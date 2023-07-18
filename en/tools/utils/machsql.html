@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>machsql</title>
+    <meta property="og:title" content="machsql" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="machsql">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="machsql"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/tools/utils/machsql.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/tools/utils/machsql.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/tools/">Tools</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/tools/utils/">Utils</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/tools/utils/machsql.html">machsql</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">machsql</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<p>machsql is an interactive tool that performs SQL queries through the terminal screen.</p>
+
+<h1 id="run-option-description">Run Option Description</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[mach@localhost]$ machsql -h
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Short Option</th>
+      <th>Full Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-s</td>
+      <td>–server</td>
+      <td>Connecting server IP address (default: 127.0.0.1)</td>
+    </tr>
+    <tr>
+      <td>-u</td>
+      <td>–user</td>
+      <td>User name (default: SYS)</td>
+    </tr>
+    <tr>
+      <td>-p</td>
+      <td>–password</td>
+      <td>User password (default: MANAGER)</td>
+    </tr>
+    <tr>
+      <td>-P</td>
+      <td>–port</td>
+      <td>Server port number (default: 5656)</td>
+    </tr>
+    <tr>
+      <td>-n</td>
+      <td>–nls</td>
+      <td>NLS configuration</td>
+    </tr>
+    <tr>
+      <td>-f</td>
+      <td>–script</td>
+      <td>SQL script file to run</td>
+    </tr>
+    <tr>
+      <td>-z</td>
+      <td>–timezone=+-HHMM</td>
+      <td>Set Timezone ex) +0900   -1230</td>
+    </tr>
+    <tr>
+      <td>-o</td>
+      <td>–output</td>
+      <td>Filename to save query results</td>
+    </tr>
+    <tr>
+      <td>-i</td>
+      <td>–silent</td>
+      <td>Runs without the copyright notice</td>
+    </tr>
+    <tr>
+      <td>-v</td>
+      <td>–verbose</td>
+      <td>Detailed output</td>
+    </tr>
+    <tr>
+      <td>-r</td>
+      <td>–format</td>
+      <td>Specifies output file format (default: csv)</td>
+    </tr>
+    <tr>
+      <td>-h</td>
+      <td>–help</td>
+      <td>Displays options</td>
+    </tr>
+    <tr>
+      <td>-c</td>
+      <td>N/A</td>
+      <td>Add Connection parameter(Supported from version 6.1 or later)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>machsql -s localhost -u sys -p manager
+machsql --server=localhost --user=sys --password=manager
+machsql -s localhost -u sys -p manager -f script.sql
+# Supported from version 6.1 or later
+machsql -s 127.0.0.1 -u sys -p manager -P 8888 -c ALTERNATIVE_SERVERS=192.168.0.147:9209;CONNECTION_TIMEOUT=10
+</code></pre></div></div>
+
+<h1 id="environment-variable-machbase_connection_string">Environment Variable MACHBASE_CONNECTION_STRING</h1>
+
+<p>Specifies basic connection parameters. For example, to add CONNECTION_TIMEOUT, ALTERNATIVE_SERVERS, you may use environment variable setting below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export MACHBASE_CONNECTION_STRING=ALTERNATIVE_SERVERS=192.168.0.148:8888;CONNECTION_TIMEOUT=3
+</code></pre></div></div>
+
+<p>Setting connection parameter with -c option, it takes precedence over environment variables. This option is supported from version 6.1 or later</p>
+
+<h1 id="show-command">SHOW Command</h1>
+
+<p>Displays information such as tables, tablespaces, and indexes.</p>
+
+<p>SHOW command list:</p>
+
+<ul>
+  <li>SHOW INDEX</li>
+  <li>SHOW INDEXES</li>
+  <li>SHOW INDEXGAP</li>
+  <li>SHOW LSM</li>
+  <li>SHOW LICENSE</li>
+  <li>SHOW STATEMENTS</li>
+  <li>SHOW STORAGE</li>
+  <li>SHOW TABLE</li>
+  <li>SHOW TABLES</li>
+  <li>SHOW TABLESPACE</li>
+  <li>SHOW TABLESPACES</li>
+  <li>SHOW USERS</li>
+</ul>
+
+<h2 id="show-index">SHOW INDEX</h2>
+<p>Displays index information.</p>
+
+<p>Syntax:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SHOW INDEX index_name
+</code></pre></div></div>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach&gt; CREATE TABLE t1 (c1 INTEGER, c2 VARCHAR(10));
+Created successfully.
+Mach&gt; CREATE VOLATILE TABLE t2 (c1 INTEGER, c2 VARCHAR(10));
+Created successfully.
+Mach&gt; CREATE INDEX t1_idx1 ON t1(c1) INDEX_TYPE LSM;
+Created successfully.
+Mach&gt; CREATE INDEX t1_idx2 ON t1(c1) INDEX_TYPE BITMAP;
+Created successfully.
+Mach&gt; CREATE INDEX t2_idx1 ON t2(c1) INDEX_TYPE REDBLACK;
+Created successfully.
+Mach&gt; CREATE INDEX t2_idx2 ON t2(c2) INDEX_TYPE REDBLACK;
+Created successfully.
+ 
+Mach&gt; SHOW INDEX t1_idx2;
+TABLE_NAME                                COLUMN_NAME                               INDEX_NAME                      
+----------------------------------------------------------------------------------------------------------------------------------
+INDEX_TYPE   BLOOM_FILTER  KEY_COMPRESS  MAX_LEVEL   PART_VALUE_COUNT BITMAP_ENCODE
+--------------------------------------------------------------------------------------------
+T1                                        C1                                        T1_IDX2                         
+LSM          ENABLE   COMPRESSED    2           100000      EQUAL
+[1] row(s) selected.
+</code></pre></div></div>
+
+<h2 id="show-indexgap">SHOW INDEXGAP</h2>
+
+<p>Displays index building GAP information.</p>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach&gt; SHOW INDEXGAP
+TABLE_NAME                                INDEX_NAME                                GAP
+-------------------------------------------------------------------------------------------------------------
+INDEX_TABLE                               T1_IDX1                                   0
+INDEX_TABLE                               T1_IDX2                                   0
+</code></pre></div></div>
+
+<h2 id="show-lsm">SHOW LSM</h2>
+
+<p>Displays LSM index building information.</p>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach&gt; SHOW LSM;
+TABLE_NAME                                INDEX_NAME                                LEVEL       COUNT
+--------------------------------------------------------------------------------------------------------------------------
+T1                                        IDX1                                      0           0
+T1                                        IDX1                                      1           100000
+T1                                        IDX1                                      2           0
+T1                                        IDX1                                      3           0
+T1                                        IDX2                                      0           100000
+T1                                        IDX2                                      1           0
+[6] row(s) selected.
+</code></pre></div></div>
+
+<h2 id="show-license">SHOW LICENSE</h2>
+
+<p>Displays license information.</p>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach&gt; SHOW LICENSE
+INSTALL_DATE          ISSUE_DATE            EXPIRY_DATE  TYPE        POLICY    
+---------------------------------------------------------------------------------------
+2016-07-01 10:24:37   20160325              20170325    2           0         
+[1] row(s) selected.
+</code></pre></div></div>
+
+<h2 id="show-statements">SHOW STATEMENTS</h2>
+
+<p>Displays all query statements (Prepare, Execute, Fetch) registered in the server.</p>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach&gt; SHOW STATEMENTS
+USER_ID     SESSION_ID  QUERY                                                                           
+--------------------------------------------------------------------------------------------------------------
+0           2           SELECT ID USER_ID, SESS_ID SESSION_ID, QUERY FROM V$STMT                        
+[1] row(s) selected.
+</code></pre></div></div>
+
+<h2 id="show-storage">SHOW STORAGE</h2>
+
+<p>Displays the disk usage for each table created by the user.</p>
+
+<p>Syntax:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SHOW STORAGE
+</code></pre></div></div>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach&gt; CREATE TAGDATA TABLE TAG (name varchar(20) primary key, time datetime basetime, value double summarized);
+Created successfully.
+  
+Mach&gt; SHOW STORAGE
+TABLE_NAME                                          DATA_SIZE            INDEX_SIZE           TOTAL_SIZE         
+------------------------------------------------------------------------------------------------------------------------ 
+_TAG_DATA_0                                         50335744             0                    50335744           
+_TAG_DATA_1                                         50335744             0                    50335744           
+_TAG_DATA_2                                         50335744             0                    50335744           
+_TAG_DATA_3                                         50335744             0                    50335744           
+_TAG_META                                           0                    0                    0
+</code></pre></div></div>
+
+<h2 id="show-table">SHOW TABLE</h2>
+
+<p>Displays information about the table created by the user.</p>
+
+<p>Syntax:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SHOW TABLE table_name
+</code></pre></div></div>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach&gt; CREATE TABLE t1 (c1 INTEGER, c2 VARCHAR(10));
+Created successfully.
+Mach&gt; CREATE INDEX t1_idx1 ON t1(c1) INDEX_TYPE LSM;
+Created successfully.
+Mach&gt; CREATE INDEX t1_idx2 ON t1(c1) INDEX_TYPE BITMAP;
+Created successfully.
+ 
+Mach&gt; SHOW TABLE T1
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+C1                            integer             11
+C2                            varchar             10
+ 
+[ INDEX ]
+----------------------------------------------------------------
+NAME                          TYPE                COLUMN
+----------------------------------------------------------------
+T1_IDX1                       LSM                 C1
+T1_IDX2                       LSM                 C1
+</code></pre></div></div>
+
+<h2 id="show-tables">SHOW TABLES</h2>
+
+<p>Displays a list of all tables created by the user.</p>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach&gt; SHOW TABLES
+NAME                                    
+--------------------------------------------
+BONUS                                   
+DEPT                                    
+EMP                                     
+SALGRADE                                
+[4] row(s) selected.
+</code></pre></div></div>
+
+<h2 id="show-tablespace">SHOW TABLESPACE</h2>
+
+<p>Displays tablespace information.</p>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach&gt; CREATE TABLE t1 (id integer);
+Created successfully.
+Mach&gt; CREATE INDEX t1_idx_id ON t1(id);
+Created successfully.
+ 
+Mach&gt; SHOW TABLESPACE SYSTEM_TABLESPACE;
+[TABLE]
+NAME                                      TYPE
+-------------------------------------------------------
+T1                                        LOG
+[1] row(s) selected.
+ 
+[INDEX]
+TABLE_NAME                                COLUMN_NAME                               INDEX_NAME                      
+----------------------------------------------------------------------------------------------------------------------------------
+T1                                        ID                                        T1_IDX_ID                   
+[1] row(s) selected.
+</code></pre></div></div>
+
+<h2 id="show-tablespaces">SHOW TABLESPACES</h2>
+
+<p>Displays a complete list of tablespaces.</p>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach&gt; CREATE TABLESPACE tbs1 DATADISK disk1 (DISK_PATH="tbs1_disk1"), disk2 (DISK_PATH="tbs1_disk2"), disk3 (DISK_PATH="tbs1_disk3");
+Created successfully.
+ 
+-- Insert data here
+...
+...
+ 
+ 
+Mach&gt; SHOW TABLESPACES;
+NAME                                                                              DISK_COUNT  USAGE
+-----------------------------------------------------------------------------------------------------------------------
+SYSTEM_TABLESPACE                                                                 1           0
+TBS1                                                                              3           25824256
+[2] row(s) selected.
+</code></pre></div></div>
+
+<h2 id="show-users">SHOW USERS</h2>
+
+<p>Displays a list of users.</p>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach&gt; CREATE USER testuser IDENTIFIED BY 'test1234';
+Created successfully.
+ 
+Mach&gt; SHOW USERS;
+USER_NAME                               
+--------------------------------------------
+SYS                                     
+TESTUSER
+[2] row(s) selected.
+</code></pre></div></div>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

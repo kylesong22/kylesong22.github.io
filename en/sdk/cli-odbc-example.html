@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>CLI/ODBC Example</title>
+    <meta property="og:title" content="CLI/ODBC Example" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="CLI/ODBC Example">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="CLI/ODBC Example"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/sdk/cli-odbc-example.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/sdk/cli-odbc-example.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/sdk/">Sdk</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/sdk/cli-odbc-example.html">CLI/ODBC Example</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">CLI/ODBC Example</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#application-development">Application Development</a>
+    <ul>
+      <li><a href="#check-cli-installation">Check CLI Installation</a></li>
+      <li><a href="#makefile-creation-guide">Makefile Creation Guide</a></li>
+      <li><a href="#compile-and-link">Compile and Link</a></li>
+    </ul>
+  </li>
+  <li><a href="#sample-program">Sample Program</a>
+    <ul>
+      <li><a href="#connection-example">Connection Example</a></li>
+      <li><a href="#data-input-and-output-example">Data Input and Output Example</a></li>
+      <li><a href="#prepare-execute-example">Prepare Execute Example</a></li>
+      <li><a href="#extension-function-append-example">Extension Function Append Example</a></li>
+      <li><a href="#acquiring-table-column-information-example">Acquiring Table Column Information Example</a></li>
+      <li><a href="#multithread-append-example">Multi-Thread Append Example</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="application-development">Application Development</h1>
+
+<h2 id="check-cli-installation">Check CLI Installation</h2>
+
+<p>If the following files are included in include and lib of the directory where Machbase is installed, the environment in which the application can be developed is complete.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach@localhost:~/machbase_home$ ls -l include lib install/
+include:
+total 176
+-rwxrwxr-x 1 mach mach 31449 Jun 18 19:26 machbase_sqlcli.h
+ 
+install/:
+total 12
+-rw-rw-r-- 1 mach mach 1667 Jun 18 19:26 machbase_env.mk
+ 
+lib:
+total 16196
+-rw-rw-r-- 1 mach mach  78603 Jun 18 19:26 machbase.jar
+-rw-rw-r-- 1 mach mach 964290 Jun 18 19:26 libmachbasecli.a
+</code></pre></div></div>
+
+<h2 id="makefile-creation-guide">Makefile Creation Guide</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mach@localhost:~/machbase_home$ cd sample/
+mach@localhost:~/machbase_home/sample$ cd cli/
+mach@localhost:~/machbase_home/sample/cli$ ls
+Makefile sample1_connect.c
+</code></pre></div></div>
+
+<p>If the Machbase package was installed, the sample program will be installed in the following path.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>include $(MACHBASE_HOME)/install/machbase_env.mk
+INCLUDES += $(LIBDIR_OPT)/$(MACHBASE_HOME)/include
+ 
+all : sample1_connect
+ 
+sample1_connect : sample1_connect.o
+$(LD_CC) $(LD_FLAGS) $(LD_OUT_OPT)$@ $&lt; $(LIB_OPT)machbasecli$(LIB_AFT) $(LIBDIR_OPT)$(MACHBASE_HOME)/lib $(LD_LIBS)
+ 
+sample1_connect.o : sample1_connect.c
+$(COMPILE.cc) $(CC_FLAGS) $(INCLUDES) $(CC_OUT_OPT)$@ $&lt;
+ 
+clean :
+rm -f sample1_connect
+</code></pre></div></div>
+
+<h2 id="compile-and-link">Compile and Link</h2>
+
+<p>Executing the following for a given sample creates an executable file.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mach@localhost:~/machbase_home/sample/cli$ make
+gcc -c -g -W -Wall -rdynamic -O3 -finline-functions -fno-omit-frame-pointer -fno-strict-aliasing -m64 -mtune=k8 -g -W -Wall -rdynamic -O3 -finline-functions -fno-omit-frame-pointer -fno-strict-aliasing -m64 -mtune=k8 -I/home/machbase/machbase_home/include -I. -L//home/machbase/machbase_home/include -osample1_connect.o sample1_connect.c
+gcc -m64 -mtune=k8 -L/home/machbase/machbase_home/lib -osample1_connect sample1_connect.o -lmachbasecli -L/home/machbase/machbase_home/lib -lm -lpthread -ldl -lrt -rdynamic
+mach@localhost:~/machbase_home/sample/cli$ ls -al
+total 1196
+drwxrwxr-x 2 mach mach 4096 Jun 18 20:15 .
+drwxrwxr-x 4 mach mach 4096 Jun 18 19:26 ..
+-rw-rw-r-- 1 mach mach 483 Jun 18 19:26 Makefile
+-rwxrwxr-x 1 mach mach 1196943 Jun 18 20:15 sample1_connect
+-rw-rw-r-- 1 mach mach 549 Jun 18 19:26 sample1_connect.c
+-rw-rw-r-- 1 mach mach 8168 Jun 18 20:15 sample1_connect.o
+</code></pre></div></div>
+
+<blockquote>
+  <p>You can write your application as necessary by modifying the sample Makefile above</p>
+</blockquote>
+
+<h1 id="sample-program">Sample Program</h1>
+
+<h2 id="connection-example">Connection Example</h2>
+
+<p>We will create an example program to connect using the CLI.
+The sample file name is sample1_connect.c.
+MACHBASE_PORT_NO must be the same as the PORT_NO value in the $MACHBASE_HOME/conf/machbase.conf file.</p>
+
+<p><a href="/en/sdk/files/sample1_connect.c">sample1_connect.c</a></p>
+
+<p>If you register sample1_connect.c in Makefile, compile and run it, it will appear as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[mach@localhost cli]$ make
+ 
+[mach@localhost cli]$ ./sample1_connect
+connected ...
+</code></pre></div></div>
+
+<h1 id="data-input-and-output-example">Data Input and Output Example</h1>
+
+<p>In the example source below, we created a table using the CREATE TABLE statement, arbitrarily create simple data values, input data using the INSERT statement, and output the data using the SELECT statement. You will be able to see how to configure each type when entering and checking values ​​directly.
+The sample file name is sample2_insert.c.</p>
+
+<p><a href="/en/sdk/files/sample2_insert.c">sample2_insert.c</a></p>
+
+<p>If you register sample2_insert.c in the Makefile, compile and run it, it will appear as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[mach@localhost cli]$ make
+ 
+[mach@localhost cli]$ ./sample2_insert
+ 
+connected ...
+1 record inserted
+2 record inserted
+3 record inserted
+4 record inserted
+5 record inserted
+6 record inserted
+7 record inserted
+8 record inserted
+9 record inserted
+===== 0 ========
+seq = 9, score = 18, total = 270000, percentage = 0.00, ratio = 3.3e-05, id = id-9, srcip = 192.168.0.9, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0009, regdate = 2015-03-31 15:26:09, log = text log-9, image = 62696E61727920696D6167652D39
+===== 1 ========
+seq = 8, score = 16, total = 240000, percentage = 0.00, ratio = 3.3e-05, id = id-8, srcip = 192.168.0.8, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0008, regdate = 2015-03-31 15:26:08, log = text log-8, image = 62696E61727920696D6167652D38
+===== 2 ========
+seq = 7, score = 14, total = 210000, percentage = 0.00, ratio = 3.3e-05, id = id-7, srcip = 192.168.0.7, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0007, regdate = 2015-03-31 15:26:07, log = text log-7, image = 62696E61727920696D6167652D37
+===== 3 ========
+seq = 6, score = 12, total = 180000, percentage = 0.00, ratio = 3.3e-05, id = id-6, srcip = 192.168.0.6, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0006, regdate = 2015-03-31 15:26:06, log = text log-6, image = 62696E61727920696D6167652D36
+===== 4 ========
+seq = 5, score = 10, total = 150000, percentage = 0.00, ratio = 3.3e-05, id = id-5, srcip = 192.168.0.5, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0005, regdate = 2015-03-31 15:26:05, log = text log-5, image = 62696E61727920696D6167652D35
+===== 5 ========
+seq = 4, score = 8, total = 120000, percentage = 0.00, ratio = 3.3e-05, id = id-4, srcip = 192.168.0.4, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0004, regdate = 2015-03-31 15:26:04, log = text log-4, image = 62696E61727920696D6167652D34
+===== 6 ========
+seq = 3, score = 6, total = 90000, percentage = 0.00, ratio = 3.3e-05, id = id-3, srcip = 192.168.0.3, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0003, regdate = 2015-03-31 15:26:03, log = text log-3, image = 62696E61727920696D6167652D33
+===== 7 ========
+seq = 2, score = 4, total = 60000, percentage = 0.00, ratio = 3.3e-05, id = id-2, srcip = 192.168.0.2, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0002, regdate = 2015-03-31 15:26:02, log = text log-2, image = 62696E61727920696D6167652D32
+===== 8 ========
+seq = 1, score = 2, total = 30000, percentage = 0.00, ratio = 3.3e-05, id = id-1, srcip = 192.168.0.1, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0001, regdate = 2015-03-31 15:26:01, log = text log-1, image = 62696E61727920696D6167652D31
+</code></pre></div></div>
+
+<h2 id="prepare-execute-example">Prepare Execute Example</h2>
+
+<p>Let’s write an example program that binds and INSERTs data.
+You can enter a value by binding data in Machbase. When you use this, you need to specify the types of data values ​​clearly. In case of long string types, you must specify the length value.
+The following example shows how to bind data for each type.
+The file name is sample3_prepare.c.</p>
+
+<p><a href="/en/sdk/files/sample3_prepare.c">sample3_prepare.c</a></p>
+
+<p>If you register sample3_prepare.c in the Makefile, compile and run it, it will appear as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[mach@localhost cli]$ make
+ 
+[mach@localhost cli]$ ./sample3_prepare
+ 
+connected ...
+1 prepared record inserted
+2 prepared record inserted
+3 prepared record inserted
+4 prepared record inserted
+5 prepared record inserted
+6 prepared record inserted
+7 prepared record inserted
+8 prepared record inserted
+9 prepared record inserted
+===== 0 ========
+seq = 9, score = 18, total = 270000, percentage = 1.11, ratio = 3.7037e-05, id = id-9, srcip = 192.168.0.9, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0009, regdate = 1970-01-01 09:00:00, log = log-9, image = 696D6167652D39
+===== 1 ========
+seq = 8, score = 16, total = 240000, percentage = 1.12, ratio = 3.75e-05, id = id-8, srcip = 192.168.0.8, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0008, regdate = 1970-01-01 09:00:00, log = log-8, image = 696D6167652D38
+===== 2 ========
+seq = 7, score = 14, total = 210000, percentage = 1.14, ratio = 3.80952e-05, id = id-7, srcip = 192.168.0.7, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0007, regdate = 1970-01-01 09:00:00, log = log-7, image = 696D6167652D37
+===== 3 ========
+seq = 6, score = 12, total = 180000, percentage = 1.17, ratio = 3.88889e-05, id = id-6, srcip = 192.168.0.6, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0006, regdate = 1970-01-01 09:00:00, log = log-6, image = 696D6167652D36
+===== 4 ========
+seq = 5, score = 10, total = 150000, percentage = 1.20, ratio = 4e-05, id = id-5, srcip = 192.168.0.5, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0005, regdate = 1970-01-01 09:00:00, log = log-5, image = 696D6167652D35
+===== 5 ========
+seq = 4, score = 8, total = 120000, percentage = 1.25, ratio = 4.16667e-05, id = id-4, srcip = 192.168.0.4, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0004, regdate = 1970-01-01 09:00:00, log = log-4, image = 696D6167652D34
+===== 6 ========
+seq = 3, score = 6, total = 90000, percentage = 1.33, ratio = 4.44444e-05, id = id-3, srcip = 192.168.0.3, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0003, regdate = 1970-01-01 09:00:00, log = log-3, image = 696D6167652D33
+===== 7 ========
+seq = 2, score = 4, total = 60000, percentage = 1.50, ratio = 5e-05, id = id-2, srcip = 192.168.0.2, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0002, regdate = 1970-01-01 09:00:00, log = log-2, image = 696D6167652D32
+===== 8 ========
+seq = 1, score = 2, total = 30000, percentage = 2.00, ratio = 6.66667e-05, id = id-1, srcip = 192.168.0.1, dstip = 2001:0DB8:0000:0000:0000:0000:1428:0001, regdate = 1970-01-01 09:00:00, log = log-1, image = 696D6167652D31
+</code></pre></div></div>
+
+<h2 id="extension-function-append-example">Extension Function Append Example</h2>
+
+<p>In Machbase, the append protocol is provided by reading a large amount of data from a file and inputting it at a high speed. Let’s write an example program that uses this Append protocol.
+First, let’s look at an example of how to append to the various types provided by Machbase. The Append method has its own settings for each type. Therefore, if you know how to use every method, you will be able to write programs more efficiently. All the methods are listed in the example code at the bottom.
+The file name is sample4_append1.c.</p>
+
+<p><a href="/en/sdk/files/sample4_append.c">sample4_append.c</a></p>
+
+<p>If you register sample4_append1.c in the Makefile, compile and run it, it will appear as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[mach@localhost cli]$ make sample4_append1
+gcc -c -g -W -Wall -rdynamic -fno-inline -m64 -mtune=k8 -g -W -Wall -rdynamic -fno-inline -m64 -mtune=k8 -I/home/mach/machbase_home/include -I. -L//home/mach/machbase_home/include -osample4_append1.o sample4_append1.c
+gcc -m64 -mtune=k8 -L/home/mach/machbase_home/lib -osample4_append1 sample4_append1.o -lmachcli -L/home/mach/machbase_home/lib -lm -lpthread -ldl -lrt -rdynamic
+[mach@localhost cli]$ ./sample4_append1
+connected ...
+append open ok
+append close ok
+success : 13, failure : 0
+timegap = 48 microseconds for 13 records
+270833.33 records/second
+[mach@localhost cli]$
+ 
+You can check what is inserted after MACH_SQL.
+ 
+Mach&gt; select * from CLI_SAMPLE;
+SHORT1 INTEGER1 LONG1 FLOAT1 DOUBLE1
+-----------------------------------------------------------------------------------------------------------
+DATETIME1 VARCHAR1 IP IP2
+------------------------------------------------------------------------------------------------------------------------------
+TEXT1
+------------------------------------------------------------------------------------
+BIN1
+------------------------------------------------------------------------------------
+2 4 6 8.4 10.9
+2000-12-31 00:00:00 000:000:000 MY VARCHAR 203.212.222.111 NULL
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+FAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFA
+FAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFA
+FAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFA
+2 4 6 8.4 10.9
+2000-12-31 00:00:00 000:000:000 MY VARCHAR 203.212.222.111 NULL
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+NULL
+2 4 6 8.4 10.9
+2000-12-31 00:00:00 000:000:000 MY VARCHAR 203.212.222.111 7F7F:7F7F:7F7F:7F7F:7F7F:7F7F:7F7F:7F7F
+NULL
+NULL
+2 4 6 8.4 10.9
+2000-12-31 00:00:00 000:000:000 MY VARCHAR 203.212.222.111 NULL
+NULL
+NULL
+2 4 6 8.4 10.9
+2000-12-31 00:00:00 000:000:000 MY VARCHAR 192.168.0.1 NULL
+NULL
+NULL
+2 4 6 8.4 10.9
+2000-12-31 00:00:00 000:000:000 MY VARCHAR 127.0.0.1 NULL
+NULL
+NULL
+2 4 6 8.4 10.9
+2000-12-31 00:00:00 000:000:000 MY VARCHAR NULL NULL
+NULL
+NULL
+2 4 6 8.4 10.9
+2000-12-31 00:00:00 000:000:000 NULL NULL NULL
+NULL
+NULL
+2 4 6 8.4 10.9
+2014-05-23 17:41:28 000:000:000 NULL NULL NULL
+NULL
+NULL
+2 4 6 8.4 10.9
+2015-04-09 16:44:11 134:256:000 NULL NULL NULL
+NULL
+NULL
+2 4 6 8.4 10.9
+1970-01-01 09:00:01 000:000:000 NULL NULL NULL
+NULL
+NULL
+2 4 6 8.4 10.9
+1970-01-01 09:00:00 000:000:000 NULL NULL NULL
+NULL
+NULL
+[12] row(s) selected.
+</code></pre></div></div>
+
+<p>Now let’s use a fast append method using a file. This is an example useful for fast input of large amounts of logs, packets, etc. used in business. The file name is sample4_append2.c.
+You have to save the data to be entered in advance in data.txt.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./make_data
+</code></pre></div></div>
+
+<p>Modifying the given make_data.c gives you the opportunity to create a data.txt file for your situation.</p>
+
+<p><a href="/en/sdk/files/make_data.c">make_data.c</a></p>
+
+<p>If you register sample4_append2.c in the Makefile, compile and run it, it will appear as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[mach@localhost cli]$ make
+gcc -c -g -W -Wall -rdynamic -fno-inline -m64 -mtune=k8 -g -W -Wall -rdynamic -fno-inline -m64 -mtune=k8 -I/home/mach/machbase_home/include -I. -L//home/mach/machbase_home/include -osingle_append2.o single_append2.c
+gcc -m64 -mtune=k8 -L/home/mach/machbase_home/lib -osingle_append2 single_append2.o -lmachcli -L/home/mach/machbase_home/lib -lm -lpthread -ldl -lrt -rdynamic
+[mach@localhost cli]$ ./single_append2
+connected ...
+table created
+append open ok
+append data start
+....................................................................................................
+append data end
+append close ok
+success : 1000000, failure : 0
+timegap = 1641503 microseconds for 1000000 records
+609197.79 records/second
+</code></pre></div></div>
+
+<h2 id="acquiring-table-column-information-example">Acquiring Table Column Information Example</h2>
+
+<p>There are a number of ways to obtain table column information, but we will look at how to use SQLDescribeCol and SQLColumns.</p>
+
+<h3 id="sqldescribecol">SQLDescribeCol</h3>
+
+<p>The sample file name is sample5_describe.c.</p>
+
+<p><a href="/en/sdk/files/sample5_describe.c">sample5_describe.c</a></p>
+
+<p>If you add the above file and run make, you can see the contents of the column as shown below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[mach@localhost cli]$ make
+ 
+[mach@localhost cli]$ ./sample5_describe
+connected ...
+----------------------------------------------------------------
+Name Type Length
+----------------------------------------------------------------
+SEQ 5 5
+SCORE 4 10
+TOTAL -5 19
+PERCENTAGE 6 27
+RATIO 8 27
+ID 12 10
+SRCIP 2104 15
+DSTIP 2106 60
+REG_DATE 9 31
+TLOG 2100 67108864
+IMAGE -2 67108864
+----------------------------------------------------------------
+[mach@localhost cli]$
+</code></pre></div></div>
+
+<h3 id="sqlcolumns">SQLColumns</h3>
+
+<p>SQLColumns is a function that can find the information of the columns existing in the current table. Machbase also supports the above functions and can be used to find out the information of each column.</p>
+
+<p>The file name is sample6_columns.c.</p>
+
+<p><a href="/en/sdk/files/sample6_columns.c">sample6_columns.c</a></p>
+
+<p>Add the above file and run make. The results are as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[mach@localhost cli]$ make
+ 
+[mach@localhost cli]$ ./sample6_columns
+connected ...
+--------------------------------------------------------------------------------
+Name Type TypeName Length
+--------------------------------------------------------------------------------
+_ARRIVAL_TIME 93 DATE 31
+SEQ 5 SMALLINT 5
+SCORE 4 INTEGER 10
+TOTAL -5 BIGINT 19
+PERCENTAGE 6 FLOAT 27
+RATIO 8 DOUBLE 27
+ID 12 VARCHAR 10
+SRCIP 2104 IPV4 15
+DSTIP 2106 IPV6 60
+REG_DATE 93 DATE 31
+TLOG 2100 TEXT 67108864
+IMAGE -2 BINARY 67108864
+--------------------------------------------------------------------------------
+</code></pre></div></div>
+
+<h2 id="multi-thread-append-example">Multi-Thread Append Example</h2>
+
+<p>An example of using multiple threads in one program to append to multiple tables.</p>
+
+<p>The file name is sample8_multi_session_multi_table.c.</p>
+
+<p><a href="/en/sdk/files/sample8_multi_session_multi_table.c">sample8_multi_session_multi_table.c</a></p>
+
+<p>Add the make code and run the executable file. Because the threads are used, the output order may be different. The results are as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[mach@localhost cli]$ make sample8_multi_session_multi_table
+gcc -c -g -W -Wall -rdynamic -fno-inline -m64 -mtune=k8 -g -W -Wall -rdynamic -fno-inline -m64 -mtune=k8 -I/home/mach/machbase_home/include -I. -L//home/mach/machbase_home/include -osample8_multi_session_multi_table.o sample8_multi_session_multi_table.c
+gcc -m64 -mtune=k8 -L/home/mach/machbase_home/lib -osample8_multi_session_multi_table sample8_multi_session_multi_table.o -lmachcli  -L/home/mach/machbase_home/lib -lm -lpthread -ldl -lrt -rdynamic
+[mach@localhost cli]$ ./sample8_multi_session_multi_table
+connectDB success.
+createTables success.
+[0]connectDB success.
+[1]connectDB success.
+[2]connectDB success.
+[1-0]appendOpen success.
+[0-0]appendOpen success.
+[2-0]appendOpen success.
+[1-1]appendOpen success.
+[2-1]appendOpen success.
+[0-1]appendOpen success.
+[1-2]appendOpen success.
+[2-2]appendOpen success.
+file open success - [1][suffle_data2.txt]
+file open success - [2][suffle_data3.txt]
+[0-2]appendOpen success.
+file open success - [0][suffle_data1.txt]
+.......................................................................................
+ 
+[1-0]appendClose start...
+..
+[0-0]appendClose start...
+append result success : 100000, failure : 0
+[1-0]appendClose success
+[1-1]appendClose start...
+append result success : 100000, failure : 0
+[1-1]appendClose success
+[1-2]appendClose start...
+append result success : 100000, failure : 0
+[1-2]appendClose success
+append result success : 100000, failure : 0
+[0-0]appendClose success
+[0-1]appendClose start...
+.append result success : 100000, failure : 0
+[0-1]appendClose success
+[0-2]appendClose start...
+append result success : 100000, failure : 0
+[0-2]appendClose success
+ 
+[2-0]appendClose start...
+append result success : 100000, failure : 0
+[2-0]appendClose success
+[2-1]appendClose start...
+append result success : 100000, failure : 0
+[2-1]appendClose success
+[2-2]appendClose start...
+append result success : 100000, failure : 0
+[2-2]appendClose success
+[1]disconnected.
+[2]disconnected.
+[0]disconnected.
+1 thread join
+2 thread join
+3 thread join
+</code></pre></div></div>
+
+<p>You can see the result through machsql as below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[mach@localhost cli]$ machsql
+ 
+=================================================================
+     Machbase Client Query Utility
+     Release Version 3.5.0
+     Copyright 2014, Machbase Inc. or its subsidiaries.
+     All Rights Reserved.
+=================================================================
+Machbase Server Addr (Default:127.0.0.1) :
+Machbase User ID  (Default:SYS)
+Machbase User Password : manager
+MACH_CONNECT_MODE=INET, PORT=5656
+Mach&gt; select count(*) from table_f1;
+count(*)
+-----------------------
+300000
+[1] Row Selected.
+Mach&gt; select count(*) from table_f2;
+count(*)
+-----------------------
+300000
+[1] row(s) selected.
+Mach&gt; select count(*) from table_event;
+count(*)
+-----------------------
+300000
+[1] row(s) selected.
+</code></pre></div></div>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>Property (Cluster)</title>
+    <meta property="og:title" content="Property (Cluster)" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="Property (Cluster)">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Property (Cluster)"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/config-monitor/property-cluster.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/config-monitor/property-cluster.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/config-monitor/">Config monitor</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/config-monitor/property-cluster.html">Property (Cluster)</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">Property (Cluster)</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#cluster_link_accept_timeout">CLUSTER_LINK_ACCEPT_TIMEOUT</a></li>
+  <li><a href="#cluster_link_buffer_size">CLUSTER_LINK_BUFFER_SIZE</a></li>
+  <li><a href="#cluster_link_check_interval">CLUSTER_LINK_CHECK_INTERVAL</a></li>
+  <li><a href="#cluster_link_connect_retry_timeout">CLUSTER_LINK_CONNECT_RETRY_TIMEOUT</a></li>
+  <li><a href="#cluster_link_connect_timeout">CLUSTER_LINK_CONNECT_TIMEOUT</a></li>
+  <li><a href="#cluster_link_error_add_origin_host">CLUSTER_LINK_ERROR_ADD_ORIGIN_HOST</a></li>
+  <li><a href="#cluster_link_handshake_timeout">CLUSTER_LINK_HANDSHAKE_TIMEOUT</a></li>
+  <li><a href="#cluster_link_buffer_size">CLUSTER_LINK_BUFFER_SIZE</a></li>
+  <li><a href="#cluster_link_send_retry_count">CLUSTER_LINK_SEND_RETRY_COUNT</a></li>
+  <li><a href="#cluster_link_host">CLUSTER_LINK_HOST</a></li>
+  <li><a href="#cluster_link_long_term_callback_interval">CLUSTER_LINK_LONG_TERM_CALLBACK_INTERVAL</a></li>
+  <li><a href="#cluster_link_long_wait_interval">CLUSTER_LINK_LONG_WAIT_INTERVAL</a></li>
+  <li><a href="#cluster_link_max_listen">CLUSTER_LINK_MAX_LISTEN</a></li>
+  <li><a href="#cluster_link_max_poll">CLUSTER_LINK_MAX_POLL</a></li>
+  <li><a href="#cluster_link_port_no">CLUSTER_LINK_PORT_NO</a></li>
+  <li><a href="#cluster_link_receive_timeout">CLUSTER_LINK_RECEIVE_TIMEOUT</a></li>
+  <li><a href="#cluster_link_request_timeout">CLUSTER_LINK_REQUEST_TIMEOUT</a></li>
+  <li><a href="#cluster_link_send_retry_count">CLUSTER_LINK_SEND_RETRY_COUNT</a></li>
+  <li><a href="#cluster_link_send_timeout">CLUSTER_LINK_SEND_TIMEOUT</a></li>
+  <li><a href="#cluster_link_session_timeout">CLUSTER_LINK_SESSION_TIMEOUT</a></li>
+  <li><a href="#cluster_link_thread_count">CLUSTER_LINK_THREAD_COUNT</a></li>
+  <li><a href="#cluster_query_stat_log_enable">CLUSTER_QUERY_STAT_LOG_ENABLE</a></li>
+  <li><a href="#cluster_replication_block_size">CLUSTER_REPLICATION_BLOCK_SIZE</a></li>
+  <li><a href="#cluster_warehouse_direct_dml_enable">CLUSTER_WAREHOUSE_DIRECT_DML_ENABLE</a></li>
+  <li><a href="#coordinator_dbs_path">COORDINATOR_DBS_PATH</a></li>
+  <li><a href="#coordinator_ddl_request_timeout">COORDINATOR_DDL_REQUEST_TIMEOUT</a></li>
+  <li><a href="#coordinator_ddl_timeout">COORDINATOR_DDL_TIMEOUT</a></li>
+  <li><a href="#coordinator_decision_delay">COORDINATOR_DECISION_DELAY</a></li>
+  <li><a href="#coordinator_decision_interval">COORDINATOR_DECISION_INTERVAL</a></li>
+  <li><a href="#coordinator_host_resource_enable">COORDINATOR_HOST_RESOURCE_ENABLE</a></li>
+  <li><a href="#coordinator_host_resource_collect_interval">COORDINATOR_HOST_RESOURCE_COLLECT_INTERVAL</a></li>
+  <li><a href="#coordinator_host_resource_interval">COORDINATOR_HOST_RESOURCE_INTERVAL</a></li>
+  <li><a href="#coordinator_host_resource_request_timeout">COORDINATOR_HOST_RESOURCE_REQUEST_TIMEOUT</a></li>
+  <li><a href="#coordinator_node_request_timeout">COORDINATOR_NODE_REQUEST_TIMEOUT</a></li>
+  <li><a href="#coordinator_node_timeout">COORDINATOR_NODE_TIMEOUT</a></li>
+  <li><a href="#coordinator_startup_delay">COORDINATOR_STARTUP_DELAY</a></li>
+  <li><a href="#coordinator_status_node_interval">COORDINATOR_STATUS_NODE_INTERVAL</a></li>
+  <li><a href="#coordinator_status_node_request_timeout">COORDINATOR_STATUS_NODE_REQUEST_TIMEOUT</a></li>
+  <li><a href="#coordinator_disk_full_upper_bound_ratio">COORDINATOR_DISK_FULL_UPPER_BOUND_RATIO</a></li>
+  <li><a href="#coordinator_disk_full_lower_bound_ratio">COORDINATOR_DISK_FULL_LOWER_BOUND_RATIO</a></li>
+  <li><a href="#deployer_dbs_path">DEPLOYER_DBS_PATH</a></li>
+  <li><a href="#execution_stage_memory_max">EXECUTION_STAGE_MEMORY_MAX</a></li>
+  <li><a href="#http_admin_port">HTTP_ADMIN_PORT</a></li>
+  <li><a href="#http_connect_timeout">HTTP_CONNECT_TIMEOUT</a></li>
+  <li><a href="#http_receive_timeout">HTTP_RECEIVE_TIMEOUT</a></li>
+  <li><a href="#http_send_timeout">HTTP_SEND_TIMEOUT</a></li>
+  <li><a href="#insert_bulk_data_max_size">INSERT_BULK_DATA_MAX_SIZE</a></li>
+  <li><a href="#insert_record_count_per_node">INSERT_RECORD_COUNT_PER_NODE</a></li>
+  <li><a href="#lookupnode_command_retry_max_count">LOOKUPNODE_COMMAND_RETRY_MAX_COUNT</a></li>
+  <li><a href="#stage_result_block_size">STAGE_RESULT_BLOCK_SIZE</a></li>
+</ul>
+
+<p>Separate from <a href="/en/config-monitor/property.html">Property</a>, Property (Cluster) organizes the Property only available in Cluster Edition.</p>
+
+<h1 id="cluster_link_accept_timeout">CLUSTER_LINK_ACCEPT_TIMEOUT</h1>
+<p>Timeout until receiving Handshake message after Accept when connecting to a specific Node.</p>
+
+<p>Failure to receive within the timeout will cause the connection to fail.</p>
+
+<p>The default value is 5 seconds.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>5000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_buffer_size">CLUSTER_LINK_BUFFER_SIZE</h1>
+<p>If this size is insufficient, it will try again until the buffer is empty during transmission.</p>
+
+<p>The size of the request/receive buffer.</p>
+
+<p>Default is 32M.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(byte)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>1024768</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^32-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>33554432 (32M)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_check_interval">CLUSTER_LINK_CHECK_INTERVAL</h1>
+<p>Check interval of the Timeout Thread that checks the Sockets connected to a specific Node.</p>
+
+<p>There is a Timeout Thread that checks RECEIVE_TIMEOUT and SESSION_TIMEOUT.</p>
+
+<p>The shorter the cycle is, the more frequently it is checked but the Timeout determination is made according to the following values.</p>
+
+<p>The default value is 1 second.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_connect_retry_timeout">CLUSTER_LINK_CONNECT_RETRY_TIMEOUT</h1>
+<p>Timeout to repeat reconnect attempt after connection failure with a specific Node.</p>
+
+<p>If it is not connected within the timeout, it is determined to be completely disconnected.</p>
+
+<p>The default value is 1 minute.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>60000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_connect_timeout">CLUSTER_LINK_CONNECT_TIMEOUT</h1>
+<p>Time to wait when trying to connect to a specific Node.</p>
+
+<p>If it does not connect within the Timeout, it will try to reconnect until CLUSTER_LINK_CONNECT_RETRY_TIMEOUT has passed.</p>
+
+<p>The default value is 5 seconds.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>5000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_error_add_origin_host">CLUSTER_LINK_ERROR_ADD_ORIGIN_HOST</h1>
+<p>You can choose whether to add an errored host name to error messages that occur during communication between the Cluster.</p>
+
+<p>If you want to display a detailed error message, set the property to 1.</p>
+
+<p>The default value is 0, which means the host name is not displayed.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(boolean)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_handshake_timeout">CLUSTER_LINK_HANDSHAKE_TIMEOUT</h1>
+<p>Timeout until receiving a Handshake message while connected to a specific Node and Cluster Socket.</p>
+
+<p>Two Nodes that have just finished connecting exchange small size Handshake messages to check the connection status.</p>
+
+<p>The Accept Node sends the Handshake message first, and the time to wait for the response is set here.</p>
+
+<p>The default value is 5 seconds.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>5000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_buffer_size-1">CLUSTER_LINK_BUFFER_SIZE</h1>
+<p>The size of the send / receive buffer.</p>
+
+<p>If this size is insufficient, the transmission will retry until the buffer is empty.</p>
+
+<p>The default value is 32M.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(byte)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>1024768</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^32-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>33554432 (32M)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_send_retry_count">CLUSTER_LINK_SEND_RETRY_COUNT</h1>
+<p>Number of times to retry sending until the send buffer is empty.</p>
+
+<p>Every retry will take 1ms off. If you retry beyond this number, you will be disconnected.</p>
+
+<p>The default value is 5000 (msec).</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(count)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>5000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_host">CLUSTER_LINK_HOST</h1>
+<p>Host name of the current Node to connect to a specific Node and Cluster Socket</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(string)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>localhost</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_long_term_callback_interval">CLUSTER_LINK_LONG_TERM_CALLBACK_INTERVAL</h1>
+<p>If the execution time of Receive Callback to process a message received on Cluster Socket exceeds the set value, it is recognized as Long-Term Callback.</p>
+
+<p>Since the number of receive Threads is limited, Receive Callback should not process messages for a long time.</p>
+
+<p>If Receive Callback processes the message after this time, it recognizes it as Long-Term Callback and records it in Trace Log.</p>
+
+<p>The default value is 1 second.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_long_wait_interval">CLUSTER_LINK_LONG_WAIT_INTERVAL</h1>
+<p>If the time until the arrival of a message received on Cluster Socket exceeds the set value, it is recognized as Long-Wait Message.</p>
+
+<p>If the time from receiving start to receiving end is long, it can be regarded as a problem of the network environment.</p>
+
+<p>If the received message does not arrive after this time, it is recognized as a Long-Wait Message and recorded in the Trace Log.</p>
+
+<p>The default value is 1 second.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_max_listen">CLUSTER_LINK_MAX_LISTEN</h1>
+<p>The maximum number of Socket’s Accept Queue when connecting to a specific Node.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(count)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^32-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>512</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_max_poll">CLUSTER_LINK_MAX_POLL</h1>
+<p>The maximum number of Events that can be retrieved at a time by Poll when communicating with a specific node.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(count)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^32-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>4096</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_port_no">CLUSTER_LINK_PORT_NO</h1>
+<p>The port number of the current Node for connecting the specific Node to the Cluster Socket</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(port)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>1024</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>65535</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>3868</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_receive_timeout">CLUSTER_LINK_RECEIVE_TIMEOUT</h1>
+<p>Timeout until the Timeout Thread determines that the connection has been disconnected since the last reception.</p>
+
+<p>Connections that exist in the ‘Linked List’ should be continuously receiving because the connection between Cluster Nodes is terminated when the reception is complete.</p>
+
+<p>If the last received time is not updated after the set time has elapsed, the Timeout Thread records its contents in the Trace Log and closes the Socket.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>30000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_request_timeout">CLUSTER_LINK_REQUEST_TIMEOUT</h1>
+<p>Timeout from when a request message is sent from the Cluster Socket to when a response to the request is received.</p>
+
+<p>For specific messages, specify the time to wait for a response after the request.</p>
+
+<p>If the response message does not arrive at this time, write log to the Trace Log and close the Socket.</p>
+
+<p>The default value is 60 seconds, Timeout is long enough because it is not known what kind of message and receive processing will happen.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>60000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_send_retry_count-1">CLUSTER_LINK_SEND_RETRY_COUNT</h1>
+<p>Number of times to retry transmission until the transmit buffer is empty.</p>
+
+<p>Each retry will result in 1 ms of rest.</p>
+
+<p>If you try again beyond this number, disconnect.</p>
+
+<p>The default value is 5000.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(count)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^32-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>5000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_send_timeout">CLUSTER_LINK_SEND_TIMEOUT</h1>
+<p>Timeout to set when sending messages through Cluster Socket.</p>
+
+<p>Set the corresponding timeout when transmitting.</p>
+
+<p>If transmission is not completed until Timeout, it is recorded in the Trace Log.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>30000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_session_timeout">CLUSTER_LINK_SESSION_TIMEOUT</h1>
+<p>Timeout until the Timeout thread determines that the connection has been disconnected since the last receive in a specific session.</p>
+
+<p>Cluster connection manages the session of all messages internally, which is a necessary property in case the session can suddenly not be fixed.</p>
+
+<p>If the last receive time for the session is not updated after this time, the Timeout Thread writes to the Trace Log and closes the session.</p>
+
+<p>The default value is 1 hour.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64-1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>3600000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_link_thread_count">CLUSTER_LINK_THREAD_COUNT</h1>
+<p>The number of Threads to process the received messages when communicating with a specific Node.</p>
+
+<p>If the size of the Cluster grows or the number of operations to be processed increases, you can increase the number of receive threads.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(count)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>4096</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_query_stat_log_enable">CLUSTER_QUERY_STAT_LOG_ENABLE</h1>
+<p>Outputs statistical information about the executed query to the trace log.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(boolean)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_replication_block_size">CLUSTER_REPLICATION_BLOCK_SIZE</h1>
+<p>The size of the data to be sent at once when the Replication for adding Node is performed in the Cluster Edition.</p>
+
+<p>The Property must be applied directly to the warehouse (=Transmitting Warehouse) that becomes the Replication Active.</p>
+
+<p>The default value is 640 KB.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(size)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>64 * 1024</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>100 * 1024 * 1024</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>640 * 1024 (655360)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster_warehouse_direct_dml_enable">CLUSTER_WAREHOUSE_DIRECT_DML_ENABLE</h1>
+<p>It is made possible to connect directly to the Warehouse to perform DML in Cluster Edition.</p>
+
+<ul>
+  <li>1: Executable</li>
+  <li>2: Not executable. An error is returned.</li>
+</ul>
+
+<p>When directly performing the DML in Warehouse, there are performance advantages over Brokers but there is an issue where the DML is not propagated to the same Group.</p>
+
+<p>Therefore, it is used only for emergency recovery due to data discrepancies, or if the data discrepancies of the Group can be taken into account.</p>
+
+<p>You must apply Properties directly to the specific Warehouse you want.</p>
+
+<p>The default value is 0.</p>
+
+<blockquote>
+  <p><img src="/icons/tips.png" alt="tips" />  The Coordinator does not check for data discrepancies, even if there is a data difference between the Warehouses in the Group with the corresponding Property turned on.</p>
+</blockquote>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(boolean)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_dbs_path">COORDINATOR_DBS_PATH</h1>
+<p>Specifies the directory where the Coordinator data file will be created.</p>
+
+<p>The default value is set to ?/dbs, and ? is replaced with the $ MACHBASE_COORDINATOR_HOME environment variable.</p>
+
+<p>This is an environment variable $MACHBASE_COORDINATOR_HOME/dbs directory.</p>
+
+<p>It must be applied to the Coordinator, and it has no effect on other Nodes.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(path)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>?/dbs</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_ddl_request_timeout">COORDINATOR_DDL_REQUEST_TIMEOUT</h1>
+<p>Timeout until the Coordinator waits after requesting the Node to execute DDL.</p>
+
+<p>This value refers to the time the Coordinator waits after requesting each Node to perform DDL.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>3600000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_decision_delay">COORDINATOR_DECISION_DELAY</h1>
+<p>Timeout until the Coordinator requests the status change and effectively reflects it.</p>
+
+<p>If the status does not actually change over this time, disable the cluster status.</p>
+
+<p>If the status of the Warehouse Active is not changed but the connected Standby exists, the Fail-Over operation starts.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_decision_interval">COORDINATOR_DECISION_INTERVAL</h1>
+<p>Time to determine how often the Coordinator changes status.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_host_resource_enable">COORDINATOR_HOST_RESOURCE_ENABLE</h1>
+<p>Whether the Coordinator collects Host Resources for Cluster Nodes.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(boolean)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0 (false)</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>1 (true)</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>0 (false)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_host_resource_collect_interval">COORDINATOR_HOST_RESOURCE_COLLECT_INTERVAL</h1>
+<p>Interval at which Cluster Nodes collect Host Resources.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_host_resource_interval">COORDINATOR_HOST_RESOURCE_INTERVAL</h1>
+<p>Interval at which the Coordinator exchanges Host Resources with Nodes.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_host_resource_request_timeout">COORDINATOR_HOST_RESOURCE_REQUEST_TIMEOUT</h1>
+<p>Time that the Coordinator waits after requesting the Host Resource information from the Nodes.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>10000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_node_request_timeout">COORDINATOR_NODE_REQUEST_TIMEOUT</h1>
+<p>Timeout until the Coordinator waits after requesting the Node to execute the command.</p>
+
+<p>Because the Add/Remove-node and Add/Remove-Package includes the Node command execution, if it is caught in a short time, the command processing may not be completed.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>600000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_node_timeout">COORDINATOR_NODE_TIMEOUT</h1>
+<p>Time the Coordinator waits before determining that the Node has failed.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>30000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_startup_delay">COORDINATOR_STARTUP_DELAY</h1>
+<p>Grace time until activating the Decision Thread immediately after Coordinator startup.</p>
+
+<p>If it takes a long time to run the entire Cluster, you can start the Node control of Coordinator later by setting a larger value.</p>
+
+<p>If the Decision Thread runs before the entire drive, there is a high likelihood that the Coordinator will be misplaced.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>3000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_status_node_interval">COORDINATOR_STATUS_NODE_INTERVAL</h1>
+<p>Interval in which the Coordinator exchanges status inquiry messages with the Nodes.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_status_node_request_timeout">COORDINATOR_STATUS_NODE_REQUEST_TIMEOUT</h1>
+<p>Time the Coordinator waits after requesting status inquiries from Nodes.</p>
+
+<p>If there is no status inquiry response during that time, the Coordinator proceeds without updating the status of the corresponding Node.</p>
+
+<p>If the network situation is not good and you need to update the state, you could consider increasing the value.</p>
+
+<p>Instead, if there is no status query response, the Coordinator will wait for as much as the value was increased.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>5000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_disk_full_upper_bound_ratio">COORDINATOR_DISK_FULL_UPPER_BOUND_RATIO</h1>
+<p>If the disk usage of some servers configured in the cluster exceeds the property value, the group to which the warehouse belongs will enter the DISKFULL state.</p>
+
+<p>Input is restricted for the group in the DISKFULL state, and only inquiry and deletion are possible.</p>
+
+<p>If the property value is 0, the function is disabled.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(percent)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="coordinator_disk_full_lower_bound_ratio">COORDINATOR_DISK_FULL_LOWER_BOUND_RATIO</h1>
+<p>If the disk usage of the server operating in the DISKFULL state falls below the property value, the group state transitions to the normal.</p>
+
+<p>If the property value is 0, the function is disabled.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(percent)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="deployer_dbs_path">DEPLOYER_DBS_PATH</h1>
+<p>Specifies the directory where the Deployer’s data files will be created.</p>
+
+<p>The default value is set to?/dbs, and ? is replaced with the $ MACHBASE_DEPLOYER_HOME environment variable.</p>
+
+<p>This is an environment variable $MACHBASE_DEPLOYER_HOME /dbs directory.</p>
+
+<p>It must be applied to Deployer, and it has no effect on other Nodes.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(path)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>?/dbs</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="execution_stage_memory_max">EXECUTION_STAGE_MEMORY_MAX</h1>
+<p>The maximum amount of Memory used by the Stage Thread performing the SELECT query in Cluster Edition.</p>
+
+<p>Because it is the maximum size of each Stage, the complexity of the SELECT query with an increase in the number of Stages can lead to a larger memory requirement.</p>
+
+<p>If there is a Stage that exceeds the maximum size, the Stage is canceled and the Query is canceled with an error.</p>
+
+<p>You must apply Properties directly to the specific Warehouse you want.</p>
+
+<p>The default value is 1GB.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(size)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>1024</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>1024 *1024 * 1024</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="http_admin_port">HTTP_ADMIN_PORT</h1>
+<p>Port number to receive requests from MWA or machcoordinatoradmin.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(port)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>1024</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>65535</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>5779</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="http_connect_timeout">HTTP_CONNECT_TIMEOUT</h1>
+<p>Timeout used when connecting to machcoordinatoradmin.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>30000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="http_receive_timeout">HTTP_RECEIVE_TIMEOUT</h1>
+<p>Timeout used when communicating with machcoordinatoradmin.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>3600000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="http_send_timeout">HTTP_SEND_TIMEOUT</h1>
+<p>Timeout used when communicating with machcoordinatoradmin.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(usec)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>60000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="insert_bulk_data_max_size">INSERT_BULK_DATA_MAX_SIZE</h1>
+<p>Maximum size of input data block when executing Append or INSERT-SELECT.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(size)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>1024</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>10 * 1024 * 1024</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>1024 * 1024</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="insert_record_count_per_node">INSERT_RECORD_COUNT_PER_NODE</h1>
+<p>Number of data inputs that lead to the warehouse group conversion when performing the input.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(count)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>10000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="lookupnode_command_retry_max_count">LOOKUPNODE_COMMAND_RETRY_MAX_COUNT</h1>
+<p>Number of retry when command and connection to Lookup node fails</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(count)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>3600</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="stage_result_block_size">STAGE_RESULT_BLOCK_SIZE</h1>
+<p>Maximum block size created in one stage.</p>
+
+<table>
+  <thead>
+    <th style="background-color: lightyellow;">(size)</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum</td>
+      <td>1024</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F0FFFF;">Default</td>
+      <td>1024 * 1024</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

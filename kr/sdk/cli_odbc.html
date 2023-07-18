@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/kr/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/kr/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>CLI/ODBC</title>
+    <meta property="og:title" content="CLI/ODBC" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="CLI/ODBC">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="CLI/ODBC"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/kr/assets/css/main.css">
+    <link rel="stylesheet" href="/kr/assets/css/palette.css">
+    <script
+      src="/kr/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/kr/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/kr/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/kr/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/kr/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/kr/sdk/cli_odbc.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/kr/sdk/cli_odbc.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">마크베이스 매뉴얼</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="마크베이스-매뉴얼">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">개요</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="개요">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-개요-마크베이스-소개" href="/kr//intro/introduction">마크베이스 소개</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-개요-마크베이스-특징" href="/kr//intro/features">마크베이스 특징</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-개요-마크베이스-제품군-소개" href="/kr//intro/products">마크베이스 제품군 소개</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">설치</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="설치">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-패키지-개요" href="/kr//install/package">패키지 개요</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-리눅스-설치" href="/kr//install/linux">리눅스 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-windows-설치" href="/kr//install/windows">Windows 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-라이선스-설치" href="/kr//install/license">라이선스 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-cluster-edition-설치" href="/kr//install/cluster">Cluster Edition 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-업그레이드-복구" href="">업그레이드 / 복구</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">주요기능 / 테이블</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="주요기능-테이블">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-태그-테이블-tag-table" href="/kr//feature-table/tag">태그 테이블 (Tag Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-로그-테이블-log-table" href="/kr//feature-table/log">로그 테이블 (Log Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-휘발성-테이블-volatile-table" href="/kr//feature-table/volatile">휘발성 테이블 (Volatile Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-참조-테이블-lookup-table" href="/kr//feature-table/lookup">참조 테이블 (Lookup Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-스트림-stream" href="/kr//feature-table/stream">스트림 (Stream)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-백업-및-마운트" href="/kr//feature-table/backup-mount">백업 및 마운트</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">도구</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="도구">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-유틸리티-모음" href="/kr//tools/utilities">유틸리티 모음</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-mwa-machbase-web-analytics" href="/kr//tools/mwa">MWA (Machbase Web Analytics)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-태그-분석기-tag-analyzer" href="/kr//tools/tag-analyzer">태그 분석기(Tag Analyzer)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-machcoordinatoradmin" href="/kr//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-machdeployeradmin" href="/kr//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">설정 / 모니터링</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="설정-모니터링">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-meta-table" href="/kr//setting-monitoring/meta-table">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-virtual-table" href="/kr//setting-monitoring/virtual-table">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-property" href="/kr//setting-monitoring/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-property-cluster" href="/kr//setting-monitoring/property-cl">Property (Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-자료형" href="/kr//sql-ref/data-types">자료형</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-ddl" href="/kr//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-dml" href="/kr//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-select" href="/kr//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-select-hint" href="/kr//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-사용자-관리" href="/kr//sql-ref/user">사용자 관리</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-지원-함수" href="/kr//sql-ref/func">지원 함수</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-시스템-세션-관리" href="/kr//sql-ref/sys-session">시스템/세션 관리</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-cli-odbc" href="/kr//sdk/cli_odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-cli-odbc-예제" href="/kr//sdk/cli_odbc_example">CLI/ODBC 예제</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-jdbc" href="/kr//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-python" href="/kr//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-restful-api" href="/kr//sdk/restful_api">RESTful API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-net-connector" href="/kr//sdk/dotnet">.NET Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-timezone" href="/kr//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Release Note</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="release-note">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-release-note-7-0-release-note" href="/kr//release-note/7_0">7.0 Release Note</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-release-note-7-5-release-note" href="/kr//release-note/7_5">7.5 Release Note</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">자주 묻는 질문(FAQ)</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="자주-묻는-질문-faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-자주-묻는-질문-faq-쿼리-에러를-property-수정하여-해결하는-방법" href="/kr//faq/faq">쿼리 에러를 Property 수정하여 해결하는 방법</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/kr/sdk/">Sdk</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/kr/sdk/cli_odbc.html">CLI/ODBC</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">CLI/ODBC</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<p>CLI란 ISO/IEC 9075-3:2003에 정의된 소프트웨어 개발 표준이다.</p>
+
+<p>CLI는 데이터베이스에 어떻게 SQL을 전달하고, 결과 값을 어떻게 받고 분석해야 하는지에 대한 함수 및 명세를 정의하고 있다. 이 CLI는 1990년 초창기에 개발되었고, C 와 COBOL 언어 만을 위해 개발되었고, 현재까지 그 스펙이 유지되고 있다.</p>
+
+<p>현재까지 가장 널리 알려진 표준 인터페이스는 ODBC(Open Database Connectivity)로서 클라이언트 프로그램이 데이터베이스의 종류와 무관하게 데이터베이스 접속할 수 있는 방법을 제시해 주고 있다. 현재 최신 ODBC API 버전은 3.52 로서 ISO와 X/Open 표준에 정의되어 있다.</p>
+
+<h1 id="목차">목차</h1>
+
+<ul>
+  <li><a href="#목차">목차</a></li>
+  <li><a href="#표준-cli-함수">표준 CLI 함수</a>
+    <ul>
+      <li><a href="#접속을-위한-연결-스트링">접속을 위한 연결 스트링</a></li>
+    </ul>
+  </li>
+  <li><a href="#확장-cli-함수-append">확장 CLI 함수 (APPEND)</a>
+    <ul>
+      <li><a href="#append-프로토콜의-이해">Append 프로토콜의 이해</a></li>
+      <li><a href="#append-데이터의-전송">Append 데이터의 전송</a></li>
+      <li><a href="#append-데이터의-에러-확인">Append 데이터의 에러 확인</a></li>
+      <li><a href="#서버-에러-검사를-위한-부가-옵션">서버 에러 검사를 위한 부가 옵션</a></li>
+      <li><a href="#서버-에러-발생시-trace-로그-남기기">서버 에러 발생시 Trace 로그 남기기</a></li>
+      <li><a href="#append-함수-설명">APPEND 함수 설명</a>
+        <ul>
+          <li><a href="#sqlappendopen">SQLAppendOpen</a></li>
+          <li><a href="#sqlappenddata-deprecated">SQLAppendData (deprecated)</a></li>
+          <li><a href="#sqlappenddatabytimedeprecated">SQLAppendDataByTime(deprecated)</a></li>
+          <li><a href="#sqlappenddatav2">SQLAppendDataV2</a></li>
+          <li><a href="#sqlappenddatabytimev2">SQLAppendDataByTimeV2</a></li>
+          <li><a href="#sqlappendflush">SQLAppendFlush</a></li>
+          <li><a href="#sqlappendclose">SQLAppendClose</a></li>
+          <li><a href="#sqlappendseterrorcallback">SQLAppendSetErrorCallback</a></li>
+          <li><a href="#sqlsetconnectappendflush">SQLSetConnectAppendFlush</a></li>
+          <li><a href="#sqlsetstmtappendinterval">SQLSetStmtAppendInterval</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#열-형식-매개변수-바인딩">열 형식 매개변수 바인딩</a></li>
+  <li><a href="#지원되는-문자열">지원되는 문자열</a></li>
+</ul>
+
+<h1 id="표준-cli-함수">표준 CLI 함수</h1>
+<p>표준 함수의 사용법에 대해서는 다음과 같은 링크를 참조한다.</p>
+
+<ul>
+  <li>위키피디아</li>
+  <li>오픈그룹 문서</li>
+</ul>
+
+<p>다음의 함수를 참고하면 된다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>SQLAllocConnect</td>
+      <td>SQLDisconnect</td>
+      <td>SQLGetDescField</td>
+      <td>SQLPrepare</td>
+    </tr>
+    <tr>
+      <td>SQLAllocEnv</td>
+      <td>SQLDriverConnect</td>
+      <td>SQLGetDescRec</td>
+      <td>SQLPrimaryKeys</td>
+    </tr>
+    <tr>
+      <td>SQLAllocHandle</td>
+      <td>SQLExecDirect</td>
+      <td>SQLGetDiagRec</td>
+      <td>SQLStatistics</td>
+    </tr>
+    <tr>
+      <td>SQLAllocStmt</td>
+      <td>SQLExecute</td>
+      <td>SQLGetEnvAttr</td>
+      <td>SQLRowCount</td>
+    </tr>
+    <tr>
+      <td>SQLBindCol</td>
+      <td>SQLFetch</td>
+      <td>SQLGetFunctions</td>
+      <td>SQLSetConnectAttr</td>
+    </tr>
+    <tr>
+      <td>SQLBindParameter+</td>
+      <td>SQLFreeConnect</td>
+      <td>SQLGetInfo</td>
+      <td>SQLSetDescField</td>
+    </tr>
+    <tr>
+      <td>SQLColAttribute</td>
+      <td>SQLFreeEnv</td>
+      <td>SQLGetStmtAttr</td>
+      <td>SQLSetDescRec</td>
+    </tr>
+    <tr>
+      <td>SQLColumns</td>
+      <td>SQLFreeHandle</td>
+      <td>SQLGetTypeInfo</td>
+      <td>SQLSetEnvAttr</td>
+    </tr>
+    <tr>
+      <td>SQLConnect</td>
+      <td>SQLFreeStmt</td>
+      <td>SQLNativeSQL</td>
+      <td>SQLSetStmtAttr</td>
+    </tr>
+    <tr>
+      <td>SQLCopyDesc</td>
+      <td>SQLGetConnectAttr</td>
+      <td>SQLNumParams</td>
+      <td>SQLStatistics</td>
+    </tr>
+    <tr>
+      <td>SQLDescribeCol</td>
+      <td>SQLGetData</td>
+      <td>SQLNumResultCols</td>
+      <td>SQLTables</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="접속을-위한-연결-스트링">접속을 위한 연결 스트링</h2>
+<p>CLI를 통해 접속을 하기 위해서는 연결 스트링을 만들어야 하며, 각각의 내용은 다음과 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>연결 스트링 항목명</th>
+      <th>항목 설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DSN</td>
+      <td>데이터 소스 명을 지정한다.<br /> ODBC에서는 리소스가 담긴 파일의 섹션 명을 기술하고, CLI에서는 서버명 혹은 IP 주소를 지정한다.</td>
+    </tr>
+    <tr>
+      <td>DBNAME</td>
+      <td>Machbase의 DB명을 기술한다.</td>
+    </tr>
+    <tr>
+      <td>SERVER</td>
+      <td>Machbase가 위치하는 서버의 호스트 명 혹은 IP 주소를 가리킨다.</td>
+    </tr>
+    <tr>
+      <td>NLS_USE</td>
+      <td>서로 사용할 언어 종류를 설정한다.(현재 사용되지 않으며, 차후 확장을 위해 유지한다.)</td>
+    </tr>
+    <tr>
+      <td>UID</td>
+      <td>사용자 아이디</td>
+    </tr>
+    <tr>
+      <td>PWD</td>
+      <td>사용자 패스워드</td>
+    </tr>
+    <tr>
+      <td>PORT_NO</td>
+      <td>접속할 포트 번호</td>
+    </tr>
+    <tr>
+      <td>PORT_DIR</td>
+      <td>유닉스에서 Unix domain으로 접속할 경우 사용되는 파일 경로를 지정한다.<br /> (서버에서 수정했을 경우에 지정하며, 디폴트로는 지정하지 않아도 동작한다.)</td>
+    </tr>
+    <tr>
+      <td>CONNTYPE</td>
+      <td>클라이언트와 서버의 접속 방법을 지정한다.<br /> 1: TCP/IP INET 으로 접속<br /> 2: Unix Domain 으로 접속</td>
+    </tr>
+    <tr>
+      <td>COMPRESS</td>
+      <td>Append 프로토콜을 압축할 것인지 나타낸다.<br /> 이 값이 0일 경우에는 압축하지 않고 전송한다.<br /> 이 값이 0보다 큰 임의의 값일 경우에는 그 값보다 Append 레코드가 클 경우에만 압축한다.<br /> 예) COMPRESS=512<br /> 레코드 사이즈가 512보다 클 경우에만 압축하여 동작한다.<br /> 원격 접속일 경우 압축하면 전송 성능이 향상된다.</td>
+    </tr>
+    <tr>
+      <td>SHOW_HIDDEN_COLS</td>
+      <td>숨겨진 컬럼(_arrival_time)을 select * 로 수행시 보여줄 것인지 결정한다.<br /> 0일 경우에는 보이지 않으며, 1일 경우에 해당 컬럼의 정보가 출력된다.</td>
+    </tr>
+    <tr>
+      <td>CONNECTION_TIMEOUT</td>
+      <td>최초 연결시에 얼마나 대기할 것이지 설정한다.<br /> 디폴트로는 30초가 설정되어 있다.<br /> 만일 최초 연결시 서버의 응답이 30초 보다 더 느려지는 경우를 고려하면, 이 값을 더 크게 설정해야 한다.<br /> CONNECTION_TIMEOUT에서 0 값은 Timeout에 제한이 없음을 의미하며 연결이 실패할 때에도 무한정으로 대기하므로 되도록이면 사용하지 않는 편이 좋다.</td>
+    </tr>
+    <tr>
+      <td>SOCKET_TIMEOUT</td>
+      <td>Protocol I/O에 시간이 걸리면 발생하는 timeout이다.<br /> Client에서 검사하여 대기 후 Disconnect를 수행한다.<br /> ORACLE의 Read Timeout과 같다. (MYSQL, MSSQL에서는 동일하게 SOCKET_TIMEOUT이라는 이름으로 사용한다.)<br /> Connection String에서 SOCKET_TIMEOUT=NN(초)로 설정하며 기본값은 30분(1800)으로 설정된다.</td>
+    </tr>
+    <tr>
+      <td>ALTERNATIVE_SERVERS</td>
+      <td>cluster 버전을 사용 시, 여러 대의 브로커의 정보를 추가적으로 가지게 되는 설정이다.<br /> 다중의 브로커를 등록해두었을 시, 접속되어있던 브로커가 혹시 내려가게 된 경우에도 다른 브로커에 접속한 뒤, 입력하던 데이터를 계속해서 입력하게 된다.<br /> 여러개의 브로커를 등록할 수 있으며, <서버 주소="">:<서버 포트="">의 값을 ',' 단위로 이어서 작성한다.<br />  ex) ALTERNATIVE_SERVERS=192.168.0.10:20320,192.168.0.11:20320;</서버></서버></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>CLI 접속 예제는 다음과 같다.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sprintf</span><span class="p">(</span><span class="n">connStr</span><span class="p">,</span><span class="s">"SERVER=127.0.0.1;COMPRESS=512;UID=SYS;PWD=MANAGER;CONNTYPE=1;PORT_NO=%d"</span><span class="p">,</span> <span class="n">MACHBASE_PORT_NO</span><span class="p">);</span>
+ 
+<span class="k">if</span> <span class="p">(</span><span class="n">SQL_ERROR</span> <span class="o">==</span> <span class="n">SQLDriverConnect</span><span class="p">(</span> <span class="n">gCon</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="p">(</span><span class="n">SQLCHAR</span> <span class="o">*</span><span class="p">)</span><span class="n">connStr</span><span class="p">,</span> <span class="n">SQL_NTS</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">SQL_DRIVER_NOPROMPT</span> <span class="p">))</span> <span class="p">{</span>
+   <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="확장-cli-함수-append">확장 CLI 함수 (APPEND)</h1>
+<p>CLI 확장 함수는 Machbase 서버에 데이터를 초고속으로 입력하기 위해 제공되는 Append 프로토콜을 구현하기 위한 함수이다.</p>
+
+<p>이 함수는 크게 4가지의 함수로 구성되어 있는데, 채널의 오픈, 채널에 대한 데이터 입력, 채널의 플러쉬, 채널 클로징이다.</p>
+
+<h2 id="append-프로토콜의-이해">Append 프로토콜의 이해</h2>
+<p>Machbase에서 제공하는 Append 프로토콜은 비동기 방식으로 동작한다. 비동기라 함은 클라이언트가 서버에게 요청한 특정 작업에 대한 응답이 서로 완전히 동기화되지 않고, 임의의 이벤트가 발생하는 순간에 발생하는 것을 의미한다. 즉, 클라이언트가 Append를 수행했다고 하더라도, 그 수행에 대한 결과를 바로 얻거나 확인할 수 없으며, 서버에서 준비가 되는 임의의 시점에 그것을 확인할 수 있다는 것이다. 이런 이유로 Append 프로토콜을 활용해서 응용 프로그램을 개발하는 개발자는 다음과 같은 내부 동작에 대한 이해를 가져야 한다. 이후의 설명은 클라이언트가 언제 어떻게 서버에서 발생하는 비동기 에러를 검출하고 사용자에게 되돌여주는지에 대한 것이다.</p>
+
+<h2 id="append-데이터의-전송">Append 데이터의 전송</h2>
+<p>SQLExecute 혹은 SQLExecDirect()와 같은 일반적인 호출에서 Machbase는 즉시 그 결과를 클라이언트에게 되돌려주는 동기화 방식을 사용한다. 그러나, SQLAppendDataV2()는 사용자 데이터가 입력된 이후 즉시 요청을 보내지 않는다. 대신, 클라이언트 통신 버퍼가 모두 찰 때 까지 대기하고 있다가 모두 차면 그 이후에 한꺼번에 데이터를 클라이언트로 전송하게 된다. 이렇게 설계된 이유는 Append를 사용하는 클라이언트의 입력 데이터가 초당 수만에서 수십만 레코드를 가정하였기 때문에 고속의 데이터 전송을 위한 버퍼링 방식을 활용한 것이다. 이런 이유로 만일 사용자가 임의로 해당 버퍼의 내용을 전송하고자 할 경우에는 SQLAppendFlush() 함수를 호출하여, 명시적으로 데이터를 입력할 수 있다.</p>
+
+<h2 id="append-데이터의-에러-확인">Append 데이터의 에러 확인</h2>
+<p>앞에서 언급한 바와 같이 Append 프로토콜은 버퍼링되어 비동기로 동작한다. 특히, 서버에서 에러가 발생하지 않았을 경우에는 아무런 응답을 받지 않고, 에러가 발생했을 경우에만 에러를 검출하는 방식을 취하기 때문에 에러가 언제 어떻게 검출되는지 이해하는 것이 매우 중요하다. 또한, 에러를 검출하는 비용이 상대적으로 매우 크기 때문에 레코드 입력시마다 매번 검사하는 것이 매우 비효율적으로 판단되어, 현재 Machbase에서는 명시적으로 다음과 같은 경우에만 에러를 검출하도록 되어 있다. 에러가 검출될 경우에는 사용자가 설정한 에러 콜백 함수를 매번 호출하게 된다.</p>
+
+<ol>
+  <li>전송 버퍼가 모두 차고, 서버에게 명시적으로 데이터를 전송한 이후 검사</li>
+  <li>SQLAppendFlush() 내부에서 서버에게 명시적으로 데이터를 전송한 이후 검사</li>
+  <li>SQLAppendClose() 내부에서 종료 직전에 검사</li>
+</ol>
+
+<p>즉, 기본적으로 위의 3가지 경우에만 에러를 검출하도록 되어 있어, I/O의 발생을 최소화하도록 설계되었다.</p>
+
+<h2 id="서버-에러-검사를-위한-부가-옵션">서버 에러 검사를 위한 부가 옵션</h2>
+<p>성능을 최대한으로 달성하기 위해 기본적으로 설정된 에러 검출 기법은 사용자가 원하는 경우 좀 더 빈번하게 검사하고, 이를 활용할 수 있다. 즉, SQLAppendOpen() 함수의 마지막 인자인 aErrorCheckCount를 조절함으로서 가능한다. 이 값이 0일 경우에는 별도의 확인 동작을 하지 않고, 기본으로 동작한다. 그러나, 만일 이 값이 0보다 클 경우에는 SQLAppendData()의 호출 횟수마다 명시적으로 에러를 검사하도록 되어있다. 다시 말해 이 값이 10일 경우에는 10번의 Append 동작마다 에러를 검사하는 비용을 지불한다. 따라서, 이 값이 작을 경우에는 에러 검출을 위한 시스템 리소스를 많이 사용하기 때문에 적절한 숫자로 조절하여 사용해야 한다.</p>
+
+<h2 id="서버-에러-발생시-trace-로그-남기기">서버 에러 발생시 Trace 로그 남기기</h2>
+<p>만일 에러가 발생한 Append 데이터에 대해서 별도로 Trace 로그를 남기고자 할 경우에는 서버에 준비된 프로퍼티 DUMP_APPEND_ERROR 를 1로 설정한다. 이렇게 설정하면, mach.trc 파일에 해당 에러를 발생시킨 레코드에 대한 명세가 파일로 기록된다. 단, 에러의 횟수가 과도할 경우 시스템 리소스의 사용량이 급격히 늘어나, Machbase의 전체 성능을 떨어뜨릴 수 있으므로 주의하여 사용해야 한다.</p>
+
+<h2 id="append-함수-설명">APPEND 함수 설명</h2>
+<h3 id="sqlappendopen">SQLAppendOpen</h3>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span> <span class="nf">SQLAppendOpen</span><span class="p">(</span><span class="n">SQLHSTMT</span>   <span class="n">aStatementHandle</span><span class="p">,</span>
+                        <span class="n">SQLCHAR</span>   <span class="o">*</span><span class="n">aTableName</span><span class="p">,</span>
+                        <span class="n">SQLINTEGER</span> <span class="n">aErrorCheckCount</span> <span class="p">);</span>
+</code></pre></div></div>
+<p>이 함수는 대상 테이블에 대한 채널을 오픈한다. 이후 이 채널을 닫아 주지 않으면 지속적으로 열린 상태가 유지된다.</p>
+
+<p>하나의 연결에 대해 최대 1024개의 Statement 설정이 가능하다. 각 Statement마다 SQLAppendOpen을 사용하면 된다.</p>
+
+<ol>
+  <li>aStatementHandle : Append를 수행할 Statement의 핸들을 나타낸다.</li>
+  <li>aTableName : Append를 수행할 대상 테이블의 이름을 나타낸다.</li>
+  <li>aErrorCheckCount : 몇 건의 데이터가 입력될 때 마다 서버의 에러를 검사할 것인지 결정한다. 이 값이 0일 경우에는 임의로 에러를 검사하지 않는다.</li>
+</ol>
+
+<h3 id="sqlappenddata-deprecated">SQLAppendData (deprecated)</h3>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span>  <span class="nf">SQLAppendData</span><span class="p">(</span><span class="n">SQLHSTMT</span> <span class="n">StatementHandle</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">aData</span><span class="p">[]);</span>
+</code></pre></div></div>
+<p>이 함수는 해당 채널에 대해 데이터를 입력하는 함수이다.</p>
+
+<ul>
+  <li>aData는 입력될 데이터의 포인터를 담고 있는 배열이다. 배열의 개수는 Open시에 지정한 테이블이 보유하고 있는 컬럼의 개수와 일치해야 한다.</li>
+  <li>리턴값은 SQL_SUCCESS, SQL_SUCCESS_WITH_INFO, SQL_ERROR가 가능하다. 특히, SQL_SUCCESS_WITH_INFO가 반환되었을 경우에는 입력된 특정 컬럼의 길이가 길어 잘리는 등의 오류가 있을 수 있으므로 결과를 다시 확인하여야 한다.</li>
+</ul>
+
+<p><strong>데이터 타입에 따른 설정</strong></p>
+
+<p>숫자형 및 문자형</p>
+<ul>
+  <li>float, double, short, int, long long, char * 과 같은 타입은 해당 값에 대한 포인터 설정 만으로 잘 동작한다.</li>
+</ul>
+
+<p>주소형</p>
+<ul>
+  <li>ipv4 의 경우에는 5 바이트 무부호 문자(unsigned char)의 배열로 넘긴다.</li>
+  <li>첫 번째 바이트는 4로 설정하고, 이후의 4바이트는 연속되는 주소값으로 설정한다.</li>
+  <li>예를 들어, 127.0.0.1의 경우에는 5바이트 배열 0x04, 0x7f, 0x00, 0x00, 0x01 의 순으로 들어가게 된다.</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 4개의 컬럼 정보를 가지는 테이블의 경우 (short(16), int(32), long(64), varchar)</span>
+ 
+<span class="n">testAppendIPFunc</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="kt">short</span> <span class="n">val1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="kt">int</span>   <span class="n">val2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="kt">long</span> <span class="kt">long</span>  <span class="n">val3</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  
+   <span class="kt">char</span> <span class="o">*</span><span class="n">val4</span> <span class="o">=</span> <span class="s">"my string"</span><span class="p">;</span>
+   <span class="kt">void</span> <span class="o">*</span><span class="n">valueArray</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+ 
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">val1</span><span class="p">;</span>
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">val2</span><span class="p">;</span>
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">val3</span><span class="p">;</span>
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">val4</span><span class="p">;</span>
+ 
+   <span class="n">SQLAppendData</span><span class="p">(</span><span class="n">aStmt</span><span class="p">,</span> <span class="n">valueArray</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>데이터 타입에 따른 설정</strong></p>
+
+<p>datetime 형</p>
+
+<ul>
+  <li>Machbase 는 내부적으로 나노 단위 시간 해상도 값을 가지기 때문에 클라이언트에서 시간을 설정할 때는 변환과정을 거쳐야 하며, 64비트 부호없는 정수형 값으로 표현된다. 따라서 적절한 변환을 위해서는 유닉스 라이브러리인 mktime을 이용하여 초로 변환한 이후에 나노 값을 더해주어야 한다.</li>
+  <li>※ Machbase의 시간 = (1970년 1월 1일 이후로부터의 총 시간 (초)) * 1,000,000,000 + mili-second * 1,000,000 + micro-second * 1000 + nano-second;</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Date String이 "연도-월-일 시:분:초 밀리:마이크로:나노" 형태로 입력될 경우 코드</span>
+ 
+<span class="n">testAppendDateStrFunc</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">aDateString</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">yy</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mm</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dd</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hh</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mi</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ss</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">t1</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">valueArray</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+    <span class="n">sscanf</span><span class="p">(</span><span class="n">aDateString</span><span class="p">,</span> <span class="s">"%d-%d-%d %d:%d:%d %d:%d:%d"</span><span class="p">,</span>
+        <span class="o">&amp;</span><span class="n">yy</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mm</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">dd</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hh</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mi</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ss</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mmm</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">uuu</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">nnn</span><span class="p">);</span>
+    <span class="n">sTm</span><span class="p">.</span><span class="n">tm_year</span> <span class="o">=</span> <span class="n">yy</span> <span class="o">-</span> <span class="mi">1900</span><span class="p">;</span>
+    <span class="n">sTm</span><span class="p">.</span><span class="n">tm_mon</span> <span class="o">=</span> <span class="n">mm</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">sTm</span><span class="p">.</span><span class="n">tm_mday</span> <span class="o">=</span> <span class="n">dd</span><span class="p">;</span>
+    <span class="n">sTm</span><span class="p">.</span><span class="n">tm_hour</span> <span class="o">=</span> <span class="n">hh</span><span class="p">;</span>
+    <span class="n">sTm</span><span class="p">.</span><span class="n">tm_min</span> <span class="o">=</span> <span class="n">mi</span><span class="p">;</span>
+    <span class="n">sTm</span><span class="p">.</span><span class="n">tm_sec</span> <span class="o">=</span> <span class="n">ss</span><span class="p">;</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">mktime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sTm</span><span class="p">);</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">*</span> <span class="mi">1000000000L</span><span class="p">;</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">+</span> <span class="p">(</span><span class="n">mmm</span><span class="o">*</span><span class="mi">1000000L</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">uuu</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="n">nnn</span><span class="p">;</span>
+ 
+    <span class="n">valueArray</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">t1</span><span class="p">;</span>
+    <span class="n">SQLAppendData</span><span class="p">(</span><span class="n">aStmt</span><span class="p">,</span> <span class="n">valueArray</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="sqlappenddatabytimedeprecated">SQLAppendDataByTime(deprecated)</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span>  <span class="nf">SQLAppendDataByTime</span><span class="p">(</span><span class="n">SQLHSTMT</span> <span class="n">StatementHandle</span><span class="p">,</span> <span class="n">SQLBIGINT</span> <span class="n">aTime</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">aData</span><span class="p">[]);</span>
+</code></pre></div></div>
+<p>이 함수는 해당 채널에 대해 데이터를 입력하는 함수이며, DB에 저장되는 _arrival_time 값을 현재 시간이 아닌 특정 시간의 값으로 설정할 수 있다.</p>
+
+<p>예를 들면, 1개월전 로그 파일에 있는 날짜를 그 당시의 날짜로 입력하고자 할때 사용된다.</p>
+
+<ul>
+  <li>aTime은 _arrival_time으로 설정된 time 값이다.</li>
+  <li>aData는 입력될 데이터의 포인터를 담고 있는 배열이다.</li>
+  <li>배열의 개수는 Open시에 지정한 테이블이 보유하고 있는 컬럼의 개수와 일치해야 한다.</li>
+</ul>
+
+<p>나머지 사항은 SQLAppendData()함수를 참고하여 작성하면 된다.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 4개의 컬럼 정보를 가지는 테이블의 경우  (short(16), int(32), long(64), varchar)</span>
+ 
+<span class="n">testAppendFuncWithTime</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="kt">long</span> <span class="kt">long</span> <span class="n">sTime</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="kt">short</span> <span class="n">val1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="kt">int</span>   <span class="n">val2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="kt">long</span> <span class="kt">long</span>  <span class="n">val3</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  
+   <span class="kt">char</span> <span class="o">*</span><span class="n">val4</span> <span class="o">=</span> <span class="s">"my string"</span><span class="p">;</span>
+   <span class="kt">void</span> <span class="o">*</span><span class="n">valueArray</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+ 
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">val1</span><span class="p">;</span>
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">val2</span><span class="p">;</span>
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">val3</span><span class="p">;</span>
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">val4</span><span class="p">;</span>
+ 
+   <span class="n">SQLAppendDataByTime</span><span class="p">(</span><span class="n">aStmt</span><span class="p">,</span> <span class="n">sTime</span><span class="p">,</span> <span class="n">valueArray</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="sqlappenddatav2">SQLAppendDataV2</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span>  <span class="nf">SQLAppendDataV2</span><span class="p">(</span><span class="n">SQLHSTMT</span> <span class="n">StatementHandle</span><span class="p">,</span> <span class="n">SQL_APPEND_PARAM</span> <span class="o">*</span><span class="n">aData</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>이 함수는 Machbase 2.0 부터 새로 도입된 Append 함수로서, 기존의 함수에서 불편했던 입력 방식을 편리하게 대폭 개선한 함수이다.</p>
+
+<p>특히, 2.0에서 도입된 TEXT와 BINARY 타입의 경우는 SQLAppendDataV2() 함수에서만 입력이 가능하다.</p>
+
+<ul>
+  <li>각 타입에 맞는 NULL 입력 가능</li>
+  <li>VARCHAR 입력시 스트링 길이 입력 가능</li>
+  <li>IPv4, IPv6 입력시 바이너리 및 스트링 형태의 데이터 입력 가능</li>
+  <li>TEXT, BINARY 타입에 대한 데이터 길이 지정 가능</li>
+</ul>
+
+<p>함수 인자는 다음과 같이 구성된다.</p>
+
+<ul>
+  <li>aData는 SQL_APPEND_PARAM 이라는 인자배열을 가리키는 포인터이다. 이 배열의 개수는 Open시에 지정한 테이블이 보유하고 있는 컬럼의 개수와 일치해야 한다.</li>
+  <li>리턴값은 SQL_SUCCESS, SQL_SUCCESS_WITH_INFO, SQL_ERROR 가 가능하다. 특히, SQL_SUCCESS_WITH_INFO가 반환되었을 경우에는 입력된 특정 컬럼의 길이가 길어 잘리는 등의 오류가 있을 수 있으므로 결과를 다시 확인하여야 한다.</li>
+</ul>
+
+<p>아래는 실제로 V2에서 사용될 SQL_APPEND_PARAM 의 정의이며, 이 내용은 machbase_sqlcli.h 에 포함되어 있다.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="nc">machAppendVarStruct</span>
+<span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">mLength</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">mData</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machAppendVarStruct</span><span class="p">;</span>
+ 
+<span class="cm">/* for IPv4, IPv6 as bin or string representation */</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="nc">machbaseAppendIPStruct</span>
+<span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span>   <span class="n">mLength</span><span class="p">;</span> <span class="cm">/* 0:null, 4:ipv4, 6:ipv6, 255:string representation */</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span>   <span class="n">mAddr</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+    <span class="kt">char</span>           <span class="o">*</span><span class="n">mAddrString</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machbaseAppendIPStruct</span><span class="p">;</span>
+ 
+<span class="cm">/* Date time*/</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="nc">machbaseAppendDateTimeStruct</span>
+<span class="p">{</span>
+    <span class="kt">long</span> <span class="kt">long</span>       <span class="n">mTime</span><span class="p">;</span>
+<span class="cp">#if defined(SUPPORT_STRUCT_TM)
+</span>    <span class="k">struct</span> <span class="nc">tm</span>       <span class="n">mTM</span><span class="p">;</span>
+<span class="cp">#endif
+</span>    <span class="kt">char</span>           <span class="o">*</span><span class="n">mDateStr</span><span class="p">;</span>
+    <span class="kt">char</span>           <span class="o">*</span><span class="n">mFormatStr</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machbaseAppendDateTimeStruct</span><span class="p">;</span>
+ 
+<span class="k">typedef</span> <span class="k">union</span> <span class="n">machbaseAppendParam</span>
+<span class="p">{</span>
+    <span class="kt">short</span>                        <span class="n">mShort</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">short</span>               <span class="n">mUShort</span><span class="p">;</span>
+    <span class="kt">int</span>                          <span class="n">mInteger</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span>                 <span class="n">mUInteger</span><span class="p">;</span>
+    <span class="kt">long</span> <span class="kt">long</span>                    <span class="n">mLong</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span>           <span class="n">mULong</span><span class="p">;</span>
+    <span class="kt">float</span>                        <span class="n">mFloat</span><span class="p">;</span>
+    <span class="kt">double</span>                       <span class="n">mDouble</span><span class="p">;</span>
+    <span class="n">machbaseAppendIPStruct</span>       <span class="n">mIP</span><span class="p">;</span>
+    <span class="n">machbaseAppendVarStruct</span>      <span class="n">mVar</span><span class="p">;</span>     <span class="cm">/* for all varying type */</span>
+    <span class="n">machbaseAppendVarStruct</span>      <span class="n">mVarchar</span><span class="p">;</span> <span class="cm">/* alias */</span>
+    <span class="n">machbaseAppendVarStruct</span>      <span class="n">mText</span><span class="p">;</span>    <span class="cm">/* alias */</span>
+    <span class="n">machbaseAppendVarStruct</span>      <span class="n">mBinary</span><span class="p">;</span>  <span class="cm">/* binary */</span>
+    <span class="n">machbaseAppendVarStruct</span>      <span class="n">mBlob</span><span class="p">;</span>    <span class="cm">/* reserved alias */</span>
+    <span class="n">machbaseAppendVarStruct</span>      <span class="n">mClob</span><span class="p">;</span>    <span class="cm">/* reserved alias */</span>
+    <span class="n">machbaseAppendDateTimeStruct</span> <span class="n">mDateTime</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machbaseAppendParam</span><span class="p">;</span>
+ 
+<span class="cp">#define SQL_APPEND_PARAM machbaseAppendParam
+</span></code></pre></div></div>
+<p>위에서 볼 수 있듯이 내부적으로 machbaseAppendParam 이라는 공용 구조체가 하나의 인자를 담고 있는 구조이다. 각 데이터 타입에 대해 데이터 및 스트링에 대한 길이 및 값을 명시적으로 입력할 수 있도록 되어 있다. 실제 사용 예는 다음과 같다.</p>
+
+<p><strong>고정 길이 숫자형 타입의 입력</strong></p>
+
+<p>고정 길이 숫자형 타입이라 함은 short, ushort, integer, uinteger, long, ulong, float, double 을 말한다. 이 타입의 경우 SQL_APPEND_PARAM의 구조체 멤버에 직접 값을 대입함으로써 입력 가능하다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>데이터베이스 타입</th>
+      <th>NULL 매크로</th>
+      <th>SQL_APPEND_PARAM 멤버</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SHORT</td>
+      <td>SQL_APPEND_SHORT_NULL</td>
+      <td>mShort</td>
+    </tr>
+    <tr>
+      <td>USHORT</td>
+      <td>SQL_APPEND_USHORT_NULL</td>
+      <td>mUShort</td>
+    </tr>
+    <tr>
+      <td>INTEGER</td>
+      <td>SQL_APPEND_INTEGER_NULL</td>
+      <td>mInteger</td>
+    </tr>
+    <tr>
+      <td>UINTEGER</td>
+      <td>SQL_APPEND_UINTEGER_NULL</td>
+      <td>mUInteger</td>
+    </tr>
+    <tr>
+      <td>LONG</td>
+      <td>SQL_APPEND_LONG_NULL</td>
+      <td>mLong</td>
+    </tr>
+    <tr>
+      <td>ULONG</td>
+      <td>SQL_APPEND_ULONG_NULL</td>
+      <td>mULong</td>
+    </tr>
+    <tr>
+      <td>FLOAT</td>
+      <td>SQL_APPEND_FLOAT_NULL</td>
+      <td>mFloat</td>
+    </tr>
+    <tr>
+      <td>DOUBLE</td>
+      <td>SQL_APPEND_DOUBLE_NULL</td>
+      <td>mDouble</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>다음은 실제 값을 입력하는 예제이다.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Table Schema가 8개의 컬럼이고, 각각 SHORT, USHORT, INTEGER, UINTEGER, LONG, ULONG, FLOAT, DOUBLE로 이루어진 것으로 가정한다.</span>
+ 
+<span class="kt">void</span> <span class="nf">testAppendExampleFunc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SQL_APPEND_PARAM</span> <span class="n">sParam</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
+ 
+    <span class="cm">/* fixed column */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mShort</span> <span class="o">=</span> <span class="n">SQL_APPEND_SHORT_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">mUShort</span> <span class="o">=</span> <span class="n">SQL_APPEND_USHORT_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">mInteger</span> <span class="o">=</span> <span class="n">SQL_APPEND_INTEGER_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="n">mUInteger</span> <span class="o">=</span> <span class="n">SQL_APPEND_UINTEGER_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">4</span><span class="p">].</span><span class="n">mLong</span> <span class="o">=</span> <span class="n">SQL_APPEND_LONG_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">5</span><span class="p">].</span><span class="n">mULong</span> <span class="o">=</span> <span class="n">SQL_APPEND_ULONG_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">6</span><span class="p">].</span><span class="n">mFloat</span> <span class="o">=</span> <span class="n">SQL_APPEND_FLOAT_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">7</span><span class="p">].</span><span class="n">mDouble</span> <span class="o">=</span> <span class="n">SQL_APPEND_DOUBLE_NULL</span><span class="p">;</span>
+ 
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* FIXED COLUMN Value */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mShort</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">mUShort</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">mInteger</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="n">mUInteger</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">4</span><span class="p">].</span><span class="n">mLong</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">5</span><span class="p">].</span><span class="n">mULong</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">6</span><span class="p">].</span><span class="n">mFloat</span> <span class="o">=</span> <span class="mf">8.4</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">7</span><span class="p">].</span><span class="n">mDouble</span> <span class="o">=</span> <span class="mf">10.9</span><span class="p">;</span>
+ 
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>날짜형 타입의 입력</strong></p>
+
+<p>아래는 DATETIME형의 데이터를 입력하는 예이다. 편의를 위해 몇가지의 매크로가 준비되어 있다.</p>
+
+<p>SQL_APPEND_PARAM에서 mDateTime 멤버에 대한 조작을 수행한다. 아래의 매크로는 mDateTime 구조체에서 mTime이라는 64비트 정수값에 대해 설정함으로써 날짜를 지정할 수 있다.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="nc">machbaseAppendDateTimeStruct</span>
+<span class="p">{</span>
+    <span class="kt">long</span> <span class="kt">long</span>       <span class="n">mTime</span><span class="p">;</span>
+<span class="cp">#if defined(SUPPORT_STRUCT_TM)
+</span>    <span class="k">struct</span> <span class="nc">tm</span>       <span class="n">mTM</span><span class="p">;</span>
+<span class="cp">#endif
+</span>    <span class="kt">char</span>           <span class="o">*</span><span class="n">mDateStr</span><span class="p">;</span>
+    <span class="kt">char</span>           <span class="o">*</span><span class="n">mFormatStr</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machbaseAppendDateTimeStruct</span><span class="p">;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>매크로</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SQL_APPEND_DATETIME_NOW</td>
+      <td>현재의 클라이언트 시간을 입력한다.</td>
+    </tr>
+    <tr>
+      <td>SQL_APPEND_DATETIME_STRUCT_TM</td>
+      <td>mDateTime의 struct tm 구조체인 mTM에 값을 설정하고, 그 값을 데이터베이스로 입력한다.</td>
+    </tr>
+    <tr>
+      <td>SQL_APPEND_DATETIME_STRING</td>
+      <td>mDateTime의 스트링형에 대한 값을 설정하고, 이를 데이터베이스로 입력한다.<br /> mDateStr : 실제 날짜 스트링 값이 할당<br /> mFormatStr : 날짜 스트링에 대한 포맷 스트링 할당</td>
+    </tr>
+    <tr>
+      <td>SQL_APPEND_DATETIME_NULL</td>
+      <td>날짜 컬럼의 값을 NULL로 입력한다.</td>
+    </tr>
+    <tr>
+      <td>임의의 64비트 값</td>
+      <td>이 값이 실제 datetime으로 입력된다.<br /> 이 값을 1970년 1월 1일 이후로부터 나노세컨드 단위의 시간이 흐른 정수값을 나타낸다. <br />예를 들어, 만일 이 값이 10억 (1,000,000,000) 이라면, 1970년 1월 1일 0시 0분 1초를 나타낸다.(GMT)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 다음은 각각의 경우에 대해 실제 값을 입력하는 예제이다. 하나의 DATETIME 컬럼이 존재한다고 가정한다.</span>
+<span class="kt">void</span> <span class="nf">testAppendDateTimeFunc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SQL_mach_PARAM</span> <span class="n">sParam</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="cm">/* NULL 입력 */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTime</span>   <span class="o">=</span> <span class="n">SQL_APPEND_DATETIME_NULL</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* 현재 시간 입력 */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTime</span>      <span class="o">=</span> <span class="n">SQL_APPEND_DATETIME_NOW</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* 임의의 값 입력 :1970.1.1일 이후로부터의 현재까지 나노세컨드의 값 */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTime</span>      <span class="o">=</span> <span class="mi">1234</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/*  스트링 포맷 기준 입력 */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTime</span>      <span class="o">=</span> <span class="n">SQL_APPEND_DATETIME_STRING</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mDateStr</span>   <span class="o">=</span> <span class="s">"23/May/2014:17:41:28"</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mFormatStr</span> <span class="o">=</span> <span class="s">"DD/MON/YYYY:HH24:MI:SS"</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/*  struct tm의 값을 변경하여 입력 */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTime</span>      <span class="o">=</span> <span class="n">SQL_APPEND_DATETIME_STRUCT_TM</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTM</span><span class="p">.</span><span class="n">tm_year</span> <span class="o">=</span> <span class="mi">2000</span> <span class="o">-</span> <span class="mi">1900</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTM</span><span class="p">.</span><span class="n">tm_mon</span>  <span class="o">=</span>  <span class="mi">11</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTM</span><span class="p">.</span><span class="n">tm_mday</span>  <span class="o">=</span> <span class="mi">31</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>인터넷 주소형 타입의 입력</strong></p>
+
+<p>아래는 IPv4와 IPv6 형의 데이터를 입력하는 예이다. 이 역시 편의를 위해 몇가지의 매크로가 준비되어 있다. SQL_APPEND_PARAM에서 mLength 멤버에 대한 조작을 수행한다.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* for IPv4, IPv6 as bin or string representation */</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="nc">machbaseAppendIPStruct</span>
+<span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span>   <span class="n">mLength</span><span class="p">;</span> <span class="cm">/* 0:null, 4:ipv4, 6:ipv6, 255:string representation */</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span>   <span class="n">mAddr</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+    <span class="kt">char</span>           <span class="o">*</span><span class="n">mAddrString</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machbaseAppendIPStruct</span><span class="p">;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>매크로 (mLength 에 설정)</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SQL_APPEND_IP_NULL</td>
+      <td>해당 컬럼에 NULL 값을 입력</td>
+    </tr>
+    <tr>
+      <td>SQL_APPEND_IP_IPV4</td>
+      <td>mAddr이 IPv4를 가지고 있음</td>
+    </tr>
+    <tr>
+      <td>SQL_APPEND_IP_IPV6</td>
+      <td>mAddr이 IPv6를 가지고 있음</td>
+    </tr>
+    <tr>
+      <td>SQL_APPEND_IP_STRING</td>
+      <td>mAddrString이 주소 문자열을 가지고 있음.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>다음은 각각의 경우에 대해 실제 값을 입력하는 예제이다.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">testAppendIPFunc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SQL_APPEND_PARAM</span> <span class="n">sParam</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="cm">/* NULL */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>  <span class="o">=</span> <span class="n">SQL_APPEND_IP_NULL</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* 배열을 직접 수정 */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>  <span class="o">=</span> <span class="n">SQL_APPEND_IP_IPV4</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* IPv4 from binary */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>  <span class="o">=</span> <span class="n">SQL_APPEND_IP_IPV4</span><span class="p">;</span>
+    <span class="o">*</span><span class="p">(</span><span class="n">in_addr_t</span> <span class="o">*</span><span class="p">)(</span><span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">)</span> <span class="o">=</span> <span class="n">inet_addr</span><span class="p">(</span><span class="s">"192.168.0.1"</span><span class="p">);</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* IPv4 : ipv4 from string */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>     <span class="o">=</span> <span class="n">SQL_APPEND_IP_STRING</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddrString</span> <span class="o">=</span> <span class="s">"203.212.222.111"</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* IPv4 : ipv4 from invalid string */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>     <span class="o">=</span> <span class="n">SQL_APPEND_IP_STRING</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddrString</span> <span class="o">=</span> <span class="s">"ip address is not valid"</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>                           <span class="c1">// invalid IP value</span>
+ 
+    <span class="cm">/* IPv6 : ipv6 from binary bytes */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>  <span class="o">=</span> <span class="n">SQL_APPEND_IP_IPV6</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>     <span class="o">=</span> <span class="n">SQL_APPEND_IP_STRING</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddrString</span> <span class="o">=</span> <span class="s">"::127.0.0.1"</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>     <span class="o">=</span> <span class="n">SQL_APPEND_IP_STRING</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddrString</span> <span class="o">=</span> <span class="s">"FFFF:FFFF:1111:2222:3333:4444:7733:2123"</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>IP 타입을 문자열 (STRING) 로 입력할경우 SQLAppendDataV2 이후에 각각 자료형에 맞게 mLength가 4 또는 6으로 바뀌게 된다.
+따라서 반복문에서 코딩할 경우 매번 SQLAppendDataV2() 전에, mLength 를 SQL_APPEND_IP_STRING 으로 지정해주어야한다.</p>
+
+<p><strong>가변 데이터형(문자 및 이진 데이터) 입력</strong></p>
+
+<p>가변 데이터 형에는 VARCHAR 및 TEXT 그리고, BLOB과 CLOB이 포함된다. 기존함수에서는 VARCHAR 만이 지원되었고, 또한 스트링의 길이를 사용자가 입력할 수 있는 방법이 없었다. 그런 이유로 매번 strlen() 함수를 통해 길이를 얻어야 했지만, 함수 V2 부터는 사용자가 직접 가변 데이터형에 대한 길이를 지정할 수 있게 되었다. 따라서, 만일 사용자가 그 길이를 미리 알고 있다면, 더 빠르게 데이터를 입력할 수 있다. 내부적으로는 가변 데이터형이 하나의 구조체로 되어 있지만, 개발 편의를 위해 각 데이터타입에 따라 멤버를 별도로 만들어 놓았다.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="nc">machAppendVarStruct</span>
+<span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">mLength</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">mData</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machAppendVarStruct</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>가변 데이터형의 입력시에는 데이터의 길이를 mLength에 설정하고, 원시 데이터 포인터를 mData로 설정하면 된다. 만일 mLength의 길이가 정의된 스키마보다 클 경우에는 자동으로 잘려서 입력된다. 이때 SQLAppendDataV2() 함수는 SQL_SUCCESS_WITH_INFO을 리턴하게 되고, 더불어 관련 경고 메시지를 내부 구조체에 채운다. 이 경고 메시지를 확인하기 위해서는 SQLError() 함수를 이용하면 된다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>데이터베이스 타입</th>
+      <th>NULL 매크로</th>
+      <th style="text-align: center">SQL_APPEND_PARAM 멤버 (mVar를 사용해도 무방함)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VARCHAR</td>
+      <td>SQL_APPEND_VARCHAR_NULL</td>
+      <td style="text-align: center">mVarchar</td>
+    </tr>
+    <tr>
+      <td>TEXT</td>
+      <td>SQL_APPEND_TEXT_NULL</td>
+      <td style="text-align: center">mText</td>
+    </tr>
+    <tr>
+      <td>BINARY</td>
+      <td>SQL_APPEND_BINARY_NULL</td>
+      <td style="text-align: center">mBinary</td>
+    </tr>
+    <tr>
+      <td>BLOB</td>
+      <td>SQL_APPEND_BLOB_NULL</td>
+      <td style="text-align: center">mBlob</td>
+    </tr>
+    <tr>
+      <td>CLOB</td>
+      <td>SQL_APPEND_CLOB_NULL</td>
+      <td style="text-align: center">mClob</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>다음은 각각의 환경에 대해 실제 값을 입력하는 예제이다. 하나의 VARCHAR 컬럼이 존재한다고 가정한다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">ttt</span> <span class="p">(</span><span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+</code></pre></div></div>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kt">void</span> <span class="nf">testAppendVarcharFunc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SQL_mach_PARAM</span> <span class="n">sParam</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+ 
+    <span class="cm">/*  VARCHAR : NULL */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mVarchar</span><span class="p">.</span><span class="n">mLength</span> <span class="o">=</span> <span class="n">SQL_APPEND_VARCHAR_NULL</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span> <span class="cm">/* OK */</span>
+ 
+    <span class="cm">/*  VARCHAR : string */</span>
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">sVarchar</span><span class="p">,</span> <span class="s">"MY VARCHAR"</span><span class="p">);</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mVarchar</span><span class="p">.</span><span class="n">mLength</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">sVarchar</span><span class="p">);</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mVarchar</span><span class="p">.</span><span class="n">mData</span>   <span class="o">=</span> <span class="n">sVarchar</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span> <span class="cm">/* OK */</span>
+ 
+    <span class="cm">/*  VARCHAR : Truncation! */</span>
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">sVarchar</span><span class="p">,</span> <span class="s">"MY VARCHAR9"</span><span class="p">);</span> <span class="cm">/* Truncation! */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mVarchar</span><span class="p">.</span><span class="n">mLength</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">sVarchar</span><span class="p">);</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mVarchar</span><span class="p">.</span><span class="n">mData</span>   <span class="o">=</span> <span class="n">sVarchar</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>  <span class="cm">/* SQL_SUCCESS_WITH_INFO */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>다음은 Text 타입에 대한 입력 예제이다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">ttt</span> <span class="p">(</span><span class="n">doc</span> <span class="nb">TEXT</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">testAppendFunc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SQL_mach_PARAM</span> <span class="n">sParam</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+ 
+    <span class="cm">/*  VARCHAR : NULL */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mText</span><span class="p">.</span><span class="n">mLength</span> <span class="o">=</span> <span class="n">SQL_APPEND_TEXT_NULL</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span> <span class="cm">/* OK */</span>
+ 
+    <span class="cm">/*  VARCHAR : string */</span>
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">sText</span><span class="p">,</span> <span class="s">"This is the sample document for tutorial."</span><span class="p">);</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mVar</span><span class="p">.</span><span class="n">mLength</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">sText</span><span class="p">);</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mVar</span><span class="p">.</span><span class="n">mData</span>   <span class="o">=</span> <span class="n">sText</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span> <span class="cm">/* OK */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="sqlappenddatabytimev2">SQLAppendDataByTimeV2</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span>  <span class="nf">SQLAppendDataByTimeV2</span><span class="p">(</span><span class="n">SQLHSTMT</span> <span class="n">StatementHandle</span><span class="p">,</span> <span class="n">SQLBIGINT</span> <span class="n">aTime</span><span class="p">,</span> <span class="n">SQL_APPEND_PARAM</span>  <span class="o">*</span><span class="n">aData</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>이 함수는 해당 채널에 대해 데이터를 입력하는 함수이며, DB에 저장되는 _arrival_time 값을 현재 시간이 아닌 특정 시간의 값으로 설정할 수 있다. 예를 들면, 1개월전 로그 파일에 있는 날짜를 그 당시의 날짜로 입력하고자 할때 사용된다.</p>
+
+<ul>
+  <li>aTime은 _arrival_time으로 설정될 time값이다. 1970년 1월 1일 이후로부터의 현재까지 nano second 값을 입력해야 한다. 또한 입력되는 값이 과거부터 현재순으로 순차적으로 정렬되어 있어야 한다.</li>
+  <li>aData는 입력될 데이터의 포인터를 담고 있는 배열이다. 배열의 개수는 Open시에 지정한 테이블이 보유하고 있는 컬럼의 개수와 일치해야 한다.</li>
+</ul>
+
+<p>나머지 사항은 SQLAppendDataV2()함수를 참고하여 작성하면 된다.</p>
+
+<p>### SQLAppendFlush</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">SQLRETURN</span> <span class="nf">SQLAppendFlush</span><span class="p">(</span><span class="n">SQLHSTMT</span> <span class="n">StatementHandle</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>이 함수는 현재 채널 버퍼에 쌓여있는 데이터를 Machbase 서버로 즉시 전송한다.</p>
+
+<p>### SQLAppendClose</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">SQLRETURN</span> <span class="nf">SQLAppendClose</span><span class="p">(</span><span class="n">SQLHSTMT</span>   <span class="n">aStmtHandle</span><span class="p">,</span>
+                         <span class="n">SQLBIGINT</span><span class="o">*</span> <span class="n">aSuccessCount</span><span class="p">,</span>
+                         <span class="n">SQLBIGINT</span><span class="o">*</span> <span class="n">aFailureCount</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>이 함수는 현재 열린 채널을 닫는다. 만일 열려지지 않은 채널이 존재할 경우 에러가 발생한다.</p>
+
+<ul>
+  <li>aSuccessCount : Append를 성공한 레코드 개수 값을 가진다.</li>
+  <li>aFailureCount : Append를 실패한 레코드 개수 값을 가진다.</li>
+</ul>
+
+<h3 id="sqlappendseterrorcallback">SQLAppendSetErrorCallback</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span> <span class="nf">SQLAppendSetErrorCallback</span><span class="p">(</span><span class="n">SQLHSTMT</span> <span class="n">aStmtHandle</span><span class="p">,</span> <span class="n">SQLAppendErrorCallback</span> <span class="n">aFunc</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>이 함수는 SQLAppendOpen()이 성공한 다음 Append시 에러가 발생했을 때 호출되는 콜백 함수를 설정한다. 만일 이 함수를 설정하지 않을 경우에는 서버에 에러가 발생하더라도, 클라이언트에서는 무시하게 된다.</p>
+
+<ul>
+  <li>aStmtHandle : 에러를 확인할 Statement를 지정한다.</li>
+  <li>aFunc : Append 실패시 호출할 함수 포인터를 지정한다.</li>
+</ul>
+
+<p>SQLAppendErrorCallback의 프로토타입은 다음과 같다.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="o">*</span><span class="n">SQLAppendErrorCallback</span><span class="p">)(</span><span class="n">SQLHSTMT</span> <span class="n">aStmtHandle</span><span class="p">,</span>
+                                     <span class="n">SQLINTEGER</span> <span class="n">aErrorCode</span><span class="p">,</span>
+                                     <span class="n">SQLPOINTER</span> <span class="n">aErrorMessage</span><span class="p">,</span>
+                                         <span class="n">SQLLEN</span> <span class="n">aErrorBufLen</span><span class="p">,</span>
+                                     <span class="n">SQLPOINTER</span> <span class="n">aRowBuf</span><span class="p">,</span>
+                                         <span class="n">SQLLEN</span> <span class="n">aRowBufLen</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>aStatementHandle : 에러를 발생한 Statement 핸들</li>
+  <li>aErrorCode : 에러의 원인이 된 32비트 에러 코드</li>
+  <li>aErrorMessage : 해당 에러코드에 대한 문자열</li>
+  <li>aErrorBufLen : aErrorMessage의 길이</li>
+  <li>aRowBuf : 에러를 발생시킨 레코드의 상세 명세가 담긴 문자열</li>
+  <li>aRowBufLen : aRowBuf의 길이</li>
+</ul>
+
+<p><strong>에러 콜백(dumpError)의 사용 예</strong></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">dumpError</span><span class="p">(</span><span class="n">SQLHSTMT</span>    <span class="n">aStmtHandle</span><span class="p">,</span>
+               <span class="n">SQLINTEGER</span>  <span class="n">aErrorCode</span><span class="p">,</span>
+               <span class="n">SQLPOINTER</span>  <span class="n">aErrorMessage</span><span class="p">,</span>
+               <span class="n">SQLLEN</span>      <span class="n">aErrorBufLen</span><span class="p">,</span>
+               <span class="n">SQLPOINTER</span>  <span class="n">aRowBuf</span><span class="p">,</span>
+               <span class="n">SQLLEN</span>      <span class="n">aRowBufLen</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span>       <span class="n">sErrMsg</span><span class="p">[</span><span class="mi">1024</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="p">};</span>
+    <span class="kt">char</span>       <span class="n">sRowMsg</span><span class="p">[</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="p">};</span>
+ 
+    <span class="k">if</span> <span class="p">(</span><span class="n">aErrorMessage</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">strncpy</span><span class="p">(</span><span class="n">sErrMsg</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">aErrorMessage</span><span class="p">,</span> <span class="n">aErrorBufLen</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="k">if</span> <span class="p">(</span><span class="n">aRowBuf</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">strncpy</span><span class="p">(</span><span class="n">sRowMsg</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">aRowBuf</span><span class="p">,</span> <span class="n">aRowBufLen</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">"Append Error : [%d][%s]</span><span class="se">\n</span><span class="s">[%s]</span><span class="se">\n\n</span><span class="s">"</span><span class="p">,</span> <span class="n">aErrorCode</span><span class="p">,</span> <span class="n">sErrMsg</span><span class="p">,</span> <span class="n">sRowMsg</span><span class="p">);</span>
+<span class="p">}</span>
+ 
+ 
+<span class="p">......</span>
+ 
+    <span class="k">if</span><span class="p">(</span> <span class="n">SQLAppendOpen</span><span class="p">(</span><span class="n">m_IStmt</span><span class="p">,</span> <span class="n">TableName</span><span class="p">,</span> <span class="n">aErrorCheckCount</span><span class="p">)</span> <span class="o">!=</span> <span class="n">SQL_SUCCESS</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">"SQLAppendOpen error</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// 콜백을 설정한다.</span>
+    <span class="n">assert</span><span class="p">(</span><span class="n">SQLAppendSetErrorCallback</span><span class="p">(</span><span class="n">m_IStmt</span><span class="p">,</span> <span class="n">dumpError</span><span class="p">)</span> <span class="o">==</span> <span class="n">SQL_SUCCESS</span><span class="p">);</span>
+ 
+    <span class="n">doAppend</span><span class="p">(</span><span class="n">sMaxAppend</span><span class="p">);</span>
+ 
+    <span class="k">if</span><span class="p">(</span> <span class="n">SQLAppendClose</span><span class="p">(</span><span class="n">m_IStmt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sSuccessCount</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sFailureCount</span><span class="p">)</span> <span class="o">!=</span> <span class="n">SQL_SUCCESS</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">"SQLAppendClose error</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div></div>
+
+<h3 id="sqlsetconnectappendflush">SQLSetConnectAppendFlush</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span> <span class="n">SQL_API</span> <span class="n">SQLSetConnectAppendFlush</span><span class="p">(</span><span class="n">SQLHDBC</span> <span class="n">hdbc</span><span class="p">,</span> <span class="n">SQLINTEGER</span> <span class="n">option</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Append에 의해서 입력된 데이터는 통신 버퍼에 기록되어 전송대기 상태에서 사용자가 SQLAppendFlush 함수를 호출하거나 통신 버퍼가 가득 차게 되면 서버로 전송된다. 사용자가 버퍼가 가득 차 있지 않아도 일정 주기로 서버에게 Append에 의한 데이터를 전송하게 하려면 이 함수를 이용하면 된다. 이 함수는 매 100ms 주기로 마지막으로 전송한 시간과 현재 시간의 차이를 계산하여 지정된 시간(설정하지 않은 경우에는 1초)가 지난 경우 통신 버퍼의 내용을 서버에 전달한다.</p>
+
+<p>매개변수는 다음과 같다.</p>
+
+<ul>
+  <li>hdbc : DB의 connection handle이다.</li>
+  <li>option : 0이면 auto flush를 off, 0이 아닌 값이면 auto flush를 on으로 한다.</li>
+</ul>
+
+<p>연결되지 않은 hdbc에 대해서 실행하면 오류로 처리된다.</p>
+
+<h3 id="sqlsetstmtappendinterval">SQLSetStmtAppendInterval</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span> <span class="n">SQL_API</span> <span class="n">SQLSetStmtAppendInterval</span><span class="p">(</span><span class="n">SQLHSTMT</span> <span class="n">hstmt</span><span class="p">,</span> <span class="n">SQLINTEGER</span> <span class="n">fValue</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>SQLSetConnectAppendFlush를 이용해서 시간 단위 flush기능을 켰을 경우, 특정 statement에 대해서는 자동 flush를 끄거나 flush 주기를 조정하고 싶을 경우 이 함수를 사용한다.</p>
+
+<p>매개변수는 다음과 같다.</p>
+
+<ul>
+  <li>hstmt : flush주기를 조정하고자 하는 statement handle이다.</li>
+  <li>fValue : flush주기를 조정하고자 하는 값이다. 0이면 flush를 하지 않으며 단위는 ms이다. 100ms마다 flush할지를 결정하는 스레드가 실행되므로 100의 배수로 설정한다. 정확히 원하는 시점에 자동 flush가 실행되지는 않는다. 1000이 기본 값이다.</li>
+</ul>
+
+<p>시간 기반 flush가 실행중이지 않은 경우라도 이 함수의 실행은 성공한다.</p>
+
+<p><strong>Error 확인 및 설명</strong></p>
+
+<p>Append 관련 함수를 사용할때 에러를 확인하는 방법과 코드에 대한 설명이다. CLI 함수에서 return 값이 SQL_SUCCESS가 아닌 경우 아래 코드를 이용하여 에러 메시지를 확인할 수 있다.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLINTEGER</span> <span class="n">errNo</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">msgLength</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">sqlState</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
+<span class="kt">char</span> <span class="n">errMsg</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+ 
+<span class="k">if</span> <span class="p">(</span><span class="n">SQL_SUCCESS</span> <span class="o">==</span> <span class="n">SQLError</span> <span class="p">(</span> <span class="n">env</span><span class="p">,</span> <span class="n">con</span><span class="p">,</span> <span class="n">stmt</span><span class="p">,</span> <span class="p">(</span><span class="n">SQLCHAR</span> <span class="o">*</span><span class="p">)</span><span class="n">sqlState</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">errNo</span><span class="p">,</span>
+                              <span class="p">(</span><span class="n">SQLCHAR</span> <span class="o">*</span><span class="p">)</span><span class="n">errMsg</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">msgLength</span> <span class="p">))</span>
+<span class="p">{</span>
+    <span class="c1">//error code값을 5자리 숫자로 지정한다.</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"ERROR-%05d: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">errNo</span><span class="p">,</span> <span class="n">errMsg</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Append관련 함수에서 리턴되는 에러 메시지는 아래와 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>함수</th>
+      <th>message</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SQLAppendOpen</td>
+      <td>statement is already opened.</td>
+      <td>중복으로 SQLAppendOpen을 하는 경우 발생함.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Failed to close stream protocol.</td>
+      <td>스트림 프로토콜 종료에 실패함.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Failed to read protocol.</td>
+      <td>네트워크 읽기 오류가 발생함.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>cannot read column meta.</td>
+      <td>column meta 정보 구조가 잘못됨</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>cannot allocate memory.</td>
+      <td>내부 버퍼 메모리 할당 오류가 발생함.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>cannot allocate compress memory.</td>
+      <td>압축 버퍼 메모리 할당 오류가 발생함.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>invalid return after reading column meta.</td>
+      <td>return값에 오류가 있음.</td>
+    </tr>
+    <tr>
+      <td>SQLAppendData</td>
+      <td>statement is not opened.</td>
+      <td>AppendOpen을 하지 않고 AppendData를 call함.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>column() truncated :</td>
+      <td>varchar 타입 컬럼에 지정된 사이즈 보다 큰 데이터를 입력하는 경우 발생함.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Failed to add binary.</td>
+      <td>통신버퍼에 쓰기 오류가 발생함.</td>
+    </tr>
+    <tr>
+      <td>SQLAppendClose</td>
+      <td>statement is not opened.</td>
+      <td>AppendOpen상태가 아님.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Failed to close stream protocol.</td>
+      <td>스트림 프로토콜 종료에 실패함.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Failed to close buffer protocol.</td>
+      <td>버퍼 프로토콜 종료에 실패함.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>cannot read column meta.</td>
+      <td>column meta정보 구조가 잘못됨.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>invalid return after reading column meta.</td>
+      <td>return값에 오류가 있음.</td>
+    </tr>
+    <tr>
+      <td>SQLAppendFlush</td>
+      <td>statement is not opened.</td>
+      <td>AppendOpen상태가 아님</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="열-형식-매개변수-바인딩">열 형식 매개변수 바인딩</h1>
+
+<p>이를 위해서 Machbase 5.5 이후 버전에서는 열 형색 매개변수 바인딩을 지원한다. (행 형식 매개변수 바인딩은 아직 지원되지 않는다.)</p>
+
+<p>함수 SQLSetStmtAttr()의 인자 Attribute에 SQL_ATTR_PARAM_BIND_TYPE을 설정하고 인자 param에 SQL_PARAM_BIND_BY_COLUMN을 설정한다. 바인드할 각  칼럼에 대해서 매개변수를 배열로 설정하고, 지시자 변수 또한 배열로 설정한다. 이후 SQLBindParameter()를 이 매개변수를 전달하여 호출한다.</p>
+
+<p>아래 그림은 각 매개변수 배열에 대해 열 형식 바인딩이 동작하는 방식을 보여준다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column A<br />(parameter A)</th>
+      <th>Column B<br />(parameter B)</th>
+      <th>Column C<br />(parameter C)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Value_Array<br />Indicator/length array</td>
+      <td>Value_Array<br />Indicator/length array</td>
+      <td>Value_Array<br />Indicator/length array</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>아래 예제는 열 형식 매개변수 바인딩을 이용하여 대량의 데이터를 삽입하는 예제이다.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define DESC_LEN 51
+#define ARRAY_SIZE 10
+</span><span class="n">SQLCHAR</span> <span class="o">*</span> <span class="n">Statement</span> <span class="o">=</span> <span class="s">"INSERT INTO Parts (PartID, Description, Price) VALUES (?, ?, ?)"</span><span class="p">;</span>
+ 
+<span class="cm">/* 바인드할 매개변수 배열 */</span>
+<span class="n">SQLUINTEGER</span> <span class="n">PartIDArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">];</span>
+<span class="n">SQLCHAR</span> <span class="n">DescArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">][</span><span class="n">DESC_LEN</span><span class="p">];</span>
+<span class="n">SQLREAL</span> <span class="n">PriceArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">];</span>
+<span class="cm">/* 바인드할 지사자 변수 배열 */</span>
+<span class="n">SQLINTEGER</span> <span class="n">PartIDIndArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">],</span> <span class="n">DescLenOrIndArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">],</span> <span class="n">PriceIndArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">];</span>
+<span class="n">SQLUSMALLINT</span> <span class="n">i</span><span class="p">,</span> <span class="n">ParamStatusArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">];</span>
+<span class="n">SQLUINTEGER</span> <span class="n">ParamsProcessed</span><span class="p">;</span>
+ 
+<span class="c1">// Set the SQL_ATTR_PARAM_BIND_TYPE statement attribute to use</span>
+<span class="c1">// column-wise binding.</span>
+<span class="n">SQLSetStmtAttr</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="n">SQL_ATTR_PARAM_BIND_TYPE</span><span class="p">,</span> <span class="n">SQL_PARAM_BIND_BY_COLUMN</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="c1">// Specify the number of elements in each parameter array.</span>
+<span class="n">SQLSetStmtAttr</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="n">SQL_ATTR_PARAMSET_SIZE</span><span class="p">,</span> <span class="n">ARRAY_SIZE</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="c1">// Specify an array in which to return the status of each set of</span>
+<span class="c1">// parameters.</span>
+<span class="n">SQLSetStmtAttr</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="n">SQL_ATTR_PARAM_STATUS_PTR</span><span class="p">,</span> <span class="n">ParamStatusArray</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="c1">// Specify an SQLUINTEGER value in which to return the number of sets of</span>
+<span class="c1">// parameters processed.</span>
+<span class="n">SQLSetStmtAttr</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="n">SQL_ATTR_PARAMS_PROCESSED_PTR</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ParamsProcessed</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="c1">// Bind the parameters in column-wise fashion.</span>
+<span class="n">SQLBindParameter</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">SQL_PARAM_INPUT</span><span class="p">,</span> <span class="n">SQL_C_ULONG</span><span class="p">,</span> <span class="n">SQL_INTEGER</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">PartIDArray</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">PartIDIndArray</span><span class="p">);</span>
+<span class="n">SQLBindParameter</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">SQL_PARAM_INPUT</span><span class="p">,</span> <span class="n">SQL_C_CHAR</span><span class="p">,</span> <span class="n">SQL_CHAR</span><span class="p">,</span> <span class="n">DESC_LEN</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">DescArray</span><span class="p">,</span> <span class="n">DESC_LEN</span><span class="p">,</span> <span class="n">DescLenOrIndArray</span><span class="p">);</span>
+<span class="n">SQLBindParameter</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">SQL_PARAM_INPUT</span><span class="p">,</span> <span class="n">SQL_C_FLOAT</span><span class="p">,</span> <span class="n">SQL_REAL</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">PriceArray</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">PriceIndArray</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h1 id="지원되는-문자열">지원되는 문자열</h1>
+
+<p>마크베이스는 기본적으로 UTF-8 방식을 사용하여 문자열 데이터를 저장한다.</p>
+
+<p>UTF-8 이외의 방식으로 문자열을 입/출력하는 Windows의 경우 ODBC에서 아래와 같이 변환한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">OS</th>
+      <th style="text-align: center">Unicode/Non-Unicode</th>
+      <th style="text-align: center">문자열 변환</th>
+      <th style="text-align: center">Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Windows</td>
+      <td style="text-align: center">Unicode (UTF-16)</td>
+      <td style="text-align: center">UTF-16 ⟷ UTF-8</td>
+      <td style="text-align: center">N/A</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Windows</td>
+      <td style="text-align: center">Non-Unicode (MBCS)</td>
+      <td style="text-align: center">MBCS ⟷ UTF-8</td>
+      <td style="text-align: center">Windows 설정의 Non-Unicode 어플리케이션의 기본 문자열을 사용함</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Linux</td>
+      <td style="text-align: center">UTF-8</td>
+      <td style="text-align: center">N/A</td>
+      <td style="text-align: center">UTF-8 만 지원됨</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<script
+  src="/kr/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/kr/assets/js/main.js"></script>
+
+  </body>
+</html>

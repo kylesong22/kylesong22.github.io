@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>Cluster Edition Upgrade</title>
+    <meta property="og:title" content="Cluster Edition Upgrade" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="Cluster Edition Upgrade">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Cluster Edition Upgrade"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/upgrade/upgrade.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/upgrade/upgrade.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/upgrade/">Upgrade</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/upgrade/upgrade.html">Cluster Edition Upgrade</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">Cluster Edition Upgrade</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#coordinator-upgrade">Coordinator Upgrade</a>
+    <ul>
+      <li><a href="#precautions">Precautions</a></li>
+      <li><a href="#coordinator-shutdown">Coordinator Shutdown</a></li>
+      <li><a href="#coordinator-backup-optional">Coordinator Backup (Optional)</a></li>
+      <li><a href="#coordinator-upgrade">Coordinator Upgrade</a></li>
+      <li><a href="#coordinator-startup">Coordinator Startup</a></li>
+    </ul>
+  </li>
+  <li><a href="#deployer-upgrade">Deployer Upgrade</a>
+    <ul>
+      <li><a href="#precautions">Precautions</a></li>
+      <li><a href="#deployer-shutdown">Deployer Shutdown</a></li>
+      <li><a href="#deployer-backup-optional">Deployer Backup (Optional)</a></li>
+      <li><a href="#deployer-upgrade">Deployer Upgrade</a></li>
+      <li><a href="#deployer-startup">Deployer Startup</a></li>
+    </ul>
+  </li>
+  <li><a href="#package-registration">Package Registration</a></li>
+  <li><a href="#brokerwarehouse-upgrade">Broker/Warehouse Upgrade</a>
+    <ul>
+      <li><a href="#node-shutdown">Node Shutdown</a></li>
+      <li><a href="#node-upgrade">Node Upgrade</a></li>
+      <li><a href="#node-startup">Node Startup</a></li>
+    </ul>
+  </li>
+  <li><a href="#snapshot-failover">Snapshot Failover</a>
+    <ul>
+      <li><a href="#snapshot-basic-concept">Snapshot basic concept</a></li>
+      <li><a href="#how-snapshot-failover-works">How Snapshot Failover Works</a></li>
+      <li><a href="#automatic-snapshot-execution">Automatic Snapshot Execution</a></li>
+      <li><a href="#take-snapshot-manually">Take Snapshot manually</a></li>
+      <li><a href="#recover-scrapped-node-based-on-snapshot">Recover scrapped node based on Snapshot</a></li>
+      <li><a href="#snapshot-based-recovery-process-of-scrapped-nodes">Snapshot-based recovery process of scrapped nodes</a></li>
+      <li><a href="#snapshot-related-properties">Snapshot related properties</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="coordinator-upgrade">Coordinator Upgrade</h1>
+
+<p>Coordinator / Deployer must be upgraded manually.</p>
+
+<h2 id="precautions">Precautions</h2>
+
+<ul>
+  <li>You can not issue commands such as adding / starting / terminating / deleting nodes during the upgrade.</li>
+  <li>DDL or DELETE must not be in use. (INSERT, APPEND, SELECT do not matter.)</li>
+</ul>
+
+<h2 id="coordinator-shutdown">Coordinator Shutdown</h2>
+
+<p>Coordinator / Deployer does not affect INSERT, APPEND, SELECT in Broker / Warehouse even if it is shut down.</p>
+
+<p>However, it does not detect that the Broker / Warehouse also shuts down while it is shutting down. (Normally detected after restart)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>machcoordinatoradmin <span class="nt">--shutdown</span>
+</code></pre></div></div>
+
+<h2 id="coordinator-backup-optional">Coordinator Backup (Optional)</h2>
+
+<p>Backup the dbs/ and conf/ directories located in $MACH_COORDINATOR_HOME.</p>
+
+<h2 id="coordinator-upgrade-1">Coordinator Upgrade</h2>
+
+<ul>
+  <li>Proceed with full package instead of lightweight package.</li>
+</ul>
+
+<p>Unzip and overwrite the package to $MACH_COORDINATOR_HOME.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">tar </span>zxvf machbase-ent-new.official-LINUX-X86-64-release.tgz <span class="nt">-C</span> <span class="nv">$MACHBASE_COORDINATOR_HOME</span>
+</code></pre></div></div>
+
+<h2 id="coordinator-startup">Coordinator Startup</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>machcoordinatoradmin <span class="nt">--startup</span>
+</code></pre></div></div>
+
+<h1 id="deployer-upgrade">Deployer Upgrade</h1>
+
+<p>This has the same process as the Coordinator.</p>
+
+<h2 id="precautions-1">Precautions</h2>
+
+<ul>
+  <li>You can not issue commands such as adding / starting / terminating / deleting nodes during the upgrade.</li>
+</ul>
+
+<h2 id="deployer-shutdown">Deployer Shutdown</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>machdeployeradmin <span class="nt">--shutdown</span>
+</code></pre></div></div>
+
+<h2 id="deployer-backup-optional">Deployer Backup (Optional)</h2>
+
+<p>Back up the dbs/ and conf/ directories located in $MACH_DEPLOYER_HOME.</p>
+
+<h2 id="deployer-upgrade-1">Deployer Upgrade</h2>
+
+<ul>
+  <li>If you are running MWA or not running Collector on the Host the Deployer is installed, you can proceed with the lightweight package.</li>
+</ul>
+
+<p>Unzip and overwrite the package to $MACH_DEPLOYER_HOME.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">tar </span>zxvf machbase-ent-new.official-LINUX-X86-64-release.tgz <span class="nt">-C</span> <span class="nv">$MACH_DEPLOYER_HOME</span>
+</code></pre></div></div>
+
+<h2 id="deployer-startup">Deployer Startup</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>machdeployeradmin <span class="nt">--startup</span>
+</code></pre></div></div>
+
+<h1 id="package-registration">Package Registration</h1>
+
+<p>To upgrade Broker / Warehouse, register the Package in Coordinator and proceed with the upgrade.</p>
+
+<p>First, move the package to the Host where $MACH_COORDINATOR_HOME is located.</p>
+
+<p>Next, add the package using the following command.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>machcoordinatoradmin <span class="nt">--add-package</span><span class="o">=</span>new_package <span class="nt">--file-name</span><span class="o">=</span>./machbase-ent-new.official-LINUX-X86-64-release-lightweight.tgz
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–add-package</td>
+      <td>Specifies the name of the package to add.</td>
+    </tr>
+    <tr>
+      <td>–file-name</td>
+      <td>Specifies the path to the package file to add.<br /><strong>If a package with the same filename is added, you will receive an error, so check the file name.</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="brokerwarehouse-upgrade">Broker/Warehouse Upgrade</h2>
+
+<p>In the Coordinator, run the following command.</p>
+
+<h1 id="node-shutdown">Node Shutdown</h1>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>machcoordinatoradmin <span class="nt">--shutdown-node</span><span class="o">=</span>localhost:5656
+</code></pre></div></div>
+
+<h1 id="node-upgrade">Node Upgrade</h1>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>machcoordinatoradmin <span class="nt">--upgrade-node</span><span class="o">=</span>localhost:5656 <span class="nt">--package-name</span><span class="o">=</span>new_package
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–upgrade-node</td>
+      <td>Enters the name of the upgrade target Node.</td>
+    </tr>
+    <tr>
+      <td>–package-name</td>
+      <td>Enters the name of the Package to be upgraded.</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>If you upgrade the Node without shutting down the Node, it will automatically shut down the Node and perform the Node upgrade.
+However, for stability, you should explicitly shut down the Node before upgrading.</li>
+</ul>
+
+<h1 id="node-startup">Node Startup</h1>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>machcoordinatoradmin <span class="nt">--startup-node</span><span class="o">=</span>localhost:5656
+</code></pre></div></div>
+
+<h1 id="snapshot-failover">Snapshot Failover</h1>
+
+<p>From Machbase 6.5 Cluster Edition, the Snapshot Failover function has been added.</p>
+
+<p>Snapshot failover is a function that provides quick recovery by recording snapshots when the DBMS is in a normal condition and performing failover only for the part where the problem occurs, excluding the normal snapshot when a specific warehouse fails.</p>
+
+<h1 id="snapshot-basic-concept">Snapshot basic concept</h1>
+
+<p>It is a concept to record the location of normal data between warehouses in the group for each group of Cluster Edition.</p>
+
+<p>All data before the snapshot created in the warehouse in the group are data in a normal state, and each snapshot is recorded for each group.</p>
+
+<h1 id="how-snapshot-failover-works">How Snapshot Failover Works</h1>
+
+<p>When a problem occurs in a specific warehouse, the warehouse enters scrapped state and data recovery is required.</p>
+
+<p>When performing Snapshot Recovery, data after the snapshot is cleared based on the normal snapshot in the warehouse where the problem occurred, and the data after the baseline snapshot of the warehouse in the normal state in the same group is replicated to the warehouse where the problem occurred to complete the recovery.</p>
+
+<h1 id="automatic-snapshot-execution">Automatic Snapshot Execution</h1>
+
+<p>By default, automatic snapshot execution is enabled, and the snapshot execution interval is set to 60 seconds. If there are multiple warehouse groups in a cluster, only one group performs snapshots sequentially every snapshot interval.</p>
+
+<p>If the execution interval is set to 0, automatic snapshot execution is disabled.</p>
+
+<p>Snapshot interval setting is reflected immediately when the command is executed.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Snapshot Interval Setting</span>
+machcoordinatoradmin <span class="nt">--snapshot-interval</span><span class="o">=[</span>sec]
+  
+<span class="c"># Check the current snapshot interval</span>
+machcoordinatoradmin <span class="nt">--configuration</span>
+</code></pre></div></div>
+
+<h1 id="take-snapshot-manually">Take Snapshot manually</h1>
+
+<p>Specify <strong>group_name</strong> using the machcoordinatoradmin tool and manually perform Snapshot.</p>
+
+<p><strong>group_name</strong> is preset like group1, group2.</p>
+
+<p>If there are multiple groups in a cluster, snapshots must be performed for each group in order to take a full snapshot.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Manually take a snapshot for group_name</span>
+machcoordinatoradmin <span class="nt">--exec-snapshot</span> <span class="nt">--group</span><span class="o">=</span><span class="s1">'group_name'</span>
+</code></pre></div></div>
+
+<h1 id="recover-scrapped-node-based-on-snapshot">Recover scrapped node based on Snapshot</h1>
+
+<p>If a scrapped node occurs, it is restored as follows.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Change the group state to readonly</span>
+<span class="c"># Prevents group from being changed to normal state in later steps</span>
+machcoordinatoradmin <span class="nt">--set-group-state</span><span class="o">=</span><span class="nb">readonly</span> <span class="nt">--group</span><span class="o">=[</span>groupname]
+  
+<span class="c"># Recover based on Snapshot</span>
+machcoordinatoradmin <span class="nt">--snapshot-recover</span><span class="o">=[</span>nodename]
+  
+<span class="c"># Replicate the latest data after snapshot through replication</span>
+<span class="c"># When replication is finished, the state of the warehouse is automatically changed to normal.</span>
+machcoordinatoradmin <span class="nt">--exec-sync</span><span class="o">=[</span>nodename]
+  
+<span class="c"># Change the group state to readonly</span>
+machcoordinatoradmin <span class="nt">--set-group-state</span><span class="o">=</span>normal <span class="nt">--group</span><span class="o">=[</span>groupname]
+</code></pre></div></div>
+
+<h1 id="snapshot-based-recovery-process-of-scrapped-nodes">Snapshot-based recovery process of scrapped nodes</h1>
+
+<p>When recovering a scrapped node with a snapshot, the following process is performed.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/<span class="k">*</span> Initial cluster state <span class="k">*</span>/
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+|  Node Type  |    Node Name    |   Group Name    |   Group State   |    Desired &amp; Actual State     |  RP State   |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+| coordinator | localhost:30110 | Coordinator     | normal          | primary       | primary       | <span class="nt">-----------</span> |
+| coordinator | localhost:30120 | Coordinator     | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| deployer    | localhost:30210 | Deployer        | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| broker      | localhost:30310 | Broker          | normal          | leader        | leader        | <span class="nt">-----------</span> |
+| broker      | localhost:30320 | Broker          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30410 | group1          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30420 | group1          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30510 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30520 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+  
+/<span class="k">*</span> warehouse 0 of group1 dies <span class="k">*</span>/
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+|  Node Type  |    Node Name    |   Group Name    |   Group State   |    Desired &amp; Actual State     |  RP State   |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+| coordinator | localhost:30110 | Coordinator     | normal          | primary       | primary       | <span class="nt">-----------</span> |
+| coordinator | localhost:30120 | Coordinator     | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| deployer    | localhost:30210 | Deployer        | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| broker      | localhost:30310 | Broker          | normal          | leader        | leader        | <span class="nt">-----------</span> |
+| broker      | localhost:30320 | Broker          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30410 | group1          | <span class="nb">readonly</span>        | scrapped      | <span class="k">**</span>unknown<span class="k">**</span>   | <span class="nt">-----------</span> |
+| warehouse   | localhost:30420 | group1          | <span class="nb">readonly</span>        | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30510 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30520 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+  
+<span class="c"># Change the group state to readonly</span>
+machcoordinatoradmin <span class="nt">--set-group-state</span><span class="o">=</span><span class="nb">readonly</span> <span class="nt">--group</span><span class="o">=[</span>groupname]
+  
+kellen@kellen-ku:~<span class="nv">$ </span>machcoordinatoradmin <span class="nt">--set-group-state</span><span class="o">=</span><span class="nb">readonly</span> <span class="nt">--group</span><span class="o">=</span>group1
+<span class="nt">-------------------------------------------------------------------------</span>
+     Machbase Coordinator Administration Tool
+     Release Version - 321a012d05.develop
+     Copyright 2014, MACHBASE Corp. or its subsidiaries
+     All Rights Reserved
+<span class="nt">-------------------------------------------------------------------------</span>
+Group Name: group1
+Flag      : 1
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+|  Node Type  |    Node Name    |   Group Name    |   Group State   |    Desired &amp; Actual State     |  RP State   |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+| coordinator | localhost:30110 | Coordinator     | normal          | primary       | primary       | <span class="nt">-----------</span> |
+| coordinator | localhost:30120 | Coordinator     | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| deployer    | localhost:30210 | Deployer        | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| broker      | localhost:30310 | Broker          | normal          | leader        | leader        | <span class="nt">-----------</span> |
+| broker      | localhost:30320 | Broker          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30410 | group1          | <span class="nb">readonly</span>        | scrapped      | <span class="k">**</span>unknown<span class="k">**</span>   | <span class="nt">-----------</span> |
+| warehouse   | localhost:30420 | group1          | <span class="nb">readonly</span>        | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30510 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30520 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+  
+<span class="c"># Restart the dead warehouse</span>
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+|  Node Type  |    Node Name    |   Group Name    |   Group State   |    Desired &amp; Actual State     |  RP State   |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+| coordinator | localhost:30110 | Coordinator     | normal          | primary       | primary       | <span class="nt">-----------</span> |
+| coordinator | localhost:30120 | Coordinator     | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| deployer    | localhost:30210 | Deployer        | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| broker      | localhost:30310 | Broker          | normal          | leader        | leader        | <span class="nt">-----------</span> |
+| broker      | localhost:30320 | Broker          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30410 | group1          | <span class="nb">readonly</span>        | scrapped      | scrapped      | <span class="nt">-----------</span> |
+| warehouse   | localhost:30420 | group1          | <span class="nb">readonly</span>        | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30510 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30520 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+  
+<span class="c"># Recovery based on snapshot</span>
+machcoordinatoradmin <span class="nt">--snapshot-recover</span><span class="o">=[</span>nodename]
+  
+kellen@kellen-ku:~<span class="nv">$ </span>machcoordinatoradmin <span class="nt">--snapshot-recover</span><span class="o">=</span>localhost:30410
+<span class="nt">-------------------------------------------------------------------------</span>
+     Machbase Coordinator Administration Tool
+     Release Version - 321a012d05.develop
+     Copyright 2014, MACHBASE Corp. or its subsidiaries
+     All Rights Reserved
+<span class="nt">-------------------------------------------------------------------------</span>
+Node-Name: localhost:30410
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+|  Node Type  |    Node Name    |   Group Name    |   Group State   |    Desired &amp; Actual State     |  RP State   |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+| coordinator | localhost:30110 | Coordinator     | normal          | primary       | primary       | <span class="nt">-----------</span> |
+| coordinator | localhost:30120 | Coordinator     | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| deployer    | localhost:30210 | Deployer        | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| broker      | localhost:30310 | Broker          | normal          | leader        | leader        | <span class="nt">-----------</span> |
+| broker      | localhost:30320 | Broker          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30410 | group1          | <span class="nb">readonly</span>        | scrapped      | scrapped      | <span class="nt">-----------</span> |
+| warehouse   | localhost:30420 | group1          | <span class="nb">readonly</span>        | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30510 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30520 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+  
+<span class="c"># Replicate the latest data after snapshot through replication</span>
+machcoordinatoradmin <span class="nt">--exec-sync</span><span class="o">=[</span>nodename]
+  
+kellen@kellen-ku:~<span class="nv">$ </span>machcoordinatoradmin <span class="nt">--exec-sync</span><span class="o">=</span>localhost:30410
+<span class="nt">-------------------------------------------------------------------------</span>
+     Machbase Coordinator Administration Tool
+     Release Version - 321a012d05.develop
+     Copyright 2014, MACHBASE Corp. or its subsidiaries
+     All Rights Reserved
+<span class="nt">-------------------------------------------------------------------------</span>
+Node-Name: localhost:30410
+Source:
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+|  Node Type  |    Node Name    |   Group Name    |   Group State   |    Desired &amp; Actual State     |  RP State   |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+| coordinator | localhost:30110 | Coordinator     | normal          | primary       | primary       | <span class="nt">-----------</span> |
+| coordinator | localhost:30120 | Coordinator     | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| deployer    | localhost:30210 | Deployer        | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| broker      | localhost:30310 | Broker          | normal          | leader        | leader        | <span class="nt">-----------</span> |
+| broker      | localhost:30320 | Broker          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30410 | group1          | <span class="nb">readonly</span>        | scrapped      | scrapped      | stopped     |
+| warehouse   | localhost:30420 | group1          | <span class="nb">readonly</span>        | normal        | normal        | stopped     |
+| warehouse   | localhost:30510 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30520 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+|  Node Type  |    Node Name    |   Group Name    |   Group State   |    Desired &amp; Actual State     |  RP State   |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+| coordinator | localhost:30110 | Coordinator     | normal          | primary       | primary       | <span class="nt">-----------</span> |
+| coordinator | localhost:30120 | Coordinator     | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| deployer    | localhost:30210 | Deployer        | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| broker      | localhost:30310 | Broker          | normal          | leader        | leader        | <span class="nt">-----------</span> |
+| broker      | localhost:30320 | Broker          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30410 | group1          | <span class="nb">readonly</span>        | sync-standby  | sync-standby  | running     |
+| warehouse   | localhost:30420 | group1          | <span class="nb">readonly</span>        | sync-active   | sync-active   | running     |
+| warehouse   | localhost:30510 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30520 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+|  Node Type  |    Node Name    |   Group Name    |   Group State   |    Desired &amp; Actual State     |  RP State   |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+| coordinator | localhost:30110 | Coordinator     | normal          | primary       | primary       | <span class="nt">-----------</span> |
+| coordinator | localhost:30120 | Coordinator     | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| deployer    | localhost:30210 | Deployer        | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| broker      | localhost:30310 | Broker          | normal          | leader        | leader        | <span class="nt">-----------</span> |
+| broker      | localhost:30320 | Broker          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30410 | group1          | <span class="nb">readonly</span>        | normal        | normal        | stopped     |
+| warehouse   | localhost:30420 | group1          | <span class="nb">readonly</span>        | normal        | normal        | stopped     |
+| warehouse   | localhost:30510 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30520 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+  
+<span class="c"># Change the group state to readonly</span>
+machcoordinatoradmin <span class="nt">--set-group-state</span><span class="o">=</span>normal <span class="nt">--group</span><span class="o">=[</span>groupname]
+  
+kellen@kellen-ku:~<span class="nv">$ </span>machcoordinatoradmin <span class="nt">--set-group-state</span><span class="o">=</span>normal <span class="nt">--group</span><span class="o">=</span>group1
+<span class="nt">-------------------------------------------------------------------------</span>
+     Machbase Coordinator Administration Tool
+     Release Version - 321a012d05.develop
+     Copyright 2014, MACHBASE Corp. or its subsidiaries
+     All Rights Reserved
+<span class="nt">-------------------------------------------------------------------------</span>
+Group Name: group1
+Flag      : 0
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+|  Node Type  |    Node Name    |   Group Name    |   Group State   |    Desired &amp; Actual State     |  RP State   |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+| coordinator | localhost:30110 | Coordinator     | normal          | primary       | primary       | <span class="nt">-----------</span> |
+| coordinator | localhost:30120 | Coordinator     | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| deployer    | localhost:30210 | Deployer        | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| broker      | localhost:30310 | Broker          | normal          | leader        | leader        | <span class="nt">-----------</span> |
+| broker      | localhost:30320 | Broker          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30410 | group1          | normal          | normal        | normal        | stopped     |
+| warehouse   | localhost:30420 | group1          | normal          | normal        | normal        | stopped     |
+| warehouse   | localhost:30510 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
+| warehouse   | localhost:30520 | group2          | normal          | normal        | normal        | <span class="nt">-----------</span> |
++-------------+-----------------+-----------------+-----------------+-------------------------------+-------------+
+</code></pre></div></div>
+
+<h1 id="snapshot-related-properties">Snapshot related properties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+      <th>Applies to</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GROUP_SNAPSHOT_TIMEOUT_SEC</td>
+      <td>Determines the timeout time when executing Snapshot<br />Default : 60 (sec)<br />Minimum : 0 (wait infinitely)<br />Maximum : uint32_max (sec)</td>
+      <td>Write in each node’s machbase.conf file</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

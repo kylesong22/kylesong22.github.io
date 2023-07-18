@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>Machbase Features</title>
+    <meta property="og:title" content="Machbase Features" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="Machbase Features">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Machbase Features"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/intro/features.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/intro/features.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/intro/">Intro</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/intro/features.html">Machbase Features</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">Machbase Features</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#support-for-various-table-structures">Support for Various Table Structures</a></li>
+  <li><a href="#hardware-support-for-various-sizes">Hardware Support for Various Sizes</a></li>
+  <li><a href="#tag-analyzer-data-visualization-solution-support">Tag Analyzer: Data Visualization Solution Support</a></li>
+  <li><a href="#write-once-read-many">Write Once, Read Many</a></li>
+  <li><a href="#lock-free-architecture-support">Lock-free Architecture Support</a></li>
+  <li><a href="#high-speed-data-storage">High Speed Data Storage</a></li>
+  <li><a href="#stream-function-support">STREAM Function Support</a></li>
+  <li><a href="#configuring-real-time-index">Configuring Real-Time Index</a></li>
+  <li><a href="#real-time-data-compression">Real-Time Data Compression</a></li>
+  <li><a href="#outstanding-query-performance">Outstanding Query Performance</a></li>
+  <li><a href="#time-series-data-characteristics-sql-syntax-support">Time Series Data Characteristics SQL Syntax Support</a></li>
+  <li><a href="#supports-text-search-function">Supports Text Search Function</a></li>
+  <li><a href="#optional-deletion-support">Optional Deletion Support</a></li>
+  <li><a href="#automated-data-collection">Automated Data Collection</a></li>
+</ul>
+
+<h1 id="support-for-various-table-structures">Support for Various Table Structures</h1>
+
+<p>Machbase provides four table types for users according to one’s usage. (Tag, Log, Volatile, Lookup)</p>
+
+<p>This is because client requirements for storing sensor data are very diverse and one business does not have just one specific data pattern.
+Therefore, it’s important to understand these business requirements and select the appropriate tables for them.
+The table below shows the characteristics of each table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Table Type</th>
+      <th>Tag Table</th>
+      <th>Log Table</th>
+      <th>Volatile Table</th>
+      <th>Lookup Table</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PURPOSE</td>
+      <td>Optimized for processing sensor time series data in the form of &lt;sensor name, time, sensor value&gt;</td>
+      <td>Optimized for processing PLC log time series data <br /> (text included)</td>
+      <td>Real-time processing of volatile memory data</td>
+      <td>Manages master data that can be stored permanently</td>
+    </tr>
+    <tr>
+      <td>DESCRIPTION</td>
+      <td>Used when storing sensor data at high speed, extracting corresponding data at high speed, or creating statistical tables in real-time <br /> Mainly stores real-time sensor data</td>
+      <td>Used when storing log data including text and analyzing it in the form of general DBMS <br /> Mainly stores historical user data</td>
+      <td>Used when Insert, Delete, Update, Select is required for memory-based performance (tens of thousands per second) <br /> <strong>All data is lost when the system is shut down.</strong> <br /> Mainly used for key-value based monitoring.</td>
+      <td>Used to permanently store user-editable master data. <br /> SELECT has high-speed performance, but INSERT, UPDATE, and DELETE provide disk-based performance.</td>
+    </tr>
+    <tr>
+      <td>TABLE STRUCTURE</td>
+      <td>&lt;Sensor name, time, sensor value&gt; is the  basic type, with the ability for assigning additional columns.</td>
+      <td>Any schema possible</td>
+      <td>Any schema possible (Primary Key can be assigned)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>INSERT (INPUT) PERFORMANCE</td>
+      <td>Millions per second</td>
+      <td>Millions per second</td>
+      <td>Tens of Thousands per second</td>
+      <td>Hundreds per second</td>
+    </tr>
+    <tr>
+      <td>SELECT</td>
+      <td>Sensor Name + Limited Time Range</td>
+      <td>All inquiries possible</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>Real time deletion of data before an arbitrary point</td>
+      <td>Real time deletion of arbitrary point / interval data</td>
+      <td>Primary Key Record Delete Support (※ Primary Key Designation Required)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>UPDATE</td>
+      <td>Not supported (※ Only Metadata column is editable)</td>
+      <td>Not supported</td>
+      <td>Primary Key Update Support (※ Primary Key Designation Required)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>STORAGE SIZE LIMITS</td>
+      <td>Disk limit</td>
+      <td>Memory limit</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>INDEX STRUCTURE</td>
+      <td>Three-step partitioning real-time index(※ default creation)</td>
+      <td>LSM index</td>
+      <td>Red/black memory index</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>STREAM SUPPORT</td>
+      <td>Target only (save target)</td>
+      <td>Both source / target (read and save target)</td>
+      <td>Not possible</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CONSIDERATIONS</td>
+      <td>Consider enough storage to erase historical data</td>
+      <td>Consider as temporary storage for Tag input</td>
+      <td>Consider memory limit</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="hardware-support-for-various-sizes">Hardware Support for Various Sizes</h1>
+
+<p>Machbase provides various product editions according to user environments as listed below.</p>
+
+<h2 id="standard-edition">Standard Edition</h2>
+
+<p>This product is used to achieve high-speed data processing on a single server.</p>
+
+<p>It runs on Windows or Linux operating systems based on Intel x86 CPU and provides very fast sensor data storage and analysis that other DBMSs can not provide.</p>
+
+<p>In most cases, it is used to store real-time data input from hundreds or more of edge devices and to perform secondary analysis.</p>
+
+<h2 id="cluster-edition">Cluster Edition</h2>
+
+<p>This product was developed for the purpose of storing large-scale sensor data for large manufacturing plants.</p>
+
+<p>A number of physical servers operate in clusters to store more than 10 million data per second in semiconductor or display, power generation, and steel production processes.</p>
+
+<p>It is used in an increasingly data-rich environment where data capacity needs to be continuously maintained.</p>
+
+<h1 id="tag-analyzer-data-visualization-solution-support">Tag Analyzer: Data Visualization Solution Support</h1>
+
+<p>Machbase provides real-time visualization of tens of billions of sensor data stored in Machbase (since Version 5).</p>
+
+<p>In other words, an arbitrary tag ID is designated, and the trend chart for the period in which the ID is input can be instantaneously checked on the web-based basis.</p>
+
+<p>In addition, it provides not only simple tag data but also a statistical chart during that period, so statistical analysis is possible beyond simple visualization.</p>
+
+<p><img src="/en/intro/TagAnalyzer.png" alt="TagAnalyzer" /></p>
+
+<h1 id="write-once-read-many">Write Once, Read Many</h1>
+
+<p>Sensor data is rarely edited or deleted once it is entered into the database.</p>
+
+<p>Therefore, Machbase is designed so that once the key time series data is inputted to maximize the characteristics of the machine data, an UPDATE can not occur.</p>
+
+<p>Once the log data has been entered, it cannot be altered or deleted by malicious users, so there should be no concerns.</p>
+
+<h1 id="lock-free-architecture-support">Lock-free Architecture Support</h1>
+
+<p>The most important aspect in sensor data processing is that data input, update, delete operation and read operation should be processed as independent as possible without conflicts.</p>
+
+<p>Because of this, Machbase is designed not to allocate any locks for the SELECT operation, and it is designed with a high performance structure that never conflicts with the operation of input or deletion changes.</p>
+
+<p>Therefore, even when hundreds of thousands of data are entered and some of them are deleted in real time, the SELECT operation can speed up statistical operations on millions of records.</p>
+
+<h1 id="high-speed-data-storage">High Speed Data Storage</h1>
+
+<p>Machbase provides data storage performance that is exponentially faster than conventional databases. Even if there are many indexes in a specific table, data can be received from at least 300,000 to at most 2 million per second.</p>
+
+<p>This is possible because Machbase is designed to optimize time series data.</p>
+
+<h1 id="stream-function-support">STREAM Function Support</h1>
+
+<p>Since Machbase Version 5, Standard Edition provides STREAM functionality to support real-time data filtering.</p>
+
+<p>This STREAM performs a condition evaluation on real-time data input in DBMS at high speed and transmits the result to an arbitrary table.</p>
+
+<p>This function is very useful for generating a warning when the value of a certain sensor exceeds a specific range or real time evaluation of internally input data is needed.</p>
+
+<h1 id="configuring-real-time-index">Configuring Real-Time Index</h1>
+
+<p>Machbase innovatively improves on conventional database structure (where the more indexes you have the slower your data insert performance is) and can build indexes in near real-time, even with hundreds of thousands of data inserts per second.</p>
+
+<p>This feature is a key technology for analyzing time series data, such as machine data, because it provides a powerful functional foundation for instant retrieval of actual data as it occurs.</p>
+
+<h1 id="real-time-data-compression">Real-Time Data Compression</h1>
+
+<p>The characteristic of time series data such as machine data is that data is generated constantly. This inevitably means that not only will the storage space of the database becomes eventually inadequate, but it will not have enough data to process.</p>
+
+<p>In particular, although conventional databases input data at a high speed, as the number of indexes increases, the occupied data space also greatly increases. Therefore, conventional databases are quite unsuitable for storing and analyzing machine data.
+Machbase uses two innovative real-time compression techniques to compress and store up to a hundred times more data without any setbacks in performance.</p>
+
+<p>Logical Real-Time Data Compression Technology Support
+First, Machbase supports logical real-time data compression technology.</p>
+
+<p>This is based on the data redundancy of the machine data derived from a column-type database. It is an innovative technique to reduce the data storage space by coding redundant data as the number of data having the same value increases, which allows high redundancy data to be compressed hundreds of times the original amount.</p>
+
+<p>Physical Data Compression Technology (Patented Technology)
+The second is Machbase’s patented physical data compression technology.</p>
+
+<p>This is a technology that reduces the amount of physical data to be stored by dividing a physical data block to be stored in a disk into a predetermined size partition, compressing it into a disk separately, and further reducing the I/O cost caused by the system. This helps to increase the efficiency of the storage space by compressing the actual logically compressed data once more.</p>
+
+<h1 id="outstanding-query-performance">Outstanding Query Performance</h1>
+<p>The innovative and technological superiority of Machbase is that the search and statistical analysis of millions or tens of millions of previously stored historical data is very fast, even with the simultaneous input of hundreds of thousands of data per second.</p>
+
+<p>This is possible because of Machbase’s own indexing technology that provides superior performance for both insertion and analysis, and will play a key role in real-time business decision making.</p>
+
+<p>Unlike conventional databases, Machbase can process two or more indexes in a single query, which can be expected to perform several times faster when processing data in parallel.</p>
+
+<p>The following is an example of using two or more indexes in a single query.</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">table1</span> <span class="k">WHERE</span> <span class="n">c1</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">and</span> <span class="n">c2</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h1 id="time-series-data-characteristics-sql-syntax-support">Time Series Data Characteristics SQL Syntax Support</h1>
+
+<p>In the case of sensor data, the newest data is several times more valuable than the older data, and also the “access frequency” of the latest data is characterized as being several times more compared to old data.</p>
+
+<p>For this reason, Machbase supports time series data features through two types of tables: Tag and Log.</p>
+
+<h2 id="log-table">Log Table</h2>
+
+<p>The log table supported by Machbase has the following features.</p>
+
+<h3 id="first-it-automatically-saves-input-time">First, it automatically saves input time</h3>
+<p>Whenever a record is stored in the database, a timestamp in nanoseconds is stored as a field called _arrival_time.</p>
+
+<p>This means that all records stored by Machbase can be searched for or given condition on a time basis.</p>
+
+<h3 id="second-it-prioritizes-lookup-of-recent-data">Second, it prioritizes lookup of recent data</h3>
+
+<p>When retrieving data, the latest time is output before the old time. That is, when SELECT is performed, the latest data is output first.</p>
+
+<p>The result is the descending sort based on the _arrival_time column mentioned earlier.</p>
+
+<h3 id="third-the-duration-keyword">Third, the DURATION keyword</h3>
+
+<p>The DURATION keyword is provided to enable quick lookup of specific time range data based on input time.</p>
+
+<p>In the case of machine data analysis, these characteristics are provided at the SQL level because they often specify a specific time range.</p>
+
+<p>This makes it easy to analyze data without stating “where” clause to complex time operators.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example 1)  View data statistics from 10 minutes ago</span>
+<span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">traffic</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">t1</span> <span class="n">DURATION</span> <span class="mi">10</span> <span class="k">MINUTE</span><span class="p">;</span>
+ 
+<span class="c1">-- Example 2) View data statistics for 30 minutes from 1 hour ago</span>
+<span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">traffic</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">t1</span> <span class="n">DURATION</span> <span class="mi">30</span> <span class="k">MINUTE</span> <span class="k">BEFORE</span> <span class="mi">1</span> <span class="n">HOUR</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="tag-table">Tag Table</h2>
+
+<p>The tag table that is supported from Machbase 5.0 has the following features.</p>
+
+<h3 id="first-high-speed-tagid--time-condition-search-performance">First, high-speed TAGID / time condition search performance</h3>
+
+<p>The tag table is excellent at any time and any ID based search performance.</p>
+
+<p>It boasts ultra-fast data extraction performance that can not be achieved with existing RDBMSs, ensuring the same speed even when billions of sensor data are stored.</p>
+
+<h3 id="second-the-high-speed-tag-data-input">Second, the high-speed tag data input</h3>
+
+<p>The tag table supports high-speed data input.</p>
+
+<p>As in the previous log table, data can be input without difficulty even with the input of hundreds of thousands of sensor data per second.</p>
+
+<h3 id="third-real-time-statistics-function">Third, real-time statistics function</h3>
+
+<p>The tag table supports real-time statistics function.</p>
+
+<p>Machbase automatically generates five types of statistics in real time for the data stored in this tag table and provides a function to access them in real time.</p>
+
+<h1 id="supports-text-search-function">Supports Text Search Function</h1>
+
+<p>One of the most important practical uses for users to store and use logarithmic time series data is to determine if a specific event occurred at a particular point in time.</p>
+
+<p>Time-series data processing is possible at a specific point in time, but in most cases the occurrence of a specific event requires searching for a specific “word” in a text field stored in a particular column.</p>
+
+<p>However, in a traditional database, in order to search for a word in a specific field, the exact match or LIKE clause is used to check the condition of some initial character through B + Tree. In most cases, this results in a very slow response.</p>
+
+<p>That’s why searching for a particular word in a conventional database is very weak and frustrating.</p>
+
+<p>On the other hand, with Machbase, the SEARCH keyword based on the log table is provided to enable real-time word search.</p>
+
+<p>This makes it possible to quickly search for any error text generated from the equipment.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example 1) Output record containing Error or 102 in msg field</span>
+<span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">ipv4</span> <span class="k">FROM</span> <span class="n">devices</span> <span class="k">WHERE</span> <span class="n">msg</span> <span class="k">SEARCH</span> <span class="s1">'Error'</span> <span class="k">or</span> <span class="n">msg</span> <span class="k">SEARCH</span> <span class="s1">'102'</span><span class="p">;</span>
+ 
+<span class="c1">-- Example 2) Output record containing Error and 102 in msg field</span>
+<span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">ipv4</span> <span class="k">FROM</span> <span class="n">devices</span> <span class="k">WHERE</span> <span class="n">msg</span> <span class="k">SEARCH</span> <span class="s1">'Error 102'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h1 id="optional-deletion-support">Optional Deletion Support</h1>
+
+<p>In the case of sensor data, it is true that deletion operations are rarely generated after insertion.</p>
+
+<p>However, with embedded devices, there is a limited storage space that is not carefully managed by users.</p>
+
+<p>In this case, if a ‘disk full’ occurs or a failure occurs due to machine data, the company could suffer a lot of damage.</p>
+
+<p>Machbase provides the ability to delete records for a given condition in this environment.</p>
+
+<p>Therefore, embedded developers can use CRON or periodic programs to easily manage Machbase to not keep data over a certain size.</p>
+
+<h2 id="for-log-tables">For Log Tables</h2>
+
+<p>The following commands are supported:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example 1) Delete oldest last 100.</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">devices</span> <span class="n">OLDEST</span> <span class="mi">100</span> <span class="k">ROWS</span><span class="p">;</span>
+ 
+<span class="c1">-- Example 2) Delete all but 1000 most recent.</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">devices</span> <span class="k">EXCEPT</span> <span class="mi">1000</span> <span class="k">ROWS</span><span class="p">;</span>
+ 
+<span class="c1">-- Example 3) Delete all of them from now on except one day.</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">devices</span> <span class="k">EXCEPT</span> <span class="mi">1</span> <span class="k">DAY</span><span class="p">;</span>
+ 
+<span class="c1">-- Example 4) Delete all data from before June 1, 2014.</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">devices</span> <span class="k">BEFORE</span> <span class="n">TO_DATE</span><span class="p">(</span><span class="s1">'2014-06-01'</span><span class="p">,</span> <span class="s1">'YYYY-MM-DD'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="for-tag-tables">For Tag Tables</h2>
+
+<p>The following command is supported:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Delete all data from before June 15, 2016.</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">tag</span> <span class="k">BEFORE</span> <span class="n">TO_DATE</span><span class="p">(</span><span class="s1">'2016-06-15'</span><span class="p">,</span> <span class="s1">'YYYY-MM-DD'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h1 id="automated-data-collection">Automated Data Collection</h1>
+
+<p>Machbase provides a “Collector” function that reads data from scattered machine data log files and automatically transfers them.</p>
+
+<p>It not only collects pre-formatted data such as syslog and web server logs, but also provides a function that can be easily converted and automatically collected even if the log format is arbitrarily defined by the user.</p>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

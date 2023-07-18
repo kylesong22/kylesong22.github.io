@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>CLI/ODBC</title>
+    <meta property="og:title" content="CLI/ODBC" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="CLI/ODBC">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="CLI/ODBC"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/sdk/cli-odbc.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/sdk/cli-odbc.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/sdk/">Sdk</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/sdk/cli-odbc.html">CLI/ODBC</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">CLI/ODBC</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#standard-cli-functions">Standard CLI Functions</a></li>
+  <li><a href="#connection-string-for-connecting">Connection String for Connecting</a></li>
+  <li><a href="#extension-cli-function-append">Extension CLI Function (APPEND)</a>
+    <ul>
+      <li><a href="#understanding-append-protocol">Understanding Append Protocol</a></li>
+      <li><a href="#append-data-transfer">Append Data Transfer</a></li>
+      <li><a href="#append-data-error-check">Append Data Error Check</a></li>
+      <li><a href="#additional-options-for-checking-server-errors">Additional Options for Checking Server Errors</a></li>
+      <li><a href="#leaving-trace-log-when-server-error-occurs">Leaving Trace Log When Server Error Occurs</a></li>
+      <li><a href="#append-function-description">APPEND Function Description</a>
+        <ul>
+          <li><a href="#sqlappendopen">SQLAppendOpen</a></li>
+          <li><a href="#sqlappenddata-deprecated">SQLAppendData (deprecated)</a></li>
+          <li><a href="#sqlappenddatabytime-deprecated">SQLAppendDataByTime(deprecated)</a></li>
+          <li><a href="#sqlappenddatav2">SQLAppendDataV2</a></li>
+          <li><a href="#sqlappenddatabytimev2">SQLAppendDataByTimeV2</a></li>
+          <li><a href="#sqlappendflush">SQLAppendFlush</a></li>
+          <li><a href="#sqlappendclose">SQLAppendClose</a></li>
+          <li><a href="#sqlappendseterrorcallback">SQLAppendSetErrorCallback</a></li>
+          <li><a href="#sqlsetconnectappendflush">SQLSetConnectAppendFlush</a></li>
+          <li><a href="#sqlsetstmtappendinterval">SQLSetStmtAppendInterval</a></li>
+          <li><a href="#error-check-and-description">Error Check and Description</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#column-wise-parameter-binding">Column wise parameter binding</a></li>
+  <li><a href="#supported-strings">Supported Strings</a></li>
+</ul>
+
+<p>CLI is  a software development standard defined in <a href="http://en.wikipedia.org/wiki/International_Organization_for_Standardization">ISO</a>/<a href="http://en.wikipedia.org/wiki/International_Electrotechnical_Commission">IEC</a> 9075-3: 2003.</p>
+
+<p>The CLI defines functions and specifications for how to pass SQL to the database and how to receive and analyze the results. This CLI was developed in the early 1990s and was developed exclusively for C and COBOL languages, and its specifications have been maintained to date.</p>
+
+<p>The most widely known standard interface to date is ODBC (Open Database Connectivity), which provides a way for a client program to access a database regardless of the type of database. The current ODBC API version is 3.52 and is defined in ISO and X/Open standards.</p>
+
+<h1 id="standard-cli-functions">Standard CLI Functions</h1>
+
+<p>See the following links for usage of the standard functions.</p>
+<ul>
+  <li><a href="http://en.wikipedia.org/wiki/Call_Level_Interface">Wikipedia</a></li>
+  <li><a href="https://www2.opengroup.org/ogsys/catalog/c451">Open Group Document</a></li>
+</ul>
+
+<p>You can refer to the following function.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>SQLAllocConnect</th>
+      <th>SQLDisconnect</th>
+      <th>SQLGetDescField</th>
+      <th>SQLPrepare</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SQLAllocEnv</td>
+      <td>SQLDriverConnect</td>
+      <td>SQLGetDescRec</td>
+      <td>SQLPrimaryKeys</td>
+    </tr>
+    <tr>
+      <td>SQLAllocHandle</td>
+      <td>SQLExecDirect</td>
+      <td>SQLGetDiagRec</td>
+      <td>SQLStatistics</td>
+    </tr>
+    <tr>
+      <td>SQLAllocStmt</td>
+      <td>SQLExecute</td>
+      <td>SQLGetEnvAttr</td>
+      <td>SQLRowCount</td>
+    </tr>
+    <tr>
+      <td>SQLBindCol</td>
+      <td>SQLFetch</td>
+      <td>SQLGetFunctions</td>
+      <td>SQLSetConnectAttr</td>
+    </tr>
+    <tr>
+      <td>SQLBindParameter+</td>
+      <td>SQLFreeConnect</td>
+      <td>SQLGetInfo</td>
+      <td>SQLSetDescField</td>
+    </tr>
+    <tr>
+      <td>SQLColAttribute</td>
+      <td>SQLFreeEnv</td>
+      <td>SQLGetStmtAttr</td>
+      <td>SQLSetDescRec</td>
+    </tr>
+    <tr>
+      <td>SQLColumns</td>
+      <td>SQLFreeHandle</td>
+      <td>SQLGetTypeInfo</td>
+      <td>SQLSetEnvAttr</td>
+    </tr>
+    <tr>
+      <td>SQLConnect</td>
+      <td>SQLFreeStmt</td>
+      <td>SQLNativeSQL</td>
+      <td>SQLSetStmtAttr</td>
+    </tr>
+    <tr>
+      <td>SQLCopyDesc</td>
+      <td>SQLGetConnectAttr</td>
+      <td>SQLNumParams</td>
+      <td>SQLStatistics</td>
+    </tr>
+    <tr>
+      <td>SQLDescribeCol</td>
+      <td>SQLGetData</td>
+      <td>SQLNumResultCols</td>
+      <td>SQLTables</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="connection-string-for-connecting">Connection String for Connecting</h1>
+
+<p>To connect through the CLI, you need to create a connection string. The contents of each are as follows.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Connection String Item Name</th>
+      <th>Item Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DSN</td>
+      <td>Specifies the data source name.<br />ODBC specifies the section name of the file containing the resource, and CLI specifies the server name or IP address.</td>
+    </tr>
+    <tr>
+      <td>DBNAME</td>
+      <td>Describes the DB name of Machbase.</td>
+    </tr>
+    <tr>
+      <td>SERVER</td>
+      <td>Indicates the host name or IP address of the server where Machbase is located.</td>
+    </tr>
+    <tr>
+      <td>NLS_USE</td>
+      <td>Sets the language type to use with each other (currently unused, kept for future expansion).</td>
+    </tr>
+    <tr>
+      <td>UID</td>
+      <td>User ID</td>
+    </tr>
+    <tr>
+      <td>PWD</td>
+      <td>User password</td>
+    </tr>
+    <tr>
+      <td>PORT_NO</td>
+      <td>Port number to connect to</td>
+    </tr>
+    <tr>
+      <td>PORT_DIR</td>
+      <td>Specifies the file path to use when connecting to a Unix domain from Unix.<br />(It is specified when modified from the server, and it works even if it is not specified by default.)</td>
+    </tr>
+    <tr>
+      <td>CONNTYPE</td>
+      <td>Specifies the connection method between the client and the server.<br /><br />1: Connection with TCP / IP INET<br />2: Connect to Unix Domain</td>
+    </tr>
+    <tr>
+      <td>CONNTYPE</td>
+      <td>Specifies the connection method between the client and the server.<br /><br />1: Connection with TCP / IP INET<br />2: Connect to Unix Domain</td>
+    </tr>
+    <tr>
+      <td>COMPRESS</td>
+      <td>Indicates whether to compress the Append protocol.<br /><br />If this value is 0, it is transmitted without compression.<br />If this value is any value greater than 0, it is compressed only if the Append record is larger than its value.<br /><br />Ex) COMPRESS = 512<br />Only when the record size is larger than 512, it is compressed and operates.<br /><br />For remote connection, compression improves transmission performance.</td>
+    </tr>
+    <tr>
+      <td>SHOW_HIDDEN_COLS</td>
+      <td>Decides whether to show the hidden column (<code class="language-plaintext highlighter-rouge">_arrival_time</code>) when executing it with select *.<br /><br />If it is 0, it is not shown. If it is 1, information of the corresponding column is output.</td>
+    </tr>
+    <tr>
+      <td>CONNECTION_TIMEOUT</td>
+      <td>Sets how long to wait on the first connection.<br /><br />The default setting is 30 seconds.<br />This value is set higher if the server response on the first connection is slower than 30 seconds.</td>
+    </tr>
+    <tr>
+      <td>SOCKET_TIMEOUT</td>
+      <td>This is a timeout that occurs when Protocol I/O takes time.<br /><br />The client checks and waits , then performing Disconnect.<br /><br />Same as Read Timeout of ORACLE. (In MYSQL and MSSQL, uses SOCKET_TIMEOUT as same as Machbase.)<br /><br />Set SOCKET_TIMEOUT=NN (seconds) in Connection String, and the default value is set to 30 minutes (1800).</td>
+    </tr>
+    <tr>
+      <td>ALTERNATIVE_SERVERS</td>
+      <td>When using the cluster version, it is a setting to have the information of several brokers additionally.<br /><br />When multiple brokers are registered, even if the connected broker is terminated, the data is continuously input after connecting to another broker.<br /><br />Multiple brokers can be registered, and the values of <server address="">:<server port=""> are separated by commas.<br /><br />ex) ALTERNATIVE_SERVERS=192.168.0.10:20320,192.168.0.11:20320;</server></server></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>An example of CLI connection is as follows.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sprintf</span><span class="p">(</span><span class="n">connStr</span><span class="p">,</span><span class="s">"SERVER=127.0.0.1;COMPRESS=512;UID=SYS;PWD=MANAGER;CONNTYPE=1;PORT_NO=%d"</span><span class="p">,</span> <span class="n">MACHBASE_PORT_NO</span><span class="p">);</span>
+ 
+<span class="k">if</span> <span class="p">(</span><span class="n">SQL_ERROR</span> <span class="o">==</span> <span class="n">SQLDriverConnect</span><span class="p">(</span> <span class="n">gCon</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="p">(</span><span class="n">SQLCHAR</span> <span class="o">*</span><span class="p">)</span><span class="n">connStr</span><span class="p">,</span> <span class="n">SQL_NTS</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">SQL_DRIVER_NOPROMPT</span> <span class="p">))</span> <span class="p">{</span>
+   <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="extension-cli-function-append">Extension CLI Function (APPEND)</h1>
+
+<p>The CLI extension function is a function for implementing the Append protocol provided to input data to the Machbase server at high speed.</p>
+
+<p>This function consists of four functions: channel open, channel data input, channel flush, and channel closing.</p>
+
+<h2 id="understanding-append-protocol">Understanding Append Protocol</h2>
+
+<p>The Append protocol provided by Machbase works asynchronously. The term asynchronous means that the response to a specific job requested by the client to the server does not completely synchronize with each other but occurs at the moment when an arbitrary event occurs. That is, even if a client has performed an append, you can not immediately get or verify the results of that execution, and you can check it at any time when the server is ready. For this reason, developers who develop applications using the Append protocol should have an understanding of the following internal behaviors. The following discussion is about how and when a client detects asynchronous errors that occur in the server.</p>
+
+<h2 id="append-data-transfer">Append Data Transfer</h2>
+
+<p>In a typical call such as SQLExecute or SQLExecDirect (), Machbase uses a synchronous scheme that returns the results back to the client immediately. However, SQLAppendDataV2 () does not send a request immediately after user data is entered. Instead, it waits until all of the client communication buffers are full, and then it sends the data to the client all at once. The reason for this design is that the input data of the client using Append assumes tens to hundreds of thousands of records per second, so it utilizes the buffering method for high-speed data transmission. For this reason, if the user wants to transmit the contents of the buffer at will, the user can input data explicitly by calling SQLAppendFlush () function.</p>
+
+<h2 id="append-data-error-check">Append Data Error Check</h2>
+
+<p>As mentioned earlier, the Append protocol is buffered and operates asynchronously. In particular, it is very important to understand when and how an error is detected because it takes a method to detect an error only when an error occurs, without receiving any response when an error does not occur in the server. In addition, since the cost of detecting an error is relatively large, it is very inefficient to check each time a record is input, and currently Machbase is designed to detect an error only in the following cases explicitly. When an error is detected, the error callback function set by the user is called every time.</p>
+<ol>
+  <li>Checks after all the transmit buffers are full and the data has been explicitly sent to the server,</li>
+  <li>Checks after explicitly sending data to the server from within SQLAppendFlush ()</li>
+  <li>Checks just before shut down from within SQLAppendClose ()</li>
+</ol>
+
+<p>In other words, it is basically designed to detect errors only in the above three cases, and is designed to minimize the occurrence of I/O.</p>
+
+<h2 id="additional-options-for-checking-server-errors">Additional Options for Checking Server Errors</h2>
+
+<p>In order to achieve the maximum performance, the default error detection technique can be more frequently checked and utilized by the user if desired. This can be done by adjusting the last argument to the SQLAppendOpen () function, aErrorCheckCount. When this value is 0, it does not perform any checking operation and operates basically. However, if this value is greater than 0, SQLAppendData () is explicitly checked for errors every time it is called. In other words, if this value is 10, you pay the cost of checking for errors every 10 appends. Therefore, when this value is small, system resources for error detection are used much, so it should be adjusted to an appropriate number.</p>
+
+<h2 id="leaving-trace-log-when-server-error-occurs">Leaving Trace Log When Server Error Occurs</h2>
+
+<p>If you want to leave a trace log for the append data where an error occurs, set the prepared property DUMP_APPEND_ERROR to 1 on the server. With this setting, the specification of the record that generated the error in the mach.trc file is written to the file. However, if the number of errors is excessive, the amount of system resources used will increase drastically, which may degrade the overall performance of Machbase.</p>
+
+<h2 id="append-function-description">APPEND Function Description</h2>
+
+<h3 id="sqlappendopen">SQLAppendOpen</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span> <span class="n">SQLAppendOpen</span><span class="p">(</span><span class="n">SQLHSTMT</span>   <span class="n">aStatementHandle</span><span class="p">,</span>
+                        <span class="n">SQLCHAR</span>   <span class="o">*</span><span class="n">aTableName</span><span class="p">,</span>
+                        <span class="n">SQLINTEGER</span> <span class="n">aErrorCheckCount</span> <span class="p">);</span>
+</code></pre></div></div>
+
+<p>This function opens a channel for the target table. If this channel is not closed afterwards, it is kept open continuously.
+A maximum of 1024 statements can be set for one connection. You can use SQLAppendOpen for each statement.</p>
+
+<ol>
+  <li>aStatementHandle: Represents the handle of the Statement to be appended.</li>
+  <li>aTableName: Indicates the name of the table to which Append will be performed.</li>
+  <li>aErrorCheckCount: Decides whether to check the server for errors whenever several data are input. If this value is 0, no error is checked arbitrarily.</li>
+</ol>
+
+<h3 id="sqlappenddata-deprecated">SQLAppendData (deprecated)</h3>
+<p><code class="language-plaintext highlighter-rouge">SQLRETURN  SQLAppendData(SQLHSTMT StatementHandle, void *aData[]);
+</code></p>
+
+<p>This function is a function that inputs data for the channel.</p>
+
+<ul>
+  <li>aData is an array containing pointers to the data to be input. The number of arrays must match the number of columns held by the table specified at Open.</li>
+  <li>The return value can be SQL_SUCCESS, SQL_SUCCESS_WITH_INFO, or SQL_ERROR.<br />
+In particular, if SQL_SUCCESS_WITH_INFO is returned, there may be errors such as a lengthy input column being truncated, so check the result again.</li>
+</ul>
+
+<p><strong>Configuration According to Data Type</strong></p>
+
+<p>Numeric and character types</p>
+<ul>
+  <li>Types such as float, double, short, int, long long, and char * work well with pointers to their values.</li>
+</ul>
+
+<p>Address type</p>
+
+<ul>
+  <li>0x04, 0x7f, 0x00, 0x00, 0x01 are entered in this order.</li>
+  <li>In the case of ipv4, it is passed as an array of 5-byte unsigned char.</li>
+  <li>The first byte is set to 4, the next 4 bytes are set to consecutive address values.</li>
+  <li>For example, in the case of 127.0.0.1, five byte arrays <strong>0x04, 0x7f, 0x00, 0x00, and 0x01</strong> are entered in order.</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// For tables with four column information (short (16), int (32), long (64), varchar)</span>
+ 
+<span class="n">testAppendIPFunc</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="kt">short</span> <span class="n">val1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="kt">int</span>   <span class="n">val2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="kt">long</span> <span class="kt">long</span>  <span class="n">val3</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  
+   <span class="kt">char</span> <span class="o">*</span><span class="n">val4</span> <span class="o">=</span> <span class="s">"my string"</span><span class="p">;</span>
+   <span class="kt">void</span> <span class="o">*</span><span class="n">valueArray</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+ 
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">val1</span><span class="p">;</span>
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">val2</span><span class="p">;</span>
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">val3</span><span class="p">;</span>
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">val4</span><span class="p">;</span>
+ 
+   <span class="n">SQLAppendData</span><span class="p">(</span><span class="n">aStmt</span><span class="p">,</span> <span class="n">valueArray</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Configuration According to Data Type</strong></p>
+
+<p>datetime type</p>
+
+<ul>
+  <li>Since Machbase internally has a nano-unit time resolution value, it must be converted when setting the time on the client, and it is expressed as a 64-bit unsigned integer value.<br />
+Therefore, for proper conversion, you need to add nano values ​​after converting to seconds using the UNIX library mktime.<br />
+※ Machbase time = (total time (seconds) since January 1, 1970) * 1,000,000,000 + milli-second * 1,000,000 + micro-second * 1000 + nano-second;</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Code if Date String is entered as "Year - Month - Date: Minute: Second Millis: Micro: Nano"</span>
+ 
+<span class="n">testAppendDateStrFunc</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">aDateString</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">yy</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mm</span><span class="p">,</span> <span class="kt">int</span> <span class="n">dd</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hh</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mi</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ss</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">t1</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">valueArray</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+    <span class="n">sscanf</span><span class="p">(</span><span class="n">aDateString</span><span class="p">,</span> <span class="s">"%d-%d-%d %d:%d:%d %d:%d:%d"</span><span class="p">,</span>
+        <span class="o">&amp;</span><span class="n">yy</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mm</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">dd</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hh</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mi</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ss</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mmm</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">uuu</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">nnn</span><span class="p">);</span>
+    <span class="n">sTm</span><span class="p">.</span><span class="n">tm_year</span> <span class="o">=</span> <span class="n">yy</span> <span class="o">-</span> <span class="mi">1900</span><span class="p">;</span>
+    <span class="n">sTm</span><span class="p">.</span><span class="n">tm_mon</span> <span class="o">=</span> <span class="n">mm</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">sTm</span><span class="p">.</span><span class="n">tm_mday</span> <span class="o">=</span> <span class="n">dd</span><span class="p">;</span>
+    <span class="n">sTm</span><span class="p">.</span><span class="n">tm_hour</span> <span class="o">=</span> <span class="n">hh</span><span class="p">;</span>
+    <span class="n">sTm</span><span class="p">.</span><span class="n">tm_min</span> <span class="o">=</span> <span class="n">mi</span><span class="p">;</span>
+    <span class="n">sTm</span><span class="p">.</span><span class="n">tm_sec</span> <span class="o">=</span> <span class="n">ss</span><span class="p">;</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">mktime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sTm</span><span class="p">);</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">*</span> <span class="mi">1000000000L</span><span class="p">;</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">+</span> <span class="p">(</span><span class="n">mmm</span><span class="o">*</span><span class="mi">1000000L</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">uuu</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="n">nnn</span><span class="p">;</span>
+ 
+    <span class="n">valueArray</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">t1</span><span class="p">;</span>
+    <span class="n">SQLAppendData</span><span class="p">(</span><span class="n">aStmt</span><span class="p">,</span> <span class="n">valueArray</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="sqlappenddatabytimedeprecated">SQLAppendDataByTime(deprecated)</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span>  <span class="nf">SQLAppendDataByTime</span><span class="p">(</span><span class="n">SQLHSTMT</span> <span class="n">StatementHandle</span><span class="p">,</span> <span class="n">SQLBIGINT</span> <span class="n">aTime</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">aData</span><span class="p">[]);</span>
+</code></pre></div></div>
+
+<p>This function is a function to input data for the corresponding channel, and the value of <code class="language-plaintext highlighter-rouge">_arrival_time</code> stored in the DB can be set to a specific time value instead of the current time.
+For example, you want to enter the date in the log file a month ago as the date.</p>
+
+<ul>
+  <li>aTime is a time value set to <code class="language-plaintext highlighter-rouge">_arrival_time</code>.</li>
+  <li>aData is an array containing pointers to the data to be input.</li>
+  <li>The number of arrays must match the number of columns held by the table specified at Open.</li>
+</ul>
+
+<p>For the rest, refer to the SQLAppendData () function.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// For tables with four column information (short (16), int (32), long (64), varchar)</span>
+ 
+<span class="n">testAppendFuncWithTime</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="kt">long</span> <span class="kt">long</span> <span class="n">sTime</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="kt">short</span> <span class="n">val1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="kt">int</span>   <span class="n">val2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="kt">long</span> <span class="kt">long</span>  <span class="n">val3</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  
+   <span class="kt">char</span> <span class="o">*</span><span class="n">val4</span> <span class="o">=</span> <span class="s">"my string"</span><span class="p">;</span>
+   <span class="kt">void</span> <span class="o">*</span><span class="n">valueArray</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+ 
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">val1</span><span class="p">;</span>
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">val2</span><span class="p">;</span>
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">val3</span><span class="p">;</span>
+   <span class="n">valueArray</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">val4</span><span class="p">;</span>
+ 
+   <span class="n">SQLAppendDataByTime</span><span class="p">(</span><span class="n">aStmt</span><span class="p">,</span> <span class="n">sTime</span><span class="p">,</span> <span class="n">valueArray</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="sqlappenddatav2">SQLAppendDataV2</h2>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span>  <span class="nf">SQLAppendDataV2</span><span class="p">(</span><span class="n">SQLHSTMT</span> <span class="n">StatementHandle</span><span class="p">,</span> <span class="n">SQL_APPEND_PARAM</span> <span class="o">*</span><span class="n">aData</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This function is a newly introduced Append function since Machbase 2.0. It is a convenient function that improves the input method inconvenient in existing functions.
+In the case of TEXT and BINARY type introduced in 2.0 especially, input is possible only in SQLAppendDataV2 () function.</p>
+
+<ul>
+  <li>Can input NULL for each type</li>
+  <li>Can input string length when inputting VARCHAR</li>
+  <li>Can input binary and string data when inputting IPv4 or IPv6</li>
+  <li>Can specify data length for TEXT, BINARY type</li>
+</ul>
+
+<p>The function arguments are structured as follows.</p>
+
+<ul>
+  <li>aData is a pointer to an array of arguments called SQL_APPEND_PARAM. The number of this array must match the number of columns held by the table specified at Open.</li>
+  <li>The return value can be SQL_SUCCESS, SQL_SUCCESS_WITH_INFO, or SQL_ERROR. In particular, if SQL_SUCCESS_WITH_INFO is returned, there may be errors such as a lengthy input column being truncated, so check the result again.</li>
+</ul>
+
+<p>Below is the definition of SQL_APPEND_PARAM that will actually be used in V2 , which is included in machbase_sqlcli.h.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">machAppendVarStruct</span>
+<span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">mLength</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">mData</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machAppendVarStruct</span><span class="p">;</span>
+ 
+<span class="cm">/* for IPv4, IPv6 as bin or string representation */</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">machbaseAppendIPStruct</span>
+<span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span>   <span class="n">mLength</span><span class="p">;</span> <span class="cm">/* 0:null, 4:ipv4, 6:ipv6, 255:string representation */</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span>   <span class="n">mAddr</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+    <span class="kt">char</span>           <span class="o">*</span><span class="n">mAddrString</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machbaseAppendIPStruct</span><span class="p">;</span>
+ 
+<span class="cm">/* Date time*/</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">machbaseAppendDateTimeStruct</span>
+<span class="p">{</span>
+    <span class="kt">long</span> <span class="kt">long</span>       <span class="n">mTime</span><span class="p">;</span>
+<span class="cp">#if defined(SUPPORT_STRUCT_TM)
+</span>    <span class="k">struct</span> <span class="n">tm</span>       <span class="n">mTM</span><span class="p">;</span>
+<span class="cp">#endif
+</span>    <span class="kt">char</span>           <span class="o">*</span><span class="n">mDateStr</span><span class="p">;</span>
+    <span class="kt">char</span>           <span class="o">*</span><span class="n">mFormatStr</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machbaseAppendDateTimeStruct</span><span class="p">;</span>
+ 
+<span class="k">typedef</span> <span class="k">union</span> <span class="n">machbaseAppendParam</span>
+<span class="p">{</span>
+    <span class="kt">short</span>                        <span class="n">mShort</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">short</span>               <span class="n">mUShort</span><span class="p">;</span>
+    <span class="kt">int</span>                          <span class="n">mInteger</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span>                 <span class="n">mUInteger</span><span class="p">;</span>
+    <span class="kt">long</span> <span class="kt">long</span>                    <span class="n">mLong</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span>           <span class="n">mULong</span><span class="p">;</span>
+    <span class="kt">float</span>                        <span class="n">mFloat</span><span class="p">;</span>
+    <span class="kt">double</span>                       <span class="n">mDouble</span><span class="p">;</span>
+    <span class="n">machbaseAppendIPStruct</span>       <span class="n">mIP</span><span class="p">;</span>
+    <span class="n">machbaseAppendVarStruct</span>      <span class="n">mVar</span><span class="p">;</span>     <span class="cm">/* for all varying type */</span>
+    <span class="n">machbaseAppendVarStruct</span>      <span class="n">mVarchar</span><span class="p">;</span> <span class="cm">/* alias */</span>
+    <span class="n">machbaseAppendVarStruct</span>      <span class="n">mText</span><span class="p">;</span>    <span class="cm">/* alias */</span>
+    <span class="n">machbaseAppendVarStruct</span>      <span class="n">mBinary</span><span class="p">;</span>  <span class="cm">/* binary */</span>
+    <span class="n">machbaseAppendVarStruct</span>      <span class="n">mBlob</span><span class="p">;</span>    <span class="cm">/* reserved alias */</span>
+    <span class="n">machbaseAppendVarStruct</span>      <span class="n">mClob</span><span class="p">;</span>    <span class="cm">/* reserved alias */</span>
+    <span class="n">machbaseAppendDateTimeStruct</span> <span class="n">mDateTime</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machbaseAppendParam</span><span class="p">;</span>
+ 
+<span class="cp">#define SQL_APPEND_PARAM machbaseAppendParam
+</span></code></pre></div></div>
+
+<p>As you can see from the above, there is a structure in which a shared structure machbaseAppendParam which internally contains one argument. The length and value for the data and string can be explicitly entered for each data type. Examples of actual use are as follows.</p>
+
+<p><strong>Fixed-Length Numeric Type Input</strong></p>
+
+<p>Fixed-length numeric types are short, ushort, integer, uinteger, long, ulong, float, and double. This type can be entered by directly assigning a value to the structure member of SQL_APPEND_PARAM.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Database Type</th>
+      <th>NULL Macro</th>
+      <th>SQL_APPEND_PARAM Member</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SHORT</td>
+      <td>SQL_APPEND_SHORT_NULL</td>
+      <td>mShort</td>
+    </tr>
+    <tr>
+      <td>USHORT</td>
+      <td>SQL_APPEND_USHORT_NULL</td>
+      <td>mUShort</td>
+    </tr>
+    <tr>
+      <td>INTEGER</td>
+      <td>SQL_APPEND_INTEGER_NULL</td>
+      <td>mInteger</td>
+    </tr>
+    <tr>
+      <td>UINTEGER</td>
+      <td>SQL_APPEND_UINTEGER_NULL</td>
+      <td>mUInteger</td>
+    </tr>
+    <tr>
+      <td>LONG</td>
+      <td>SQL_APPEND_LONG_NULL</td>
+      <td>mLong</td>
+    </tr>
+    <tr>
+      <td>ULONG</td>
+      <td>SQL_APPEND_ULONG_NULL</td>
+      <td>mULong</td>
+    </tr>
+    <tr>
+      <td>FLOAT</td>
+      <td>SQL_APPEND_FLOAT_NULL</td>
+      <td>mFloat</td>
+    </tr>
+    <tr>
+      <td>DOUBLE</td>
+      <td>SQL_APPEND_DOUBLE_NULL</td>
+      <td>mDouble</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following is an example of entering actual values.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Assume that the Table Schema consists of eight columns, SHORT, USHORT, INTEGER, UINTEGER, LONG, ULONG, FLOAT, and DOUBLE, respectively.</span>
+ 
+<span class="kt">void</span> <span class="nf">testAppendExampleFunc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SQL_APPEND_PARAM</span> <span class="n">sParam</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
+ 
+    <span class="cm">/* fixed column */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mShort</span> <span class="o">=</span> <span class="n">SQL_APPEND_SHORT_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">mUShort</span> <span class="o">=</span> <span class="n">SQL_APPEND_USHORT_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">mInteger</span> <span class="o">=</span> <span class="n">SQL_APPEND_INTEGER_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="n">mUInteger</span> <span class="o">=</span> <span class="n">SQL_APPEND_UINTEGER_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">4</span><span class="p">].</span><span class="n">mLong</span> <span class="o">=</span> <span class="n">SQL_APPEND_LONG_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">5</span><span class="p">].</span><span class="n">mULong</span> <span class="o">=</span> <span class="n">SQL_APPEND_ULONG_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">6</span><span class="p">].</span><span class="n">mFloat</span> <span class="o">=</span> <span class="n">SQL_APPEND_FLOAT_NULL</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">7</span><span class="p">].</span><span class="n">mDouble</span> <span class="o">=</span> <span class="n">SQL_APPEND_DOUBLE_NULL</span><span class="p">;</span>
+ 
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* FIXED COLUMN Value */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mShort</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">mUShort</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">mInteger</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="n">mUInteger</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">4</span><span class="p">].</span><span class="n">mLong</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">5</span><span class="p">].</span><span class="n">mULong</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">6</span><span class="p">].</span><span class="n">mFloat</span> <span class="o">=</span> <span class="mi">8</span><span class="p">.</span><span class="mi">4</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">7</span><span class="p">].</span><span class="n">mDouble</span> <span class="o">=</span> <span class="mi">10</span><span class="p">.</span><span class="mi">9</span><span class="p">;</span>
+ 
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Date Type Input</strong></p>
+
+<p>Below is an example of inputting data of DATETIME type. Several macros are available for convenience.</p>
+
+<p>Performs operations on the mDateTime member in SQL_APPEND_PARAM. The following macro can specify a date by setting a 64-bit integer value called mTime in the mDateTime structure.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">machbaseAppendDateTimeStruct</span>
+<span class="p">{</span>
+<span class="kt">long</span> <span class="kt">long</span>       <span class="n">mTime</span><span class="p">;</span>
+<span class="cp">#if defined(SUPPORT_STRUCT_TM)
+</span><span class="k">struct</span> <span class="n">tm</span>       <span class="n">mTM</span><span class="p">;</span>
+<span class="cp">#endif
+</span><span class="kt">char</span>           <span class="o">*</span><span class="n">mDateStr</span><span class="p">;</span>
+<span class="kt">char</span>           <span class="o">*</span><span class="n">mFormatStr</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machbaseAppendDateTimeStruct</span><span class="p">;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Macro</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SQL_APPEND_DATETIME_NOW</td>
+      <td>Enters the current client time.</td>
+    </tr>
+    <tr>
+      <td>SQL_APPEND_DATETIME_STRUCT_TM</td>
+      <td>Sets a value to mTM, the struct tm structure of mDateTime, and inputs the value to the database.</td>
+    </tr>
+    <tr>
+      <td>SQL_APPEND_DATETIME_STRING</td>
+      <td>Sets a value for the string type of mDateTime and enters it into the database.<br /><br />mDateStr: real date string value assigned<br />mFormatStr: format string assignment for date string</td>
+    </tr>
+    <tr>
+      <td>SQL_APPEND_DATETIME_NULL</td>
+      <td>Enters the value of the date column as NULL.</td>
+    </tr>
+    <tr>
+      <td>Any 64-bit Value</td>
+      <td>This value is entered as the actual datetime.<br /><br />This value represents an integer value in nanoseconds since January 1, 1970.<br />For example, if this value is 1 billion (1,000,000,000), it represents 0: 1: 1 on January 1, 1970. (GMT)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// Assume that the table schema consists of eight columns, SHORT, USHORT, INTEGER, UINTEGER, LONG, ULONG, FLOAT, and DOUBLE, respectively.</span>
+ 
+<span class="kt">void</span> <span class="nf">testAppendDateTimeFunc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SQL_mach_PARAM</span> <span class="n">sParam</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="cm">/* NULL Insert */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTime</span>   <span class="o">=</span> <span class="n">SQL_APPEND_DATETIME_NULL</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* Current Time */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTime</span>      <span class="o">=</span> <span class="n">SQL_APPEND_DATETIME_NOW</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* nano second since 1970/01/01 */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTime</span>      <span class="o">=</span> <span class="mi">1234</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* String format time */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTime</span>      <span class="o">=</span> <span class="n">SQL_APPEND_DATETIME_STRING</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mDateStr</span>   <span class="o">=</span> <span class="s">"23/May/2014:17:41:28"</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mFormatStr</span> <span class="o">=</span> <span class="s">"DD/MON/YYYY:HH24:MI:SS"</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* struct tm based time */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTime</span>      <span class="o">=</span> <span class="n">SQL_APPEND_DATETIME_STRUCT_TM</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTM</span><span class="p">.</span><span class="n">tm_year</span> <span class="o">=</span> <span class="mi">2000</span> <span class="o">-</span> <span class="mi">1900</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTM</span><span class="p">.</span><span class="n">tm_mon</span>  <span class="o">=</span>  <span class="mi">11</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mDateTime</span><span class="p">.</span><span class="n">mTM</span><span class="p">.</span><span class="n">tm_mday</span>  <span class="o">=</span> <span class="mi">31</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Internet Address Type Input</strong></p>
+
+<p>The following is an example of inputting IPv4 and IPv6 type data. There are also several macros available for your convenience. Performs operations on the mLength member in SQL_APPEND_PARAM.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* for IPv4, IPv6 as bin or string representation */</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">machbaseAppendIPStruct</span>
+<span class="p">{</span>
+<span class="kt">unsigned</span> <span class="kt">char</span>   <span class="n">mLength</span><span class="p">;</span> <span class="cm">/* 0:null, 4:ipv4, 6:ipv6, 255:string representation */</span>
+<span class="kt">unsigned</span> <span class="kt">char</span>   <span class="n">mAddr</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+<span class="kt">char</span>           <span class="o">*</span><span class="n">mAddrString</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machbaseAppendIPStruct</span><span class="p">;</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Macro (set on mLength)</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SQL_APPEND_IP_NULL</td>
+      <td>Enters a NULL value in the corresponding column</td>
+    </tr>
+    <tr>
+      <td>SQL_APPEND_IP_IPV4</td>
+      <td>mAddr has IPv4</td>
+    </tr>
+    <tr>
+      <td>SQL_APPEND_IP_IPV6</td>
+      <td>mAddr has IPv6</td>
+    </tr>
+    <tr>
+      <td>SQL_APPEND_IP_STRING</td>
+      <td>mAddrString has an address string.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following is an example of entering actual values for each case.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">testAppendIPFunc</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="n">SQL_APPEND_PARAM</span> <span class="n">sParam</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="cm">/* NULL */</span>
+<span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>  <span class="o">=</span> <span class="n">SQL_APPEND_IP_NULL</span><span class="p">;</span>
+<span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+
+    <span class="cm">/* Direct array access */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>  <span class="o">=</span> <span class="n">SQL_APPEND_IP_IPV4</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* IPv4 from binary */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>  <span class="o">=</span> <span class="n">SQL_APPEND_IP_IPV4</span><span class="p">;</span>
+    <span class="o">*</span><span class="p">(</span><span class="n">in_addr_t</span> <span class="o">*</span><span class="p">)(</span><span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">)</span> <span class="o">=</span> <span class="n">inet_addr</span><span class="p">(</span><span class="s">"192.168.0.1"</span><span class="p">);</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* IPv4 : ipv4 from string */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>     <span class="o">=</span> <span class="n">SQL_APPEND_IP_STRING</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddrString</span> <span class="o">=</span> <span class="s">"203.212.222.111"</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="cm">/* IPv4 : ipv4 from invalid string */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>     <span class="o">=</span> <span class="n">SQL_APPEND_IP_STRING</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddrString</span> <span class="o">=</span> <span class="s">"ip address is not valid"</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>                           <span class="c1">// invalid IP value</span>
+ 
+    <span class="cm">/* IPv6 : ipv6 from binary bytes */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>  <span class="o">=</span> <span class="n">SQL_APPEND_IP_IPV6</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddr</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>     <span class="o">=</span> <span class="n">SQL_APPEND_IP_STRING</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddrString</span> <span class="o">=</span> <span class="s">"::127.0.0.1"</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+ 
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mLength</span>     <span class="o">=</span> <span class="n">SQL_APPEND_IP_STRING</span><span class="p">;</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mIP</span><span class="p">.</span><span class="n">mAddrString</span> <span class="o">=</span> <span class="s">"FFFF:FFFF:1111:2222:3333:4444:7733:2123"</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Variable Data Types (Character and Binary Data) Input</strong></p>
+
+<p>Variable data types include VARCHAR and TEXT, and BLOB and CLOB. In existing functions, only VARCHAR was supported, and there was no way for the user to enter the length of the string. For that reason, we had to get the length through the strlen () function each time, but from function V2, the user can directly specify the length for the variable data type. Thus, if the user knows the length in advance, data can be input more quickly. Internally, the variable data type is a structure. However, for convenience of development, members are created separately for each data type.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">machAppendVarStruct</span>
+<span class="p">{</span>
+<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">mLength</span><span class="p">;</span>
+<span class="kt">void</span> <span class="o">*</span><span class="n">mData</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">machAppendVarStruct</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>When inputting a variable data type, set the length of the data to mLength and set the primitive data pointer to mData. If mLength is greater than the defined schema, it is automatically truncated. At this time, SQLAppendDataV2 () returns SQL_SUCCESS_WITH_INFO and also fills the internal structure with a related warning message. To see this warning message, use SQLError () function.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Database Type</td>
+      <td>NULL Macro</td>
+      <td>SQL_APPEND_PARAM Member<br />(mVar is acceptable)</td>
+    </tr>
+    <tr>
+      <td>VARCHAR</td>
+      <td>SQL_APPEND_VARCHAR_NULL</td>
+      <td>mVarchar</td>
+    </tr>
+    <tr>
+      <td>TEXT</td>
+      <td>SQL_APPEND_TEXT_NULL</td>
+      <td>mText</td>
+    </tr>
+    <tr>
+      <td>BINARY</td>
+      <td>SQL_APPEND_BINARY_NULL</td>
+      <td>mBinary</td>
+    </tr>
+    <tr>
+      <td>BLOB</td>
+      <td>SQL_APPEND_BLOB_NULL</td>
+      <td>mBlob</td>
+    </tr>
+    <tr>
+      <td>CLOB</td>
+      <td>SQL_APPEND_CLOB_NULL</td>
+      <td>mClob</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following is an example of entering actual values for each environment. Assumes that there is one VARCHAR column.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">ttt</span> <span class="p">(</span><span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">testAppendVarcharFunc</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">SQL_mach_PARAM</span> <span class="n">sParam</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+ 
+    <span class="cm">/*  VARCHAR : NULL */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mVarchar</span><span class="p">.</span><span class="n">mLength</span> <span class="o">=</span> <span class="n">SQL_APPEND_VARCHAR_NULL</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span> <span class="cm">/* OK */</span>
+ 
+    <span class="cm">/*  VARCHAR : string */</span>
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">sVarchar</span><span class="p">,</span> <span class="s">"MY VARCHAR"</span><span class="p">);</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mVarchar</span><span class="p">.</span><span class="n">mLength</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">sVarchar</span><span class="p">);</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mVarchar</span><span class="p">.</span><span class="n">mData</span>   <span class="o">=</span> <span class="n">sVarchar</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span> <span class="cm">/* OK */</span>
+ 
+    <span class="cm">/*  VARCHAR : Truncation! */</span>
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">sVarchar</span><span class="p">,</span> <span class="s">"MY VARCHAR9"</span><span class="p">);</span> <span class="cm">/* Truncation! */</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mVarchar</span><span class="p">.</span><span class="n">mLength</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">sVarchar</span><span class="p">);</span>
+    <span class="n">sParam</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">mVarchar</span><span class="p">.</span><span class="n">mData</span>   <span class="o">=</span> <span class="n">sVarchar</span><span class="p">;</span>
+    <span class="n">SQLAppendDataV2</span><span class="p">(</span><span class="n">Stmt</span><span class="p">,</span> <span class="n">sParam</span><span class="p">);</span>  <span class="cm">/* SQL_SUCCESS_WITH_INFO */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="sqlappenddatabytimev2">SQLAppendDataByTimeV2</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span>  <span class="n">SQLAppendDataByTimeV2</span><span class="p">(</span><span class="n">SQLHSTMT</span> <span class="n">StatementHandle</span><span class="p">,</span> <span class="n">SQLBIGINT</span> <span class="n">aTime</span><span class="p">,</span> <span class="n">SQL_APPEND_PARAM</span>  <span class="o">*</span><span class="n">aData</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This function is a function to input data for the corresponding channel, and the value of <code class="language-plaintext highlighter-rouge">_arrival_time</code> stored in the DB can be set to a specific time value instead of the current time. For example, you want to enter the date in the log file a month ago as the date.</p>
+
+<ul>
+  <li>aTime is the time value to be set to <code class="language-plaintext highlighter-rouge">_arrival_time</code>. You must enter the nano second value from January 1, 1970 to the present. Also, input values ​​must be sorted in order from the past to the present.</li>
+  <li>aData is an array containing pointers to the data to be input. The number of arrays must match the number of columns held by the table specified at Open.</li>
+</ul>
+
+<p>For the rest, refer to the SQLAppendDataV2 () function.</p>
+
+<h2 id="sqlappendflush">SQLAppendFlush</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span> <span class="n">SQLAppendFlush</span><span class="p">(</span><span class="n">SQLHSTMT</span> <span class="n">StatementHandle</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This function immediately sends the data accumulated in the current channel buffer to the Machbase server.</p>
+
+<h2 id="sqlappendclose">SQLAppendClose</h2>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span> <span class="n">SQLAppendClose</span><span class="p">(</span><span class="n">SQLHSTMT</span>   <span class="n">aStmtHandle</span><span class="p">,</span>
+                         <span class="n">SQLBIGINT</span><span class="o">*</span> <span class="n">aSuccessCount</span><span class="p">,</span>
+                         <span class="n">SQLBIGINT</span><span class="o">*</span> <span class="n">aFailureCount</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This function closes the currently open channel. If an unopened channel exists, an error occurs.</p>
+
+<ul>
+  <li>aSuccessCount: The number of successful Append records.</li>
+  <li>aFailureCount: The number of failed Append records.</li>
+</ul>
+
+<h2 id="sqlappendseterrorcallback">SQLAppendSetErrorCallback</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span> <span class="n">SQLAppendSetErrorCallback</span><span class="p">(</span><span class="n">SQLHSTMT</span> <span class="n">aStmtHandle</span><span class="p">,</span> <span class="n">SQLAppendErrorCallback</span> <span class="n">aFunc</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This function sets the callback function that is called when an error occurs during append. If you do not set this function, the client will ignore any errors that occur in the server.</p>
+
+<ul>
+  <li>aStmtHandle: Specifies a Statement to check for errors.</li>
+  <li>aFunc: Specifies the function pointer to call on Append failure.</li>
+</ul>
+
+<p>The prototype for SQLAppendErrorCallback is:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="o">*</span><span class="n">SQLAppendErrorCallback</span><span class="p">)(</span><span class="n">SQLHSTMT</span> <span class="n">aStmtHandle</span><span class="p">,</span>
+                                     <span class="n">SQLINTEGER</span> <span class="n">aErrorCode</span><span class="p">,</span>
+                                     <span class="n">SQLPOINTER</span> <span class="n">aErrorMessage</span><span class="p">,</span>
+                                         <span class="n">SQLLEN</span> <span class="n">aErrorBufLen</span><span class="p">,</span>
+                                     <span class="n">SQLPOINTER</span> <span class="n">aRowBuf</span><span class="p">,</span>
+                                         <span class="n">SQLLEN</span> <span class="n">aRowBufLen</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>aStatementHandle: the statement handle that generated the error</li>
+  <li>aErrorCode: 32-bit error code that caused the error</li>
+  <li>aErrorMessage: string for the error code</li>
+  <li>aErrorBufLen: the length of aErrorMessage</li>
+  <li>aRowBuf: a string containing the detailed description of the record that caused the error</li>
+  <li>aRowBufLen: length of aRowBuf</li>
+</ul>
+
+<p><strong>Example of Using Error Callback (dumpError)</strong></p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">dumpError</span><span class="p">(</span><span class="n">SQLHSTMT</span>    <span class="n">aStmtHandle</span><span class="p">,</span>
+<span class="n">SQLINTEGER</span>  <span class="n">aErrorCode</span><span class="p">,</span>
+<span class="n">SQLPOINTER</span>  <span class="n">aErrorMessage</span><span class="p">,</span>
+<span class="n">SQLLEN</span>      <span class="n">aErrorBufLen</span><span class="p">,</span>
+<span class="n">SQLPOINTER</span>  <span class="n">aRowBuf</span><span class="p">,</span>
+<span class="n">SQLLEN</span>      <span class="n">aRowBufLen</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="kt">char</span>       <span class="n">sErrMsg</span><span class="p">[</span><span class="mi">1024</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="p">};</span>
+<span class="kt">char</span>       <span class="n">sRowMsg</span><span class="p">[</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="p">};</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">aErrorMessage</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">strncpy</span><span class="p">(</span><span class="n">sErrMsg</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">aErrorMessage</span><span class="p">,</span> <span class="n">aErrorBufLen</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="k">if</span> <span class="p">(</span><span class="n">aRowBuf</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">strncpy</span><span class="p">(</span><span class="n">sRowMsg</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">aRowBuf</span><span class="p">,</span> <span class="n">aRowBufLen</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">"Append Error : [%d][%s]</span><span class="se">\n</span><span class="s">[%s]</span><span class="se">\n\n</span><span class="s">"</span><span class="p">,</span> <span class="n">aErrorCode</span><span class="p">,</span> <span class="n">sErrMsg</span><span class="p">,</span> <span class="n">sRowMsg</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="p">......</span>
+
+    <span class="k">if</span><span class="p">(</span> <span class="n">SQLAppendOpen</span><span class="p">(</span><span class="n">m_IStmt</span><span class="p">,</span> <span class="n">TableName</span><span class="p">,</span> <span class="n">aErrorCheckCount</span><span class="p">)</span> <span class="o">!=</span> <span class="n">SQL_SUCCESS</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">"SQLAppendOpen error</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// Setting Callback.</span>
+    <span class="n">assert</span><span class="p">(</span><span class="n">SQLAppendSetErrorCallback</span><span class="p">(</span><span class="n">m_IStmt</span><span class="p">,</span> <span class="n">dumpError</span><span class="p">)</span> <span class="o">==</span> <span class="n">SQL_SUCCESS</span><span class="p">);</span>
+ 
+    <span class="n">doAppend</span><span class="p">(</span><span class="n">sMaxAppend</span><span class="p">);</span>
+ 
+    <span class="k">if</span><span class="p">(</span> <span class="n">SQLAppendClose</span><span class="p">(</span><span class="n">m_IStmt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sSuccessCount</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sFailureCount</span><span class="p">)</span> <span class="o">!=</span> <span class="n">SQL_SUCCESS</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">"SQLAppendClose error</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div></div>
+
+<h2 id="sqlsetconnectappendflush">SQLSetConnectAppendFlush</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span> <span class="n">SQL_API</span> <span class="n">SQLSetConnectAppendFlush</span><span class="p">(</span><span class="n">SQLHDBC</span> <span class="n">hdbc</span><span class="p">,</span> <span class="n">SQLINTEGER</span> <span class="k">option</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The data input by Append is written to the communication buffer and is sent to the server when the user calls the SQLAppendFlush function in the waiting state or the communication buffer becomes full. You can use this function if you want the user to send data by append to the server at regular intervals even if the buffer is not full. This function computes the difference between the last transmitted time and the current time every 100ms, and transfers the contents of the communication buffer to the server when the specified time (1 second if not set) has passed.</p>
+
+<p>The parameters are:</p>
+
+<ul>
+  <li>hdbc: DB connection handle.</li>
+  <li>If option: 0, auto flush is off; otherwise, auto flush is on.</li>
+</ul>
+
+<p>Executing on an unconnected hdbc will result in an error.</p>
+
+<h2 id="sqlsetstmtappendinterval">SQLSetStmtAppendInterval</h2>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLRETURN</span> <span class="n">SQL_API</span> <span class="n">SQLSetStmtAppendInterval</span><span class="p">(</span><span class="n">SQLHSTMT</span> <span class="n">hstmt</span><span class="p">,</span> <span class="n">SQLINTEGER</span> <span class="n">fValue</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Uses SQLSetConnectAppendFlush to turn off automatic flushing or flushing for a particular statement when you turn on flushing on a time unit.</p>
+
+<p>The parameters are:</p>
+
+<ul>
+  <li>hstmt: This is the statement handle that you want to adjust the flush interval.</li>
+  <li>fValue: The value to which you want to adjust the flush interval. <strong>If 0, flush is not performed and the unit is ms</strong>. Set to a multiple of 100 since the thread that determines whether to flush every 100ms is executed. It does not automatically flush at exactly the right time. <strong>1000 is the default value</strong>.</li>
+</ul>
+
+<p>Execution of this function will succeed even if time-based flush is not running.</p>
+
+<h2 id="error-check-and-description">Error Check and Description</h2>
+
+<p>This is a description of the code and how to check for errors when using the Append related functions. If the return value in the CLI function is not SQL_SUCCESS, you can check the error message using the following code.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SQLINTEGER</span> <span class="n">errNo</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">msgLength</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">sqlState</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
+<span class="kt">char</span> <span class="n">errMsg</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">SQL_SUCCESS</span> <span class="o">==</span> <span class="n">SQLError</span> <span class="p">(</span> <span class="n">env</span><span class="p">,</span> <span class="n">con</span><span class="p">,</span> <span class="n">stmt</span><span class="p">,</span> <span class="p">(</span><span class="n">SQLCHAR</span> <span class="o">*</span><span class="p">)</span><span class="n">sqlState</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">errNo</span><span class="p">,</span>
+<span class="p">(</span><span class="n">SQLCHAR</span> <span class="o">*</span><span class="p">)</span><span class="n">errMsg</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">msgLength</span> <span class="p">))</span>
+<span class="p">{</span>
+<span class="c1">//set five length error code</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"ERROR-%05d: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">errNo</span><span class="p">,</span> <span class="n">errMsg</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The error message returned from the Append related function is as follows.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>function</th>
+      <th>message</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="7">SQLAppendOpen</td>
+      <td>statement is already opened.</td>
+      <td>Occurs when SQLAppendOpen is executed in duplicate.</td>
+    </tr>
+    <tr>
+      <td>Failed to close stream protocol.</td>
+      <td>Stream protocol termination failed.</td>
+    </tr>
+    <tr>
+      <td>Failed to read protocol.</td>
+      <td>A network read error occurred.</td>
+    </tr>
+    <tr>
+      <td>cannot read column meta.</td>
+      <td>Invalid column meta information structure</td>
+    </tr>
+    <tr>
+      <td>cannot allocate memory.</td>
+      <td>An internal buffer memory allocation error occurred.</td>
+    </tr>
+    <tr>
+      <td>cannot allocate compress memory.</td>
+      <td>Compressed buffer memory allocation error occurred.</td>
+    </tr>
+    <tr>
+      <td>invalid return after reading column meta.</td>
+      <td>Return value has an error.</td>
+    </tr>
+    <tr>
+      <td rowspan="3">SQLAppendData</td>
+      <td>statement is not opened.</td>
+      <td>Called AppendData without AppendOpen.</td>
+    </tr>
+    <tr>
+      <td>column() truncated :</td>
+      <td>Occurs when you enter data that is larger than the size specified in the varchar type column.</td>
+    </tr>
+    <tr>
+      <td>Failed to add binary.</td>
+      <td>Write error in communication buffer occurred.</td>
+    </tr>
+    <tr>
+      <td rowspan="5">SQLAppendClose</td>
+      <td>statement is not opened.</td>
+      <td>Not in AppendOpen state.</td>
+    </tr>
+    <tr>
+      <td>Failed to close stream protocol.</td>
+      <td>Stream protocol termination failed.</td>
+    </tr>
+    <tr>
+      <td>Failed to close buffer protocol.</td>
+      <td>Buffer protocol termination failed.</td>
+    </tr>
+    <tr>
+      <td>cannot read column meta.</td>
+      <td>The column meta information structure is incorrect.</td>
+    </tr>
+    <tr>
+      <td>invalid return after reading column meta.</td>
+      <td>Return value has an error.</td>
+    </tr>
+    <tr>
+      <td rowspan="2">SQLAppendFlush</td>
+      <td>statement is not opened.</td>
+      <td>Not in AppendOpen state</td>
+    </tr>
+    <tr>
+      <td>Failed to close stream protocol.</td>
+      <td>A network write error occurred.</td>
+    </tr>
+    <tr>
+      <td rowspan="2">SQLSetErrorCallback</td>
+      <td>statement is not opened.</td>
+      <td>Not in AppendOpen state.</td>
+    </tr>
+    <tr>
+      <td>Protocol Error (not APPEND_DATA_PROTOCOL)</td>
+      <td>Communication buffer read result is not APPEND_DATA_PROTOCOL value.</td>
+    </tr>
+    <tr>
+      <td rowspan="8">SQLAppendDataV2</td>
+      <td>Invalid date format or date string.</td>
+      <td>Occurs when the datetime type is wrong.</td>
+    </tr>
+    <tr>
+      <td>statement is not opened.</td>
+      <td>Not in AppendOpen state</td>
+    </tr>
+    <tr>
+      <td>column() truncated :</td>
+      <td>This occurs when you enter data that is larger than the size specified in the binary type column.</td>
+    </tr>
+    <tr>
+      <td>column() truncated :</td>
+      <td>Occurs when you enter data that is larger than the size specified in the varchar and text type column.</td>
+    </tr>
+    <tr>
+      <td>Failed to add stream.</td>
+      <td>Write error in communication buffer occurred.</td>
+    </tr>
+    <tr>
+      <td>IP address length is invalid.</td>
+      <td>The mLength value of the IPv4, IPv6 type structure is specified incorrectly.</td>
+    </tr>
+    <tr>
+      <td>IP string is invalid.</td>
+      <td>Not in IPv4 or IPv6 format.</td>
+    </tr>
+    <tr>
+      <td>Unknown data type has been specified.</td>
+      <td>Not the data type used by Machbase.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="column-wise-parameter-binding">Column wise parameter binding</h1>
+
+<p>The SQLAppend function, which is used to enter a large amount of data into Machbase quickly, can be used only when entering a log / tag table, and the SQLAppend function cannot be used to perform a bulk update on a lookup or volatile table.
+For this purpose, Machbase 5.5 and later versions support column wise parameter binding. (Row wise format parameter binding is not yet supported.)
+Set SQL_ATTR_PARAM_BIND_TYPE in the argument Attribute of the function SQLSetStmtAttr () and SQL_PARAM_BIND_BY_COLUMN in the parameter param.
+For each column to bind, set the parameter to an array and the indicator variable to an array. Then call SQLBindParameter () with this parameter.
+The figure below shows how columnar binding works for each parameter array.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="2">Column A<br />(parameter A)</th>
+      <th colspan="2">Column B<br />(parameter B)</th>
+      <th colspan="2">Column C<br />(parameter C)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Value_Array</td>
+      <td>Indicator/<br /><br />length array</td>
+      <td>Value_Array</td>
+      <td>Indicator/<br /><br />length array</td>
+      <td>Value_Array</td>
+      <td>Indicator/<br /><br />length array</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define DESC_LEN 51
+#define ARRAY_SIZE 10
+</span><span class="n">SQLCHAR</span> <span class="o">*</span> <span class="n">Statement</span> <span class="o">=</span> <span class="s">"INSERT INTO Parts (PartID, Description, Price) VALUES (?, ?, ?)"</span><span class="p">;</span>
+ 
+<span class="cm">/* Array of parameters to bind */</span>
+<span class="n">SQLUINTEGER</span> <span class="n">PartIDArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">];</span>
+<span class="n">SQLCHAR</span> <span class="n">DescArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">][</span><span class="n">DESC_LEN</span><span class="p">];</span>
+<span class="n">SQLREAL</span> <span class="n">PriceArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">];</span>
+<span class="cm">/* Array of predicate variables to bind */</span>
+<span class="n">SQLINTEGER</span> <span class="n">PartIDIndArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">],</span> <span class="n">DescLenOrIndArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">],</span> <span class="n">PriceIndArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">];</span>
+<span class="n">SQLUSMALLINT</span> <span class="n">i</span><span class="p">,</span> <span class="n">ParamStatusArray</span><span class="p">[</span><span class="n">ARRAY_SIZE</span><span class="p">];</span>
+<span class="n">SQLUINTEGER</span> <span class="n">ParamsProcessed</span><span class="p">;</span>
+ 
+<span class="c1">// Set the SQL_ATTR_PARAM_BIND_TYPE statement attribute to use</span>
+<span class="c1">// column-wise binding.</span>
+<span class="n">SQLSetStmtAttr</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="n">SQL_ATTR_PARAM_BIND_TYPE</span><span class="p">,</span> <span class="n">SQL_PARAM_BIND_BY_COLUMN</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="c1">// Specify the number of elements in each parameter array.</span>
+<span class="n">SQLSetStmtAttr</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="n">SQL_ATTR_PARAMSET_SIZE</span><span class="p">,</span> <span class="n">ARRAY_SIZE</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="c1">// Specify an array in which to return the status of each set of</span>
+<span class="c1">// parameters.</span>
+<span class="n">SQLSetStmtAttr</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="n">SQL_ATTR_PARAM_STATUS_PTR</span><span class="p">,</span> <span class="n">ParamStatusArray</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="c1">// Specify an SQLUINTEGER value in which to return the number of sets of</span>
+<span class="c1">// parameters processed.</span>
+<span class="n">SQLSetStmtAttr</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="n">SQL_ATTR_PARAMS_PROCESSED_PTR</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ParamsProcessed</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="c1">// Bind the parameters in column-wise fashion.</span>
+<span class="n">SQLBindParameter</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">SQL_PARAM_INPUT</span><span class="p">,</span> <span class="n">SQL_C_ULONG</span><span class="p">,</span> <span class="n">SQL_INTEGER</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">PartIDArray</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">PartIDIndArray</span><span class="p">);</span>
+<span class="n">SQLBindParameter</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">SQL_PARAM_INPUT</span><span class="p">,</span> <span class="n">SQL_C_CHAR</span><span class="p">,</span> <span class="n">SQL_CHAR</span><span class="p">,</span> <span class="n">DESC_LEN</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">DescArray</span><span class="p">,</span> <span class="n">DESC_LEN</span><span class="p">,</span> <span class="n">DescLenOrIndArray</span><span class="p">);</span>
+<span class="n">SQLBindParameter</span><span class="p">(</span><span class="n">hstmt</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">SQL_PARAM_INPUT</span><span class="p">,</span> <span class="n">SQL_C_FLOAT</span><span class="p">,</span> <span class="n">SQL_REAL</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">PriceArray</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">PriceIndArray</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h1 id="supported-strings">Supported Strings</h1>
+
+<p>Machbase stores string data using UTF-8 by default.
+In the case of Windows that inputs/outputs strings in methods other than UTF-8, ODBC converts them as follows.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>OS</th>
+      <th>Unicode/Non-Unicode</th>
+      <th>String Conversion</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Windows</td>
+      <td>Unicode (UTF-16)</td>
+      <td>UTF-16 ⟷ UTF-8</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Windows</td>
+      <td>Non-Unicode (MBCS)</td>
+      <td>MBCS ⟷ UTF-8</td>
+      <td>Use the default string of Non-Unicode application in Windows settings</td>
+    </tr>
+    <tr>
+      <td>Linux</td>
+      <td>UTF-8</td>
+      <td>N/A</td>
+      <td>UTF-8 only supported</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

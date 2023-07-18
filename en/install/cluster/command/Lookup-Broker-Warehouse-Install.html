@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>Lookup / Broker / Warehouse Installation</title>
+    <meta property="og:title" content="Lookup / Broker / Warehouse Installation" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="Lookup / Broker / Warehouse Installation">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Lookup / Broker / Warehouse Installation"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/install/cluster/command/Lookup-Broker-Warehouse-Install.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/install/cluster/command/Lookup-Broker-Warehouse-Install.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/install/">Install</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/install/cluster/">Cluster</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/install/cluster/command/">Command</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/install/cluster/command/Lookup-Broker-Warehouse-Install.html">Lookup / Broker / Warehouse Installation</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">Lookup / Broker / Warehouse Installation</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#lookup-installation">Lookup Installation</a>
+    <ul>
+      <li><a href="#installation-conditions">Installation Conditions</a></li>
+    </ul>
+  </li>
+  <li><a href="#delete-lookup">Delete Lookup</a></li>
+  <li><a href="#shut-downstop-lookup">Shut Down/Stop Lookup</a></li>
+  <li><a href="#change-lookup-master">Change Lookup Master</a></li>
+  <li><a href="#broker-installation">Broker Installation</a></li>
+  <li><a href="#delete-broker">Delete Broker</a></li>
+  <li><a href="#shut-downstop-broker">Shut Down/Stop Broker</a></li>
+  <li><a href="#warehouse-installation">Warehouse Installation</a>
+    <ul>
+      <li><a href="#group-1-installation">Group 1 Installation</a></li>
+      <li><a href="#add-node-to-group-1">Add Node to Group 1</a></li>
+      <li><a href="#group-2-installation">Group 2 Installation</a></li>
+      <li><a href="#add-node-to-group-2">Add Node to Group 2</a></li>
+    </ul>
+  </li>
+  <li><a href="#delete-warehouse">Delete Warehouse</a></li>
+  <li><a href="#shut-downstop-warehouse">Shut Down/Stop Warehouse</a></li>
+</ul>
+
+<h1 id="lookup-installation">Lookup Installation</h1>
+
+<p>Add a lookup node in the Coordinator node. Multiple lookup nodes can be registered.</p>
+
+<p>The deployer node must be pre-installed on the server.</p>
+
+<p>When the deployer node is installed, all operations are performed on the coordinator node, and there is nothing to set up by connecting to the server.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Add lookup master node</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--add-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5301"</span>  <span class="se">\</span>
+        <span class="nt">--node-type</span><span class="o">=</span>lookup <span class="nt">--lookup-type</span><span class="o">=</span>master <span class="nt">--deployer</span><span class="o">=</span><span class="s2">"192.168.0.84:5201"</span>      <span class="se">\</span>
+        <span class="nt">--home-path</span><span class="o">=</span><span class="s2">"/home/machbase/lookup1"</span>
+ 
+ 
+<span class="c"># Add lookup monitor node</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--add-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5302"</span>  <span class="se">\</span>
+        <span class="nt">--node-type</span><span class="o">=</span>lookup <span class="nt">--lookup-type</span><span class="o">=</span>monitor <span class="nt">--deployer</span><span class="o">=</span><span class="s2">"192.168.0.84:5201"</span>         <span class="se">\</span>
+        <span class="nt">--home-path</span><span class="o">=</span><span class="s2">"/home/machbase/lookupm1"</span>
+ 
+ 
+<span class="c"># Add lookup slave node</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--add-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5303"</span>  <span class="se">\</span>
+        <span class="nt">--node-type</span><span class="o">=</span>lookup <span class="nt">--lookup-type</span><span class="o">=</span>slave <span class="nt">--deployer</span><span class="o">=</span><span class="s2">"192.168.0.84:5201"</span>       <span class="se">\</span>
+        <span class="nt">--home-path</span><span class="o">=</span><span class="s2">"/home/machbase/lookup3"</span>
+ 
+  
+<span class="c"># Run lookup node</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--startup-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5301"</span>
+ 
+<span class="c"># You can run lookup nodes in batches</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--startup-lookup</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option items</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–add-node</td>
+      <td>Specifies the node name to be added as “IP: PORT”.</td>
+      <td>192.168.0.84:5301</td>
+    </tr>
+    <tr>
+      <td>–node-type</td>
+      <td>Specifies the node type.<br />There are five types: coordinator, deployer, lookup, broker, and warehouse.</td>
+      <td>lookup</td>
+    </tr>
+    <tr>
+      <td>–deployer</td>
+      <td>Register the deployer node information of the server to be installed.</td>
+      <td>192.168.0.84:5201</td>
+    </tr>
+    <tr>
+      <td>–lookup-type</td>
+      <td>Specify the lookup type<br />There are three types: master, slave, monitor.</td>
+      <td>master</td>
+    </tr>
+    <tr>
+      <td>–home-path</td>
+      <td>Specifies the path to install.<br />Specifies /home/machbase/lookup in machbase account.</td>
+      <td>/home/machabse/lookup</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="installation-conditions">Installation Conditions</h2>
+
+<p>There are 3 types of Lookup node, Master, Slave, and Monitor, and it must be installed according to the conditions below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. Lookup Master Node
+    a. It is a Lookup node that must have only one.
+    b. It must be installed before Monitor and Slave nodes.
+2. Lookup Monitor Node
+    a. It is a Lookup node that must exist at least one.
+    b.For stable HA, there should be one in each server.
+3. Lookup Slave Node
+    a. It is recommended that there be more than one for HA. (If not, HA cannot be guaranteed)
+</code></pre></div></div>
+
+<h1 id="delete-lookup">Delete Lookup</h1>
+
+<p>Remove the broker node from the Coordinator node.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Delete lookup node</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--remove-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5301"</span>
+</code></pre></div></div>
+
+<h1 id="shut-downstop-lookup">Shut Down/Stop Lookup</h1>
+
+<p>Shut down / kill the lookup node on the Coordinator node.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># Terminate lookup node</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--shutdown-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5301"</span>
+ 
+<span class="c"># You can terminate lookup nodes in batches</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--shutdown-lookup</span>
+</code></pre></div></div>
+
+<h1 id="change-lookup-master">Change Lookup Master</h1>
+
+<p>You can change the lookup master node in the coordinator node.</p>
+
+<p>Only lookup slaves can be changed to lookup masters, and the existing lookup masters become lookup slaves.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Change lookup master</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--set-lookup-master</span><span class="o">=</span><span class="s2">"192.168.0.84:5301"</span>
+</code></pre></div></div>
+
+<h1 id="broker-installation">Broker Installation</h1>
+
+<p>Add a broker node to the coordinator node. Multi-broker node registration is possible.</p>
+
+<p>The deployer node must be installed on the server in advance.</p>
+
+<p>Once the deployer node is installed, there is no setting by connecting to the server as  all work can be done on the coordinator node.</p>
+
+<p>The first registered node becomes the leader broker, and the additional registered node becomes the follower broker.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Add broker node.                                </span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--add-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5301"</span>  <span class="se">\</span>
+        <span class="nt">--node-type</span><span class="o">=</span>broker <span class="nt">--deployer</span><span class="o">=</span><span class="s2">"192.168.0.84:5201"</span> <span class="nt">--port-no</span><span class="o">=</span><span class="s2">"5656"</span>          <span class="se">\</span>
+        <span class="nt">--home-path</span><span class="o">=</span><span class="s2">"/home/machbase/broker"</span> <span class="nt">--package-name</span><span class="o">=</span>machbase
+  
+<span class="c"># Run broker node.</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--startup-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5301"</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option items</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–add-node</td>
+      <td>Specifies the node name to be added as “IP: PORT”.<br />The PORT value is set to the CLUSTER_LINK_PORT_NO value.</td>
+      <td>192.168.0.84:5301</td>
+    </tr>
+    <tr>
+      <td>–node-type</td>
+      <td>Specifies the node type.<br />There are five types: coordinator, deployer, lookup, broker, and warehouse.</td>
+      <td>broker</td>
+    </tr>
+    <tr>
+      <td>–deployer</td>
+      <td>Register the deployer node information of the server to be installed.</td>
+      <td>192.168.0.84:5201</td>
+    </tr>
+    <tr>
+      <td>–port-no</td>
+      <td>Specifies ‘machbased’ port.<br />The Broker specifies a default value of 5656.<br />This port is used when connecting to client and machsql.</td>
+      <td>5656</td>
+    </tr>
+    <tr>
+      <td>–home-path</td>
+      <td>Specifies the path to install.<br />Specifies /home/machbase/broker in machbase account</td>
+      <td>/home/machbase/broker</td>
+    </tr>
+    <tr>
+      <td>–package-name</td>
+      <td>Sets the package name specified when package was added.</td>
+      <td>machbase</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="delete-broker">Delete Broker</h1>
+
+<p>Remove the broker node from the Coordinator node.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Delete broker node.</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--remove-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5301"</span>
+</code></pre></div></div>
+
+<h1 id="shut-downstop-broker">Shut Down/Stop Broker</h1>
+
+<p>There is a way to shut down / kill the broker node on the Coordinator node.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Terminate broker node.</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--shutdown-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5301"</span>
+  
+<span class="c"># Stop broker node.</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--kill-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5301"</span>
+</code></pre></div></div>
+
+<p>Alternatively, you can shut down / kill the process directly from the server where the broker is installed.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Terminate broker node.</span>
+<span class="nv">$MACHBASE_HOME</span>/bin/machadmin <span class="nt">-s</span>
+  
+<span class="c"># Stop broker node.</span>
+<span class="nv">$MACHBASE_HOME</span>/bin/machadmin <span class="nt">-k</span>
+</code></pre></div></div>
+
+<h1 id="warehouse-installation">Warehouse Installation</h1>
+
+<p>Install the active node and the standby node from the Coordinator node.</p>
+
+<p>They will be installed through a pre-installed deployer.</p>
+
+<h2 id="group-1-installation">Group 1 Installation</h2>
+
+<p>Install the first Warehouse Group1 node.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install group1 warehouse.                         </span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--add-node</span><span class="o">=</span><span class="s2">"192.168.0.83:5401"</span>  <span class="se">\</span>
+        <span class="nt">--node-type</span><span class="o">=</span>warehouse <span class="nt">--deployer</span><span class="o">=</span><span class="s2">"192.168.0.83:5201"</span> <span class="nt">--port-no</span><span class="o">=</span><span class="s2">"5400"</span>       <span class="se">\</span>
+        <span class="nt">--home-path</span><span class="o">=</span><span class="s2">"/home/machbase/warehouse_g1"</span> <span class="nt">--package-name</span><span class="o">=</span>machbase           <span class="se">\</span>
+        <span class="nt">--replication</span><span class="o">=</span><span class="s2">"192.168.0.83:5402"</span>  <span class="nt">--group</span><span class="o">=</span><span class="s2">"group1"</span> <span class="nt">--no-replicate</span>
+  
+<span class="c"># Run installed node.</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--startup-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5401"</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option items</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–add-node</td>
+      <td>Specifies the node name to be added as “IP: PORT”.<br />The PORT value is set to the CLUSTER_LINK_PORT_NO value.</td>
+      <td>192.168.0.84:5401</td>
+    </tr>
+    <tr>
+      <td>–node-type</td>
+      <td>Specifies the node type.<br />There are five types: coordinator, deployer, lookup, broker, and warehouse.</td>
+      <td>warehouse</td>
+    </tr>
+    <tr>
+      <td>–deployer</td>
+      <td>Registers the deployer node information of the server to be installed.</td>
+      <td>192.168.0.84:5201</td>
+    </tr>
+    <tr>
+      <td>–port-no</td>
+      <td>Specifies the working port of ‘machbased’.<br />Since the value was set to 5656 on the Broker, a different port must be specified if it is installed on the same server. The warehouse port number is set as 5400.<br />This port is used when connecting to client and machsql.</td>
+      <td>5400</td>
+    </tr>
+    <tr>
+      <td>–home-path</td>
+      <td>Specifies the path to install. To distinguish the groups, set them in order of warehouse_g1, g2, g3.</td>
+      <td>/home/machbase/warehouse_g1</td>
+    </tr>
+    <tr>
+      <td>–package-name</td>
+      <td>Sets the package name specified when adding the package.</td>
+      <td>machbase</td>
+    </tr>
+    <tr>
+      <td>–replication</td>
+      <td>Specifies the node in charge of replication as “IP: PORT”.<br />The port value is set to the warehouse port number 5402.</td>
+      <td>192.168.0.84:5402</td>
+    </tr>
+    <tr>
+      <td>–no-replicate</td>
+      <td>Specifies whether to replicate data when adding a node if there is warehouse data in the group.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>–set-group-state</td>
+      <td>Specifies the state of the group as normal and readonly.<br />Normal is read, write / readonly is read only</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="add-node-to-group-1">Add Node to Group 1</h2>
+
+<p>Add another node to Warehouse Group1.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Add warehouse node to group1.              </span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--add-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5401"</span>  <span class="se">\</span>
+        <span class="nt">--node-type</span><span class="o">=</span>warehouse <span class="nt">--deployer</span><span class="o">=</span><span class="s2">"192.168.0.84:5201"</span> <span class="nt">--port-no</span><span class="o">=</span><span class="s2">"5400"</span>       <span class="se">\</span>
+        <span class="nt">--home-path</span><span class="o">=</span><span class="s2">"/home/machbase/warehouse_g1"</span> <span class="nt">--package-name</span><span class="o">=</span>machbase           <span class="se">\</span>
+        <span class="nt">--replication</span><span class="o">=</span><span class="s2">"192.168.0.84:5402"</span> <span class="nt">--group</span><span class="o">=</span><span class="s2">"group1"</span> <span class="nt">--no-replicate</span>
+  
+<span class="c"># Run installed node.</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--startup-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5401"</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option items</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–add-node</td>
+      <td>Specifies the node name to be added as “IP: PORT”.<br />The PORT value is set to the CLUSTER_LINK_PORT_NO value.</td>
+      <td>192.168.0.84:5401</td>
+    </tr>
+    <tr>
+      <td>–node-type</td>
+      <td>Specifies the node type.<br />There are five types: coordinator, deployer, lookup, broker, and warehouse.</td>
+      <td>warehouse</td>
+    </tr>
+    <tr>
+      <td>–deployer</td>
+      <td>Registers the deployer node information of the server to be installed.</td>
+      <td>192.168.0.84:5201</td>
+    </tr>
+    <tr>
+      <td>–port-no</td>
+      <td>Specifies the working port  of ‘machbased’.<br />Since the value was set to 5656 on the Broker, a different port must be specified if it is installed on the same server. The warehouse port number is set as 5400.<br />This port is used when connecting to client and machsql.</td>
+      <td>5400</td>
+    </tr>
+    <tr>
+      <td>–home-path</td>
+      <td>Specifies the path to install. To distinguish the groups, set them in order of warehouse_g1, g2, g3.</td>
+      <td>/home/machabse/warehouse_g1</td>
+    </tr>
+    <tr>
+      <td>–package-name</td>
+      <td>Sets the package name specified when adding the package.</td>
+      <td>machbase</td>
+    </tr>
+    <tr>
+      <td>–replication</td>
+      <td>Specify the node in charge of replication as “IP: PORT”.<br />The port value is set to the warehouse port number 5402.</td>
+      <td>192.168.0.84:5402</td>
+    </tr>
+    <tr>
+      <td>–group</td>
+      <td>Specifies the Group name.</td>
+      <td>group1</td>
+    </tr>
+    <tr>
+      <td>–no-replicate</td>
+      <td>Specifies whether to replicate data when adding a node if there is warehouse data in the group.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>–set-group-state</td>
+      <td>Specifies the state of the group as normal and readonly.<br />Normal is read, write / readonly is read only</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="group-2-installation">Group 2 Installation</h1>
+
+<p>Install the second Warehouse Group2 node.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install group1 warehouse.                         </span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--add-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5411"</span>  <span class="se">\</span>
+        <span class="nt">--node-type</span><span class="o">=</span>warehouse <span class="nt">--deployer</span><span class="o">=</span><span class="s2">"192.168.0.84:5201"</span> <span class="nt">--port-no</span><span class="o">=</span><span class="s2">"5410"</span>       <span class="se">\</span>
+        <span class="nt">--home-path</span><span class="o">=</span><span class="s2">"/home/machbase/warehouse_g2"</span> <span class="nt">--package-name</span><span class="o">=</span>machbase           <span class="se">\</span>
+        <span class="nt">--replication</span><span class="o">=</span><span class="s2">"192.168.0.84:5412"</span>  <span class="nt">--group</span><span class="o">=</span><span class="s2">"group2"</span> <span class="nt">--no-replicate</span>
+  
+<span class="c"># Run installed node.</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--startup-node</span><span class="o">=</span><span class="s2">"192.168.0.84:5411"</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option items</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–add-node</td>
+      <td>Specifies the node name to be added as “IP: PORT”.<br />The PORT value is set to the CLUSTER_LINK_PORT_NO value.</td>
+      <td>192.168.0.84:5411</td>
+    </tr>
+    <tr>
+      <td>–node-type</td>
+      <td>Specifies the node type.<br />There are five types: coordinator, deployer, lookup, broker, and warehouse.</td>
+      <td>warehouse</td>
+    </tr>
+    <tr>
+      <td>–deployer</td>
+      <td>Registers the deployer node information of the server to be installed.</td>
+      <td>192.168.0.84:5201</td>
+    </tr>
+    <tr>
+      <td>–port-no</td>
+      <td>Specifies the working port  of ‘machbased’.<br />Since the value was set to 5656 on the Broker, a different port must be specified if it is installed on the same server. The warehouse port number is set as 5410.<br />This port is used when connecting to client and machsql.</td>
+      <td>5410</td>
+    </tr>
+    <tr>
+      <td>–home-path</td>
+      <td>Specifies the path to install. To distinguish the groups, set them in order of warehouse_g1, g2, g3.</td>
+      <td>/home/machbase/warehouse_g2</td>
+    </tr>
+    <tr>
+      <td>–package-name</td>
+      <td>Sets the package name specified when adding the package.</td>
+      <td>machbase</td>
+    </tr>
+    <tr>
+      <td>–replication</td>
+      <td>Specifies the node in charge of replication as “IP: PORT”.<br />The port value is set to the warehouse port number 5412.</td>
+      <td>192.168.0.84:5412</td>
+    </tr>
+    <tr>
+      <td>–group</td>
+      <td>Specifies the Group name.</td>
+      <td>group</td>
+    </tr>
+    <tr>
+      <td>–no-replicate</td>
+      <td>Specifies whether to replicate data when adding a node if there is warehouse data in the group.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>–set-group-state</td>
+      <td>Specifies the state of the group as normal and readonly.<br />Normal is read, write / readonly is read only</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="add-node-to-group-2">Add Node to Group 2</h2>
+
+<p>Add another node to Warehouse Group2.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Add warehouse node to group1.              </span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--add-node</span><span class="o">=</span><span class="s2">"192.168.0.83:5411"</span>  <span class="se">\</span>
+        <span class="nt">--node-type</span><span class="o">=</span>warehouse <span class="nt">--deployer</span><span class="o">=</span><span class="s2">"192.168.0.83:5201"</span> <span class="nt">--port-no</span><span class="o">=</span><span class="s2">"5410"</span>       <span class="se">\</span>
+        <span class="nt">--home-path</span><span class="o">=</span><span class="s2">"/home/machbase/warehouse_g2"</span> <span class="nt">--package-name</span><span class="o">=</span>machbase           <span class="se">\</span>
+        <span class="nt">--replication</span><span class="o">=</span><span class="s2">"192.168.0.83:5412"</span> <span class="nt">--group</span><span class="o">=</span><span class="s2">"group2"</span> <span class="nt">--no-replicate</span>
+  
+<span class="c"># Run installed node.</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--startup-node</span><span class="o">=</span><span class="s2">"192.168.0.83:5411"</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option items</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>–add-node</td>
+      <td>Specifies the node name to be added as “IP: PORT”.<br />The PORT value is set to the CLUSTER_LINK_PORT_NO value.</td>
+      <td>192.168.0.83:5411</td>
+    </tr>
+    <tr>
+      <td>–node-type</td>
+      <td>Specifies the node type.<br />There are five types: coordinator, deployer, lookup, broker, and warehouse.</td>
+      <td>warehouse</td>
+    </tr>
+    <tr>
+      <td>–deployer</td>
+      <td>Registers the deployer node information of the server to be installed.</td>
+      <td>192.168.0.83:5201</td>
+    </tr>
+    <tr>
+      <td>–port-no</td>
+      <td>Specifies the working port of ‘machbased’.<br />Since the value was set to 5656 on the Broker, a different port must be specified if it is installed on the same server. The warehouse port number is set as 5400.<br />This port is used when connecting to client and machsql.</td>
+      <td>5410</td>
+    </tr>
+    <tr>
+      <td>–home-path</td>
+      <td>Specifies the path to install. To distinguish the groups, set them in order of warehouse_g1, g2, g3.</td>
+      <td>/home/machbase/warehouse_g2</td>
+    </tr>
+    <tr>
+      <td>–package-name</td>
+      <td>Sets the package name specified when adding the package.</td>
+      <td>machbase</td>
+    </tr>
+    <tr>
+      <td>–replication</td>
+      <td>Specifies the node in charge of replication as “IP: PORT”.<br />The port value is set to the warehouse port number 5412.</td>
+      <td>192.168.0.83:5412</td>
+    </tr>
+    <tr>
+      <td>–group</td>
+      <td>Specifies the Group name.</td>
+      <td>group2</td>
+    </tr>
+    <tr>
+      <td>–no-replicate</td>
+      <td>Specifies whether to replicate data when adding a node if there is warehouse data in the group.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>–set-group-state</td>
+      <td>Specifies the state of the group as normal and readonly.<br />Normal is read, write / readonly is read only</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="delete-warehouse">Delete Warehouse</h1>
+
+<p>Delete the warehouse node from the Coordinator node.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Delete warehouse node.</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--remove-node</span><span class="o">=</span><span class="s2">"192.168.0.83:5401"</span>
+</code></pre></div></div>
+
+<h1 id="shut-downstop-warehouse">Shut Down/Stop Warehouse</h1>
+
+<p>There is a way to shut down / kill the warehouse node at the Coordinator node.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Terminate warehouse node.</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--shutdown-node</span><span class="o">=</span><span class="s2">"192.168.0.83:5401"</span>
+  
+<span class="c"># Stop warehouse node.</span>
+<span class="nv">$MACHBASE_COORDINATOR_HOME</span>/bin/machcoordinatoradmin <span class="nt">--kill-node</span><span class="o">=</span><span class="s2">"192.168.0.83:5401"</span>
+</code></pre></div></div>
+
+<p>Otherwise, the process can be shut down / killed directly from the server where the warehouse is installed.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Terminate warehouse node.</span>
+<span class="nv">$MACHBASE_HOME</span>/bin/machadmin <span class="nt">-s</span>
+  
+<span class="c"># Stop warehouse node.</span>
+<span class="nv">$MACHBASE_HOME</span>/bin/machadmin <span class="nt">-k</span>
+</code></pre></div></div>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

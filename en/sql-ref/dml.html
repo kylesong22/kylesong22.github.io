@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>DML</title>
+    <meta property="og:title" content="DML" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="DML">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="DML"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/sql-ref/dml.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/sql-ref/dml.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/sql-ref/">Sql ref</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/sql-ref/dml.html">DML</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">DML</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#insert">INSERT</a>
+    <ul>
+      <li><a href="#insert-on-duplicate-key-update">INSERT ON DUPLICATE KEY UPDATE</a></li>
+    </ul>
+  </li>
+  <li><a href="#insert-select">INSERT SELECT</a></li>
+  <li><a href="#update">UPDATE</a>
+    <ul>
+      <li><a href="#update-metadata">UPDATE METADATA</a></li>
+    </ul>
+  </li>
+  <li><a href="#delete">DELETE</a></li>
+  <li><a href="#delete-where">DELETE WHERE</a></li>
+  <li><a href="#load-data-infile">LOAD DATA INFILE</a></li>
+</ul>
+
+<h1 id="insert">INSERT</h1>
+
+<p><strong>insert_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/dml_image/insert_stmt.png" alt="insert_stmt" /></p>
+
+<p><strong>insert_column_list:</strong></p>
+
+<p><img src="/en/sql-ref/dml_image/insert_column_list.png" alt="insert_column_list" /></p>
+
+<p><strong>value_list:</strong></p>
+
+<p><img src="/en/sql-ref/dml_image/value_list.png" alt="value_list" /></p>
+
+<p><strong>set_list:</strong></p>
+
+<p><img src="/en/sql-ref/dml_image/set_list.png" alt="set_list" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">insert_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'INSERT INTO'</span> <span class="k">table_name</span> <span class="p">(</span> <span class="s1">'('</span> <span class="n">insert_column_list</span> <span class="s1">')'</span> <span class="p">)</span><span class="o">?</span> <span class="s1">'METADATA'</span><span class="o">?</span> <span class="s1">'VALUES'</span> <span class="s1">'('</span> <span class="n">value_list</span> <span class="s1">')'</span> <span class="p">(</span> <span class="s1">'ON DUPLICATE KEY UPDATE'</span> <span class="p">(</span> <span class="s1">'SET'</span> <span class="n">set_list</span> <span class="p">)</span><span class="o">?</span> <span class="p">)</span><span class="o">?</span>
+<span class="n">insert_column_list</span> <span class="p">::</span><span class="o">=</span> <span class="k">column_name</span> <span class="p">(</span> <span class="s1">','</span> <span class="k">column_name</span> <span class="p">)</span><span class="o">*</span>
+<span class="n">value_list</span> <span class="p">::</span><span class="o">=</span> <span class="n">value</span> <span class="p">(</span> <span class="s1">','</span> <span class="n">value</span> <span class="p">)</span><span class="o">*</span>
+<span class="n">set_list</span> <span class="p">::</span><span class="o">=</span> <span class="k">column_name</span> <span class="s1">'='</span> <span class="n">value</span> <span class="p">(</span> <span class="s1">','</span> <span class="k">column_name</span> <span class="s1">'='</span> <span class="n">value</span> <span class="p">)</span><span class="o">*</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">table</span> <span class="n">test</span> <span class="p">(</span><span class="n">number</span> <span class="nb">int</span><span class="p">,</span><span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">));</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">test</span> <span class="k">values</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nv">"test"</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">test</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">number</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="nv">"test"</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>This is the syntax for entering values ​​into a specific table. One unusual thing is that columns not specified in Column_List are all filled with NULL values. This is a policy considering the characteristics of log files adopted for convenience of input and efficiency of storage space.
+METADATA is only available for tag tables.</p>
+
+<h2 id="insert-on-duplicate-key-update">INSERT ON DUPLICATE KEY UPDATE</h2>
+
+<p>Machbase supports syntax similar to the commonly known UPSERT function.</p>
+
+<p>A special syntax that can be used when entering a value into a Lookup/Volatile table with a primary key specified. If the table already contains data with a duplicate primary key value, the value of the existing data is changed. 
+Of course, when there is no duplicated key value data, it is inserted as new data.</p>
+
+<p>To use this syntax, the primary key must be specified in the volatile table.</p>
+
+<p>If the column value of the inserted data is different from the column value of the updated data, or if it is desired to update a column value other than the column value of the inserted data, the SET clause can be further input.</p>
+
+<ul>
+  <li>The SET clause consists of ‘column = value’, each separated by a comma.</li>
+  <li>You must not change the default key value in the SET clause.</li>
+</ul>
+
+<h1 id="insert-select">INSERT SELECT</h1>
+
+<p>insert_select_stmt:</p>
+
+<p><img src="/en/sql-ref/dml_image/insert_select_stmt.png" alt="insert_select_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">insert_select_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'INSERT INTO'</span> <span class="k">table_name</span> <span class="p">(</span> <span class="s1">'('</span> <span class="n">insert_column_list</span> <span class="s1">')'</span> <span class="p">)</span><span class="o">?</span> <span class="n">select_stmt</span>
+</code></pre></div></div>
+
+<p>This statement inserts the result of the SELECT statement on a specific table. In basic, it is similar to other DBMSs, but with the following differences.</p>
+<ol>
+  <li>The _ARRIVAL_TIME column value is entered as the time value at the time the INSERT SELECT statement is executed unless specified in the select and INSERT column lists.</li>
+  <li>If the input value to be inserted for a VARCHAR type column is greater than the maximum length of the column, the maximum length of the corresponding column is entered without error.</li>
+  <li>If type conversion is possible (numeric -&gt; numeric), it is inserted according to the input column value.</li>
+  <li>ROLLBACK does not occur if an error occurs during execution.</li>
+  <li>If you insert a value in the _ARRIVAL_TIME column, the new value will not be entered if it has a time before the existing value.</li>
+</ol>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">table</span> <span class="n">t1</span> <span class="p">(</span><span class="n">i1</span> <span class="nb">integer</span><span class="p">,</span> <span class="n">i2</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">60</span><span class="p">),</span> <span class="n">i3</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="k">insert</span> <span class="k">into</span> <span class="n">t1</span> <span class="k">values</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'ddd'</span> <span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">t1</span> <span class="k">values</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'kkkkkkkkkkkkkkkkkkkkk'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="k">insert</span> <span class="k">into</span> <span class="n">t1</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">t1</span><span class="p">;</span>
+<span class="mi">2</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+<span class="k">create</span> <span class="k">table</span> <span class="n">t2</span> <span class="p">(</span><span class="n">i1</span> <span class="nb">integer</span><span class="p">,</span> <span class="n">i2</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">60</span><span class="p">),</span> <span class="n">i3</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+ 
+<span class="k">insert</span> <span class="k">into</span> <span class="n">t2</span> <span class="p">(</span><span class="n">_arrival_time</span><span class="p">,</span> <span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">,</span> <span class="n">i3</span><span class="p">)</span> <span class="k">select</span> <span class="n">_arrival_time</span><span class="p">,</span> <span class="o">*</span> <span class="k">from</span> <span class="n">t1</span><span class="p">;</span>
+<span class="mi">4</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h1 id="update">UPDATE</h1>
+
+<ul>
+  <li>This function is available from 5.5.</li>
+</ul>
+
+<p><strong>update_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/dml_image/update_stmt.png" alt="update_stmt" /></p>
+
+<p><strong>update_expr_list:</strong></p>
+
+<p><img src="/en/sql-ref/dml_image/update_expr_list.png" alt="update_expr_list" /></p>
+
+<p><strong>update_expr:</strong></p>
+
+<p><img src="/en/sql-ref/dml_image/update_expr.png" alt="update_expr" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">update_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'UPDATE'</span> <span class="k">table_name</span> <span class="p">(</span> <span class="s1">'METADATA'</span> <span class="p">)</span><span class="o">?</span> <span class="s1">'SET'</span> <span class="n">update_expr_list</span> <span class="s1">'WHERE'</span> <span class="n">primary_key_column</span> <span class="s1">'='</span> <span class="n">value</span>
+<span class="n">update_expr_list</span> <span class="p">::</span><span class="o">=</span> <span class="n">update_expr</span> <span class="p">(</span> <span class="s1">','</span> <span class="n">update_expr</span><span class="p">)</span><span class="o">*</span>
+<span class="n">update_expr</span> <span class="p">::</span><span class="o">=</span> <span class="k">column</span> <span class="s1">'='</span> <span class="n">value</span>
+</code></pre></div></div>
+
+<p>INSERT ON DUPLICATE UPDATE syntax is also provided, rather than UPSERT via a KEY UPDATE.
+You can also use the Primary Key to enter values ​​into the specified Lookup/Volatile table. In the WHERE clause, you must create a matching predicate for the primary key.</p>
+
+<h2 id="update-metadata">UPDATE METADATA</h2>
+
+<p>Only for the TAGDATA table, when you want to update the metadata.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="n">TAG</span> <span class="n">METADATA</span> <span class="k">SET</span> <span class="p">...</span>
+</code></pre></div></div>
+
+<ul>
+  <li>The metadata of the TAGDATA table can not be entered/modified through INSERT ON DUPLICATE KEY UPDATE.</li>
+</ul>
+
+<h1 id="delete">DELETE</h1>
+
+<p><strong>delete_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/dml_image/delete_stmt.png" alt="delete_stmt" /></p>
+
+<p><strong>time_unit:</strong></p>
+
+<p><img src="/en/sql-ref/dml_image/time_unit.png" alt="time_unit" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">delete_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'DELETE FROM'</span> <span class="k">table_name</span> <span class="p">(</span> <span class="s1">'OLDEST'</span> <span class="n">number</span> <span class="s1">'ROWS'</span> <span class="o">|</span> <span class="s1">'EXCEPT'</span> <span class="n">number</span> <span class="p">(</span> <span class="s1">'ROWS'</span> <span class="o">|</span> <span class="n">time_unit</span> <span class="p">)</span> <span class="o">|</span> <span class="s1">'BEFORE'</span> <span class="n">datetime_expression</span> <span class="p">)</span><span class="o">?</span> <span class="s1">'NO WAIT'</span><span class="o">?</span>
+<span class="n">time_unit</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'DURATION'</span> <span class="n">number</span> <span class="n">time_unit</span> <span class="p">(</span> <span class="p">(</span> <span class="s1">'BEFORE'</span> <span class="o">|</span> <span class="s1">'AFTER'</span> <span class="p">)</span> <span class="n">number</span> <span class="n">time_unit</span> <span class="p">)</span><span class="o">?</span>
+</code></pre></div></div>
+
+<p>The DELETE statement in Machbase can be performed on the log table. In addition, it is not possible to delete data in an arbitrary position in the middle, and it is possible to erase consecutively from the arbitrary position to the last (oldest log) record.</p>
+
+<p>This is a policy that takes advantage of the characteristics of log data. It is a DB format representation of the act of deleting a file in order to secure space when it is entered once.</p>
+
+<p>The syntax of DURATION, OLDEST, and EXCEPT cannot be used for TAG and Rollup tables.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Delete all.</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">devices</span><span class="p">;</span>
+ 
+<span class="c1">-- Delete oldest last N rows.</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">devices</span> <span class="n">OLDEST</span> <span class="n">N</span> <span class="k">ROWS</span><span class="p">;</span>
+ 
+<span class="c1">-- Delete all except recent N rows.</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">devices</span> <span class="k">EXCEPT</span> <span class="n">N</span> <span class="k">ROWS</span><span class="p">;</span>
+ 
+<span class="c1">-- Delete all except N matches from now on.</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">devices</span> <span class="k">EXCEPT</span> <span class="n">N</span> <span class="k">DAY</span><span class="p">;</span>
+ 
+<span class="c1">-- Delete all data from before June 1, 2014.</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">devices</span> <span class="k">BEFORE</span> <span class="n">TO_DATE</span><span class="p">(</span><span class="s1">'2014-06-01'</span><span class="p">,</span> <span class="s1">'YYYY-MM-DD'</span><span class="p">);</span>
+ 
+<span class="c1">-- Delete tag data from before June 1, 2014.</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">tag</span> <span class="k">BEFORE</span> <span class="n">TO_DATE</span><span class="p">(</span><span class="s1">'2014-06-01'</span><span class="p">,</span> <span class="s1">'YYYY-MM-DD'</span><span class="p">);</span>
+ 
+<span class="c1">-- Delete tag rollup data from before June 1, 2014.</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">tag</span> <span class="k">ROLLUP</span> <span class="k">BEFORE</span> <span class="n">TO_DATE</span><span class="p">(</span><span class="s1">'2014-06-01'</span><span class="p">,</span> <span class="s1">'YYYY-MM-DD'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h1 id="delete-where">DELETE WHERE</h1>
+
+<p><strong>delete_where_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/dml_image/delete_where_stmt.png" alt="delete_where_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">delete_where_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'DELETE FROM'</span> <span class="k">table_name</span> <span class="s1">'WHERE'</span> <span class="k">column_name</span> <span class="s1">'='</span> <span class="n">value</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">volatile</span> <span class="k">table</span> <span class="n">t1</span> <span class="p">(</span><span class="n">i1</span> <span class="nb">int</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span> <span class="n">i2</span> <span class="nb">int</span><span class="p">);</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">t1</span> <span class="k">values</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+<span class="k">delete</span> <span class="k">from</span> <span class="n">t1</span> <span class="k">where</span> <span class="n">i1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">deleted</span><span class="p">.</span>
+</code></pre></div></div>
+
+<ul>
+  <li>You can only delete records that match the conditions created in the WHERE clause, which can only be performed on volatile tables.</li>
+  <li>The primary key can only be performed on the specified volatile table.</li>
+  <li>The WHERE clause allows only conditions of (primary key column) = (value), and can not be created with other conditions.</li>
+  <li>You can not use a column other than the primary key column in the condition.</li>
+</ul>
+
+<p><strong>delete_from_tag_where_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/dml_image/delete_from_tag_where_stmt.png" alt="delete_from_tag_where_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">delete_from_tag_where_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'DELETE FROM'</span> <span class="k">table_name</span> <span class="s1">'WHERE'</span> <span class="n">tag_name</span> <span class="s1">'='</span> <span class="n">value</span> <span class="p">(</span> <span class="k">and</span> <span class="n">tag_time</span> <span class="s1">'&lt;'</span> <span class="n">datetime_expression</span>  <span class="p">)</span><span class="o">?</span>
+</code></pre></div></div>
+
+<p>The Tag table additionally supports two types of deletion queries as follows.</p>
+<ul>
+  <li>Delete by tag name</li>
+  <li>Delete by tag name and tag time</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Delete by tag name</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">tag</span> <span class="k">where</span> <span class="n">tag_name</span> <span class="o">=</span> <span class="s1">'my_tag_2021'</span>
+ 
+<span class="c1">-- Delete by tag name and tag time</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">tag</span> <span class="k">where</span> <span class="n">tag_name</span> <span class="o">=</span> <span class="s1">'my_tag_2021'</span> <span class="k">and</span> <span class="n">tag_time</span> <span class="o">&lt;</span> <span class="n">TO_DATE</span><span class="p">(</span><span class="s1">'2021-07-01'</span><span class="p">,</span> <span class="s1">'YYYY-MM-DD'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>The time it takes for the deleted row to be physically deleted from the storage space after the deletion query is executed may vary depending on the situation of the DBMS.</li>
+</ul>
+
+<h1 id="load-data-infile">LOAD DATA INFILE</h1>
+
+<p><strong>load_data_infile_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/dml_image/load_data_infile_stmt.png" alt="load_data_infile_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">load_data_infile_stmt</span><span class="p">:</span> <span class="s1">'LOAD DATA INFILE'</span> <span class="n">file_name</span> <span class="s1">'INTO TABLE'</span> <span class="k">table_name</span> <span class="p">(</span> <span class="s1">'TABLESPACE'</span> <span class="n">tbs_name</span> <span class="p">)</span><span class="o">?</span> <span class="p">(</span> <span class="s1">'AUTO'</span> <span class="p">(</span> <span class="s1">'BULKLOAD'</span> <span class="o">|</span> <span class="s1">'HEADUSE'</span> <span class="o">|</span> <span class="s1">'HEADUSE_ESCAPE'</span> <span class="p">)</span> <span class="p">)</span><span class="o">?</span> <span class="p">(</span> <span class="p">(</span> <span class="s1">'FIELDS'</span> <span class="o">|</span> <span class="s1">'COLUMNS'</span> <span class="p">)</span> <span class="p">(</span> <span class="s1">'TERMINATED BY'</span> <span class="nb">char</span> <span class="p">)</span><span class="o">?</span> <span class="p">(</span> <span class="s1">'ENCLOSED BY'</span> <span class="nb">char</span> <span class="p">)</span><span class="o">?</span> <span class="p">)</span><span class="o">?</span> <span class="p">(</span> <span class="s1">'TRIM'</span> <span class="p">(</span> <span class="s1">'ON'</span> <span class="o">|</span> <span class="s1">'OFF'</span> <span class="p">)</span> <span class="p">)</span><span class="o">?</span> <span class="p">(</span> <span class="s1">'IGNORE'</span> <span class="n">number</span> <span class="p">(</span> <span class="s1">'LINES'</span> <span class="o">|</span> <span class="s1">'ROWS'</span> <span class="p">)</span> <span class="p">)</span><span class="o">?</span> <span class="p">(</span> <span class="s1">'MAX_LINE_LENGTH'</span> <span class="n">number</span> <span class="p">)</span><span class="o">?</span> <span class="p">(</span> <span class="s1">'ENCODED BY'</span> <span class="n">coding_name</span> <span class="p">)</span><span class="o">?</span> <span class="p">(</span> <span class="s1">'ON ERROR'</span> <span class="p">(</span> <span class="s1">'STOP'</span> <span class="o">|</span> <span class="s1">'IGNORE'</span> <span class="p">)</span> <span class="p">)</span><span class="o">?</span>
+</code></pre></div></div>
+
+<p>CSV format data files are read directly from the server, and tables and columns are created directly from the server according to the options and input them.
+Each option is explained as follows</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Options</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AUTO mode_string<br /><br />mode_string =<br /><br />(BULKLOAD | HEADUSE | HEADUSE_ESCAPE)</td>
+      <td>Creates the corresponding table and automatically generates the column type (varchar type for automatic creation) and the column name.<br />BULKLOAD: Enters one row of data as one column. It is used for data that can not be divided into columns.<br />HEADUSE: Uses the column name as described in the first line of the data file as the column name of the table, and creates as many columns as there are in the line.<br />HEADUSE_ESCAPE: Similar to the HEADUSE option, but appends a ‘<em>’ character to the front and back of the column name to avoid errors that can occur if the column name is the same as the reserved word in the DB. If a special character exists in the column name, changes it to ‘</em>’.</td>
+    </tr>
+    <tr>
+      <td><br />(FIELDS|COLUMNS) TERMINATED BY ‘term_char’<br /><br />ESCAPED BY ‘escape_char’</td>
+      <td>Specifies the delimiter (term_char) and escape character (escape_char) for parsing the data line. For common CSV files, the delimiter is , and the escape character is ‘.</td>
+    </tr>
+    <tr>
+      <td>ENCODED BY coding_name<br />coding_name =<br />{ UTF8(default) | MS949 | KSC5601 | EUCJP | SHIFTJIS | BIG5 | GB231280 }</td>
+      <td>Specifies the encoding options for the data file. The default value is UTF-8.</td>
+    </tr>
+    <tr>
+      <td>TRIM (ON | OFF)</td>
+      <td>Removes or maintains the empty space of the column. The default is ON.</td>
+    </tr>
+    <tr>
+      <td>IGNORE number (LINES | ROWS)</td>
+      <td>Ignores data for a specified number of lines or lines. It is used to ignore header of CSV format file or ignore VCF header.</td>
+    </tr>
+    <tr>
+      <td>MAX_LINE_LENGTH</td>
+      <td>Specifies the maximum length of one line. The default value is 512K. If the data is larger, you can specify a larger value.</td>
+    </tr>
+    <tr>
+      <td>ON ERROR (STOP | IGNORE)</td>
+      <td>Specifies the action to take when an error occurs during input. If it is STOP, input is stopped. If it is IGNORE, the line where error occurred is skipped and input is continued.<br />The default is IGNORE.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Use default field delimiter(,)  field encloser (") to input data.</span>
+<span class="k">LOAD</span> <span class="k">DATA</span> <span class="n">INFILE</span> <span class="s1">'/tmp/aaa.csv'</span> <span class="k">INTO</span> <span class="k">TABLE</span> <span class="n">Sample_data</span> <span class="p">;</span>
+ 
+<span class="c1">-- Create NEWTABLE with one column and enter one line as one column.</span>
+<span class="k">LOAD</span> <span class="k">DATA</span> <span class="n">INFILE</span> <span class="s1">'/tmp/bbb.csv'</span> <span class="k">INTO</span> <span class="k">TABLE</span> <span class="n">NEWTABLE</span> <span class="n">AUTO</span> <span class="n">BULKLOAD</span><span class="p">;</span>
+ 
+<span class="c1">-- Create NEWTABLE using first line of csv as column information, and input it into table.</span>
+<span class="k">LOAD</span> <span class="k">DATA</span> <span class="n">INFILE</span> <span class="s1">'/tmp/bbb.csv'</span> <span class="k">INTO</span> <span class="k">TABLE</span> <span class="n">NEWTABLE</span> <span class="n">AUTO</span> <span class="n">HEADUSE</span><span class="p">;</span>
+  
+<span class="c1">-- First line is ignored and field delimiter is ; and enclosing character is specified by '.</span>
+<span class="k">LOAD</span> <span class="k">DATA</span> <span class="n">INFILE</span> <span class="s1">'/tmp/ccc.csv'</span> <span class="k">INTO</span> <span class="k">TABLE</span> <span class="n">Sample_data</span> <span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="k">BY</span> <span class="s1">';'</span> <span class="n">ENCLOSED</span> <span class="s1">'</span><span class="se">\'</span><span class="s1">'</span>  <span class="k">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span> <span class="k">ON</span> <span class="n">ERROR</span> <span class="k">IGNORE</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>If the AUTO option is not used, all columns of the table must be created as VARCHAR or TEXT types.</li>
+</ul>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

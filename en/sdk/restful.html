@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>RESTful API</title>
+    <meta property="og:title" content="RESTful API" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="RESTful API">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="RESTful API"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/sdk/restful.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/sdk/restful.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/sdk/">Sdk</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/sdk/restful.html">RESTful API</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">RESTful API</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#restful-api-overview">RESTful API Overview</a></li>
+  <li><a href="#machbase-restapi">Machbase RestAPI</a></li>
+  <li><a href="#restapi-for-tag-table-usage">RestAPI for Tag Table Usage</a>
+    <ul>
+      <li><a href="#raw-data-processing-function">Raw data processing function</a></li>
+      <li><a href="#statistical-data-processing-function">Statistical data processing function</a></li>
+      <li><a href="#tag-metadata-processing-function">Tag metadata processing function</a></li>
+      <li><a href="#other-function">Other function</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="restful-api-overview">RESTful API Overview</h1>
+
+<p>Representational State Transfer (REST) is a type of <a href="https://en.wikipedia.org/wiki/Architectural_pattern">software architecture style</a> that consists of guidelines and best practices for interfaces provided by scalable Web services.</p>
+
+<p>The four methods defined in the HTTP protocol define the CRUD for the resource.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP Method</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>POST</td>
+      <td>Create</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>Select</td>
+    </tr>
+    <tr>
+      <td>PUT</td>
+      <td>Update</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>Delete</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Machbase is not a standard RESTful API, but rather a RESTful API that handles CRUD using only POST and GET methods.</p>
+
+<p>That is, the POST method is used for data input and the rest is transmitted as a GET Method parameter to the SQL query so that all the operations can be performed.</p>
+
+<h1 id="machbase-restapi">Machbase RestAPI</h1>
+
+<p>MachBase supports convenient and fast Rest API functions through the web server built into the server. 
+Machbase Edition support embedded web server
+All type of machbase editions are supported. (Standard / Cluster)</p>
+
+<p>Location of version-specific .conf files</p>
+
+<p>Standard edition</p>
+
+<p>$MACHBASE_HOME/conf/machbase.conf $MACHBASE_HOME/http/conf/http.conf</p>
+
+<p>Cluster edition</p>
+
+<p>$EACH_BROKER_HOME/conf/machbase.conf (Modify by Broker) $EACH_BROKER_HOME/http/conf/http.conf (modify all per Broker)</p>
+
+<p>Added properties for embedded web server
+machbase.conf (set as PROPERTY = VALUE)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HTTP_ENABLE</td>
+      <td>Whether to run the embedded web server 0: not driven, 1: driven</td>
+    </tr>
+    <tr>
+      <td>HTTP_PORT_NO</td>
+      <td>Embedded web server connection port number Port range: 0 ~ 65535 Default : 5657</td>
+    </tr>
+    <tr>
+      <td>HTTP_MAX_MEM</td>
+      <td>Maximum memory used by one Web Session Min: 1048576 (1MB) Default : 536870912 (512MB)</td>
+    </tr>
+    <tr>
+      <td>HTTP_AUTH</td>
+      <td>Whether to use Basic authentication when using the Embedded Web Server 0: Authentication not used, 1: Authentication enabled</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>http.conf (set in JSON format)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>document_root</td>
+      <td>html file location based on $MACHBASE_HOME<br /> Default : http/html ($MACHBASE_HOME/http/html)</td>
+    </tr>
+    <tr>
+      <td>max_request_size</td>
+      <td>Limit the maximum request byte size for one request</td>
+    </tr>
+    <tr>
+      <td>request_timeout_ms</td>
+      <td>Maximum response latency for one request (millisecond)</td>
+    </tr>
+    <tr>
+      <td>enable_auth_domain_check</td>
+      <td>Whether to enable domain authentication Set to “yes” or “no” value Default: “no”</td>
+    </tr>
+    <tr>
+      <td>reverse_proxy</td>
+      <td>change request url to specific url</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>sample conf files</p>
+
+<p>machbase.conf</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#################################################################################
+# Rest-API port
+#################################################################################
+HTTP_PORT_NO = 5657
+   
+#################################################################################
+# Maximum memory per web session.
+# Default Value: 536870912 (512MB)
+#################################################################################
+HTTP_MAX_MEM = 536870912
+   
+#################################################################################
+# Min Value:     0
+# Max Value:     1
+# Default Value: 0
+#
+# Enable REST-API service.
+#################################################################################
+HTTP_ENABLE = 0
+   
+#################################################################################
+# Min Value:     0
+# Max Value:     1
+# Default Value: 0
+#
+# Enable Basic Authentication for Rest-API service
+#################################################################################
+HTTP_AUTH = 0
+</code></pre></div></div>
+
+<p>http.conf</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "document_root":"http/html/",
+    "max_request_size": "100000",
+    "request_timeout_ms": "10000",
+    "enable_auth_domain_check": "no",
+    "reverse_proxy" : [["/machbase/tables", "http://127.0.0.1:55657/machbase"],
+        ["/self_machbase_proxy", "http://127.0.0.1:55657/machbase"],
+        ["/dead_proxy", "http://127.0.0.0/machbase"]]
+}
+</code></pre></div></div>
+
+<h2 id="ddl--dml--append-rest-api-usage">DDL / DML / Append REST API Usage</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Basic request format
+  
+http://addr:port/machbase?q=query&amp;f=dateformat
+  
+Response DDL / Append / DML (except Select)
+{"error_code":0, "error_message" :"Message", "data":[]}
+  
+Response DML (Select)
+{"error_code":0, "error_message" :"Message", "columns":[Columns], "data":[Data]}
+</code></pre></div></div>
+
+<p>DDL Sample</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Request of creating a table
+curl -G "http://127.0.0.1:5657/machbase" --data-urlencode 'q=create table test_table (name varchar(20), time datetime, value double)'
+   
+## Normal response
+{"error_code":0, "error_message" :"No Error", "data":[]}
+   
+## Request of dropping a table
+curl -G "http://127.0.0.1:5657/machbase" --data-urlencode 'q=drop table test_table'
+   
+## Normal response
+{"error_code":0, "error_message" :"No Error", "data":[]}
+</code></pre></div></div>
+
+<p>DML Sample</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Request Log table data insert
+curl -G "http://127.0.0.1:5657/machbase" --data-urlencode 'q=insert into test_table values ("test", "1999-01-01 00:00:00", 0)'
+   
+## Response
+{"error_code":0, "error_message" :"No Error", "data":[]}
+   
+## Request Log table select
+curl -G "http://127.0.0.1:5657/machbase" --data-urlencode 'q=select * from test_table'
+   
+## Response
+{"error_code":0, "error_message": "", "columns" : [{"name":"NAME", "type":5, "length":20},{"name":"TIME", "type":6, "length":8},{"name":"VALUE", "type":20, "length":8}],"data" :[{"NAME":"test", "TIME":"1999-01-01 00:00:00 000:000:000", "VALUE":0.000}]}
+</code></pre></div></div>
+
+<p>Append Sample</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Append some data to log table
+curl -X POST -H "Content-Type: application/json" "http://127.0.0.1:5657/machbase" -d '{"name":"test_table", "date_format":"YYYY-MM-DD","values":[["test", "1999-01-01 00:00:01", 1], ["test", "1999-01-01 00:00:02", 2], ["test", "1999-01-01 00:00:03", 3]]}'
+   
+## Response
+{"error_code":0, "error_message" :"No Error", "data":[], "append_success":3, "append_failure":0}
+</code></pre></div></div>
+
+<p>In the case of Binary Append, if binary data is encoded in Base64 and transmitted, the server will decode it and store it. When outputting, binary data is returned after being encoded in Base64.
+Input : Binary Data » Base64 Encoding » HTTP(POST) » Base64 Decoding » Append(BLOB Binary)</p>
+
+<p>Output : BLOB Binary » Base64 Encoding » HTTP (GET) » Base64 Decoding » Save or View Binary</p>
+
+<p>Binary Append Sample</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Example of sending binary data. data should be encoded by Base64.
+   
+## Request append to log table
+curl  -X POST -H "Content-Type: application/json" "http://127.0.0.1:5657/machbase" -d '{"name":"test_table", "date_format":"YYYY-MM-DD","values":[["AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/w=="]]}'
+   
+## Result
+{"error_code":0, "error_message" :"No Error", "data":[], "append_success":1, "append_failure":0}
+   
+## Get data from log table
+curl -G "http://127.0.0.1:5657/machbase" --data-urlencode 'q=select * from test_table';
+   
+## The Base64 encoded data are displaied
+{"error_code" :0, "error_message": "No Error", "columns" : [{"name":"V1", "type":57, "length":67108864}],"data" :[{"V1":"AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/w=="}]}
+   
+## Can check data using machsql
+select to_hex(v1) from test_table;
+to_hex(v1)                                                                      
+------------------------------------------------------------------------------------
+000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F2021222324252627
+28292A2B2C2D2E2F303132333435363738393A3B3C3D3E3F404142434445464748494A4B4C4D4E4F
+505152535455565758595A5B5C5D5E5F606162636465666768696A6B6C6D6E6F7071727374757677
+78797A7B7C7D7E7F808182838485868788898A8B8C8D8E8F909192939495969798999A9B9C9D9E9F
+A0A1A2A3A4A5A6A7A8A9AAABACADAEAFB0B1B2B3B4B5B6B7B8B9BABBBCBDBEBFC0C1C2C3C4C5C6C7
+C8C9CACBCCCDCECFD0D1D2D3D4D5D6D7D8D9DADBDCDDDEDFE0E1E2E3E4E5E6E7E8E9EAEBECEDEEEF
+F0F1F2F3F4F5F6F7F8F9FAFBFCFDFEFF                                                
+[1] row(s) selected.
+</code></pre></div></div>
+
+<p>Using HTTP Auth Property</p>
+
+<p>This is an option to set authentication as a normal user by including the string ‘Authorization: Basic Base64String’ in the Request Header. Base64 string is written in ID@Host:Password structure. (However, the host name does not need to be correct. ID and password must be entered in Machbase user information.)</p>
+
+<p>How to create a Basic Base64String for authorize</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## In case of ID: sys, Password: manager , creating a Base64String
+echo -n "sys@localhost:manager" | base64
+   
+## Result
+c3lzQGxvY2FsaG9zdDptYW5hZ2Vy
+</code></pre></div></div>
+
+<p>Using Auth Sample (HTTP_AUTH = 1)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Request of result without authorization clause
+curl -G "http://127.0.0.1:5657/machbase" --data-urlencode 'q=select * from v$stmt'
+   
+## Error occurred
+{"error_code":3118, "error_message" :"There is No Authorization Header.", "data":[]}
+   
+## Adding 'Authorization:Base64String' at the request header
+curl -H "Authorization: Basic c3lzQGxvY2FsaG9zdDptYW5hZ2Vy"  -G "http://127.0.0.1:5657/machbase" --data-urlencode 'q=select * from v$stmt'
+   
+## Normal response
+{"error_code":0, "error_message": "No Error", "columns" : [{"name":"ID", "type":8, "length":4},{"name":"SESS_ID", "type":8, "length":4},{"name":"STATE", "type":5, "length":64},{"name":"RECORD_SIZE", "type":8, "length":4},{"name":"QUERY", "type":5, "length":32767}],"data" :[{"ID":0, "SESS_ID":52, "STATE":"Fetch prepared", "RECORD_SIZE":0, "QUERY":"select * from v$stmt"}]}
+</code></pre></div></div>
+
+<p>Changing floating point precision with s option</p>
+
+<p>Specify how many decimal places of response data to output Set to a value from 0 to 9 (If it is not a range value, it operates as 3)</p>
+
+<p>Sample (s=5)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## display result 5 decimal places
+curl -G "http://127.0.0.1:5657/machbase" --data-urlencode 'q=select * from test_table' --data-urlencode 's=5';
+   
+## Normal response
+{"error_code" :0, "error_message": "", "columns" : [{"name":"C1", "type":16, "length":4},{"name":"C2", "type":20, "length":8}],"data" :[{"C1":12345.00000, "C2":1234.01235}]}
+</code></pre></div></div>
+
+<p>Changing data Fetch mode (m option)</p>
+
+<p>Default Fetch mode Sample (m=0)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Request fetch mode (m=0)
+curl -G "http://127.0.0.1:5657/machbase" --data-urlencode 'q=select * from tag limit 2' --data-urlencode 'm=0';
+   
+## Normal response (Conatains Column Name in result data)
+{"error_code" :0, "error_message": "", "columns" : [{"name":"NAME", "type":5, "length":20},{"name":"TIME", "type":6, "length":8},{"name":"VALUE", "type":20, "length":8}],
+"data" :[{"NAME":"tag1", "TIME":"2001-09-09 10:46:40 000:000:000", "VALUE":1000000000.000}, {"NAME":"tag1", "TIME":"2001-09-09 10:46:41 000:000:000", "VALUE":1000000001.000}]}
+</code></pre></div></div>
+
+<p>Advanced Fetch mode Sample (m=1)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Request fetch mode (m=1)
+curl -G "http://127.0.0.1:5657/machbase" --data-urlencode 'q=select * from tag limit 2' --data-urlencode 'm=1';
+   
+## Normal response (Column Names are not included in results)
+{"error_code" :0, "error_message": "", "columns" : [{"name":"NAME", "type":5, "length":20},{"name":"TIME", "type":6, "length":8},{"name":"VALUE", "type":20, "length":8}],
+"data" :[["tag1", "2001-09-09 10:46:40 000:000:000", 1000000000.000], ["tag1", "2001-09-09 10:46:41 000:000:000", 1000000001.000]]}
+</code></pre></div></div>
+
+<p>Handling of NULL values</p>
+
+<p>When inserting or appending during DML processing, a NULL value can be entered as null as it is.</p>
+
+<p>JSON Sample for appending null values</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[["data1", "data2", "data3"],["data11", "data12", "data13"],["data21", "data22", "data23"],[null,null,null]]
+</code></pre></div></div>
+
+<p>Sample result containing null values from SELECT</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[{"C1":null, "C2":null, "C3":null, "C4":null, "C5":null, "C6":null, "C7":null, "C8":null, "C9":null, "C10":null, "C11":null, "C12":null}]
+</code></pre></div></div>
+
+<h1 id="restapi-for-tag-table-usage">RestAPI for Tag Table Usage</h1>
+
+<p>Machbase provides Historian-like RestAPI access to Tag Table.</p>
+
+<p>The default request format is http://ipaddr:port/machiot/ or http://ipaddr:port/machiot-rest-api/</p>
+
+<p>In addition, the following parameters can be handed over to the URL.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Sample</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>f or DateFormat</td>
+      <td>set date format</td>
+      <td>XXX?f=YYYY/MM/DD<br /> XXX?DateFormat=YYYY/MM/DD</td>
+    </tr>
+    <tr>
+      <td>m or FetchMode</td>
+      <td>set fetch mode</td>
+      <td>XXX?m=1<br /> XXX?FetchMode=1</td>
+    </tr>
+    <tr>
+      <td>s or Scale</td>
+      <td>set scale</td>
+      <td>XXX?s=12<br /> XXX?Scale=12</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="raw-data-processing-function">Raw data processing function</h2>
+
+<h3 id="raw-value-append-api">Raw Value Append API</h3>
+
+<p>This API is a function of appending a large amount of data into a given table.</p>
+
+<p>URL</p>
+
+<p>http://ipaddr:port/machiot/datapoints/raw/{Table}
+http://ipaddr:port/machiot/v1/datapoints/raw/{Table}</p>
+
+<ul>
+  <li>HTTP method : POST</li>
+  <li>Table : Target tag table to be input</li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request
+curl  -X POST -H "Content-Type: application/json" "http://127.0.0.1:${ITF_HTTP_PORT}/machiot-rest-api/datapoints/raw/tag"
+-d '{"date_format":"YYYY-MM-DD HH24:MI:SS",
+     "values":
+       [
+          ["tag1", "1999-01-01 00:00:00", 0],
+          ["tag1", "1999-01-01 00:00:01", 1],
+          ["tag1", "1999-01-01 00:00:02", 2]
+        ]
+     }';
+Response
+{
+   "error_code":0,
+   "error_message" :"No Error",
+   "timezone":"+0900",
+   "data":[],
+   "append_success":3,
+   "append_failure":0
+}
+</code></pre></div></div>
+
+<h3 id="raw-value-select-api">Raw Value Select API</h3>
+
+<p>This API is a function of obtaining data from a given table.</p>
+
+<p>It supports the method of directly specifying all URLs, and also supports the method of passing them to the factor of the GET method.</p>
+
+<p>Each directory name may be designated as a factor in the URL below.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/datapoints/raw/{Table}/{TagNames}/{Start}/{End}/{Direction}/{Count}/{Offset}
+http://ipaddr:port/machiot/v1/datapoints/raw/{Table}/{TagNames}/{Start}/{End}/{Direction}/{Count}/{Offset}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : GET</li>
+  <li>Table : Target tag table to be selected</li>
+  <li>TagNames : Target tag name to be selected<br />
+    <ul>
+      <li>This tag name can be divided into a comma and multiple tag results can be obtained in one series.</li>
+    </ul>
+  </li>
+  <li>Start : Indicates the starting time value of the data to be selected.</li>
+  <li>End :  Indicates the last time value of the data to be selected.<br />
+    <ul>
+      <li>Time format: Both space-free and space-support forms are supported as shown below. (If tested with curl, additional forms can be used)
+        <ul>
+          <li>Basic form (space supported, up to nanoseconds)
+            <ul>
+              <li>YYYY-MM-DD HH:MI:SS, millis</li>
+              <li>YYYY-MM-DD HH:MI:SS milliSec:microSec:nanoSec</li>
+            </ul>
+          </li>
+          <li>Additional Form (space not supported, Use uppercase T instead of space and support up to milliseconds)
+            <ul>
+              <li>YYYY-MM-DDTHH:MI:SS,millis</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Example
+        <ul>
+          <li>“2020-12-12”</li>
+          <li>“2020-12-12 03:22:22”</li>
+          <li>“2020-12-12 03:22:22 222:333:444”</li>
+          <li>“2020-12-12T03:22:22”</li>
+          <li>“2020-12-12T03:22:22,234”</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Direction (Omitable)
+    <ul>
+      <li>0 (Default): Output in the order entered</li>
+      <li>1 : Output in the direction of time decrease</li>
+      <li>2 : Output in the direction of time increase</li>
+    </ul>
+  </li>
+  <li>Count (Omitable)
+    <ul>
+      <li>0 (Default): Output all data</li>
+      <li>Else : Output a given number of records</li>
+    </ul>
+  </li>
+  <li>Offset (Omitable)
+    <ul>
+      <li>0 (Default) : Do not skip over</li>
+      <li>Else : Skip over a given value</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request (Directly specifying all URL)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/v1/datapoints/raw/tag/tag-1/2001-09-09T00:00:00,000/2001-09-09T01:20:00,000/0/5/0"
+Request
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "NAME",
+      "type": 5,
+      "length": 20
+    },
+    {
+      "name": "TIME",
+      "type": 6,
+      "length": 31
+    },
+    {
+      "name": "VALUE",
+      "type": 20,
+      "length": 17
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "NAME": "tag-1",
+      "TIME": "2001-09-09 01:00:01 000:000:000",
+      "VALUE": 8001
+    },
+    {
+      "NAME": "tag-1",
+      "TIME": "2001-09-09 01:01:41 000:000:000",
+      "VALUE": 8101
+    },
+    {
+      "NAME": "tag-1",
+      "TIME": "2001-09-09 01:03:21 000:000:000",
+      "VALUE": 8201
+    },
+    {
+      "NAME": "tag-1",
+      "TIME": "2001-09-09 01:05:01 000:000:000",
+      "VALUE": 8301
+    },
+    {
+      "NAME": "tag-1",
+      "TIME": "2001-09-09 01:06:41 000:000:000",
+      "VALUE": 8401
+    },
+    {
+      "NAME": "tag-1",
+      "TIME": "2001-09-09 01:08:21 000:000:000",
+      "VALUE": 8501
+    }
+  ]
+}
+ 
+Request (Passing factors)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/v1/datapoints/raw?Table=tag&amp;amp;TagNames=tag-1&amp;amp;Start=2001-09-09T00:00:00,000&amp;amp;End=2001-09-09T01:20:00,000&amp;amp;Direction=0&amp;amp;Count=5&amp;amp;Offset=0"
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "NAME",
+      "type": 5,
+      "length": 20
+    },
+    {
+      "name": "TIME",
+      "type": 6,
+      "length": 31
+    },
+    {
+      "name": "VALUE",
+      "type": 20,
+      "length": 17
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "NAME": "tag-1",
+      "TIME": "2001-09-09 01:00:01 000:000:000",
+      "VALUE": 8001
+    },
+    {
+      "NAME": "tag-1",
+      "TIME": "2001-09-09 01:01:41 000:000:000",
+      "VALUE": 8101
+    },
+    {
+      "NAME": "tag-1",
+      "TIME": "2001-09-09 01:03:21 000:000:000",
+      "VALUE": 8201
+    },
+    {
+      "NAME": "tag-1",
+      "TIME": "2001-09-09 01:05:01 000:000:000",
+      "VALUE": 8301
+    },
+    {
+      "NAME": "tag-1",
+      "TIME": "2001-09-09 01:06:41 000:000:000",
+      "VALUE": 8401
+    }
+  ]
+}
+  
+Request (When specifying multiple tags (tag-1, tag-2, tag-3))
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/v1/datapoints/raw/tag/tag-1,tag-2,tag-3/2001-09-09T00:00:00,000/2001-09-09T01:20:00,000/0/0/0";
+Response
+[
+  {
+    "NAME": "tag-1",
+    "TIME": "2001-09-09 01:00:01 000:000:000",
+    "VALUE": 8001
+  },
+  {
+    "NAME": "tag-1",
+    "TIME": "2001-09-09 01:01:41 000:000:000",
+    "VALUE": 8101
+  },
+  {
+    "NAME": "tag-2",
+    "TIME": "2001-09-09 01:00:02 000:000:000",
+    "VALUE": 8002
+  },
+  {
+    "NAME": "tag-2",
+    "TIME": "2001-09-09 01:01:42 000:000:000",
+    "VALUE": 8102
+  },
+  {
+    "NAME": "tag-3",
+    "TIME": "2001-09-09 01:00:03 000:000:000",
+    "VALUE": 8003
+  },
+  {
+    "NAME": "tag-3",
+    "TIME": "2001-09-09 01:01:43 000:000:000",
+    "VALUE": 8103
+  },
+  {
+    "NAME": "tag-3",
+    "TIME": "2001-09-09 01:03:23 000:000:000",
+    "VALUE": 8203
+  }
+]
+</code></pre></div></div>
+
+<h3 id="all-tag-based-raw-value-delete-api">All Tag-based Raw Value Delete API</h3>
+
+<p>This API deletes all data prior to a specific time for all entered tags.</p>
+
+<p>This function can be usefully used to remove data that is no longer needed after disk capacity is insufficient or backup is completed.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/datapoints/raw/{Table}/{BeforeTime}
+http://ipaddr:port/machiot/v1/datapoints/raw/{Table}/{BeforeTime}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : DELETE</li>
+  <li>Table : Target tag table to be deleted</li>
+  <li>BeforeTime : Indicates time value which all data before it will deleted</li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request
+curl -X DELETE  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/v1/datapoints/raw/tag/2001-09-09T01:20:00,000";
+Response
+{
+  "error_code": 0,
+  "error_message": "No Error",
+  "timezone": "+0900",
+  "effect_rows": "1201",
+  "data": []
+}
+</code></pre></div></div>
+
+<h3 id="specific-tag-based-raw-value-deletion-api">Specific Tag-based Raw Value deletion API</h3>
+
+<p>This API deletes all data prior to a specific time for a specific tag.</p>
+
+<p>This function can be usefully used to remove data that is no longer needed after disk capacity is insufficient or backup is completed.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/datapoints/raw/{Table}/{TagNames}/{BeforeTime}
+http://ipaddr:port/machiot/v1/datapoints/raw/{Table}/{TagNames}/{BeforeTime}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : DELETE</li>
+  <li>Table : Target tag table to be deleted</li>
+  <li>TagNames : Target tag names to be deleted. You can specify multiple tags separated by a comma.</li>
+  <li>BeforeTime : Indicates time value which all data before it will deleted</li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request
+curl -X DELETE  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/v1/datapoints/raw/tag/tag-2,tag-3/2001-09-09T01:20:00,000";
+Response
+{
+  "error_code": 0,
+  "error_message": "No Error",
+  "timezone": "+0900",
+  "effect_rows": "32",
+  "data": []
+}
+</code></pre></div></div>
+
+<h2 id="statistical-data-processing-function">Statistical data processing function</h2>
+
+<h3 id="statistical-data-select-api">Statistical Data Select API</h3>
+
+<p>This API is a function that quickly obtains statistical results for stored data.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/datapoints/calculated/{Table}/{TagNames}/{Start}/{End}/{CalculationMode}/{Count}/{IntervalType}/{IntervalValue}
+http://ipaddr:port/machiot/v1/datapoints/calculated/{Table}/{TagNames}/{Start}/{End}/{CalculationMode}/{Count}/{IntervalType}/{IntervalValue}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : GET</li>
+  <li>Table : Target tag table to be selected
+    <ul>
+      <li>TagNames : Target tag names to be selected. You can specify multiple tags separated by a comma.</li>
+    </ul>
+  </li>
+  <li>If multiple tags are specified, the total operation result for those tags is output. (If you want to get statistical results for each tag, you have to call it tag by tag)</li>
+  <li>Start, End : Specify the time range in which data is to be obtained (Lookup Raw Value Select API)</li>
+  <li>Count : Number of result</li>
+  <li>CalculationMode : Target statistical function to be obtained. You can specify multiple statistical functions separated by a comma. (The function name must be the same as below)
+    <ul>
+      <li>min : Minimum value</li>
+      <li>max : Maximum value</li>
+      <li>sum : Sum of values</li>
+      <li>count : Count of values</li>
+      <li>avg : Average of values</li>
+    </ul>
+  </li>
+  <li>IntervalType : Desired time unit type of values
+    <ul>
+      <li>sec : Per second</li>
+      <li>min : Per minute</li>
+      <li>hour : Per hour</li>
+    </ul>
+  </li>
+  <li>IntervalValue : Desired time unit of IntervalType
+    <ul>
+      <li>A value greater than 0 is specified as a minor number of 60.</li>
+      <li>Mainly 5, 10, 15, and 30 are designated.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request (single statistical function)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/v1/datapoints/calculated/tag/tag-1/2001-09-09T00:00:00,000/2001-09-09T01:20:00,000/sum/5/min/5"
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "time",
+      "type": 6,
+      "length": 31
+    },
+    {
+      "name": "sum",
+      "type": 20,
+      "length": 17
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "time": "2001-09-09 01:00:00 000:000:000",
+      "sum": 24303
+    },
+    {
+      "time": "2001-09-09 01:05:00 000:000:000",
+      "sum": 25203
+    },
+    {
+      "time": "2001-09-09 01:10:00 000:000:000",
+      "sum": 26103
+    },
+    {
+      "time": "2001-09-09 01:15:00 000:000:000",
+      "sum": 27003
+    },
+    {
+      "time": "2001-09-09 01:20:00 000:000:000",
+      "sum": 9201
+    }
+  ]
+}
+Request (multiple statistical function)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/v1/datapoints/calculated/tag/tag-1/2001-09-09T00:00:00,000/2001-09-09T01:20:00,000/sum,min,max/5/min/5"
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "time",
+      "type": 6,
+      "length": 31
+    },
+    {
+      "name": "sum",
+      "type": 20,
+      "length": 17
+    },
+    {
+      "name": "min",
+      "type": 20,
+      "length": 17
+    },
+    {
+      "name": "max",
+      "type": 20,
+      "length": 17
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "time": "2001-09-09 01:00:00 000:000:000",
+      "sum": 24303,
+      "min": 8001,
+      "max": 8201
+    },
+    {
+      "time": "2001-09-09 01:05:00 000:000:000",
+      "sum": 25203,
+      "min": 8301,
+      "max": 8501
+    },
+    {
+      "time": "2001-09-09 01:10:00 000:000:000",
+      "sum": 26103,
+      "min": 8601,
+      "max": 8801
+    },
+    {
+      "time": "2001-09-09 01:15:00 000:000:000",
+      "sum": 27003,
+      "min": 8901,
+      "max": 9101
+    },
+    {
+      "time": "2001-09-09 01:20:00 000:000:000",
+      "sum": 9201,
+      "min": 9201,
+      "max": 9201
+    }
+  ]
+}
+</code></pre></div></div>
+
+<h2 id="tag-metadata-processing-function">Tag metadata processing function</h2>
+
+<p>The schema of the table used in this section was created as follows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET "http://127.0.0.1:${ITF_HTTP_PORT}/machbase" --data-urlencode 'q=create tagdata table TAG (name_multi varchar(20) primary key, time_multi datetime basetime, value_multi double summarized, value2_multi short, value3_multi varchar(10)) metadata (myshortmeta short, baseip ipv4);';
+</code></pre></div></div>
+
+<h3 id="tag-information-insert-api">Tag Information INSERT API</h3>
+
+<p>This API is used to register tags to be used.</p>
+
+<p>Enter data as many as the number of metadata columns added when creating a table with the Tag</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/tags/list/{TableName}
+http://ipaddr:port/machiot/v1/tags/list/{TableName}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : POST</li>
+  <li>TableName : Target tag table to be input.</li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request
+curl -X POST -H "Content-Type: application/json" "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/list/tag" -d
+       '{
+        "values":[
+            ["tag3", 0, "127.0.0.0"],
+            ["tag4", 1, "127.0.0.1"],
+            ["tag4", 1, "127.0.0.1"],
+            ["tag5", 2, "127.0.0.2"]
+         ]
+        }';
+Response
+{
+  "error_code": 0,
+  "error_message": "No Error",
+  "timezone": "+0900",
+  "data": [],
+  "append_success": 3,
+  "append_failure": 1
+}
+#tag4의 중복 입력으로 에러 1건, 나머지 3건 성공
+</code></pre></div></div>
+
+<h3 id="tag-information-select-api">Tag Information SELECT API</h3>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/tags/list/{Table}/{TagName}
+http://ipaddr:port/machiot/v1/tags/list/{Table}/{TagName}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : GET</li>
+  <li>Table : Target tag table to be selected
+    <ul>
+      <li>Print a list of all tag names if only table name is specified</li>
+    </ul>
+  </li>
+  <li>TagName : Target tag name to be selected
+    <ul>
+      <li>Print the tag details</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request (select all tag names)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/list/tag"
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "name_multi",
+      "type": 5,
+      "length": 20
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "name_multi": "tag0"
+    },
+    {
+      "name_multi": "tag1"
+    },
+    {
+      "name_multi": "tag3"
+    },
+    {
+      "name_multi": "tag4"
+    },
+    {
+      "name_multi": "tag5"
+    }
+  ]
+}
+</code></pre></div></div>
+
+<h3 id="tag-information-update-api">Tag Information UPDATE API</h3>
+
+<p>This API supports modification of additional tag information.</p>
+
+<p>Both PUT and PATCH are supported, and the value of the JSON format used at the time of input must be the same as the column name of the table.</p>
+
+<p>Since multiple column names are supported, values of two or more columns can be changed at once.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/tags/list/{Table}/{TagName}
+http://ipaddr:port/machiot/v1/tags/list/{Table}/{TagName}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : PUT / PATCH</li>
+  <li>Table : Target tag table to be updated</li>
+  <li>TagName : Target tag name to be updated</li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request (PUT)
+curl -X PUT -H "Content-Type: application/json" "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/list/tag/tag0" -d  '{"baseip":"192.168.0.1"}';
+Response
+{
+   "error_code":0,
+   "error_message" :"No Error",
+   "timezone":"+0900",
+   "effect_rows":"1",
+   "data":[]
+}
+  
+Request (PATCH)
+curl -X PATCH -H "Content-Type: application/json" "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/list/tag/tag3" -d  '{"baseip":"255.255.255.0", "myshortmeta":9999 }';
+Response
+{
+   "error_code":0,
+   "error_message" :"No Error",
+   "timezone":"+0900",
+   "effect_rows":"1",
+   "data":[]
+}
+</code></pre></div></div>
+
+<h3 id="tag-information-delete-api">Tag Information DELETE API</h3>
+
+<p>This API deletes the specified tag. However, if raw data is present in the tag, deletion fails.</p>
+
+<p>In order to delete a tag in which raw data exists, this function must be called after performing the deletion of raw data for that tag.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/tags/list/{Table}/{TagNames}
+http://ipaddr:port/machiot/v1/tags/list/{Table}/{TagNames}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : DELETE</li>
+  <li>Table: Target tag table to be deleted</li>
+  <li>TagName: Target tag name to be deleted</li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request (Try to delete tag with raw data)
+curl -X DELETE -H "Content-Type: application/json" "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/list/tag/tag0";
+Response (Error)
+{
+   "error_code":2324,
+   "error_message" :"Cannot delete tagmeta. there exist data with deleted_tag key.",
+   "timezone":"+0900",
+   "data":[]
+}
+ 
+ 
+Request (Try to delete tag without raw data)
+curl -X DELETE -H "Content-Type: application/json" "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/list/tag/tag4";
+Response (Success)
+{
+   "error_code":0,
+   "error_message" :"No Error",
+   "timezone":"+0900",
+   "effect_rows":"1",
+   "data":[]
+}
+</code></pre></div></div>
+
+<h2 id="other-functions">Other functions</h2>
+
+<h3 id="time-range-lookup-api">Time range lookup API</h3>
+
+<p>This API obtains an overall time range (minimum and maximum) for data of the specified table and tag.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/tags/range/{Table}/{TagName}
+http://ipaddr:port/machiot/v1/tags/range/{Table}/{TagName}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : GET</li>
+  <li>Table : Target tag table to be selected</li>
+  <li>TagName : Target tag name to be selected
+    <ul>
+      <li>If not specified, return the whole tag time range (the tag name will be returned to ALL).</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request (Whole tag range)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/range/tag"
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "name",
+      "type": 5,
+      "length": 3
+    },
+    {
+      "name": "min",
+      "type": 6,
+      "length": 31
+    },
+    {
+      "name": "max",
+      "type": 6,
+      "length": 31
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "name": "ALL",
+      "min": "2001-09-09 01:00:00 000:000:000",
+      "max": "2032-09-09 10:46:49 000:000:000"
+    }
+  ]
+}
+  
+Request (Time range of each specified tag)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/range/tag/tag-1,tag-2"
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "name",
+      "type": 5,
+      "length": 20
+    },
+    {
+      "name": "min",
+      "type": 6,
+      "length": 31
+    },
+    {
+      "name": "max",
+      "type": 6,
+      "length": 31
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "name": "tag-1",
+      "min": "2001-09-09 01:00:01 000:000:000",
+      "max": "2001-09-21 12:31:41 000:000:000"
+    },
+    {
+      "name": "tag-2",
+      "min": "2001-09-09 01:00:02 000:000:000",
+      "max": "2001-09-21 12:31:42 000:000:000"
+    }
+  ]
+}
+</code></pre></div></div>
+
+<h3 id="minimum-value-api">Minimum value API</h3>
+
+<p>This API gets the minimum Value existing in the specified table or tag.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/tags/min/{Table}/{TagName}
+http://ipaddr:port/machiot/v1/tags/min/{Table}/{TagName}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : GET</li>
+  <li>Table : Target tag table to be selected</li>
+  <li>TagName : Target tag name to be selected
+    <ul>
+      <li>If not specified, return the minimum value of the table</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request (Minimum value of whole table)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/min/tag"
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "min",
+      "type": 20,
+      "length": 17
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "min": 0.0
+    }
+  ]
+}
+ 
+ 
+Request (Minimum value of each specified tag)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/min/tag/tag-1,tag-2";
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "name",
+      "type": 5,
+      "length": 100
+    },
+    {
+      "name": "time",
+      "type": 6,
+      "length": 31
+    },
+    {
+      "name": "min",
+      "type": 20,
+      "length": 17
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "name": "tag-1",
+      "time": "2001-09-09 10:46:42 000:000:000",
+      "min": 10001.0
+    },
+    {
+      "name": "tag-2",
+      "time": "2001-09-09 10:46:43 000:000:000",
+      "min": 10002.0
+    }
+  ]
+}
+</code></pre></div></div>
+
+<h3 id="maximum-value-api">Maximum value API</h3>
+
+<p>This API gets the maximum Value existing in the specified table or tag.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/tags/max/{Table}/{TagName}
+http://ipaddr:port/machiot/v1/tags/max/{Table}/{TagName}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : GET</li>
+  <li>Table : Target tag table to be selected</li>
+  <li>TagName : Target tag name to be selected
+    <ul>
+      <li>If not specified, return the maximum value of the table</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request (Maximum value of the table)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/max/tag"
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "max",
+      "type": 20,
+      "length": 17
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "max": 10000000000.0
+    }
+  ]
+}
+ 
+ 
+Request (Maximum value of each specified tag)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/max/tag/tag-1,tag-2";
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "name",
+      "type": 5,
+      "length": 100
+    },
+    {
+      "name": "time",
+      "type": 6,
+      "length": 31
+    },
+    {
+      "name": "max",
+      "type": 20,
+      "length": 17
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "name": "tag-1",
+      "time": "2001-09-09 13:12:12 000:000:000",
+      "max": 9999999991.0
+    },
+    {
+      "name": "tag-2",
+      "time": "2001-09-09 13:12:13 000:000:000",
+      "max": 9999999992.0
+    }
+  ]
+}
+</code></pre></div></div>
+
+<h3 id="first-row-api">First row API</h3>
+
+<p>This API gets the row with the smallest time value that exists in the specified table or tag.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/tags/first/{Table}/{TagName}
+http://ipaddr:port/machiot/v1/tags/first/{Table}/{TagName}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : GET</li>
+  <li>Table : Target tag table to be selected</li>
+  <li>TagName : Target tag name to be selected
+    <ul>
+      <li>If not specified, return the row with the smallest time value of the table</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request (Earliest row data of the table)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/first/tag"
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "NAME",
+      "type": 5,
+      "length": 20
+    },
+    {
+      "name": "TIME",
+      "type": 6,
+      "length": 31
+    },
+    {
+      "name": "VALUE",
+      "type": 20,
+      "length": 17
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "NAME": "tag-0",
+      "TIME": "2001-09-09 01:00:00 000:000:000",
+      "VALUE": 8000.0
+    }
+  ]
+}
+ 
+ 
+Request (Earliest row data of each specified tag)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/first/tag/tag-1,tag-2";
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "NAME",
+      "type": 5,
+      "length": 20
+    },
+    {
+      "name": "TIME",
+      "type": 6,
+      "length": 31
+    },
+    {
+      "name": "VALUE",
+      "type": 20,
+      "length": 17
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "NAME": "tag-1",
+      "TIME": "2001-09-09 01:00:01 000:000:000",
+      "VALUE": 8001.0
+    },
+    {
+      "NAME": "tag-2",
+      "TIME": "2001-09-09 01:00:02 000:000:000",
+      "VALUE": 8002.0
+    }
+  ]
+}
+</code></pre></div></div>
+
+<h3 id="last-row-api">Last row API</h3>
+
+<p>This API gets the row with the largest time value that exists in the specified table or tag.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/tags/last/{Table}/{TagName}
+http://ipaddr:port/machiot/v1/tags/last/{Table}/{TagName}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : GET</li>
+  <li>Table : Target tag table to be selected</li>
+  <li>TagName : Target tag name to be selected
+    <ul>
+      <li>If not specified, return the row with the largest time value of the table</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request (Latest row data of the table)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/last/tag"
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "NAME",
+      "type": 5,
+      "length": 20
+    },
+    {
+      "name": "TIME",
+      "type": 6,
+      "length": 31
+    },
+    {
+      "name": "VALUE",
+      "type": 20,
+      "length": 17
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "NAME": "dummy",
+      "TIME": "2032-09-09 10:46:49 000:000:000",
+      "VALUE": 1000000009.0
+    }
+  ]
+}
+ 
+ 
+Request (Latest row data of each specified tag)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/last/tag/tag-1,tag-2";
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "NAME",
+      "type": 5,
+      "length": 20
+    },
+    {
+      "name": "TIME",
+      "type": 6,
+      "length": 31
+    },
+    {
+      "name": "VALUE",
+      "type": 20,
+      "length": 17
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "NAME": "tag-1",
+      "TIME": "2001-09-21 12:31:41 000:000:000",
+      "VALUE": 999901.0
+    },
+    {
+      "NAME": "tag-2",
+      "TIME": "2001-09-21 12:31:42 000:000:000",
+      "VALUE": 999902.0
+    }
+  ]
+}
+</code></pre></div></div>
+
+<h3 id="record-count-api">Record count API</h3>
+
+<p>This API obtains the number of records present in the specified table or tag.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/tags/count/{Table}/{TagNames}
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/tags/cnt/{Table}/{TagNames}
+http://ipaddr:port/machiot/v1/tags/count/{Table}/{TagNames}
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/v1/tags/cnt/{Table}/{TagNames}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : GET</li>
+  <li>Table : Target tag table to be counted</li>
+  <li>TagName : Target tag name to be counted
+    <ul>
+      <li>If not specified, output the total number of records in the table.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request (Total number of records in the table)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/count/tag"
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "count",
+      "type": 12,
+      "length": 20
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "count": 1000001
+    }
+  ]
+}
+ 
+ 
+Request (Records count of each specified tag)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/count/tag/tag-1,tag-2";
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "name",
+      "type": 5,
+      "length": 100
+    },
+    {
+      "name": "count",
+      "type": 12,
+      "length": 20
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "name": "tag-1",
+      "count": 10000
+    },
+    {
+      "name": "tag-2",
+      "count": 10000
+    }
+  ]
+}
+</code></pre></div></div>
+
+<h3 id="disk-usage-api">Disk usage API</h3>
+
+<p>This API approximates the disk usage in use by the specified table or tag.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot/tags/disksize/{Table}/{TagNames}
+http://ipaddr:port/machiot/v1/tags/disksize/{Table}/{TagNames}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : GET</li>
+  <li>Table : Target tag table to be measured</li>
+  <li>TagName : Target tag name to be measured
+    <ul>
+      <li>If not specified, output the total disk usage for that table.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request (Total disk usage for table)
+curl -X GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/disksize/tag/"
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "disksize",
+      "type": 12,
+      "length": 20
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "disksize": 276904448
+    }
+  ]
+}
+ 
+Request (Disk usage of each specified tag)
+curl -X  GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/disksize/tag/tag-1,tag-2"
+Response
+{
+  "error_code": 0,
+  "error_message": "",
+  "columns": [
+    {
+      "name": "name",
+      "type": 5,
+      "length": 100
+    },
+    {
+      "name": "disksize",
+      "type": 12,
+      "length": 20
+    }
+  ],
+  "timezone": "+0900",
+  "data": [
+    {
+      "name": "tag-1",
+      "disksize": 240000
+    },
+    {
+      "name": "tag-2",
+      "disksize": 240000
+    }
+  ]
+}
+</code></pre></div></div>
+
+<h3 id="rollup-request-api">Rollup request API</h3>
+
+<p>This API requests compulsory execution for a specific rollup table. Through this, it is forced to calculate statistical values that have not yet been calculated.</p>
+
+<p>If you call this API, you can wait for seconds to minutes depending on the situation, so you should use it carefully.</p>
+
+<p>URL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://ipaddr:port/machiot//rollup/{Table}
+http://ipaddr:port/machiot/v1//rollup/{Table}
+</code></pre></div></div>
+
+<ul>
+  <li>HTTP method : GET</li>
+  <li>Table : Target table to be execute rollup</li>
+</ul>
+
+<p>Usage</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request
+curl -X HTTP GET  "http://127.0.0.1:${ITF_HTTP_PORT}/machiot/tags/rollup/tag"
+Response
+{
+  "error_code": 0,
+  "error_message": "No Error",
+  "timezone": "+0900",
+  "data": []
+}
+</code></pre></div></div>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

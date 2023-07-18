@@ -1,0 +1,3508 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>Virtual Table</title>
+    <meta property="og:title" content="Virtual Table" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="Virtual Table">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Virtual Table"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/config-monitor/virtualtable.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/config-monitor/virtualtable.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/config-monitor/">Config monitor</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/config-monitor/virtualtable.html">Virtual Table</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">Virtual Table</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#index">Index</a></li>
+  <li><a href="#sessionsystem">Session/System</a>
+    <ul>
+      <li><a href="#vproperty">V$PROPERTY</a></li>
+      <li><a href="#vsession">V$SESSION</a></li>
+      <li><a href="#vsesmem">V$SESMEM</a></li>
+      <li><a href="#vsesstat">V$SESSTAT</a></li>
+      <li><a href="#vsestime">V$SESTIME</a></li>
+    </ul>
+  </li>
+  <li><a href="#vsysmem">V$SYSMEM</a>
+    <ul>
+      <li><a href="#vsysstat">V$SYSSTAT</a></li>
+      <li><a href="#vsystime">V$SYSTIME</a></li>
+      <li><a href="#vstmt">V$STMT</a></li>
+      <li><a href="#vversion">V$VERSION</a></li>
+    </ul>
+  </li>
+  <li><a href="#result-cache">Result Cache</a>
+    <ul>
+      <li><a href="#vrs_cache_list">V$RS_CACHE_LIST</a></li>
+      <li><a href="#vrs_cache_stat">V$RS_CACHE_STAT</a></li>
+    </ul>
+  </li>
+  <li><a href="#storage">Storage</a>
+    <ul>
+      <li><a href="#vstorage">V$STORAGE</a></li>
+      <li><a href="#vstorage_mount_databases">V$STORAGE_MOUNT_DATABASES</a></li>
+      <li><a href="#vcache">V$CACHE</a></li>
+      <li><a href="#vcache_objects">V$CACHE_OBJECTS</a></li>
+      <li><a href="#vstorage_dc_tablespaces">V$STORAGE_DC_TABLESPACES</a></li>
+      <li><a href="#vstorage_dc_tablespace_disks">V$STORAGE_DC_TABLESPACE_DISKS</a></li>
+      <li><a href="#vstorage_dc_dwfiles">V$STORAGE_DC_DWFILES</a></li>
+      <li><a href="#vstorage_dc_pagecache">V$STORAGE_DC_PAGECACHE</a></li>
+      <li><a href="#vstorage_dc_pagecache_lru_lst">V$STORAGE_DC_PAGECACHE_LRU_LST</a></li>
+      <li><a href="#vstorage_usage">V$STORAGE_USAGE</a></li>
+      <li><a href="#vstorage_tables">V$STORAGE_TABLES</a></li>
+    </ul>
+  </li>
+  <li><a href="#log-table">Log Table</a>
+    <ul>
+      <li><a href="#vstorage_dc_tables">V$STORAGE_DC_TABLES</a></li>
+      <li><a href="#vstorage_dc_tables_stat">V$STORAGE_DC_TABLES_STAT</a></li>
+      <li><a href="#vstorage_dc_table_columns">V$STORAGE_DC_TABLE_COLUMNS</a></li>
+      <li><a href="#vstorage_dc_table_column_parts">V$STORAGE_DC_TABLE_COLUMN_PARTS</a></li>
+      <li><a href="#vstorage_dc_table_indexes">V$STORAGE_DC_TABLE_INDEXES</a></li>
+    </ul>
+  </li>
+  <li><a href="#lsmlog-structured-merge-index">LSM(Log Structured Merge) Index</a>
+    <ul>
+      <li><a href="#vstorage_dc_lsmindex_level_parts">V$STORAGE_DC_LSMINDEX_LEVEL_PARTS</a></li>
+      <li><a href="#vstorage_dc_lsmindex_level_parts_cache">V$STORAGE_DC_LSMINDEX_LEVEL_PARTS_CACHE</a></li>
+      <li><a href="#vstorage_dc_lsmindex_levels">V$STORAGE_DC_LSMINDEX_LEVELS</a></li>
+      <li><a href="#vstorage_dc_lsmindex_files">V$STORAGE_DC_LSMINDEX_FILES</a></li>
+      <li><a href="#vstorage_dc_lsmindex_ager_jobs">V$STORAGE_DC_LSMINDEX_AGER_JOBS</a></li>
+    </ul>
+  </li>
+  <li><a href="#volatile-table">Volatile Table</a>
+    <ul>
+      <li><a href="#vstorage_dc_volatile_table">V$STORAGE_DC_VOLATILE_TABLE</a></li>
+    </ul>
+  </li>
+  <li><a href="#tag-table">Tag Table</a>
+    <ul>
+      <li><a href="#vstorage_tag_tables">V$STORAGE_TAG_TABLES</a></li>
+      <li><a href="#vstorage_tag_cache">V$STORAGE_TAG_CACHE</a></li>
+      <li><a href="#vstorage_tag_cache_objects">V$STORAGE_TAG_CACHE_OBJECTS</a></li>
+      <li><a href="#vstorage_tag_table_files">V$STORAGE_TAG_TABLE_FILES</a></li>
+      <li><a href="#vstorage_tag_index">V$STORAGE_TAG_INDEX</a></li>
+    </ul>
+  </li>
+  <li><a href="#tag-rollup">Tag Rollup</a>
+    <ul>
+      <li><a href="#vrollup">V$ROLLUP</a></li>
+    </ul>
+  </li>
+  <li><a href="#stream">Stream</a>
+    <ul>
+      <li><a href="#vstreams">V$STREAMS</a></li>
+    </ul>
+  </li>
+  <li><a href="#license">License</a>
+    <ul>
+      <li><a href="#vlicense_info">V$LICENSE_INFO</a></li>
+      <li><a href="#vlicense_status">V$LICENSE_STATUS</a></li>
+    </ul>
+  </li>
+  <li><a href="#mutex">Mutex</a>
+    <ul>
+      <li><a href="#vmutex">V$MUTEX</a></li>
+      <li><a href="#vmutex_wait_stat">V$MUTEX_WAIT_STAT</a></li>
+    </ul>
+  </li>
+  <li><a href="#cluster">Cluster</a>
+    <ul>
+      <li><a href="#vnode_status">V$NODE_STATUS</a></li>
+      <li><a href="#vddl_info">V$DDL_INFO</a></li>
+      <li><a href="#vreplication">V$REPLICATION</a></li>
+      <li><a href="#vrepl_sender">V$REPL_SENDER</a></li>
+      <li><a href="#vrepl_sender_meta">V$REPL_SENDER_META</a></li>
+      <li><a href="#vrepl_receiver">V$REPL_RECEIVER</a></li>
+      <li><a href="#vrepl_receiver_meta">V$REPL_RECEIVER_META</a></li>
+      <li><a href="#vrepl_reader">V$REPL_READER</a></li>
+      <li><a href="#vrepl_reader_meta">V$REPL_READER_META</a></li>
+      <li><a href="#vrepl_writer">V$REPL_WRITER</a></li>
+      <li><a href="#vrepl_writer_meta">V$REPL_WRITER_META</a></li>
+    </ul>
+  </li>
+  <li><a href="#others">Others</a>
+    <ul>
+      <li><a href="#vtables">V$TABLES</a></li>
+      <li><a href="#vcolumns">V$COLUMNS</a></li>
+      <li><a href="#vretention_job">V$RETENTION_JOB</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>The Virtual Tables are virtual tables that represent various operational information of the Machbase server in the form of a table. The names of these tables begin with “V$”.</p>
+
+<p>This data is used to know what state the Machbase server is operating in.
+In addition, various information can be obtained through JOIN operation with other tables in this virtual table.</p>
+
+<p>Virtual Tables are read-only and can not be added / deleted / updated by the user.</p>
+
+<h1 id="sessionsystem">Session/System</h1>
+
+<h2 id="vproperty">V$PROPERTY</h2>
+
+<p>Displays the property information set in the server.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NAME</td>
+      <td>Property name</td>
+    </tr>
+    <tr>
+      <td>VALUE</td>
+      <td>Property value</td>
+    </tr>
+    <tr>
+      <td>TYPE</td>
+      <td>Data type</td>
+    </tr>
+    <tr>
+      <td>DEFLT</td>
+      <td>Default value</td>
+    </tr>
+    <tr>
+      <td>MIN</td>
+      <td>Minimum set value</td>
+    </tr>
+    <tr>
+      <td>MAX</td>
+      <td>Maximum set value</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vsession">V$SESSION</h2>
+
+<p>Displays session information connected to the Machbase server.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HOSTNAME (Cluster Only)</td>
+      <td>Name of the HOST which the session is connected.</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Session identifier</td>
+    </tr>
+    <tr>
+      <td>CLOSED</td>
+      <td>Whether connection is closed</td>
+    </tr>
+    <tr>
+      <td>USER_ID</td>
+      <td>User identifier</td>
+    </tr>
+    <tr>
+      <td>LOGIN_TIME</td>
+      <td>Connection time</td>
+    </tr>
+    <tr>
+      <td>CLIENT_TYPE</td>
+      <td>Connected client type</td>
+    </tr>
+    <tr>
+      <td>USER_NAME</td>
+      <td>User name</td>
+    </tr>
+    <tr>
+      <td>USER_IP</td>
+      <td>User IP address</td>
+    </tr>
+    <tr>
+      <td>SQL_LOGGING</td>
+      <td>Leave message in session trace log status<br /><br />1: Leaves errors occurring in the Parsing, Validation, Optimization steps<br />2: Leaves result performance of DDL<br />3: (Leaves both cases above)</td>
+    </tr>
+    <tr>
+      <td>SHOW_HIDDEN_COLS</td>
+      <td>Whether hidden columns are shown upon SELECT</td>
+    </tr>
+    <tr>
+      <td>FEEDBACK_APPEND_ERROR</td>
+      <td>Whether there is feedback to client on APPEND error</td>
+    </tr>
+    <tr>
+      <td>DEFAULT_DATE_FORMAT</td>
+      <td>Default input format upon Datetime input</td>
+    </tr>
+    <tr>
+      <td>HASH_BUCKET_SIZE</td>
+      <td>Number of Buckets in Temp Hashtable created when performing query</td>
+    </tr>
+    <tr>
+      <td>AX_QPX_MEM</td>
+      <td>Maximum memory size available when performing query</td>
+    </tr>
+    <tr>
+      <td>RS_CACHE_ENABLE</td>
+      <td>Whether Result Cache in in use</td>
+    </tr>
+    <tr>
+      <td>RS_CACHE_TIME_BOUND_MSEC</td>
+      <td>Maximum elapsed time to store results when using Result Cache</td>
+    </tr>
+    <tr>
+      <td>RS_CACHE_MAX_MEMORY_PER_QUERY</td>
+      <td>Maximum size of memory used per query when using Result Cache</td>
+    </tr>
+    <tr>
+      <td>RS_CACHE_MAX_RECORD_PER_QUERY</td>
+      <td>Maximum number of results used per query when using Result Cache</td>
+    </tr>
+    <tr>
+      <td>RS_CACHE_APPROXIMATE_RESULT_ENABLE</td>
+      <td>Whether to cache approximate query results when using Result Cache</td>
+    </tr>
+    <tr>
+      <td>IDLE_TIMEOUT</td>
+      <td>Terminate the session if the client does nothing for that time after the session connected.</td>
+    </tr>
+    <tr>
+      <td>QUERY_TIMEOUT</td>
+      <td>Response waiting time for query execution</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vsesmem">V$SESMEM</h2>
+
+<p>Displays session memory information.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SID</td>
+      <td>Session identifier</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Memory manager identifier</td>
+    </tr>
+    <tr>
+      <td>USAGE</td>
+      <td>Usage size</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vsesstat">V$SESSTAT</h2>
+
+<p>Displays statistical information of the session.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SID</td>
+      <td>Session identifier</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Statistical information identifier</td>
+    </tr>
+    <tr>
+      <td>VALUE</td>
+      <td>Statistical information value</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vsestime">V$SESTIME</h2>
+
+<p>Displays the time information of the session.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SID</td>
+      <td>Session identifier</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Performance unit identifier</td>
+    </tr>
+    <tr>
+      <td>ACCUM_TICK</td>
+      <td>Cumulative time</td>
+    </tr>
+    <tr>
+      <td>MAX_TICK</td>
+      <td>Maximum time (per each performance unit)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="vsysmem">V$SYSMEM</h1>
+
+<p>Displays memory information of the system.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>Memory manager identifier</td>
+    </tr>
+    <tr>
+      <td>NAME</td>
+      <td>Memory manager name</td>
+    </tr>
+    <tr>
+      <td>USAGE</td>
+      <td>Current usage</td>
+    </tr>
+    <tr>
+      <td>MAX_USAGE</td>
+      <td>(Recorded) Maximum usage</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vsysstat">V$SYSSTAT</h2>
+
+<p>Displays statistical information of the system.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Column Name</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Statistical information identifier</td>
+    </tr>
+    <tr>
+      <td>NAME</td>
+      <td>Statistical information name</td>
+    </tr>
+    <tr>
+      <td>VALUE</td>
+      <td>Statistical information value</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vsystime">V$SYSTIME</h2>
+
+<p>Displays the time information of the system.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>Performance unit identifier</td>
+    </tr>
+    <tr>
+      <td>NAME</td>
+      <td>Performance unit name</td>
+    </tr>
+    <tr>
+      <td>ACCUM_TICK</td>
+      <td>Cumulative time</td>
+    </tr>
+    <tr>
+      <td>AVG_TICK</td>
+      <td>Average time (per each performance unit)</td>
+    </tr>
+    <tr>
+      <td>MIN_TICK</td>
+      <td>Minimum Time (per each performance unit)</td>
+    </tr>
+    <tr>
+      <td>MAX_TICK</td>
+      <td>Maximum Time (per each performance unit)</td>
+    </tr>
+    <tr>
+      <td>COUNT</td>
+      <td>Performance frequency</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstmt">V$STMT</h2>
+
+<p>Displays information about the query statement that the user is currently executing.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>Query identifier</td>
+    </tr>
+    <tr>
+      <td>SESS_ID</td>
+      <td>Performed query session identifier</td>
+    </tr>
+    <tr>
+      <td>STATE</td>
+      <td>Query status</td>
+    </tr>
+    <tr>
+      <td>RECORD_SIZE</td>
+      <td>Resulting record size of select statements</td>
+    </tr>
+    <tr>
+      <td>QUERY</td>
+      <td>Query statement</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vversion">V$VERSION</h2>
+
+<p>Displays information about Machbase version.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BINARY_DB_MAJOR_VERSION</td>
+      <td>Database major version</td>
+    </tr>
+    <tr>
+      <td>BINARY_DB_MINOR_VERSION</td>
+      <td>Database minor version</td>
+    </tr>
+    <tr>
+      <td>BINARY_META_MAJOR_VERSION</td>
+      <td>META major version</td>
+    </tr>
+    <tr>
+      <td>BINARY_META_MINOR_VERSION</td>
+      <td>META minor version</td>
+    </tr>
+    <tr>
+      <td>BINARY_CM_MAJOR_VERSION</td>
+      <td>Client (Communication Level) major version</td>
+    </tr>
+    <tr>
+      <td>BINARY_CM_MINOR_VERSION</td>
+      <td>Client (Communication Level) minor version</td>
+    </tr>
+    <tr>
+      <td>BINARY_SIGNATURE</td>
+      <td>Version name of DB data files.</td>
+    </tr>
+    <tr>
+      <td>FILE_DB_MAJOR_VERSION</td>
+      <td>File DB major version</td>
+    </tr>
+    <tr>
+      <td>FILE_DB_MINOR_VERSION</td>
+      <td>File DB minor version</td>
+    </tr>
+    <tr>
+      <td>FILE_META_MAJOR_VERSION</td>
+      <td>File META major version</td>
+    </tr>
+    <tr>
+      <td>FILE_META_MINOR_VERSION</td>
+      <td>File META minor version</td>
+    </tr>
+    <tr>
+      <td>FILE_CM_MAJOR_VERSION</td>
+      <td>File Client (Communication Level) major version</td>
+    </tr>
+    <tr>
+      <td>FILE_CM_MINOR_VERSION</td>
+      <td>File Client (Communication Level) minor version</td>
+    </tr>
+    <tr>
+      <td>FILE_CREATE_TIME</td>
+      <td>File creation time</td>
+    </tr>
+    <tr>
+      <td>EDITION</td>
+      <td>Machbase type</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="result-cache">Result Cache</h1>
+
+<h2 id="vrs_cache_list">V$RS_CACHE_LIST</h2>
+
+<p>Display the result cache list.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TOUCH_TIME</td>
+      <td>Time cache was used or created</td>
+    </tr>
+    <tr>
+      <td>USER_ID</td>
+      <td>Cache user identifier</td>
+    </tr>
+    <tr>
+      <td>QUERY</td>
+      <td>Cache query statement</td>
+    </tr>
+    <tr>
+      <td>TIME_SPENT</td>
+      <td>Time spent producing result</td>
+    </tr>
+    <tr>
+      <td>TABLE_COUNT</td>
+      <td>Number of tables associated with query statement</td>
+    </tr>
+    <tr>
+      <td>RECORD_COUNT</td>
+      <td>Number of result records</td>
+    </tr>
+    <tr>
+      <td>REFERENCE_COUNT</td>
+      <td>Number of sessions currently being referenced</td>
+    </tr>
+    <tr>
+      <td>HIT_COUNT</td>
+      <td>Cache hit count</td>
+    </tr>
+    <tr>
+      <td>AGGR_TOUCH_TIME</td>
+      <td>Time the cache was used or created for aggregate results</td>
+    </tr>
+    <tr>
+      <td>AGGR_HIT_COUNT</td>
+      <td>Cache hit count for aggregate results</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vrs_cache_stat">V$RS_CACHE_STAT</h2>
+
+<p>Display statistical information of result cache in one session.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CACHE_COUNT</td>
+      <td>Number of result caches</td>
+    </tr>
+    <tr>
+      <td>CACHE_HIT</td>
+      <td>Total cache hit count</td>
+    </tr>
+    <tr>
+      <td>AGGR_HIT</td>
+      <td>Total cache hit count for aggregate results</td>
+    </tr>
+    <tr>
+      <td>CACHE_REPLACED</td>
+      <td>Cache replacement count</td>
+    </tr>
+    <tr>
+      <td>CACHE_MEMORY_USAGE</td>
+      <td>Size of cache memory used</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="storage">Storage</h1>
+
+<h2 id="vstorage">V$STORAGE</h2>
+
+<p>Displays internal information of the storage system.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DC_TABLE_FILE_SIZE</td>
+      <td>Total capacity of disk column data</td>
+    </tr>
+    <tr>
+      <td>DC_INDEX_FILE_SIZE</td>
+      <td>Total capacity of index file data</td>
+    </tr>
+    <tr>
+      <td>DC_TABLESPACE_DWFILE_SIZE</td>
+      <td>Total capacity of DWFILE for all column data</td>
+    </tr>
+    <tr>
+      <td>DC_KV_TABLE_FILE_SIZE</td>
+      <td>Total number of data files of TAGDATA table partition tables</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_mount_databases">V$STORAGE_MOUNT_DATABASES</h2>
+
+<p>Displays the information of the mounted backup database using the mount function.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NAME</td>
+      <td>Mounted database name</td>
+    </tr>
+    <tr>
+      <td>PATH</td>
+      <td>Backup file location</td>
+    </tr>
+    <tr>
+      <td>BACKUP_TBSID</td>
+      <td>Backup database tablespace identifier</td>
+    </tr>
+    <tr>
+      <td>BACKUP_SCN</td>
+      <td>Backup database identifier</td>
+    </tr>
+    <tr>
+      <td>MOUNTDB</td>
+      <td>Backup time</td>
+    </tr>
+    <tr>
+      <td>DB_BEGIN_TIME</td>
+      <td>Backup database first entry time</td>
+    </tr>
+    <tr>
+      <td>DB_END_TIME</td>
+      <td>Backup database last entry time</td>
+    </tr>
+    <tr>
+      <td>BACKUP_BEGIN_TIME</td>
+      <td>Backup begin time</td>
+    </tr>
+    <tr>
+      <td>BACKUP_END_TIME</td>
+      <td>Backup end time</td>
+    </tr>
+    <tr>
+      <td>FLAG</td>
+      <td>Property flag</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vcache">V$CACHE</h2>
+
+<p>Displays the comprehensive information on the cache objects containing the results read from the storage system.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OBJ_COUNT</td>
+      <td>Current number of result set cache objects</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vcache_objects">V$CACHE_OBJECTS</h2>
+
+<p>Displays information about each cache object that contains the results read from the storage system.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OID</td>
+      <td>Object identifier</td>
+    </tr>
+    <tr>
+      <td>REF_COUNT</td>
+      <td>Reference count</td>
+    </tr>
+    <tr>
+      <td>FLAG</td>
+      <td>(Internal server use flag)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_dc_tablespaces">V$STORAGE_DC_TABLESPACES</h2>
+
+<p>Displays the table space information of the storage system.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NAME</td>
+      <td>Tablespace name</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Tablespace identifier</td>
+    </tr>
+    <tr>
+      <td>FLAG</td>
+      <td>Flag indicating tablespace property</td>
+    </tr>
+    <tr>
+      <td>REF_COUNT</td>
+      <td>Tablespace reference count</td>
+    </tr>
+    <tr>
+      <td>DISK_COUNT</td>
+      <td>Tablespace disk count</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_dc_tablespace_disks">V$STORAGE_DC_TABLESPACE_DISKS</h2>
+
+<p>Displays the table space information of the storage system.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NAME</td>
+      <td>Disk name</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Disk identifier</td>
+    </tr>
+    <tr>
+      <td>TABLESPACE_ID</td>
+      <td>Disk tablespace identifier</td>
+    </tr>
+    <tr>
+      <td>PATH</td>
+      <td>Disk path</td>
+    </tr>
+    <tr>
+      <td>IO_THREAD_COUNT</td>
+      <td>I/O Thread count</td>
+    </tr>
+    <tr>
+      <td>IO_JOB_COUNT</td>
+      <td>I/O Job count</td>
+    </tr>
+    <tr>
+      <td>VIRTUAL_DISK_COUNT</td>
+      <td>Virtual disk count</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_dc_dwfiles">V$STORAGE_DC_DWFILES</h2>
+
+<p>Displays the information of the double-write file (DW File) operated by the storage system.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TBS_ID</td>
+      <td>Tablespace identifier</td>
+    </tr>
+    <tr>
+      <td>DISK_ID</td>
+      <td>Disk identifier</td>
+    </tr>
+    <tr>
+      <td>FILE</td>
+      <td>File path</td>
+    </tr>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>COLUMN_ID</td>
+      <td>Column identifier</td>
+    </tr>
+    <tr>
+      <td>PARTITION_ID</td>
+      <td>Partition identifier</td>
+    </tr>
+    <tr>
+      <td>PAGE_ID</td>
+      <td>Page identifier</td>
+    </tr>
+    <tr>
+      <td>DISK_OFFSET</td>
+      <td>Disk offset</td>
+    </tr>
+    <tr>
+      <td>DISK_IMAGE_SIZE</td>
+      <td>Disk image size</td>
+    </tr>
+    <tr>
+      <td>HEAD_CRC32CODE_IMAGE</td>
+      <td>Head CRC32 Code Image</td>
+    </tr>
+    <tr>
+      <td>TAIL_CRC32CODE_IMAGE</td>
+      <td>Tail CRC32 Code Image</td>
+    </tr>
+    <tr>
+      <td>CRC32CODE_PAGE</td>
+      <td>CRC32 Code Page</td>
+    </tr>
+    <tr>
+      <td>HEAD_TIMESTAMP_PAGE</td>
+      <td>Head Timestamp Page</td>
+    </tr>
+    <tr>
+      <td>TAIL_TIMESTAMP_PAGE</td>
+      <td>Tail Timestamp Page</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_dc_pagecache">V$STORAGE_DC_PAGECACHE</h2>
+
+<p>Displays information about the Page Cache operating on the storage system</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MAX_MEM_SIZE</td>
+      <td>Maximum memory size of Page Cache</td>
+    </tr>
+    <tr>
+      <td>CUR_MEM_SIZE</td>
+      <td>Current memory size of Page Cache</td>
+    </tr>
+    <tr>
+      <td>PAGE_CNT</td>
+      <td>Number of cached pages</td>
+    </tr>
+    <tr>
+      <td>CHECK_TIME</td>
+      <td>Check time</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_dc_pagecache_lru_lst">V$STORAGE_DC_PAGECACHE_LRU_LST</h2>
+
+<p>Displays information about the LRU List of Page Cache operated by the storage system.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OBJECT_ID</td>
+      <td>Object identifier</td>
+    </tr>
+    <tr>
+      <td>LEVEL</td>
+      <td>Partition level</td>
+    </tr>
+    <tr>
+      <td>PARTITION_ID</td>
+      <td>Partition identifier</td>
+    </tr>
+    <tr>
+      <td>OFFSET</td>
+      <td>Page Cache Offset</td>
+    </tr>
+    <tr>
+      <td>SIZE</td>
+      <td>Page size</td>
+    </tr>
+    <tr>
+      <td>REF_CNT</td>
+      <td>Reference count</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_usage">V$STORAGE_USAGE</h2>
+
+<p>Displays the amount of storage used by the storage system.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TOTAL_SPACE</td>
+      <td>Total storage capacity where the $MACHBASE_HOME/dbs directory is located</td>
+    </tr>
+    <tr>
+      <td>USED_SPACE</td>
+      <td>Total storage usage where the $MACHBASE_HOME/dbs directory is located</td>
+    </tr>
+    <tr>
+      <td>USED_RATIO</td>
+      <td>Percentage of usage(%)</td>
+    </tr>
+    <tr>
+      <td>RATIO_CAP</td>
+      <td>Storage usage limit. Data input/index construction stops when USED_RATIO reaches this limit.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_tables">V$STORAGE_TABLES</h2>
+
+<p>Display table details.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>Table ID</td>
+    </tr>
+    <tr>
+      <td>TYPE</td>
+      <td>Table type<br /> - Persistent: LOG / TAG Table<br /> - Volatile: Volatile Table - Key-Value: Accompanying table of TAG table</td>
+    </tr>
+    <tr>
+      <td>STATUS</td>
+      <td>Current Status<br /> - Creating…: Creating table by CREATE TABLE query<br /> - Normal: normal<br /> - Predrop: DROP TABLE query accepted<br /> - Dropping…: DROP TABLE query processing<br /> - Dropped: DROP TABLE query completed<br /> - Mounted: The backed up database loaded with the MOUNT query</td>
+    </tr>
+    <tr>
+      <td>STORAGE_USAGE</td>
+      <td>Capacity occupied by the table in storage</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="log-table">Log Table</h1>
+
+<h2 id="vstorage_dc_tables">V$STORAGE_DC_TABLES</h2>
+
+<p>Displays internal information about Log Table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>DATABASE_ID</td>
+      <td>Database identifier</td>
+    </tr>
+    <tr>
+      <td>CREATE_SCN</td>
+      <td>System Change Number at time of creation</td>
+    </tr>
+    <tr>
+      <td>UPDATE_SCN</td>
+      <td>System Change Number at time of most recent update</td>
+    </tr>
+    <tr>
+      <td>DDL_REF_COUNT</td>
+      <td>Number of sessions referencing table in DDL syntax execution</td>
+    </tr>
+    <tr>
+      <td>BEGIN_RID</td>
+      <td>Minimum table RID</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>Last row ID of table + 1</td>
+    </tr>
+    <tr>
+      <td>BEGIN_META_RID</td>
+      <td>ID at start of recording meta information</td>
+    </tr>
+    <tr>
+      <td>END_META_RID</td>
+      <td>ID at end of recording meta information</td>
+    </tr>
+    <tr>
+      <td>END_SYNC_RID</td>
+      <td>Last row ID recorded on disk + 1</td>
+    </tr>
+    <tr>
+      <td>FLAG</td>
+      <td>Flag indicating table property</td>
+    </tr>
+    <tr>
+      <td>COLUMN_COUNT</td>
+      <td>Table column count</td>
+    </tr>
+    <tr>
+      <td>INDEX_COUNT</td>
+      <td>Table index count</td>
+    </tr>
+    <tr>
+      <td>INDEX_MIN_END_RID</td>
+      <td>Last RID recorded in index + 1</td>
+    </tr>
+    <tr>
+      <td>LAST_ARRIVAL_TIME</td>
+      <td>Last recorded _arrival_time value</td>
+    </tr>
+    <tr>
+      <td>LAST_CHECKPOINT_TIME</td>
+      <td>Last checkpoint time</td>
+    </tr>
+    <tr>
+      <td>TYPE</td>
+      <td>Table type</td>
+    </tr>
+    <tr>
+      <td>REMAINING_ROW_COUNT</td>
+      <td>Number of records not deleted when using auto delete</td>
+    </tr>
+    <tr>
+      <td>KEPT_DURATION</td>
+      <td>How long to keep data when using auto delete function</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_dc_tables_stat">V$STORAGE_DC_TABLES_STAT</h2>
+
+<p>Displays internal information about Log Table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TABLESPACE_ID</td>
+      <td>Tablespace identifier</td>
+    </tr>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>COLUMN_ID</td>
+      <td>Column identifier</td>
+    </tr>
+    <tr>
+      <td>COUNT</td>
+      <td>Record count</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_dc_table_columns">V$STORAGE_DC_TABLE_COLUMNS</h2>
+
+<p>Displays information about the columns in the Log Table.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Column Name</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>DATABASE_ID</td>
+      <td>Database identifier</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Column identifier</td>
+    </tr>
+    <tr>
+      <td>FLAG</td>
+      <td>Property flag</td>
+    </tr>
+    <tr>
+      <td>SIZE</td>
+      <td>Column data size</td>
+    </tr>
+    <tr>
+      <td>PARTITION_VALUE_COUNT</td>
+      <td>Maximum number of data stored in partition</td>
+    </tr>
+    <tr>
+      <td>PAGE_VALUE_COUNT</td>
+      <td>Maximum number of data stored in page</td>
+    </tr>
+    <tr>
+      <td>CACHE_VALUE_COUNT</td>
+      <td>Maximum number of cache values</td>
+    </tr>
+    <tr>
+      <td>MINMAX_CACHE_SIZE</td>
+      <td>Maximum size of MIN / MAX cache for column partitions</td>
+    </tr>
+    <tr>
+      <td>CUR_APPEND_PARTITION_ID</td>
+      <td>Current partition in progress of input identifier</td>
+    </tr>
+    <tr>
+      <td>CUR_CACHE_PARTITION_COUNT</td>
+      <td>Number of partitions that have read data in current cache</td>
+    </tr>
+    <tr>
+      <td>CUR_MINMAX_CACHE_SIZE</td>
+      <td>Current Min / MAX cache size</td>
+    </tr>
+    <tr>
+      <td>END_RID_FOR_DEFAULT_VALUE</td>
+      <td>Location value of end rid maintaining default value</td>
+    </tr>
+    <tr>
+      <td>DISK_FILE_SIZE</td>
+      <td>Total size of column partition data file for that column</td>
+    </tr>
+    <tr>
+      <td>MEMORY_TOTAL_SIZE</td>
+      <td>Memory size used by table</td>
+    </tr>
+    <tr>
+      <td>MEMORY_ALLOC_SIZE</td>
+      <td>Memory size allocated by table</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_dc_table_column_parts">V$STORAGE_DC_TABLE_COLUMN_PARTS</h2>
+
+<p>Displays column partition information of log table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>DATABASE_ID</td>
+      <td>Database identifier</td>
+    </tr>
+    <tr>
+      <td>COLUMN_ID</td>
+      <td>Column identifier</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Partition identifier</td>
+    </tr>
+    <tr>
+      <td>FLAG</td>
+      <td>Flag indicating column property</td>
+    </tr>
+    <tr>
+      <td>BEGIN_RID</td>
+      <td>First RID stored in partition</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>Last RID stored in partition</td>
+    </tr>
+    <tr>
+      <td>END_SYNC_RID</td>
+      <td>Last RID SYNC ended.<br /><br />Data with a RID greater than the starting RID and less than the last SYNC RID is recorded in the partition file.</td>
+    </tr>
+    <tr>
+      <td>MIN_TIME</td>
+      <td>First time data was entered into column partition</td>
+    </tr>
+    <tr>
+      <td>MAX_TIME</td>
+      <td>Last time data was entered into column partition</td>
+    </tr>
+    <tr>
+      <td>MAX_VALUE_COUNT_PER_PARTITION</td>
+      <td>Maximum partition data count</td>
+    </tr>
+    <tr>
+      <td>MAX_VALUE_COUNT_PER_PAGE</td>
+      <td>Maximum page data count</td>
+    </tr>
+    <tr>
+      <td>MAX_PAGE_COUNT</td>
+      <td>Maximum partition page count</td>
+    </tr>
+    <tr>
+      <td>PAGE_SIZE</td>
+      <td>Page size stored in column partition</td>
+    </tr>
+    <tr>
+      <td>PAGE_COUNT</td>
+      <td>Page count created in current column partition</td>
+    </tr>
+    <tr>
+      <td>COMPRESS_RATIO</td>
+      <td>Column partition compression ratio. If it is 0, data compression has not been performed yet.</td>
+    </tr>
+    <tr>
+      <td>DISK_FILENAME</td>
+      <td>Partition file name</td>
+    </tr>
+    <tr>
+      <td>EXTERNAL_PART_SIZE</td>
+      <td>A large amount of data is written to the external partition file, indicating the size of the file</td>
+    </tr>
+    <tr>
+      <td>MIN_VALUE</td>
+      <td>Minimum column partition value</td>
+    </tr>
+    <tr>
+      <td>MAX_VALUE</td>
+      <td>Maximum column partition value</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_dc_table_indexes">V$STORAGE_DC_TABLE_INDEXES</h2>
+
+<p>Displays index information generated in Log Table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>DATABASE_ID</td>
+      <td>Database identifier</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Index identifier</td>
+    </tr>
+    <tr>
+      <td>FLAG</td>
+      <td>Flag indicating index property</td>
+    </tr>
+    <tr>
+      <td>TABLE_BEGIN_RID</td>
+      <td>First RID entered into table</td>
+    </tr>
+    <tr>
+      <td>TABLE_END_RID</td>
+      <td>Last table RID</td>
+    </tr>
+    <tr>
+      <td>BEGIN_RID</td>
+      <td>First index RID</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>Last index RID</td>
+    </tr>
+    <tr>
+      <td>END_SYNC_RID</td>
+      <td>Last recorded RID in file + 1</td>
+    </tr>
+    <tr>
+      <td>COLUMN_COUNT</td>
+      <td>Index column count</td>
+    </tr>
+    <tr>
+      <td>BEGIN_PART_ID</td>
+      <td>Index first partition identifier</td>
+    </tr>
+    <tr>
+      <td>END_PART_ID</td>
+      <td>Index last partition identifier</td>
+    </tr>
+    <tr>
+      <td>FLUSH_REQUEST_COUNT</td>
+      <td>Number of index partitions requested to reflect on disk</td>
+    </tr>
+    <tr>
+      <td>MAX_KEY_SIZE</td>
+      <td>Maximum key size</td>
+    </tr>
+    <tr>
+      <td>INDEX_TYPE</td>
+      <td>Index type</td>
+    </tr>
+    <tr>
+      <td>DISK_FILE_SIZE</td>
+      <td>Total size of index partition file for that index</td>
+    </tr>
+    <tr>
+      <td>LAST_CHECKPOINT_TIME</td>
+      <td>Last checkpoint time</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="lsmlog-structured-merge-index">LSM(Log Structured Merge) Index</h1>
+
+<h2 id="vstorage_dc_lsmindex_level_parts">V$STORAGE_DC_LSMINDEX_LEVEL_PARTS</h2>
+
+<p>Displays information about LSM Index partitions.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TABLE ID</td>
+      <td>Index table identifier</td>
+    </tr>
+    <tr>
+      <td>TABLESPACE_ID</td>
+      <td>Tablespace identifier</td>
+    </tr>
+    <tr>
+      <td>INDEX_ID</td>
+      <td>Index identifier</td>
+    </tr>
+    <tr>
+      <td>LEVEL</td>
+      <td>Index partition LSM level</td>
+    </tr>
+    <tr>
+      <td>PARTITION_ID</td>
+      <td>Partition identifier</td>
+    </tr>
+    <tr>
+      <td>BEGIN_RID</td>
+      <td>First RID entered into partition</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>Last RID entered into partition + 1</td>
+    </tr>
+    <tr>
+      <td>KEY_VALUE_COUNT</td>
+      <td>Key value count entered into partition</td>
+    </tr>
+    <tr>
+      <td>KEY_VALUE_TABLE_SIZE</td>
+      <td>Size of page storing key value</td>
+    </tr>
+    <tr>
+      <td>KEY_VALUE_TABLE_PAGE_COUNT</td>
+      <td>Number of pages storing key value</td>
+    </tr>
+    <tr>
+      <td>MIN_KEY_VALUE</td>
+      <td>Minimum key value</td>
+    </tr>
+    <tr>
+      <td>MAX_KEY_VALUE</td>
+      <td>Maximum key value</td>
+    </tr>
+    <tr>
+      <td>BITMAP_TABLE_SIZE</td>
+      <td>Total size of page storing bitmap value</td>
+    </tr>
+    <tr>
+      <td>BITMAP_TABLE_PAGE_COUNT</td>
+      <td>Number of pages storing bitmap value</td>
+    </tr>
+    <tr>
+      <td>META_SIZE</td>
+      <td>Total size of page storing meta information</td>
+    </tr>
+    <tr>
+      <td>META_PAGE_COUNT</td>
+      <td>Number of pages storing meta information</td>
+    </tr>
+    <tr>
+      <td>TOTAL_BUILD_MSEC</td>
+      <td>Total time to complete partition</td>
+    </tr>
+    <tr>
+      <td>KEYVAL_BUILD_MSEC</td>
+      <td>Total time to complete partition for KeyValue Mode</td>
+    </tr>
+    <tr>
+      <td>BITMAP_BUILD_MSEC</td>
+      <td>Total time to complete partition for Bitmap Mode</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_dc_lsmindex_level_parts_cache">V$STORAGE_DC_LSMINDEX_LEVEL_PARTS_CACHE</h2>
+
+<p>Displays information about the LSM Index partition cache.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TABLESPACE_ID</td>
+      <td>Tablespace identifier</td>
+    </tr>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Index Table identifier</td>
+    </tr>
+    <tr>
+      <td>INDEX_ID</td>
+      <td>Index identifier</td>
+    </tr>
+    <tr>
+      <td>LEVEL</td>
+      <td>Index partition LSM level</td>
+    </tr>
+    <tr>
+      <td>PARTITION_ID</td>
+      <td>Partition identifier</td>
+    </tr>
+    <tr>
+      <td>BEGIN_RID</td>
+      <td>First RID entered into partition</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>Last RID entered into partition + 1</td>
+    </tr>
+    <tr>
+      <td>KEY_VALUE_COUNT</td>
+      <td>Number of key values entered into partition</td>
+    </tr>
+    <tr>
+      <td>KEY_VALUE_TABLE_SIZE</td>
+      <td>Size of page storing key value</td>
+    </tr>
+    <tr>
+      <td>KEY_VALUE_TABLE_PAGE_COUNT</td>
+      <td>Number of pages storing key value</td>
+    </tr>
+    <tr>
+      <td>BITMAP_TABLE_SIZE</td>
+      <td>Total size of page storing bitmap value</td>
+    </tr>
+    <tr>
+      <td>BITMAP_TABLE_PAGE_COUNT</td>
+      <td>Number of pages storing bitmap value</td>
+    </tr>
+    <tr>
+      <td>META_SIZE</td>
+      <td>Total size of page storing meta information</td>
+    </tr>
+    <tr>
+      <td>META_PAGE_COUNT</td>
+      <td>Number of pages storing meta information</td>
+    </tr>
+    <tr>
+      <td>MEMORY_SIZE</td>
+      <td>Memory usage</td>
+    </tr>
+    <tr>
+      <td>MEMORY_SIZE_RBTREE</td>
+      <td>Redblack Tree memory usage</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_dc_lsmindex_levels">V$STORAGE_DC_LSMINDEX_LEVELS</h2>
+
+<p>Displays information about the level of the LSM index.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TABLE ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>DATABASE_ID</td>
+      <td>Database identifier</td>
+    </tr>
+    <tr>
+      <td>INDEX_ID</td>
+      <td>Index identifier</td>
+    </tr>
+    <tr>
+      <td>LEVEL</td>
+      <td>Level</td>
+    </tr>
+    <tr>
+      <td>BEGIN_RID</td>
+      <td>First partition RID</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>Last partition RID + 1</td>
+    </tr>
+    <tr>
+      <td>META_BEGIN_RID</td>
+      <td>RID at start time of recording meta information</td>
+    </tr>
+    <tr>
+      <td>META_END_RID</td>
+      <td>RID at end time of recording meta information</td>
+    </tr>
+    <tr>
+      <td>DELETE_END_RID</td>
+      <td>Maximum deleted RID + 1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_dc_lsmindex_files">V$STORAGE_DC_LSMINDEX_FILES</h2>
+
+<p>Displays information about the files that make up the LSM Index.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>DATABASE_ID</td>
+      <td>Database identifier</td>
+    </tr>
+    <tr>
+      <td>INDEX_ID</td>
+      <td>Index identifier</td>
+    </tr>
+    <tr>
+      <td>LEVEL</td>
+      <td>Index partition LSM level</td>
+    </tr>
+    <tr>
+      <td>PARTITION_ID</td>
+      <td>Partition identifier</td>
+    </tr>
+    <tr>
+      <td>BEGIN_RID</td>
+      <td>Partition first RID</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>Partition last RID + 1</td>
+    </tr>
+    <tr>
+      <td>PATH</td>
+      <td>Index file location</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_dc_lsmindex_ager_jobs">V$STORAGE_DC_LSMINDEX_AGER_JOBS</h2>
+
+<p>Displays working status of Ager responsible for LSM Index deletion.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>INDEX_ID</td>
+      <td>Index identifier</td>
+    </tr>
+    <tr>
+      <td>LEVEL</td>
+      <td>Index partition LSM level</td>
+    </tr>
+    <tr>
+      <td>BEGIN_RID</td>
+      <td>First partition RID</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>Last partition RID + 1</td>
+    </tr>
+    <tr>
+      <td>STATE</td>
+      <td>Index Ager working status</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="volatile-table">Volatile Table</h1>
+
+<h2 id="vstorage_dc_volatile_table">V$STORAGE_DC_VOLATILE_TABLE</h2>
+
+<p>Displays information about Volatile Table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MAX_MEM_SIZE</td>
+      <td>Maximum Volatile Tablespace size</td>
+    </tr>
+    <tr>
+      <td>CUR_MEM_SIZE</td>
+      <td>Current Volatile Tablespace size</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="tag-table">Tag Table</h1>
+
+<h2 id="vstorage_tag_tables">V$STORAGE_TAG_TABLES</h2>
+
+<p>Displays information about the partition table in the Tagdata Table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>TABLE_BEGIN_RID</td>
+      <td>Table start RID</td>
+    </tr>
+    <tr>
+      <td>TABLE_END_RID</td>
+      <td>Table end RID</td>
+    </tr>
+    <tr>
+      <td>WRITE_END_RID</td>
+      <td>Last RID which is written to data file.</td>
+    </tr>
+    <tr>
+      <td>EXT_ROW_COUNT</td>
+      <td>Number of entries to external partitions in VARCHAR records</td>
+    </tr>
+    <tr>
+      <td>EXT_WRITE_COUNT</td>
+      <td>Number of entries to data files in VARCHAR records</td>
+    </tr>
+    <tr>
+      <td>DISK_INDEX_END_RID</td>
+      <td>Index end RID stored in storage</td>
+    </tr>
+    <tr>
+      <td>MEMORY_INDEX_END_RID</td>
+      <td>Table end RID in memory index</td>
+    </tr>
+    <tr>
+      <td>DELETE_MIN_DATE</td>
+      <td>Minimum time of deleted data by execute  DELETE BETWEEN query</td>
+    </tr>
+    <tr>
+      <td>DELETE_MAX_DATE</td>
+      <td>Maximum time of deleted data by execute  DELETE BETWEEN/BEFORE query</td>
+    </tr>
+    <tr>
+      <td>INDEX_STATE</td>
+      <td>Current Index Build Stats<br /> - IDLE: Build Complete, waiting<br /> - PROGRESS: Build in progress<br /> - IOWAIT: Waiting for I/O operation in storage<br /> - PENDING: Waiting for table read lock<br /> - SHUTDOWN:  Stopped. DELETE operation or DROP operation in progress.<br /> - ABNORMAL: Abnormal end</td>
+    </tr>
+    <tr>
+      <td>DELETE_STATE</td>
+      <td>Current DELETE operation state.<br />There is no IDLE because it is performed only when a DELETE command is entered.<br /> - PROGRESS: Deletion in progress<br /> - IOWAIT: Waiting for I/O operation in storage<br /> - PENDING: Waiting for table read/write lock<br /> - SHUTDOWN: Stopped. DELETE operation or DROP operation in progress.<br /> - ABNORMAL: Abnormal end</td>
+    </tr>
+    <tr>
+      <td>SAVE_STATE</td>
+      <td>Current Table Save operation state.<br /> - IDLE: Save Complete, waiting<br /> - PROGRESS: Save in progress<br /> - IOWAIT: Waiting for I/O operation in storage<br /> - PENDING: Waiting for table read lock<br /> - SHUTDOWN: Stopped. DELETE operation or DROP operation in progress.<br /> - ABNORMAL: Abnormal end</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_tag_cache">V$STORAGE_TAG_CACHE</h2>
+
+<p>Displays the cache information used in the partition table of the Tagdata Table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CATEGORY</td>
+      <td>Type of object in cache</td>
+    </tr>
+    <tr>
+      <td>USED_MEMORY</td>
+      <td>Size of memory in use</td>
+    </tr>
+    <tr>
+      <td>BLOCK_COUNT</td>
+      <td>Data cache count</td>
+    </tr>
+    <tr>
+      <td>CACHE_HIT</td>
+      <td>Data cache hit count</td>
+    </tr>
+    <tr>
+      <td>CACHE_MISS</td>
+      <td>Data cache miss count</td>
+    </tr>
+    <tr>
+      <td>FLUSHOUT</td>
+      <td>Number of page flushouts due to data cache crash</td>
+    </tr>
+    <tr>
+      <td>COLDREAD</td>
+      <td>Number of data pages read directly from storage</td>
+    </tr>
+    <tr>
+      <td>MEMORY_WAIT</td>
+      <td>Number of times data memory waited for cache crash</td>
+    </tr>
+    <tr>
+      <td>IO_WAIT</td>
+      <td>Data read operation wait count</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_tag_cache_objects">V$STORAGE_TAG_CACHE_OBJECTS</h2>
+
+<p>Displays detailed information about each cache block used in the partition table of the Tagdata Table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CATEGORY</td>
+      <td>Object classification being cached</td>
+    </tr>
+    <tr>
+      <td>LATEST_HIT</td>
+      <td>Last approach time</td>
+    </tr>
+    <tr>
+      <td>STATUS</td>
+      <td>Cache status<br /> - None: Memory allocation done<br /> - Resides: Already stored in cache<br /> - Loading: Loading table data from storage<br /> - ERROR!: Error appears while loading data</td>
+    </tr>
+    <tr>
+      <td>WAIT_COUNT</td>
+      <td>The number of waiting times because the cache could not be read in the Loading state</td>
+    </tr>
+    <tr>
+      <td>REF_COUNT</td>
+      <td>Number of sessions currently referencing the cache block</td>
+    </tr>
+    <tr>
+      <td>HIT_COUNT</td>
+      <td>Number of times a cache block was referenced</td>
+    </tr>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Table Identifier</td>
+    </tr>
+    <tr>
+      <td>FILE_ID</td>
+      <td>File Identifier</td>
+    </tr>
+    <tr>
+      <td>PART_ID</td>
+      <td>Partition identifier inside the datafile</td>
+    </tr>
+    <tr>
+      <td>SAVE_SCN</td>
+      <td>SCN of table save</td>
+    </tr>
+    <tr>
+      <td>VSAVE_SCN</td>
+      <td>SCN of table save</td>
+    </tr>
+    <tr>
+      <td>DELETE_SCN</td>
+      <td>SCN of delete operation</td>
+    </tr>
+    <tr>
+      <td>OFFSET</td>
+      <td>Datafile offset</td>
+    </tr>
+    <tr>
+      <td>DATA_SIZE</td>
+      <td>Data size before compression, or 0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_tag_table_files">V$STORAGE_TAG_TABLE_FILES</h2>
+
+<p>Displays the file information of the partition table of the Tag Table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>FILE_ID</td>
+      <td>File identifier</td>
+    </tr>
+    <tr>
+      <td>STATE</td>
+      <td>Index status<br /> - COMPLETE: Data stored, index build complete<br /> - INDEXING: Index build in progress<br /> - FILLED: Data is full, waiting for Index build<br /> - PARTIAL: Data not yet full, waiting for Index build</td>
+    </tr>
+    <tr>
+      <td>REF_COUNT</td>
+      <td>Number of sessions currently referencing the file</td>
+    </tr>
+    <tr>
+      <td>ROW_COUNT</td>
+      <td>Number of records stored in the file, including those that were deleted</td>
+    </tr>
+    <tr>
+      <td>DEL_COUNT</td>
+      <td>Number of records deleted from the file</td>
+    </tr>
+    <tr>
+      <td>MIN_DATE</td>
+      <td>Minimum datatime value of this data file.</td>
+    </tr>
+    <tr>
+      <td>MAX_DATE</td>
+      <td>Maximum datatime value of this data file.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vstorage_tag_index">V$STORAGE_TAG_INDEX</h2>
+
+<p>Displays index information generated in Tag Table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>INDEX_ID</td>
+      <td>Index identifier (if INDEX_ID is 4294967295 it is a default index that is created automatically when the tag table is created.)</td>
+    </tr>
+    <tr>
+      <td>INDEX_STATE</td>
+      <td>Current index build state<br /> - IDLE: Build Complete, waiting<br /> - INDEXING: Build in progress<br /> - STORAGE FULL: Stopped because of disk full</td>
+    </tr>
+    <tr>
+      <td>DISK_INDEX_END_RID</td>
+      <td>Index end RID stored in storage</td>
+    </tr>
+    <tr>
+      <td>MEMORY_INDEX_END_RID</td>
+      <td>Table end RID in memory index</td>
+    </tr>
+    <tr>
+      <td>TABLE_END_RID</td>
+      <td>Table end RID</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="tag-rollup">Tag Rollup</h1>
+
+<h2 id="vrollup">V$ROLLUP</h2>
+
+<p>Displays the Rollup information that stores information of the Tagdata table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>Rollup job ID</td>
+    </tr>
+    <tr>
+      <td>ROLLUP_TABLE_NAME</td>
+      <td>Table name to store Rollup information</td>
+    </tr>
+    <tr>
+      <td>SOURCE_TABLE_NAME</td>
+      <td>Name of tag table that Rollup will query</td>
+    </tr>
+    <tr>
+      <td>USER_ID</td>
+      <td>User ID of Rollup Table and Source Table</td>
+    </tr>
+    <tr>
+      <td>ROOT_TABLE</td>
+      <td>Root Source Table Name</td>
+    </tr>
+    <tr>
+      <td>INTERVAL</td>
+      <td>Rollup execution cycle (sec)</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>Source Table end RID</td>
+    </tr>
+    <tr>
+      <td>ENABLED</td>
+      <td>Indicates Rollup progress status</td>
+    </tr>
+    <tr>
+      <td>LAST_ELAPSED_MSEC</td>
+      <td>Number of recently entered records</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="stream">Stream</h1>
+
+<h2 id="vstreams">V$STREAMS</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NAME</td>
+      <td>The name of stream query.</td>
+    </tr>
+    <tr>
+      <td>LAST_EX_TIME</td>
+      <td>Last execution time of this query.</td>
+    </tr>
+    <tr>
+      <td>TABLE_NAME</td>
+      <td>The name of table which searched from the query</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>The last RID read by stream query</td>
+    </tr>
+    <tr>
+      <td>STATE</td>
+      <td>Current state of stream query</td>
+    </tr>
+    <tr>
+      <td>QUERY_TXT</td>
+      <td>Query text</td>
+    </tr>
+    <tr>
+      <td>ERROR_MSG</td>
+      <td>Error message of the last stream execution</td>
+    </tr>
+    <tr>
+      <td>FREQUENCY</td>
+      <td>Minimum wait time for query execution. If it is 0, it is executed every record. If it is not 0, it is executed each time. The unit is nanoseconds.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="license">License</h1>
+
+<h2 id="vlicense_info">V$LICENSE_INFO</h2>
+
+<p>Displays license information.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>INSTALL_DATE</td>
+      <td>Installation date</td>
+    </tr>
+    <tr>
+      <td>TYPE</td>
+      <td>License type</td>
+    </tr>
+    <tr>
+      <td>POLICY</td>
+      <td>License policy type</td>
+    </tr>
+    <tr>
+      <td>CUSTOMER</td>
+      <td>Customer name</td>
+    </tr>
+    <tr>
+      <td>ISSUE_DATE</td>
+      <td>Issue date</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Host ID</td>
+    </tr>
+    <tr>
+      <td>EXPIRY_DATE</td>
+      <td>Expiration date</td>
+    </tr>
+    <tr>
+      <td>SIZE_LIMIT</td>
+      <td>Work input limit</td>
+    </tr>
+    <tr>
+      <td>ADDENDUM</td>
+      <td>Additional data rate</td>
+    </tr>
+    <tr>
+      <td>VIOLATION_ACTION</td>
+      <td>Indicates license violation</td>
+    </tr>
+    <tr>
+      <td>VIOLATION_LIMIT</td>
+      <td>Number of violations to suspend service (monthly update)</td>
+    </tr>
+    <tr>
+      <td>STOP_ACTION</td>
+      <td>Indicates database is terminated in the event of license violation</td>
+    </tr>
+    <tr>
+      <td>RESET_FLAG</td>
+      <td>(Internal server use)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vlicense_status">V$LICENSE_STATUS</h2>
+
+<p>Displays the license status.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>USER_DATA_PER_DAY</td>
+      <td>Amount of data that can be entered per day</td>
+    </tr>
+    <tr>
+      <td>PREVIOUS_CHECK_DATE</td>
+      <td>Previous license check date</td>
+    </tr>
+    <tr>
+      <td>VIOLATION_COUNT</td>
+      <td>License violation count</td>
+    </tr>
+    <tr>
+      <td>STOP_ENABLED</td>
+      <td>Display whether license restrictions are enabled or not.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="mutex">Mutex</h1>
+
+<h2 id="vmutex">V$MUTEX</h2>
+
+<p>Displays current mutex status.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OBJECT</td>
+      <td>Address of the mutex object</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>NAME</td>
+      <td>The name given when creating the mutex</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TYPE</td>
+      <td>Mutex type</td>
+      <td>- Mutex: pmuMutex<br /> - RW Mutex: pmuRWMutex</td>
+    </tr>
+    <tr>
+      <td>OWNER</td>
+      <td>ID of the thread that acquired the mutex</td>
+      <td>- Mutex: 0 if no thread acquired the mutex.<br /> - RW Mutex w/ Read-Lock: 0<br /> - RW Mutex w/ Write-Lock: ID of the thread that acquired the write lock.</td>
+    </tr>
+    <tr>
+      <td>LOCK_COUNT</td>
+      <td>Number of threads that acquired the mutex</td>
+      <td>- RW Mutex can be 2 or more.</td>
+    </tr>
+    <tr>
+      <td>PEND_COUNT</td>
+      <td>Number of threads waiting to acquire a mutex</td>
+      <td>- Collect only when TRACE_MUTEX_WAIT_STATUS=1</td>
+    </tr>
+    <tr>
+      <td>TRY_COUNT</td>
+      <td>Number of attempts to acquire the mutex</td>
+      <td>- Collect only when TRACE_MUTEX_WAIT_STATUS=1</td>
+    </tr>
+    <tr>
+      <td>CONFLICT_COUNT</td>
+      <td>Number of failed to acquire mutex</td>
+      <td>- Collect only when TRACE_MUTEX_WAIT_STATUS=1</td>
+    </tr>
+    <tr>
+      <td>WAIT_TICK</td>
+      <td>Sum of waiting time to acquire mutex</td>
+      <td>- Collect only when TRACE_MUTEX_WAIT_STATUS<br /> - Do not write to RW Mutex</td>
+    </tr>
+    <tr>
+      <td>WAIT_TICK_AVG</td>
+      <td>Average time to success after an attempt to acquire a mutex</td>
+      <td>- Collect only when TRACE_MUTEX_WAIT_STATUS=1<br /> - Do not write to RW Mutex</td>
+    </tr>
+    <tr>
+      <td>HELD_TICK</td>
+      <td>Total time from acquiring the mutex to releasing it</td>
+      <td>- Collect only when TRACE_MUTEX_WAIT_STATUS=1<br /> - Do not write to RW Mutex</td>
+    </tr>
+    <tr>
+      <td>HELD_TICK_AVG</td>
+      <td>Average time from acquisition to release of mutex</td>
+      <td>- Collect only when TRACE_MUTEX_WAIT_STATUS=1<br /> - Do not write to RW Mutex</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vmutex_wait_stat">V$MUTEX_WAIT_STAT</h2>
+
+<p>Shows the call stack of the currently waiting mutex.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>THREAD_ID</td>
+      <td>ID of the thread waiting to acquire the mutex</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>OBJECT</td>
+      <td>Address of the mutex being acquired</td>
+      <td>- Same as OBJECT in V$MUTEX</td>
+    </tr>
+    <tr>
+      <td>DEPTH</td>
+      <td>Call stack depth</td>
+      <td>- Collect only when TRACE_MUTEX_WAIT_STATUS=1</td>
+    </tr>
+    <tr>
+      <td>SYMBOL</td>
+      <td>Symbol of function that called acquire mutex</td>
+      <td>- Collect only when TRACE_MUTEX_WAIT_STATUS=1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="cluster">Cluster</h1>
+
+<h2 id="vnode_status">V$NODE_STATUS</h2>
+
+<p>Displays the Node status for each Cluster. Only one is displayed.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NODETYPE</td>
+      <td>Node type. There are two types that can be viewed by queries.<br /> - Broker<br /> - Warehouse</td>
+    </tr>
+    <tr>
+      <td>STATE</td>
+      <td>Node status</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vddl_info">V$DDL_INFO</h2>
+
+<p>Displays DDL information performed by Cluster.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SEQUENCENUMBER</td>
+      <td>DDL sequence number</td>
+    </tr>
+    <tr>
+      <td>TIME</td>
+      <td>DDL execution time</td>
+    </tr>
+    <tr>
+      <td>VALUE</td>
+      <td>DDL query result value (Internal server use)</td>
+    </tr>
+    <tr>
+      <td>CLIENT</td>
+      <td>Client name</td>
+    </tr>
+    <tr>
+      <td>BROKER</td>
+      <td>Lead Broker Node name</td>
+    </tr>
+    <tr>
+      <td>USER</td>
+      <td>User name</td>
+    </tr>
+    <tr>
+      <td>SQL</td>
+      <td>DDL query value</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vreplication">V$REPLICATION</h2>
+
+<p>Displays information about the replication operation.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HOSTNAME</td>
+      <td>Replication Node Hostname</td>
+    </tr>
+    <tr>
+      <td>MODE</td>
+      <td>(Internal server use)</td>
+    </tr>
+    <tr>
+      <td>STATE</td>
+      <td>Node status</td>
+    </tr>
+    <tr>
+      <td>ADDR</td>
+      <td>Replication Manager address</td>
+    </tr>
+    <tr>
+      <td>PORT_NO</td>
+      <td>Replication Manager port number</td>
+    </tr>
+    <tr>
+      <td>MAX_SENDER_COUNT</td>
+      <td>Maximum number of Senders that can be created</td>
+    </tr>
+    <tr>
+      <td>RUN_SENDER_COUNT</td>
+      <td>Maximum number of active Senders</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vrepl_sender">V$REPL_SENDER</h2>
+
+<p>Displays Sender replication when running Replication.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HOSTNAME</td>
+      <td>Replication Node Hostname</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Sender identifier</td>
+    </tr>
+    <tr>
+      <td>STATUS</td>
+      <td>Sender operational status</td>
+    </tr>
+    <tr>
+      <td>PAYLOAD_RECV_COUNT</td>
+      <td>Number of payloads received from sender</td>
+    </tr>
+    <tr>
+      <td>PAYLOAD_RECV_BYTES</td>
+      <td>Total payload size received from Sender</td>
+    </tr>
+    <tr>
+      <td>QUEUE_REMAIN_COUNT</td>
+      <td>Number of buffers remaining in the Receive Queue</td>
+    </tr>
+    <tr>
+      <td>NET_SEND_COUNT</td>
+      <td>Net send count</td>
+    </tr>
+    <tr>
+      <td>NET_SEND_SIZE</td>
+      <td>Net send size</td>
+    </tr>
+    <tr>
+      <td>NET_RECV_COUNT</td>
+      <td>Net receive count</td>
+    </tr>
+    <tr>
+      <td>NET_RECV_SIZE</td>
+      <td>Net receive size</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vrepl_sender_meta">V$REPL_SENDER_META</h2>
+
+<p>Displays Sender metadata when running Replication.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HOSTNAME</td>
+      <td>Replication Node Hostname</td>
+    </tr>
+    <tr>
+      <td>SENDER_ID</td>
+      <td>Sender identifier</td>
+    </tr>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Target table identifier</td>
+    </tr>
+    <tr>
+      <td>TABLE_TYPE</td>
+      <td>Target table type</td>
+    </tr>
+    <tr>
+      <td>BEGIN_RID</td>
+      <td>Target record start RID</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>Target record end RID</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vrepl_receiver">V$REPL_RECEIVER</h2>
+
+<p>Displays Receiver information when running Replication.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HOSTNAME</td>
+      <td>Replication Node Hostname</td>
+    </tr>
+    <tr>
+      <td>STATUS</td>
+      <td>Receiver operational status</td>
+    </tr>
+    <tr>
+      <td>PAYLOAD_RECV_COUNT</td>
+      <td>Number of payloads received from sender</td>
+    </tr>
+    <tr>
+      <td>PAYLOAD_RECV_BYTES</td>
+      <td>Total payload size received from Sender</td>
+    </tr>
+    <tr>
+      <td>QUEUE_REMAIN_COUNT</td>
+      <td>Number of buffers remaining in the Receive Queue</td>
+    </tr>
+    <tr>
+      <td>NET_SEND_COUNT</td>
+      <td>Net send count</td>
+    </tr>
+    <tr>
+      <td>NET_SEND_SIZE</td>
+      <td>Net send size</td>
+    </tr>
+    <tr>
+      <td>NET_RECV_COUNT</td>
+      <td>Net receive count</td>
+    </tr>
+    <tr>
+      <td>NET_RECV_SIZE</td>
+      <td>Net receive size</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vrepl_receiver_meta">V$REPL_RECEIVER_META</h2>
+
+<p>Displays Receiver metadata when running Replication.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HOSTNAME</td>
+      <td>Replication Node Hostname</td>
+    </tr>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Target table identifier</td>
+    </tr>
+    <tr>
+      <td>TABLE_TYPE</td>
+      <td>Target table type</td>
+    </tr>
+    <tr>
+      <td>BEGIN_RID</td>
+      <td>Target record start RID</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>Target record end RID</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vrepl_reader">V$REPL_READER</h2>
+
+<p>Displays Reader information when running Replication.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HOSTNAME</td>
+      <td>Replication Node Hostname</td>
+    </tr>
+    <tr>
+      <td>SENDER_ID</td>
+      <td>Sender identifier</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Reader identifier</td>
+    </tr>
+    <tr>
+      <td>STATUS</td>
+      <td>Reader operation status</td>
+    </tr>
+    <tr>
+      <td>FETCH_COUNT</td>
+      <td>FETCH count</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vrepl_reader_meta">V$REPL_READER_META</h2>
+
+<p>Displays Reader metadata when running Replication.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HOSTNAME</td>
+      <td>Replication Node Hostname</td>
+    </tr>
+    <tr>
+      <td>SENDER_ID</td>
+      <td>Sender identifier</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Reader identifier</td>
+    </tr>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Target table identifier</td>
+    </tr>
+    <tr>
+      <td>TABLE_TYPE</td>
+      <td>Target table type</td>
+    </tr>
+    <tr>
+      <td>BEGIN_RID</td>
+      <td>Target record start RID</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>Target record end RID</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vrepl_writer">V$REPL_WRITER</h2>
+
+<p>Displays Writer information when running Replication.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HOSTNAME</td>
+      <td>Replication Node Hostname</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Writer identifier</td>
+    </tr>
+    <tr>
+      <td>STATUS</td>
+      <td>Writer operational status</td>
+    </tr>
+    <tr>
+      <td>APPEND_COUNT</td>
+      <td>APPEND count</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vrepl_writer_meta">V$REPL_WRITER_META</h2>
+
+<p>Displays Writer metadata when running Replication.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HOSTNAME</td>
+      <td>Replication Node Hostname</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Writer identifier</td>
+    </tr>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Target table identifier</td>
+    </tr>
+    <tr>
+      <td>TABLE_TYPE</td>
+      <td>Target table type</td>
+    </tr>
+    <tr>
+      <td>BEGIN_RID</td>
+      <td>Target record start RID</td>
+    </tr>
+    <tr>
+      <td>END_RID</td>
+      <td>Target record end RID</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="others">Others</h1>
+
+<h2 id="vtables">V$TABLES</h2>
+
+<p>Displays all Virtual Tables that start with “V$”.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NAME</td>
+      <td>Table name</td>
+    </tr>
+    <tr>
+      <td>TYPE</td>
+      <td>Table type</td>
+    </tr>
+    <tr>
+      <td>DATABASE_ID</td>
+      <td>Database identifier</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>USER ID</td>
+      <td>User who created table</td>
+    </tr>
+    <tr>
+      <td>COLCOUNT</td>
+      <td>Column count</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vcolumns">V$COLUMNS</h2>
+
+<p>Displays column information of Virtual Tables.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NAME</td>
+      <td>Column name</td>
+    </tr>
+    <tr>
+      <td>TYPE</td>
+      <td>Column data type</td>
+    </tr>
+    <tr>
+      <td>DATABASE_ID</td>
+      <td>Database identifier</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Column identifier</td>
+    </tr>
+    <tr>
+      <td>LENGTH</td>
+      <td>Column size</td>
+    </tr>
+    <tr>
+      <td>TABLE_ID</td>
+      <td>Table identifier</td>
+    </tr>
+    <tr>
+      <td>FLAG</td>
+      <td>Private data</td>
+    </tr>
+    <tr>
+      <td>PART_PAGE_COUNT</td>
+      <td>Unused</td>
+    </tr>
+    <tr>
+      <td>PAGE_VALUE_COUNT</td>
+      <td>Unused</td>
+    </tr>
+    <tr>
+      <td>MINMAX_CACHE_SIZE</td>
+      <td>Unused</td>
+    </tr>
+    <tr>
+      <td>MAX_CACHE_PART_COUNT</td>
+      <td>Unused</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="vretention_job">V$RETENTION_JOB</h2>
+
+<p>Displays table information to which RETENTION POLICY is applied.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>USER_NAME</td>
+      <td>User name</td>
+    </tr>
+    <tr>
+      <td>TABLE_NAME</td>
+      <td>applied table name</td>
+    </tr>
+    <tr>
+      <td>POLICY_NAME</td>
+      <td>applied policy name</td>
+    </tr>
+    <tr>
+      <td>STATE</td>
+      <td>RETENTION state (RUNNING/WAITING/STOPPED)</td>
+    </tr>
+    <tr>
+      <td>LAST_DELETED_TIME</td>
+      <td>most recently deleted time</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

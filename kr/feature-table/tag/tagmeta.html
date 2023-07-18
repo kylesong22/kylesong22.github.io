@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/kr/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/kr/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>태그 메타(태그 이름) 관리</title>
+    <meta property="og:title" content="태그 메타(태그 이름) 관리" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="태그 메타(태그 이름) 관리">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="태그 메타(태그 이름) 관리"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/kr/assets/css/main.css">
+    <link rel="stylesheet" href="/kr/assets/css/palette.css">
+    <script
+      src="/kr/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/kr/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/kr/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/kr/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/kr/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/kr/feature-table/tag/tagmeta.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/kr/feature-table/tag/tagmeta.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">마크베이스 매뉴얼</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="마크베이스-매뉴얼">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">개요</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="개요">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-개요-마크베이스-소개" href="/kr//intro/introduction">마크베이스 소개</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-개요-마크베이스-특징" href="/kr//intro/features">마크베이스 특징</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-개요-마크베이스-제품군-소개" href="/kr//intro/products">마크베이스 제품군 소개</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">설치</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="설치">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-패키지-개요" href="/kr//install/package">패키지 개요</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-리눅스-설치" href="/kr//install/linux">리눅스 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-windows-설치" href="/kr//install/windows">Windows 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-라이선스-설치" href="/kr//install/license">라이선스 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-cluster-edition-설치" href="/kr//install/cluster">Cluster Edition 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-업그레이드-복구" href="">업그레이드 / 복구</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">주요기능 / 테이블</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="주요기능-테이블">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-태그-테이블-tag-table" href="/kr//feature-table/tag">태그 테이블 (Tag Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-로그-테이블-log-table" href="/kr//feature-table/log">로그 테이블 (Log Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-휘발성-테이블-volatile-table" href="/kr//feature-table/volatile">휘발성 테이블 (Volatile Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-참조-테이블-lookup-table" href="/kr//feature-table/lookup">참조 테이블 (Lookup Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-스트림-stream" href="/kr//feature-table/stream">스트림 (Stream)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-백업-및-마운트" href="/kr//feature-table/backup-mount">백업 및 마운트</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">도구</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="도구">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-유틸리티-모음" href="/kr//tools/utilities">유틸리티 모음</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-mwa-machbase-web-analytics" href="/kr//tools/mwa">MWA (Machbase Web Analytics)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-태그-분석기-tag-analyzer" href="/kr//tools/tag-analyzer">태그 분석기(Tag Analyzer)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-machcoordinatoradmin" href="/kr//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-machdeployeradmin" href="/kr//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">설정 / 모니터링</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="설정-모니터링">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-meta-table" href="/kr//setting-monitoring/meta-table">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-virtual-table" href="/kr//setting-monitoring/virtual-table">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-property" href="/kr//setting-monitoring/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-property-cluster" href="/kr//setting-monitoring/property-cl">Property (Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-자료형" href="/kr//sql-ref/data-types">자료형</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-ddl" href="/kr//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-dml" href="/kr//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-select" href="/kr//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-select-hint" href="/kr//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-사용자-관리" href="/kr//sql-ref/user">사용자 관리</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-지원-함수" href="/kr//sql-ref/func">지원 함수</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-시스템-세션-관리" href="/kr//sql-ref/sys-session">시스템/세션 관리</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-cli-odbc" href="/kr//sdk/cli_odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-cli-odbc-예제" href="/kr//sdk/cli_odbc_example">CLI/ODBC 예제</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-jdbc" href="/kr//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-python" href="/kr//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-restful-api" href="/kr//sdk/restful_api">RESTful API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-net-connector" href="/kr//sdk/dotnet">.NET Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-timezone" href="/kr//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Release Note</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="release-note">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-release-note-7-0-release-note" href="/kr//release-note/7_0">7.0 Release Note</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-release-note-7-5-release-note" href="/kr//release-note/7_5">7.5 Release Note</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">자주 묻는 질문(FAQ)</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="자주-묻는-질문-faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-자주-묻는-질문-faq-쿼리-에러를-property-수정하여-해결하는-방법" href="/kr//faq/faq">쿼리 에러를 Property 수정하여 해결하는 방법</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/kr/feature-table/">Feature table</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/kr/feature-table/tag/">Tag</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/kr/feature-table/tag/tagmeta.html">태그 메타(태그 이름) 관리</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">태그 메타(태그 이름) 관리</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="목차">목차</h1>
+
+<ul>
+  <li><a href="#태그-메타의-개념">태그 메타의 개념</a></li>
+  <li><a href="#이름만으로-이뤄진-태그-메타">이름만으로 이뤄진 태그 메타</a></li>
+  <li><a href="#추가-정보를-갖는-태그-메타">추가 정보를 갖는 태그 메타</a></li>
+  <li><a href="#restful-api를-통한-태그-메타-조회">RESTful API를 통한 태그 메타 조회</a></li>
+</ul>
+
+<h1 id="태그-메타의-개념">태그 메타의 개념</h1>
+
+<p>태그 메타는 마크베이스에서 저장될 임의의 태그가 가질 이름과 부가 정보를 나타낸다.</p>
+
+<p>즉, 특정 장비에 존재하는 태그가 3개라고 한다면, 이 태그를 나타내는 임의의 이름과 관련 부가 정보가 필요한데, 이것을 모두 태그의 메타 정보라고 한다.</p>
+
+<p>이 태그 메타는 최소한 이름이 존재할 수 있으며,  부가적으로 필요하다면 해당 장비에 맞는 다양한 종류의 데이터 타입을 지정할 수 있도록 되어 있다.</p>
+
+<h1 id="이름만으로-이뤄진-태그-메타">이름만으로 이뤄진 태그 메타</h1>
+
+<h2 id="태그-메타의-생성">태그 메타의 생성</h2>
+
+<p>아래는 가장 기본적인 태그 메타가 생성되는 TAG 테이블의 생성 명령어이다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="n">tag</span> <span class="k">table</span> <span class="n">TAG</span> <span class="p">(</span><span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span> <span class="nb">time</span> <span class="nb">datetime</span> <span class="n">basetime</span><span class="p">,</span> <span class="n">value</span> <span class="nb">double</span> <span class="n">summarized</span><span class="p">);</span>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">desc</span> <span class="n">tag</span><span class="p">;</span>
+<span class="p">[</span> <span class="k">COLUMN</span> <span class="p">]</span>                             
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">NAME</span>                          <span class="k">TYPE</span>                <span class="k">LENGTH</span>       
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">NAME</span>                          <span class="nb">varchar</span>             <span class="mi">20</span>                 
+<span class="nb">TIME</span>                          <span class="nb">datetime</span>            <span class="mi">31</span>             
+<span class="n">VALUE</span>                         <span class="nb">double</span>              <span class="mi">17</span>
+</code></pre></div></div>
+
+<p>위는 기본적인 TAG 테이블을 생성한 것이며, 태그 메타에 대한 별도의 정보는 보이지 않는다.</p>
+
+<p>이 경우 태그 메타는 VARCHAR(20)의 기본적인 이름만을 가진다.</p>
+
+<h2 id="태그-메타의-입력">태그 메타의 입력</h2>
+
+<p>이제 TAG1 이라는 이름을 갖는 하나의 태그 정보를 입력해 보자.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">insert</span> <span class="k">into</span> <span class="n">tag</span> <span class="n">metadata</span> <span class="k">values</span> <span class="p">(</span><span class="s1">'TAG_0001'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>위의 질의를 통해서 TAG_0001 이라는 이름을 갖는 하나의 태그를 생성하였다.</p>
+
+<h2 id="태그-메타의-출력">태그 메타의 출력</h2>
+
+<p>마크베이스에서는 입력된 태그 메타의 정보를 확인하기 위한 특별한 테이블인 _tag_meta 를 제공한다.</p>
+
+<p>따라서, 사용자는 다음과 같은 질의를 통해서 마크베이스에 입력된 모든 태그의 정보를 확인할 수 있다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">_tag_meta</span><span class="p">;</span>
+<span class="n">ID</span>                   <span class="n">NAME</span>                 
+<span class="c1">----------------------------------------------</span>
+<span class="mi">1</span>                    <span class="n">TAG_0001</span>             
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>위의 질의를 통해서 TAG_0001 이라는 NAME을 갖는 하나의 태그를 생성하였다.</p>
+
+<p>ID는 내부적으로 관리되는 값으로서 자동으로 부여된다.</p>
+
+<h2 id="태그-메타의-수정">태그 메타의 수정</h2>
+
+<p>마크베이스는 입력된 태그 메타 정보를 수정할 수 있도록 해 주는데, 다음과 같이 이름이 수정 가능하다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">update</span> <span class="n">tag</span> <span class="n">metadata</span> <span class="k">set</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'NEW_0001'</span> <span class="k">where</span> <span class="n">NAME</span> <span class="o">=</span> <span class="s1">'TAG_0001'</span><span class="p">;</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">updated</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">_tag_meta</span><span class="p">;</span>
+<span class="n">ID</span>                   <span class="n">NAME</span>                 
+<span class="c1">----------------------------------------------</span>
+<span class="mi">1</span>                    <span class="n">NEW_0001</span>             
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>위와 같이 이름이 TAG_0001에서 NEW_0001로 수정된 것을 확인할 수 있다.</p>
+
+<h2 id="태그-메타의-삭제">태그 메타의 삭제</h2>
+
+<p>아래와 같이 실제 태그 메타의 정보를 삭제할 수 있다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">delete</span> <span class="k">from</span> <span class="n">tag</span> <span class="n">metadata</span> <span class="k">where</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'NEW_0001'</span><span class="p">;</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">deleted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">_tag_meta</span><span class="p">;</span>
+<span class="n">ID</span>                   <span class="n">NAME</span>                 
+<span class="c1">----------------------------------------------</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>주의할 점은 태그 테이블에 실제 데이터가 해당 태그 메타를 참조하지 않을 때 태그 메타 삭제가 가능하다.</p>
+
+<h1 id="추가-정보를-갖는-태그-메타">추가 정보를 갖는 태그 메타</h1>
+
+<h2 id="태그-메타의-생성-1">태그 메타의 생성</h2>
+
+<p>아래는 태그 메타의 정보에 16비트 정수와 시간 그리고, IPv4 의 정보를 부가적으로 더 추가해서 만들어 본다.</p>
+
+<p>주의할 점은 일단 생성된 태그 메타에 대해 값은 수정할 수 있지만, 그 구조는 수정할 수 없다는 것이다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="n">tag</span> <span class="k">table</span> <span class="n">TAG</span> <span class="p">(</span><span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span> <span class="nb">time</span> <span class="nb">datetime</span> <span class="n">basetime</span><span class="p">,</span> <span class="n">value</span> <span class="nb">double</span> <span class="n">summarized</span><span class="p">)</span>
+<span class="n">metadata</span> <span class="p">(</span><span class="k">type</span> <span class="n">short</span><span class="p">,</span> <span class="n">create_date</span> <span class="nb">datetime</span><span class="p">,</span> <span class="n">srcip</span> <span class="n">ipv4</span><span class="p">)</span> <span class="p">;</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">desc</span> <span class="n">tag</span><span class="p">;</span>
+<span class="p">[</span> <span class="k">COLUMN</span> <span class="p">]</span>                             
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">NAME</span>                          <span class="k">TYPE</span>                <span class="k">LENGTH</span>       
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">NAME</span>                          <span class="nb">varchar</span>             <span class="mi">20</span>                 
+<span class="nb">TIME</span>                          <span class="nb">datetime</span>            <span class="mi">31</span>             
+<span class="n">VALUE</span>                         <span class="nb">double</span>              <span class="mi">17</span>                 
+<span class="p">[</span> <span class="n">META</span><span class="o">-</span><span class="k">COLUMN</span> <span class="p">]</span>                             
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">NAME</span>                          <span class="k">TYPE</span>                <span class="k">LENGTH</span>       
+<span class="c1">----------------------------------------------------------------</span>
+<span class="k">TYPE</span>                          <span class="n">short</span>               <span class="mi">6</span>              
+<span class="n">CREATE_DATE</span>                   <span class="nb">datetime</span>            <span class="mi">31</span>             
+<span class="n">SRCIP</span>                         <span class="n">ipv4</span>                <span class="mi">15</span>   
+</code></pre></div></div>
+
+<h2 id="태그-메타의-입력-1">태그 메타의 입력</h2>
+
+<p>이름 뿐만 아니라 부가 정보가 있는 상태에서 아래와 같이 입력해서 정보를 확인할 수 있다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">insert</span> <span class="k">into</span> <span class="n">tag</span> <span class="n">metadata</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="s1">'TAG_0001'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">_tag_meta</span><span class="p">;</span>
+<span class="n">ID</span>                   <span class="n">NAME</span>                  <span class="k">TYPE</span>        <span class="n">CREATE_DATE</span>                     <span class="n">SRCIP</span>          
+<span class="c1">-------------------------------------------------------------------------------------------------------------</span>
+<span class="mi">1</span>                    <span class="n">TAG_0001</span>              <span class="k">NULL</span>        <span class="k">NULL</span>                            <span class="k">NULL</span>           
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>위와 같이 NAME 외 다른 컬럼에는 NULL이 입력된 것을 알 수 있다.</p>
+
+<p>이제 부가 정보를 아래와  같이 더 넣어 보자.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">insert</span> <span class="k">into</span> <span class="n">tag</span> <span class="n">metadata</span> <span class="k">values</span> <span class="p">(</span><span class="s1">'TAG_0002'</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="s1">'2010-01-01'</span><span class="p">,</span> <span class="s1">'1.1.1.1'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">_tag_meta</span><span class="p">;</span>
+<span class="n">ID</span>                   <span class="n">NAME</span>                  <span class="k">TYPE</span>        <span class="n">CREATE_DATE</span>                     <span class="n">SRCIP</span>          
+<span class="c1">-------------------------------------------------------------------------------------------------------------</span>
+<span class="mi">1</span>                    <span class="n">TAG_0001</span>              <span class="k">NULL</span>        <span class="k">NULL</span>                            <span class="k">NULL</span>           
+<span class="mi">2</span>                    <span class="n">TAG_0002</span>              <span class="mi">99</span>          <span class="mi">2010</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="mi">000</span><span class="p">:</span><span class="mi">000</span><span class="p">:</span><span class="mi">000</span> <span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span>        
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>부가 정보를 위와 같이 넣었고, 각 태그 메타가 주어진 풍부한 정보를 가질 수 있게 되었다.</p>
+
+<h2 id="태그-메타의-수정-1">태그 메타의 수정</h2>
+
+<p>이제 TAG_0001의 타입을 NULL에서 11로 수정해 보자.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">update</span> <span class="n">tag</span> <span class="n">metadata</span> <span class="k">set</span> <span class="k">type</span> <span class="o">=</span> <span class="mi">11</span> <span class="k">where</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'TAG_0001'</span><span class="p">;</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">updated</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">_tag_meta</span><span class="p">;</span>
+<span class="n">ID</span>                   <span class="n">NAME</span>                  <span class="k">TYPE</span>        <span class="n">CREATE_DATE</span>                     <span class="n">SRCIP</span>          
+<span class="c1">-------------------------------------------------------------------------------------------------------------</span>
+<span class="mi">2</span>                    <span class="n">TAG_0002</span>              <span class="mi">99</span>          <span class="mi">2010</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="mi">000</span><span class="p">:</span><span class="mi">000</span><span class="p">:</span><span class="mi">000</span> <span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span>        
+<span class="mi">1</span>                    <span class="n">TAG_0001</span>              <span class="mi">11</span>          <span class="k">NULL</span>                            <span class="k">NULL</span>           
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>위와 같이 수정되었다.</p>
+
+<p>즉,  UPDATE 구문을 통해 모든 필드의 값을 수정할 수 있다.</p>
+
+<p>단, 반드시 WHERE 절에 NAME이 지정되어야 하는 것은 공통적인 제약 사항이다.</p>
+
+<h1 id="restful-api를-통한-태그-메타-조회">RESTful API를 통한 태그 메타 조회</h1>
+
+<h2 id="모든-태그-리스트-얻기">모든 태그 리스트 얻기</h2>
+
+<p>아래는 마크베이스 포함된 모든 태그의 리스트를 얻는 예제이다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host:~<span class="nv">$ </span>curl  <span class="nt">-G</span>  <span class="s2">"http://192.168.0.148:5001/machiot-rest-api/tags/list"</span>
+<span class="o">{</span><span class="s2">"ErrorCode"</span>: 0,
+ <span class="s2">"ErrorMessage"</span>: <span class="s2">""</span>,
+ <span class="s2">"Data"</span>: <span class="o">[{</span><span class="s2">"NAME"</span>: <span class="s2">"TAG_0001"</span><span class="o">}</span>,
+          <span class="o">{</span><span class="s2">"NAME"</span>: <span class="s2">"TAG_0002"</span><span class="o">}]}</span>
+Host:~<span class="err">$</span>
+</code></pre></div></div>
+
+<h2 id="특정-태그의-시간-범위-얻기">특정 태그의 시간 범위 얻기</h2>
+
+<p>아래는 원하는 태그가 가지고 있는 데이터의 최소 및 최대 시간 범위를 얻는 예제이다.</p>
+
+<p>이기능은 특정 태그의 차트를 그릴 때 매우 유용하다.</p>
+
+<h3 id="문법">문법</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{MWA URL}/machiot-rest-api/tags/range/  # Time Range of whole DB
+{MWA URL}/machiot-rest-api/tags/range/{TagName}  # Time Range of a specific Tag
+</code></pre></div></div>
+
+<h3 id="전체-시간-범위">전체 시간 범위</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host:~$ curl  -G  "http://192.168.0.148:5001/machiot-rest-api/tags/range/"
+{"ErrorCode": 0,
+ "ErrorMessage": "",
+ "Data": [{"MAX": "2018-02-10 10:00:00 000:000:000", "MIN": "2018-01-01 01:00:00 000:000:000"}]}
+</code></pre></div></div>
+
+<h3 id="특정-태그의-시간-범위">특정 태그의 시간 범위</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host:~$ curl  -G  "http://192.168.0.148:5001/machiot-rest-api/tags/range/TAG_0001"
+{"ErrorCode": 0, "ErrorMessage": "", "Data": [{"MAX": "2018-01-10 10:00:00 000:000:000", "MIN": "2018-01-01 01:00:00 000:000:000"}]}
+Host:~$
+Host:~$ curl  -G  "http://192.168.0.148:5001/machiot-rest-api/tags/range/TAG_0002"
+{"ErrorCode": 0, "ErrorMessage": "", "Data": [{"MAX": "2018-02-10 10:00:00 000:000:000", "MIN": "2018-02-01 01:00:00 000:000:000"}]}
+</code></pre></div></div>
+
+
+<script
+  src="/kr/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/kr/assets/js/main.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>Tarball Installation</title>
+    <meta property="og:title" content="Tarball Installation" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="Tarball Installation">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Tarball Installation"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/install/linux/tgz-install.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/install/linux/tgz-install.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/install/">Install</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/install/linux/">Linux</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/install/linux/tgz-install.html">Tarball Installation</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">Tarball Installation</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="create-user">Create User</h1>
+
+<p>Create a Linux user ‘machbase’ for installing and using  Machbase.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>useradd machbase
+</code></pre></div></div>
+
+<p>After setting the password,  log in as ‘machbase’ account.</p>
+
+<h1 id="package-installation">Package Installation</h1>
+
+<p>Create a directory called ‘macbase_home’ and download and install the package from the Machbase download site.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>machbase@localhost ~]<span class="nv">$ </span>wget http://www.machbase.com/dist/machbase-fog-x.x.x.official-LINUX-X86-64-release.tgz
+<span class="o">[</span>machbase@localhost ~]<span class="nv">$ </span><span class="nb">mkdir </span>machbase_home
+<span class="o">[</span>machbase@localhost ~]<span class="nv">$ </span><span class="nb">mv </span>machbase-fog-x.x.x.official-LINUX-X86-64-release.tgz machbase_home/
+<span class="o">[</span>machbase@localhost ~]<span class="nv">$ </span><span class="nb">cd </span>machbase_home/
+<span class="o">[</span>machbase@localhost machbase_home]<span class="nv">$ </span><span class="nb">tar </span>zxf machbase-fog-x.x.x.official-LINUX-X86-64-release.tgz
+ 
+<span class="o">[</span>machbase@loclahost machbase_home]<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span>
+drwxrwxr-x  5 machbase machbase        64 Oct 30 16:10 3rd-party
+drwxrwxr-x  2 machbase machbase      4096 Oct 30 16:10 bin
+drwxrwxr-x  2 machbase machbase       306 Jan  2 11:36 conf
+drwxrwxr-x  2 machbase machbase       136 Jan  2 11:37 dbs
+drwxrwxr-x  3 machbase machbase        22 Oct 30 16:10 doc
+drwxrwxr-x  2 machbase machbase        96 Oct 30 16:10 include
+drwxrwxr-x  2 machbase machbase        29 Oct 30 16:10 <span class="nb">install
+</span>drwxrwxr-x  2 machbase machbase       283 Oct 30 16:10 lib
+<span class="nt">-rw-rw-r--</span>  1 machbase machbase 139888377 Dec 20 11:33 machbase-fog-x.x.x.official-LINUX-X86-64-release.tgz
+drwxrwxr-x  2 machbase machbase        22 Dec 21 15:43 msg
+ 
+drwxrwxr-x  2 machbase machbase         6 Oct 30 16:10 package
+drwxrwxr-x 12 machbase machbase       140 Oct 30 16:10 sample
+drwxrwxr-x  2 machbase machbase      4096 Jan  2 09:37 trc
+drwxrwxr-x 10 machbase machbase       160 Oct 30 16:10 tutorials
+drwxrwxr-x  3 machbase machbase        19 Oct 30 16:10 webadmin
+ 
+<span class="o">[</span>machbase@loclahost machbase_home]<span class="err">$</span>
+</code></pre></div></div>
+
+<p>The directory descriptions installed are as follows.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Direcotry</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bin</td>
+      <td>Executable files</td>
+    </tr>
+    <tr>
+      <td>conf</td>
+      <td>Configuration files</td>
+    </tr>
+    <tr>
+      <td>dbs</td>
+      <td>Data storage space</td>
+    </tr>
+    <tr>
+      <td>doc</td>
+      <td>License files</td>
+    </tr>
+    <tr>
+      <td>include</td>
+      <td>Various header files for the CLI program</td>
+    </tr>
+    <tr>
+      <td>install</td>
+      <td>mk files for Makefile</td>
+    </tr>
+    <tr>
+      <td>lib</td>
+      <td>Various libraries</td>
+    </tr>
+    <tr>
+      <td>msg</td>
+      <td>Machbase server error messages</td>
+    </tr>
+    <tr>
+      <td>package</td>
+      <td>(Cluster edition) Path to save the added package</td>
+    </tr>
+    <tr>
+      <td>sample</td>
+      <td>Various example files</td>
+    </tr>
+    <tr>
+      <td>trc</td>
+      <td>Machbase server logs and trace contents</td>
+    </tr>
+    <tr>
+      <td>webadmin</td>
+      <td>MWA Web Server Files</td>
+    </tr>
+    <tr>
+      <td>3rd-party</td>
+      <td>Grafana plug-in files</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="set-environment-variable">Set Environment Variable</h1>
+
+<p>Add Machbase-related environment variables to your .bashrc file.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">export </span><span class="nv">MACHBASE_HOME</span><span class="o">=</span>/home/machbase/machbase_home
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$MACHBASE_HOME</span>/bin:<span class="nv">$PATH</span>
+<span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$MACHBASE_HOME</span>/lib:<span class="nv">$LD_LIBRARY_PATH</span>
+ 
+<span class="c"># Apply the changes with the following command.</span>
+<span class="nb">source</span> .bashrc
+</code></pre></div></div>
+
+<h1 id="set-machbase-property">Set Machbase Property</h1>
+
+<p>The $MACHBASE_HOME/conf directory contains the file macbase.conf.sample.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">[</span>machbase@localhost ~]<span class="nv">$ </span><span class="nb">cd</span> <span class="nv">$MACHBASE_HOME</span>/conf
+<span class="o">[</span>machbase@localhost conf]<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span>
+<span class="nt">-rw-rw-r--</span> 1 machbase machbase   106 Oct 30 16:10 machtag.sql.sample
+<span class="nt">-rw-rw-r--</span> 1 machbase machbase 17556 Oct 30 16:10 machbase.conf.sample
+ 
+<span class="o">[</span>machbase@localhost conf]<span class="err">$</span>
+</code></pre></div></div>
+
+<p>You can also change the Machbase connection port number using the Linux environment variable. Below is an example of switching to a different port number (7878)  other than the default value (5656).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">MACHBASE_PORT_NO</span><span class="o">=</span>7878
+</code></pre></div></div>
+
+<h1 id="machbase-simple-usage">Machbase Simple Usage</h1>
+
+<h2 id="create-database">Create Database</h2>
+
+<p>To create the database, use the machadmin utility. You can see the command with the –help option.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>machbase@localhost machbase_home]<span class="nv">$ </span>machadmin <span class="nt">--help</span>
+<span class="nt">-----------------------------------------------------------------</span>
+     Machbase Administration Tool
+     Release Version - x.x.x.official
+     Copyright 2014, MACHBASE Corp. or its subsidiaries
+     All Rights Reserved
+<span class="nt">-----------------------------------------------------------------</span>
+<span class="o">&lt;&lt;</span> <span class="no">available</span><span class="sh"> option lists &gt;&gt;
+  -u, --startup                         Startup Machbase server.
+      --recovery[=simple,complex,reset] Recovery mode. (default: simple)
+  -s, --shutdown                        Shutdown Machbase server.
+  -c, --createdb                        Create Machbase database.
+  -d, --destroydb                       Destroy Machbase database.
+  -k, --kill                            Terminate Machbase server.
+  -i, --silence                         Produce less output.
+  -r, --restore                         Restore Machbase database.
+  -x, --extract                         Extract BackupFile to BackupDirectory.
+  -w, --viewimage                       Display information of BackupImageFile.
+  -e, --check                           Check whether Machbase Server is running.
+  -t, --licinstall                      Install the license file.
+  -f, --licinfo                         Display information of installed license file.
+ 
+[machbase@localhost machbase_home]$
+</span></code></pre></div></div>
+
+<p>Create a database with the -c option.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">[</span>machbase@localhost machbase_home]<span class="nv">$ </span>machadmin <span class="nt">-c</span>
+<span class="nt">-----------------------------------------------------------------</span>
+     Machbase Administration Tool
+     Release Version - x.x.x.official
+     Copyright 2014, MACHBASE Corp. or its subsidiaries
+     All Rights Reserved
+<span class="nt">-----------------------------------------------------------------</span>
+Database created successfully.
+<span class="o">[</span>machbase@localhost machbase_home]<span class="err">$</span>
+</code></pre></div></div>
+
+<h2 id="launch-machbase-server">Launch Machbase Server</h2>
+
+<p>Run the Machbase server with the -u option.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">[</span>machbase@localhost machbase_home]<span class="nv">$ </span>machadmin <span class="nt">-u</span>
+<span class="nt">-----------------------------------------------------------------</span>
+     Machbase Administration Tool
+     Release Version - x.x.x.official
+     Copyright 2014, MACHBASE Corp. or its subsidiaries
+     All Rights Reserved
+<span class="nt">-----------------------------------------------------------------</span>
+Waiting <span class="k">for </span>Machbase server start.
+Machbase server started successfully.
+<span class="o">[</span>machbase@localhost machbase_home]<span class="err">$</span>
+</code></pre></div></div>
+
+<p>You can see that the server daemon, machbased, is running through the ps command as shown below.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>machbase@localhost machbase_home]<span class="nv">$ </span> ps <span class="nt">-ef</span> |grep machbased
+machbase 11178     1  2 11:25 ?        00:00:01 /home/machbase/machbase_home/bin/machbased <span class="nt">-s</span> <span class="nt">--recovery</span><span class="o">=</span>simple
+machbase 11276  9867  0 11:26 pts/1    00:00:00 <span class="nb">grep</span> <span class="nt">--color</span><span class="o">=</span>auto machbased
+<span class="o">[</span>machbase@localhost machbase_home]<span class="err">$</span>
+</code></pre></div></div>
+
+<h2 id="machbase-server-connection">Machbase Server Connection</h2>
+
+<p>Connect to the Machbase server using an access utility called machsql.</p>
+
+<p>The administrator account SYS is ready and the password is set to MANAGER.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>machbase@localhost machbase_home]<span class="nv">$ </span> machsql
+<span class="o">=================================================================</span>
+     Machbase Client Query Utility
+     Release Version x.x.x.official
+     Copyright 2014 MACHBASE Corporation or its subsidiaries.
+     All Rights Reserved.
+<span class="o">=================================================================</span>
+Machbase server address <span class="o">(</span>Default:127.0.0.1<span class="o">)</span> :
+Machbase user ID  <span class="o">(</span>Default:SYS<span class="o">)</span>
+Machbase User Password :
+<span class="nv">MACHBASE_CONNECT_MODE</span><span class="o">=</span>INET, <span class="nv">PORT</span><span class="o">=</span>5656
+Type <span class="s1">'help'</span> to display a list of available commands.
+Mach&gt;
+</code></pre></div></div>
+
+<p>Let’s create a simple table and input / output data.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">table</span> <span class="n">hello</span><span class="p">(</span> <span class="n">id</span> <span class="nb">integer</span> <span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">hello</span> <span class="k">values</span><span class="p">(</span> <span class="mi">1</span> <span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">hello</span> <span class="k">values</span><span class="p">(</span> <span class="mi">2</span> <span class="p">);</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">hello</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">_arrival_time</span><span class="p">,</span> <span class="o">*</span> <span class="k">from</span> <span class="n">hello</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">create</span> <span class="k">table</span> <span class="n">hello</span><span class="p">(</span> <span class="n">id</span> <span class="nb">integer</span> <span class="p">);</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+<span class="n">Elapsed</span> <span class="nb">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">054</span>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">insert</span> <span class="k">into</span> <span class="n">hello</span> <span class="k">values</span><span class="p">(</span> <span class="mi">1</span> <span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+<span class="n">Elapsed</span> <span class="nb">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">000</span>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">insert</span> <span class="k">into</span> <span class="n">hello</span> <span class="k">values</span><span class="p">(</span> <span class="mi">2</span> <span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+<span class="n">Elapsed</span> <span class="nb">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">000</span>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">hello</span><span class="p">;</span>
+<span class="n">ID</span>
+<span class="c1">--------------</span>
+<span class="mi">2</span>
+<span class="mi">1</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+<span class="n">Elapsed</span> <span class="nb">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">000</span>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">_arrival_time</span><span class="p">,</span> <span class="o">*</span> <span class="k">from</span> <span class="n">hello</span><span class="p">;</span>
+<span class="n">_arrival_time</span>                   <span class="n">ID</span>
+<span class="c1">-----------------------------------------------</span>
+<span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span> <span class="mi">11</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mi">00</span> <span class="mi">122</span><span class="p">:</span><span class="mi">806</span><span class="p">:</span><span class="mi">804</span> <span class="mi">2</span>
+<span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">02</span> <span class="mi">11</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span><span class="mi">57</span> <span class="mi">383</span><span class="p">:</span><span class="mi">848</span><span class="p">:</span><span class="mi">361</span> <span class="mi">1</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+<span class="n">Elapsed</span> <span class="nb">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">000</span>
+<span class="n">Mach</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>The above SELECT results show that the most recently input data is displayed first.</p>
+
+<p>Also, it can be seen through the _arrival_time column that the input time of the record is set to the nanosecond.</p>
+
+<h2 id="stop-machbase-server">Stop Machbase Server</h2>
+
+<p>Shut down the Machbase server with the -s option.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>machbase@localhost machbase_home]<span class="nv">$ </span>machadmin <span class="nt">-s</span>
+<span class="nt">-----------------------------------------------------------------</span>
+     Machbase Administration Tool
+     Release Version - x.x.x.official
+     Copyright 2014, MACHBASE Corp. or its subsidiaries
+     All Rights Reserved
+<span class="nt">-----------------------------------------------------------------</span>
+Waiting <span class="k">for </span>Machbase server shut down...
+Machbase server shut down successfully.
+<span class="o">[</span>machbase@localhost machbase_home]<span class="err">$</span>
+</code></pre></div></div>
+
+<h2 id="delete-database">Delete Database</h2>
+
+<p>Delete the database with the -d option.
+<strong>Be very careful because all data will be deleted.</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>machbase@localhost machbase_home]<span class="nv">$ </span>machadmin <span class="nt">-d</span>
+<span class="nt">-----------------------------------------------------------------</span>
+     Machbase Administration Tool
+     Release Version - x.x.x.official
+     Copyright 2014, MACHBASE Corp. or its subsidiaries
+     All Rights Reserved
+<span class="nt">-----------------------------------------------------------------</span>
+Destroy Machbase database. Are you sure?<span class="o">(</span>y/N<span class="o">)</span> y
+Database destoryed successfully.
+<span class="o">[</span>machbase@localhost machbase_home]<span class="err">$</span>
+</code></pre></div></div>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

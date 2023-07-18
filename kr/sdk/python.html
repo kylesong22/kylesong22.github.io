@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/kr/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/kr/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>Python</title>
+    <meta property="og:title" content="Python" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="Python">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Python"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/kr/assets/css/main.css">
+    <link rel="stylesheet" href="/kr/assets/css/palette.css">
+    <script
+      src="/kr/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/kr/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/kr/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/kr/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/kr/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/kr/sdk/python.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/kr/sdk/python.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">마크베이스 매뉴얼</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="마크베이스-매뉴얼">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">개요</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="개요">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-개요-마크베이스-소개" href="/kr//intro/introduction">마크베이스 소개</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-개요-마크베이스-특징" href="/kr//intro/features">마크베이스 특징</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-개요-마크베이스-제품군-소개" href="/kr//intro/products">마크베이스 제품군 소개</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">설치</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="설치">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-패키지-개요" href="/kr//install/package">패키지 개요</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-리눅스-설치" href="/kr//install/linux">리눅스 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-windows-설치" href="/kr//install/windows">Windows 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-라이선스-설치" href="/kr//install/license">라이선스 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-cluster-edition-설치" href="/kr//install/cluster">Cluster Edition 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-업그레이드-복구" href="">업그레이드 / 복구</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">주요기능 / 테이블</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="주요기능-테이블">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-태그-테이블-tag-table" href="/kr//feature-table/tag">태그 테이블 (Tag Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-로그-테이블-log-table" href="/kr//feature-table/log">로그 테이블 (Log Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-휘발성-테이블-volatile-table" href="/kr//feature-table/volatile">휘발성 테이블 (Volatile Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-참조-테이블-lookup-table" href="/kr//feature-table/lookup">참조 테이블 (Lookup Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-스트림-stream" href="/kr//feature-table/stream">스트림 (Stream)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-백업-및-마운트" href="/kr//feature-table/backup-mount">백업 및 마운트</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">도구</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="도구">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-유틸리티-모음" href="/kr//tools/utilities">유틸리티 모음</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-mwa-machbase-web-analytics" href="/kr//tools/mwa">MWA (Machbase Web Analytics)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-태그-분석기-tag-analyzer" href="/kr//tools/tag-analyzer">태그 분석기(Tag Analyzer)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-machcoordinatoradmin" href="/kr//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-machdeployeradmin" href="/kr//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">설정 / 모니터링</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="설정-모니터링">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-meta-table" href="/kr//setting-monitoring/meta-table">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-virtual-table" href="/kr//setting-monitoring/virtual-table">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-property" href="/kr//setting-monitoring/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-property-cluster" href="/kr//setting-monitoring/property-cl">Property (Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-자료형" href="/kr//sql-ref/data-types">자료형</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-ddl" href="/kr//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-dml" href="/kr//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-select" href="/kr//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-select-hint" href="/kr//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-사용자-관리" href="/kr//sql-ref/user">사용자 관리</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-지원-함수" href="/kr//sql-ref/func">지원 함수</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-시스템-세션-관리" href="/kr//sql-ref/sys-session">시스템/세션 관리</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-cli-odbc" href="/kr//sdk/cli_odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-cli-odbc-예제" href="/kr//sdk/cli_odbc_example">CLI/ODBC 예제</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-jdbc" href="/kr//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-python" href="/kr//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-restful-api" href="/kr//sdk/restful_api">RESTful API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-net-connector" href="/kr//sdk/dotnet">.NET Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-timezone" href="/kr//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Release Note</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="release-note">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-release-note-7-0-release-note" href="/kr//release-note/7_0">7.0 Release Note</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-release-note-7-5-release-note" href="/kr//release-note/7_5">7.5 Release Note</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">자주 묻는 질문(FAQ)</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="자주-묻는-질문-faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-자주-묻는-질문-faq-쿼리-에러를-property-수정하여-해결하는-방법" href="/kr//faq/faq">쿼리 에러를 Property 수정하여 해결하는 방법</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/kr/sdk/">Sdk</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/kr/sdk/python.html">Python</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">Python</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="목차">목차</h1>
+
+<ul>
+  <li><a href="#목차">목차</a></li>
+  <li><a href="#python-모듈-사용-개요">Python 모듈 사용 개요</a></li>
+  <li><a href="#사용-환경-설정">사용 환경 설정</a></li>
+  <li><a href="#class-생성">Class 생성</a></li>
+  <li><a href="#접속과-접속해제">접속과 접속해제</a>
+    <ul>
+      <li><a href="#machbaseopenahost-auser-apw-aport">machbase.open(aHost, aUser, aPw, aPort)</a></li>
+      <li><a href="#machbaseclose">machbase.close()</a></li>
+      <li><a href="#machbaseisconnected">machbase.isConnected()</a></li>
+    </ul>
+  </li>
+  <li><a href="#명령어-실행-및-사용자-편의-함수">명령어 실행 및 사용자 편의 함수</a>
+    <ul>
+      <li><a href="#machbaseexecuteasql">machbase.execute(aSql)</a></li>
+      <li><a href="#machbaseappendatablename-atypes-avalues-aformat">machbase.append(aTableName, aTypes, aValues, aFormat)</a></li>
+      <li><a href="#machbasetables">machbase.tables()</a></li>
+      <li><a href="#machbasecolumnsatablename">machbase.columns(aTableName)</a></li>
+    </ul>
+  </li>
+  <li><a href="#결과-확인">결과 확인</a>
+    <ul>
+      <li><a href="#machbaseresult">machbase.result()</a></li>
+    </ul>
+  </li>
+  <li><a href="#select-결과-확인">SELECT 결과 확인</a>
+    <ul>
+      <li><a href="#machbaseselectasql">machbase.select(aSql)</a></li>
+      <li><a href="#machbasefetch">machbase.fetch()</a></li>
+      <li><a href="#machbaseselectclose">machbase.selectClose()</a></li>
+      <li><a href="#machbaseselect-예제">machbase.select() 예제</a></li>
+    </ul>
+  </li>
+  <li><a href="#예제">예제</a>
+    <ul>
+      <li><a href="#connect">Connect</a></li>
+      <li><a href="#simple">Simple</a></li>
+      <li><a href="#append">Append</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="python-모듈-사용-개요">Python 모듈 사용 개요</h1>
+
+<p>마크베이스에서는 Python 모듈을 지원한다. 모듈을 설치함으로써 마크베이스 서버와 CLI 방식으로 값을 주고 받을 수 있는 클래스를 제공한다. 이를 활용해서 Python에서 쉽게 마크베이스에 질의 형태로 값을 입력하거나 삭제, 테이블 생성, 삭제 등 다양한 명령어를 사용할 수 있다.</p>
+
+<h1 id="사용-환경-설정">사용 환경 설정</h1>
+
+<p><strong>리눅스</strong></p>
+
+<p>이를 사용하기 위해서는 간단한 환경 설정과 라이브러리 파일들이 필요하다. 먼저 $LD_LIBRARY_PATH에 $MACHBASE_HOME/lib 디렉터리가 등록되어있는지 확인한다. CLI를 이용해서 마크베이스에 접속하기 때문에 libmachbasecli_dll.so 파일이 라이브러리 폴더에 존재해야 한다. 그리고 $MACHBASE_HOME/3rd-party/python3-module 폴더에 있는 machbaseAPI-1.0.tar.gz를 압축 해제후 python setup.py install 명령을 통해 사용하려는 Python에 모듈을 설치한다.</p>
+
+<p><strong>윈도우</strong></p>
+
+<p>먼저 %MACHBASE_HOME%/3rd-party/python3-module 폴더에 있는 machbaseAPI-1.0.zip을 압축 해제 후 python setup.py install 명령을 통해 사용하려는 Python에 모듈을 설치한다.</p>
+
+<h1 id="class-생성">Class 생성</h1>
+
+<p>마크베이스 Python 모듈을 사용하기 위해서 해당 클래스를 선언해야 한다.</p>
+
+<p>해당 클래스 명은 machbase이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">machbaseAPI</span> <span class="kn">import</span> <span class="n">machbase</span>
+</code></pre></div></div>
+
+<h1 id="접속과-접속해제">접속과 접속해제</h1>
+
+<h2 id="machbaseopenahost-auser-apw-aport">machbase.open(aHost, aUser, aPw, aPort)</h2>
+
+<p>마크베이스에 접속하는 함수이다. 알맞은 파라미터 값을 입력했을시에 DB에 접속 성공했는지 실패했는지를 반환한다. 정상 종료시 1, 실패시 0을 반환한다.</p>
+
+<h2 id="machbaseclose">machbase.close()</h2>
+
+<p>마크베이스 접속을 해제하는 함수이다. 정상 종료시 1, 실패시 0을 반환한다.</p>
+
+<h2 id="machbaseisconnected">machbase.isConnected()</h2>
+
+<p>선언한 클래스가 해당 서버에 접속중인지 아닌지를 판별하는 함수이다. 접속 중일 때 1, 접속 중이 아닐 때 0을 반환한다.</p>
+
+<h1 id="명령어-실행-및-사용자-편의-함수">명령어 실행 및 사용자 편의 함수</h1>
+
+<h2 id="machbaseexecuteasql">machbase.execute(aSql)</h2>
+
+<p>서버에 접속되어 있을 때 해당 서버에 질의문을 전송하는 명령어이다. 정상적으로 실행되었을 때 1, 실패하거나 에러가 발생했을 시에는 0을 반환한다.</p>
+
+<p>마크베이스에서 지원하지 않는 UPDATE를 제외하고 모든 명령어들을 사용할 수 있다.</p>
+
+<p>결과를 한꺼번에 return하는 구조이기 때문에 SELECT 구문을 사용하는 경우 메모리 부족 오류가 발생할 수 있다. 따라서 SELECT 구문은 machbase.select() 함수를 사용한다.</p>
+
+<h2 id="machbaseappendatablename-atypes-avalues-aformat">machbase.append(aTableName, aTypes, aValues, aFormat)</h2>
+
+<p>마크베이스에서 지원하는 Append 프로토콜을 사용할 수 있는 함수이다.</p>
+
+<p>데이터를 입력하게 될 테이블명, 각 컬럼들의 타입의 딕셔너리, 그리고 입력할 값들을 JSON 형태로 입력하고 dateformat을 지정해 주면 Append를 실행할 수 있다.</p>
+
+<p>정상적으로 실행하였다면 1, 실패시에는 0을 반환한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">타입명</th>
+      <th style="text-align: center">값</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">short</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ushort</td>
+      <td style="text-align: center">104</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">integer</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">uinteger</td>
+      <td style="text-align: center">108</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">long</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ulong</td>
+      <td style="text-align: center">112</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">float</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">double</td>
+      <td style="text-align: center">20</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">datetime</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">varchar</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ipv4</td>
+      <td style="text-align: center">32</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ipv6</td>
+      <td style="text-align: center">36</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">text</td>
+      <td style="text-align: center">49</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">binary</td>
+      <td style="text-align: center">97</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="machbasetables">machbase.tables()</h2>
+
+<p>접속한 서버에 있는 모든 테이블들의 정보를 반환한다. 정상적으로 실행되었다면 1, 실패했을 시에는 0을 반환한다.</p>
+
+<h2 id="machbasecolumnsatablename">machbase.columns(aTableName)</h2>
+
+<p>접속한 서버에 있는 해당 테이블 내의 컬럼들의 정보를 반환한다. 정상적으로 실행되었다면 1, 실패했을 시에는 0을 반환한다.</p>
+
+<h1 id="결과-확인">결과 확인</h1>
+
+<p>마크베이스 Python 모듈에서 모든 결과값은 JSON으로 반환된다.</p>
+
+<p>다양한 환경에서 활용하기 쉬운 형태의 결과를 반환하는 것으로 채택하였다.</p>
+
+<h2 id="machbaseresult">machbase.result()</h2>
+
+<p>위쪽에서 설명하였던 함수들은 실행 결과들을 해당 함수의 반환값으로 나타내지 않고 성공, 실패 여부만 반환한다. 함수들의 결과값은 이 함수의 반환값으로만 얻을 수 있다.</p>
+
+<h1 id="select-결과-확인">SELECT 결과 확인</h1>
+
+<p>machbase.execute() 함수로 SELECT 결과를 읽어오면 모든 결과를 한번에 읽기때문에 많은 메모리가 필요하며 경우에 따라서 메모리 부족 오류가 발생할 수 있다.</p>
+
+<p>따라서 SELECT 구문의 경우에는 한 레코드씩 결과를 얻을 수 있는 함수를 사용해야 한다.</p>
+
+<h2 id="machbaseselectasql">machbase.select(aSql)</h2>
+
+<p>서버에 접속되어 있을 때 해당 서버에 SELECT 질의문을 전송하는 명령어이다. 정상적으로 실행되었을 때 1, 실패하거나 에러가 발생했을 시에는 0을 반환한다.</p>
+
+<p>SELECT 구문만 사용이 가능하며, 모든 결과를 한번에 가져오는 machbase.execute() 함수와 달리 machbase.fetch()함수를 사용해서 1 레코드 씩 결과를 얻을 수 있다.</p>
+
+<h2 id="machbasefetch">machbase.fetch()</h2>
+
+<p>machbase.select(aSql) 함수의 결과를 한 레코드 씩 읽어온다.</p>
+
+<p>return 값은 성공여부와 결과값으로 성공여부는 1과 0으로 표시되고, 결과값은 한 레코드의 결과가 json 형식으로 return 된다.</p>
+
+<h2 id="machbaseselectclose">machbase.selectClose()</h2>
+
+<p>한번 선택된 machbase.select()의 결과는 다른 machbase.select()나 machbase.execute() 함수가 호출될 때까지 open된 상태로 존재한다.</p>
+
+<p>이 것을 명시적으로 닫아주는 것이 machbase.selectClose() 함수이다.</p>
+
+<h2 id="machbaseselect-예제">machbase.select() 예제</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">db</span> <span class="o">=</span> <span class="n">machbase</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">db</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="s">'127.0.0.1'</span><span class="p">,</span><span class="s">'SYS'</span><span class="p">,</span><span class="s">'MANAGER'</span><span class="p">,</span> <span class="mi">5656</span><span class="p">)</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">:</span>
+    <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+ 
+<span class="n">query</span> <span class="o">=</span> <span class="s">'SELECT * from sample_table'</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">is_success</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">fetch</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">is_success</span> <span class="ow">is</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span><span class="p">;</span>
+ 
+    <span class="n">res</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+ 
+<span class="n">db</span><span class="p">.</span><span class="n">selectClose</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">db</span><span class="p">.</span><span class="n">close</span><span class="p">()</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">:</span>
+    <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+</code></pre></div></div>
+<h1 id="예제">예제</h1>
+
+<p>간단한 예제들을 통해서 마크베이스 Python 모듈을 사용하는 방법을 알아보자</p>
+
+<p>$MACHBASE_HOME/sample/python 파일들을 이용해서 확인할 수 있다. 해당 디렉터리에는 간편하게 테스트를 해 볼 수 있게 해주는 Makefile과 데이터를 만들어주는 MakeData.py 파일이 있다. Makefile 내부 변수 중 PYPATH의 값을 마크베이스 Python 모듈이 설치된 파이썬으로 지정해야 정상 작동한다. 기본값은 마크베이스 패키지에 설치된 파이썬으로 지정되어 있다. 또한 파이썬에서 모듈을 독자적으로 실행하기 위해서는 <strong>init</strong>.py 파일이 필요하므로 해당 디렉터리에 파일이 존재하는지 확인하도록 하다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>mach@localhost]<span class="nv">$ </span><span class="nb">cd</span> <span class="nv">$MACHBASE_HOME</span>/sample/python
+<span class="o">[</span>mach@localhost python]<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span>
+total 20
+<span class="nt">-rw-rw-r--</span> 1 mach mach    0 Oct  7 14:37 __init__.py
+<span class="nt">-rw-rw-r--</span> 1 mach mach  764 Oct  7 14:37 MakeData.py
+<span class="nt">-rw-rw-r--</span> 1 mach mach  593 Oct  7 14:58 Makefile
+<span class="nt">-rw-rw-r--</span> 1 mach mach  664 Oct  7 14:37 Sample1Connect.py
+<span class="nt">-rw-rw-r--</span> 1 mach mach 2401 Oct  7 14:37 Sample2Simple.py
+<span class="nt">-rw-rw-r--</span> 1 mach mach 1997 Oct  7 14:37 Sample3Append.py
+</code></pre></div></div>
+
+<h2 id="connect">Connect</h2>
+
+<p>아래의 예제는 서버에 접속해서 질의를 실행하고 결과값을 반환하는 단순한 함수이다. 각각의 함수들이 실패(0)를 반환했을 때에 결과값을 반환하는 경우는 에러 결과를 반환하기 위함이다. 정상적으로 실행된다면 m$tables 테이블의 값들 개수가 반환 된다.</p>
+
+<p>파일 이름은 Sample1Connect.py이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">machbaseAPI</span> <span class="kn">import</span> <span class="n">machbase</span>
+<span class="k">def</span> <span class="nf">connect</span><span class="p">():</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">machbase</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">db</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="s">'127.0.0.1'</span><span class="p">,</span><span class="s">'SYS'</span><span class="p">,</span><span class="s">'MANAGER'</span><span class="p">,</span><span class="mi">5656</span><span class="p">)</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">db</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="s">'select count(*) from m$tables'</span><span class="p">)</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">db</span><span class="p">.</span><span class="n">close</span><span class="p">()</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="k">if</span> <span class="n">__name__</span><span class="o">==</span><span class="s">"__main__"</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">connect</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>mach@localhost python]<span class="nv">$ </span>make run_sample1
+/home/machbase/machbase_home/webadmin/flask/Python/bin/python Sample1Connect.py
+<span class="o">{</span><span class="s2">"count(*)"</span>:<span class="s2">"13"</span><span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="simple">Simple</h2>
+
+<p>아래 예제를 이용해서 단순하게 마크베이스에 파이썬을 이용해서 테이블을 만들고 값을 입력하고 입력된 값을 추출해서 확인하는 예제이다. 파일 이름은 Sample2Simple.py이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">machbaseAPI</span> <span class="kn">import</span> <span class="n">machbase</span>
+<span class="k">def</span> <span class="nf">insert</span><span class="p">():</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">machbase</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">db</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="s">'127.0.0.1'</span><span class="p">,</span><span class="s">'SYS'</span><span class="p">,</span><span class="s">'MANAGER'</span><span class="p">,</span><span class="mi">5656</span><span class="p">)</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="n">db</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="s">'drop table sample_table'</span><span class="p">)</span>
+    <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">db</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="s">'create table sample_table(d1 short, d2 integer, d3 long, f1 float, f2 double, name varchar(20), text text, bin binary, v4 ipv4, v6 ipv6, dt datetime)'</span><span class="p">)</span> <span class="ow">is</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">sql</span> <span class="o">=</span> <span class="s">"INSERT INTO SAMPLE_TABLE VALUES ("</span>
+        <span class="n">sql</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">((</span><span class="n">i</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6552</span><span class="p">)</span> <span class="c1">#short
+</span>        <span class="n">sql</span> <span class="o">+=</span> <span class="s">","</span><span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="n">i</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">42949672</span><span class="p">)</span> <span class="c1">#integer
+</span>        <span class="n">sql</span> <span class="o">+=</span> <span class="s">","</span><span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="n">i</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="il">92233720368547758L</span><span class="p">)</span> <span class="c1">#long
+</span>        <span class="n">sql</span> <span class="o">+=</span> <span class="s">","</span><span class="o">+</span> <span class="s">"1.234"</span><span class="o">+</span><span class="nb">str</span><span class="p">((</span><span class="n">i</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span> <span class="c1">#float
+</span>        <span class="n">sql</span> <span class="o">+=</span> <span class="s">","</span><span class="o">+</span> <span class="s">"1.234"</span><span class="o">+</span><span class="nb">str</span><span class="p">((</span><span class="n">i</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="mi">61</span><span class="p">)</span> <span class="c1">#double
+</span>        <span class="n">sql</span> <span class="o">+=</span> <span class="s">",'id-"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s">"'"</span> <span class="c1">#varchar
+</span>        <span class="n">sql</span> <span class="o">+=</span> <span class="s">",'name-"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s">"'"</span> <span class="c1">#text
+</span>        <span class="n">sql</span> <span class="o">+=</span> <span class="s">",'aabbccddeeff'"</span> <span class="c1">#binary
+</span>        <span class="n">sql</span> <span class="o">+=</span> <span class="s">",'192.168.0."</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s">"'"</span> <span class="c1">#ipv4
+</span>        <span class="n">sql</span> <span class="o">+=</span> <span class="s">",'::192.168.0."</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s">"'"</span> <span class="c1">#ipv6
+</span>        <span class="n">sql</span> <span class="o">+=</span> <span class="s">",TO_DATE('2015-08-0"</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s">"','YYYY-MM-DD')"</span> <span class="c1">#date
+</span>        <span class="n">sql</span> <span class="o">+=</span> <span class="s">")"</span><span class="p">;</span>
+        <span class="k">if</span> <span class="n">db</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">:</span>
+            <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+        <span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s">" record inserted."</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="s">"SELECT d1, d2, d3, f1, f2, name, text, bin, to_hex(bin), v4, v6, to_char(dt,'YYYY-MM-DD') as dt from SAMPLE_TABLE"</span><span class="p">;</span>
+    <span class="k">if</span> <span class="n">db</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="s">'{[^}]+}'</span><span class="p">,</span><span class="n">result</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">"d1 : "</span><span class="o">+</span><span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'d1'</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">"d2 : "</span><span class="o">+</span><span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'d2'</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">"d3 : "</span><span class="o">+</span><span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'d3'</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">"f1 : "</span><span class="o">+</span><span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'f1'</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">"f2 : "</span><span class="o">+</span><span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'f2'</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">"name : "</span><span class="o">+</span><span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'name'</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">"text : "</span><span class="o">+</span><span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'text'</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">"bin : "</span><span class="o">+</span><span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'bin'</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">"to_hex(bin) : "</span><span class="o">+</span><span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'to_hex(bin)'</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">"v4 : "</span><span class="o">+</span><span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'v4'</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">"v6 : "</span><span class="o">+</span><span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'v6'</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">"dt : "</span><span class="o">+</span><span class="n">res</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'dt'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">db</span><span class="p">.</span><span class="n">close</span><span class="p">()</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="k">if</span> <span class="n">__name__</span><span class="o">==</span><span class="s">"__main__"</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">insert</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>mach@loclahost python]<span class="nv">$ </span>make run_sample2
+/home/machbase/machbase_home/webadmin/flask/Python/bin/python Sample2Simple.py
+<span class="o">{</span><span class="s2">"EXECUTE RESULT"</span>:<span class="s2">"Execute Success"</span><span class="o">}</span>
+1 record inserted.
+<span class="o">{</span><span class="s2">"EXECUTE RESULT"</span>:<span class="s2">"Execute Success"</span><span class="o">}</span>
+2 record inserted.
+<span class="o">{</span><span class="s2">"EXECUTE RESULT"</span>:<span class="s2">"Execute Success"</span><span class="o">}</span>
+3 record inserted.
+<span class="o">{</span><span class="s2">"EXECUTE RESULT"</span>:<span class="s2">"Execute Success"</span><span class="o">}</span>
+4 record inserted.
+<span class="o">{</span><span class="s2">"EXECUTE RESULT"</span>:<span class="s2">"Execute Success"</span><span class="o">}</span>
+5 record inserted.
+<span class="o">{</span><span class="s2">"EXECUTE RESULT"</span>:<span class="s2">"Execute Success"</span><span class="o">}</span>
+6 record inserted.
+<span class="o">{</span><span class="s2">"EXECUTE RESULT"</span>:<span class="s2">"Execute Success"</span><span class="o">}</span>
+7 record inserted.
+<span class="o">{</span><span class="s2">"EXECUTE RESULT"</span>:<span class="s2">"Execute Success"</span><span class="o">}</span>
+8 record inserted.
+<span class="o">{</span><span class="s2">"EXECUTE RESULT"</span>:<span class="s2">"Execute Success"</span><span class="o">}</span>
+9 record inserted.
+d1 : 26208
+d2 : 171798688
+d3 : 368934881474191032
+f1 : 1.23428
+f2 : 1.23424
+name : id-9
+text : name-9
+bin : 616162626363646465656666
+to_hex<span class="o">(</span>bin<span class="o">)</span> : 616162626363646465656666
+v4 : 192.168.0.9
+v6 : ::192.168.0.9
+...
+</code></pre></div></div>
+
+<h2 id="append">Append</h2>
+
+<p>마크베이스에서 고속으로 데이터를 입력할 수 있는 Append 방식 또한 파이썬 모듈을 활용해서 사용할 수 있다. 아래의 예제는 고속으로 데이터를 입력하는 예제이다. 컬럼 정보 및 초기화를 위한 접속 클래스 db, Append를 하기 위한 접속용 클래스 db2를 선언하여 각각의 함수를 활용하는 방식을 사용했다. 파일 이름은 Sample3Append.py이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">machbaseAPI</span> <span class="kn">import</span> <span class="n">machbase</span>
+<span class="k">def</span> <span class="nf">append</span><span class="p">():</span>
+<span class="c1">#init,columns start
+</span>    <span class="n">db</span> <span class="o">=</span> <span class="n">machbase</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">db</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="s">'127.0.0.1'</span><span class="p">,</span><span class="s">'SYS'</span><span class="p">,</span><span class="s">'MANAGER'</span><span class="p">,</span><span class="mi">5656</span><span class="p">)</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="n">db</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="s">'drop table sample_table'</span><span class="p">)</span>
+    <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">db</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="s">'create table sample_table(d1 short, d2 integer, d3 long, f1 float, f2 double, name varchar(20), text text, bin binary, v4 ipv4, v6 ipv6, dt datetime)'</span><span class="p">)</span> <span class="ow">is</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="n">tableName</span> <span class="o">=</span> <span class="s">'sample_table'</span>
+    <span class="n">db</span><span class="p">.</span><span class="n">columns</span><span class="p">(</span><span class="n">tableName</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">db</span><span class="p">.</span><span class="n">close</span><span class="p">()</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="n">db</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+<span class="c1">#init, colums end
+#append start
+</span>    <span class="n">db2</span> <span class="o">=</span> <span class="n">machbase</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">db2</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="s">'127.0.0.1'</span><span class="p">,</span><span class="s">'SYS'</span><span class="p">,</span><span class="s">'MANAGER'</span><span class="p">,</span><span class="mi">5656</span><span class="p">)</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="n">db2</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="n">types</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">re</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="s">'{[^}]+}'</span><span class="p">,</span><span class="n">result</span><span class="p">):</span>
+        <span class="n">types</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">item</span><span class="p">).</span><span class="n">get</span><span class="p">(</span><span class="s">'type'</span><span class="p">))</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'data.txt'</span><span class="p">,</span><span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">.</span><span class="n">readlines</span><span class="p">():</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">line</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">):</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">or</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">8</span> <span class="ow">or</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">12</span> <span class="ow">or</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">104</span> <span class="ow">or</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">108</span> <span class="ow">or</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">112</span><span class="p">:</span>
+                    <span class="c1">#short   integer    long       ushort      uinteger     ulong
+</span>                    <span class="n">v</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">16</span> <span class="ow">or</span> <span class="n">t</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
+                    <span class="c1">#float      double
+</span>                    <span class="n">v</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">v</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+                <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="n">values</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">db2</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">tableName</span><span class="p">,</span> <span class="n">types</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="s">'YYYY-MM-DD HH24:MI:SS'</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">db2</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">db2</span><span class="p">.</span><span class="n">close</span><span class="p">()</span> <span class="ow">is</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="n">db2</span><span class="p">.</span><span class="n">result</span><span class="p">()</span>
+<span class="c1">#append end
+</span>    <span class="k">return</span> <span class="n">result</span>
+<span class="k">if</span> <span class="n">__name__</span><span class="o">==</span><span class="s">"__main__"</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">append</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>mach@localhost python]<span class="nv">$ </span>make run_sample3
+/home/machbase/machbase_home/webadmin/flask/Python/bin/python Sample3Append.py
+<span class="o">{</span><span class="s2">"EXECUTE RESULT"</span>:<span class="s2">"Append success"</span><span class="o">}</span>
+</code></pre></div></div>
+
+
+<script
+  src="/kr/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/kr/assets/js/main.js"></script>
+
+  </body>
+</html>

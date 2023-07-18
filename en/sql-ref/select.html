@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>SELECT</title>
+    <meta property="og:title" content="SELECT" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="SELECT">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="SELECT"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/sql-ref/select.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/sql-ref/select.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/sql-ref/">Sql ref</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/sql-ref/select.html">SELECT</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">SELECT</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#select-syntax">SELECT Syntax</a></li>
+  <li><a href="#set-operator">SET OPERATOR</a></li>
+  <li><a href="#target-list">TARGET LIST</a>
+    <ul>
+      <li><a href="#case-statement">CASE statement</a></li>
+    </ul>
+  </li>
+  <li><a href="#from">FROM</a>
+    <ul>
+      <li><a href="#subqueryinline-view">SUBQUERY(INLINE VIEW)</a></li>
+      <li><a href="#joininner-join">JOIN(INNER JOIN)</a></li>
+      <li><a href="#inner-join-and-outer-join">INNER JOIN and OUTER JOIN</a></li>
+      <li><a href="#pivot">PIVOT</a></li>
+    </ul>
+  </li>
+  <li><a href="#where">WHERE</a>
+    <ul>
+      <li><a href="#use-of-subquery">Use of SUBQUERY</a></li>
+      <li><a href="#search-statement">SEARCH Statement</a></li>
+      <li><a href="#esearch-statement">ESEARCH Statement</a></li>
+      <li><a href="#not-search-statement">NOT SEARCH Statement</a></li>
+      <li><a href="#regexp-statement">REGEXP Statement</a></li>
+      <li><a href="#in-statement">IN Statement</a></li>
+      <li><a href="#use-in-statement-and-subquery">Use In Statement and SUBQUERY</a></li>
+      <li><a href="#between-statement">BETWEEN Statement</a></li>
+      <li><a href="#range-statement">RANGE Statement</a></li>
+    </ul>
+  </li>
+  <li><a href="#group-by--having">GROUP BY / HAVING</a></li>
+  <li><a href="#order-by">ORDER BY</a></li>
+  <li><a href="#series-by">SERIES BY</a></li>
+  <li><a href="#limit">LIMIT</a></li>
+  <li><a href="#duration">DURATION</a></li>
+  <li><a href="#save-data">SAVE DATA</a></li>
+</ul>
+
+<p>SELECT is a syntax used to find, filter, and manipulate data from various tables in Machbase.</p>
+
+<h1 id="select-syntax">SELECT Syntax</h1>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">select_stmt</span> <span class="k">UNION</span> <span class="k">ALL</span> <span class="n">select_stmt</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">target_list</span> <span class="k">FROM</span> <span class="n">TableList</span> <span class="k">WHERE</span> <span class="n">Condition</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">Expr</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Expr</span> <span class="p">[</span><span class="k">Desc</span><span class="p">]</span> <span class="k">HAVING</span> <span class="n">Expr</span> <span class="n">SERIES</span> <span class="k">BY</span> <span class="n">Expr</span> <span class="k">LIMIT</span> <span class="n">N</span><span class="p">[,</span><span class="n">N</span><span class="p">]</span> <span class="n">DURATION</span> <span class="n">TimeExpr</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h1 id="set-operator">SET OPERATOR</h1>
+
+<p>Used when receiving the results of multiple Select queries as a single query result. Machbase supports only the UNION ALL set operator. The set operator can be executed only if the left and right Select statements are (1) the same or compatible types, (2) the number of query results is the same, and if any of the two conditions does not match, they are treated as errors.</p>
+
+<p>Data type conversion and compatibility verification are performed based on the following criteria.</p>
+<ul>
+  <li>Signed integer types and unsigned integer types are not compatible.</li>
+  <li>The integer type is compatible with the real type, and the query result is converted to the real type and returned.</li>
+  <li>Character types are compatible with different lengths.</li>
+  <li>IPv6 type and IPv4 type are not compatible.</li>
+  <li>Of the two SELECT statements, the column name of the left query is always used.</li>
+</ul>
+
+<p>Examples</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">i1</span><span class="p">,</span> <span class="n">i2</span> <span class="k">FROM</span> <span class="n">table_1</span>
+<span class="k">UNION</span> <span class="k">ALL</span>
+<span class="k">SELECT</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span> <span class="k">FROM</span> <span class="n">table_2</span>
+</code></pre></div></div>
+
+<h1 id="target-list">TARGET LIST</h1>
+
+<p>This is a <strong>list of columns or subqueries</strong> targeted by the Select statement .</p>
+
+<p>The subquery used in the target list is treated as an error if it has two or more values ​​or two or more result columns, such as a subquery used in the WHERE clause.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">i1</span><span class="p">,</span> <span class="n">i2</span> <span class="p">...</span>
+<span class="k">SELECT</span> <span class="n">i1</span> <span class="p">(</span><span class="k">Select</span> <span class="k">avg</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">t1</span><span class="p">),</span> <span class="n">i2</span> <span class="p">...</span>
+</code></pre></div></div>
+
+<h2 id="case-statement">CASE statement</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CASE</span> <span class="o">&lt;</span><span class="n">simple_case_expression</span><span class="o">|</span><span class="n">searched_case_expression</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">else_clause</span><span class="p">]</span> <span class="k">END</span>
+ 
+<span class="n">simple_case_expression</span> <span class="p">::</span><span class="o">=</span>
+    <span class="n">expr</span> <span class="k">WHEN</span> <span class="n">comparison_expr</span> <span class="k">THEN</span> <span class="n">return_expr</span>
+        <span class="p">[</span><span class="k">WHEN</span> <span class="n">comparison_expr</span> <span class="k">THEN</span> <span class="n">return_expr</span> <span class="p">...]</span>
+ 
+<span class="n">searched_case_expression</span> <span class="p">::</span><span class="o">=</span>
+    <span class="k">WHEN</span> <span class="n">condtion_expr</span> <span class="k">THEN</span> <span class="k">return</span> <span class="n">EXPR</span> <span class="p">[</span><span class="k">WHEN</span> <span class="n">condtion_expr</span> <span class="k">THEN</span> <span class="k">return</span> <span class="n">EXPR</span> <span class="p">...]</span>
+ 
+<span class="n">else_clause</span> <span class="p">::</span><span class="o">=</span>
+    <span class="k">ELSE</span> <span class="n">else_value_expr</span>
+</code></pre></div></div>
+
+<p>This is an expression that supports the IF … THEN … ELSE block of a typical programming language. simple_case_expression is executed in the form of return_expr when one column or expression is equal to the value of comparison_expr followed by when, and this when … then clause can be repeated as many times as desired.</p>
+
+<p>searched_case_expression does not specify an expression after CASE but describes a conditional clause that includes a comparison operator in the when clause. If the result of each comparison operation is true, then the value of the then clause is returned. The else clause returns else_value if the value of the when clause is not satisfied (even if the expression is NULL).</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">t1</span><span class="p">;</span>
+<span class="n">I1</span>          <span class="n">I2</span>         
+<span class="c1">---------------------------</span>
+<span class="mi">2</span>           <span class="mi">2</span>          
+<span class="mi">1</span>           <span class="mi">1</span>          
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="k">select</span> <span class="k">case</span> <span class="n">i1</span> <span class="k">when</span> <span class="mi">1</span> <span class="k">then</span> <span class="mi">100</span> <span class="k">end</span> <span class="k">from</span> <span class="n">t1</span><span class="p">;</span>
+<span class="k">case</span> <span class="n">i1</span> <span class="k">when</span> <span class="mi">1</span> <span class="k">then</span> <span class="mi">100</span> <span class="k">end</span>
+<span class="c1">------------------------------</span>
+<span class="k">NULL</span>       
+<span class="mi">100</span>        
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>In the simple_case_expression example, if the value of the i1 column is 2, NULL is returned.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select case when i1 &gt; 0 then 100 when i1 &gt; 1 then 200 end from t1;
+case when i1 &gt; 0 then 100 when i1 &gt; 1 then 200 end
+------------------------------------------
+100        
+100        
+[2] row(s) selected.
+</code></pre></div></div>
+
+<p>Since searched_case_expression returns the first condition that satisfies the condition, 100 is returned, and the second condition is not executed.</p>
+
+<h1 id="from">FROM</h1>
+
+<p>You can specify a table name or an Inline view in the FROM clause. To perform a join between tables, lists the table or Inline view separated by a comma (,).</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span> <span class="k">table_name</span>
+</code></pre></div></div>
+
+<p>Retrieves data in the table specified by table_name.</p>
+
+<h2 id="subqueryinline-view">SUBQUERY(INLINE VIEW)</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span> <span class="p">(</span><span class="k">Select</span> <span class="k">statement</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Retrievse data for the contents of the subquery enclosed in parentheses.</p>
+
+<ul>
+  <li>Machbase server does not support correlated subqueries, so you can not reference columns in a subquery in an outer query.</li>
+</ul>
+
+<h2 id="joininner-join">JOIN(INNER JOIN)</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">JOIN</span><span class="p">(</span><span class="k">INNER</span> <span class="k">JOIN</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Joins two tables, table_1 and table_2. An INNER JOIN can be used when three or more tables are listed, and both the search condition and the conditional clause are described in the WHERE clause.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">t1</span><span class="p">.</span><span class="n">i1</span><span class="p">,</span> <span class="n">t2</span><span class="p">.</span><span class="n">i1</span> <span class="k">FROM</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">i1</span> <span class="o">=</span> <span class="n">t2</span><span class="p">.</span><span class="n">i1</span> <span class="k">AND</span> <span class="n">t1</span><span class="p">.</span><span class="n">i1</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">t2</span><span class="p">.</span><span class="n">i2</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="inner-join-and-outer-join">INNER JOIN and OUTER JOIN</h2>
+
+<p>Supports ANSI style INNER JOIN, LEFT OUTER JOIN, and RIGHT OUTER JOIN. FULL OUTER JOIN is not supported.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span> <span class="n">TABLE_1</span> <span class="p">[</span><span class="k">INNER</span><span class="o">|</span><span class="k">LEFT</span> <span class="k">OUTER</span><span class="o">|</span><span class="k">RIGHT</span> <span class="k">OUTER</span><span class="p">]</span> <span class="k">JOIN</span> <span class="n">TABLE_2</span> <span class="k">ON</span> <span class="n">expression</span>
+</code></pre></div></div>
+
+<p>The ON clause of the ANSI-style JOIN clause uses the conditional clause that is performed by the JOIN. If the WHERE clause in the OUTER JOIN query has a clause for an inner table (a table that is filled with NULL if the condition of the ON clause is not satisfied), the query is converted to an INNER JOIN.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">t1</span><span class="p">.</span><span class="n">i1</span> <span class="n">t2</span><span class="p">.</span><span class="n">i1</span> <span class="k">FROM</span> <span class="n">t1</span> <span class="k">LEFT</span> <span class="k">OUTER</span> <span class="k">JOIN</span> <span class="n">t2</span> <span class="k">ON</span> <span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">i1</span> <span class="o">=</span> <span class="n">t2</span><span class="p">.</span><span class="n">i1</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">t2</span><span class="p">.</span><span class="n">i2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>The above query is converted to an INNER JOIN by the condition t2.i2 = 1 in the WHERE clause.</p>
+
+<h2 id="pivot">PIVOT</h2>
+
+<ul>
+  <li>The PIVOT syntax is supported from Machbase version 5.6.</li>
+</ul>
+
+<p><img src="/en/sql-ref/select_image/pivot_clause.png" alt="pivot_clause" /></p>
+
+<p>pivot_clause:</p>
+
+<p>The PIVOT statement shows the aggregated results of GROUP BY output as ROW, rearranged into columns.</p>
+
+<p>It is used in conjunction with the Inline view and is performed as follows.</p>
+<ul>
+  <li>Performs GROUP BY on columns that are not used in the PIVOT clause of the inline view, and then performs aggregate functions on the values ​​listed in the PIVOT IN clause.</li>
+  <li>The resulting grouping column and the aggregation result are rotated and displayed as columns.</li>
+</ul>
+
+<p>For example, aggregate the value of each device from the data collected from various sensors.
+The query that should be performed through the CASE statement can be expressed simply through the PIVOT statement.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- w/o PIVOT</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="p">(</span>
+    <span class="k">SELECT</span>
+             <span class="n">regtime</span><span class="p">,</span>
+             <span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span> <span class="k">WHEN</span> <span class="n">tagid</span> <span class="o">=</span> <span class="s1">'FRONT_AXIS_TORQUE'</span> <span class="k">THEN</span> <span class="n">dvalue</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span><span class="p">)</span>  <span class="k">AS</span> <span class="n">front_axis_torque</span><span class="p">,</span>
+             <span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span> <span class="k">WHEN</span> <span class="n">tagid</span> <span class="o">=</span> <span class="s1">'REAR_AXIS_TORQUE'</span> <span class="k">THEN</span> <span class="n">dvalue</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span><span class="p">)</span>  <span class="k">AS</span> <span class="n">rear_axis_torque</span><span class="p">,</span>
+             <span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span> <span class="k">WHEN</span> <span class="n">tagid</span> <span class="o">=</span> <span class="s1">'HOIST_AXIS_TORQUE'</span> <span class="k">THEN</span> <span class="n">dvalue</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span><span class="p">)</span>  <span class="k">AS</span> <span class="n">hoist_axis_torque</span><span class="p">,</span>
+             <span class="k">SUM</span><span class="p">(</span><span class="k">CASE</span> <span class="k">WHEN</span> <span class="n">tagid</span> <span class="o">=</span> <span class="s1">'SLIDE_AXIS_TORQUE'</span> <span class="k">THEN</span> <span class="n">dvalue</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span><span class="p">)</span>  <span class="k">AS</span> <span class="n">slide_axis_torque</span>
+    <span class="k">FROM</span>     <span class="n">result_d</span>
+    <span class="k">WHERE</span>    <span class="n">regtime</span> <span class="k">BETWEEN</span> <span class="n">TO_DATE</span><span class="p">(</span><span class="s1">'2018-12-07 00:00:00'</span><span class="p">)</span> <span class="k">AND</span> <span class="n">TO_DATE</span><span class="p">(</span><span class="s1">'2018-12-08 05:00:00'</span><span class="p">)</span>
+    <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">regtime</span>
+<span class="p">)</span> <span class="k">WHERE</span> <span class="n">front_axis_torque</span> <span class="o">&gt;=</span> <span class="mi">40</span> <span class="k">AND</span> <span class="n">rear_axis_torque</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">;</span>
+  
+<span class="c1">-- w/ PIVOT</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="p">(</span>
+    <span class="k">SELECT</span> <span class="n">regtime</span><span class="p">,</span> <span class="n">tagid</span><span class="p">,</span> <span class="n">dvalue</span> <span class="k">FROM</span> <span class="n">result_d</span>
+    <span class="k">WHERE</span>  <span class="n">regtime</span> <span class="k">BETWEEN</span> <span class="n">TO_DATE</span><span class="p">(</span><span class="s1">'2018-12-07 00:00:00'</span><span class="p">)</span> <span class="k">AND</span> <span class="n">TO_DATE</span><span class="p">(</span><span class="s1">'2018-12-08 05:00:00'</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">PIVOT</span> <span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">dvalue</span><span class="p">)</span> <span class="k">FOR</span> <span class="n">tagid</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">'FRONT_AXIS_TORQUE'</span><span class="p">,</span> <span class="s1">'REAR_AXIS_TORQUE'</span><span class="p">,</span> <span class="s1">'HOIST_AXIS_TORQUE'</span><span class="p">,</span> <span class="s1">'SLIDE_AXIS_TORQUE'</span><span class="p">))</span>
+<span class="k">WHERE</span> <span class="n">front_axis_torque</span> <span class="o">&gt;=</span> <span class="mi">40</span> <span class="k">AND</span> <span class="n">rear_axis_torque</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">;</span>
+ 
+<span class="c1">-- Result</span>
+<span class="n">regtime</span>                         <span class="s1">'FRONT_AXIS_TORQUE'</span>         <span class="s1">'REAR_AXIS_TORQUE'</span>          <span class="s1">'HOIST_AXIS_TORQUE'</span>         <span class="s1">'SLIDE_AXIS_TORQUE'</span>       
+<span class="c1">------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">07</span> <span class="mi">16</span><span class="p">:</span><span class="mi">42</span><span class="p">:</span><span class="mi">29</span> <span class="mi">840</span><span class="p">:</span><span class="mi">000</span><span class="p">:</span><span class="mi">000</span> <span class="mi">12158</span>                       <span class="mi">7244</span>                        <span class="k">NULL</span>                        <span class="k">NULL</span>                      
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">07</span> <span class="mi">14</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">26</span> <span class="mi">220</span><span class="p">:</span><span class="mi">000</span><span class="p">:</span><span class="mi">000</span> <span class="mi">3308</span>                        <span class="mi">663</span>                         <span class="k">NULL</span>                        <span class="k">NULL</span>                      
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">07</span> <span class="mi">12</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span><span class="mi">13</span> <span class="mi">844</span><span class="p">:</span><span class="mi">000</span><span class="p">:</span><span class="mi">000</span> <span class="mi">3804</span>                        <span class="mi">113</span>                         <span class="k">NULL</span>                        <span class="k">NULL</span>                      
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">07</span> <span class="mi">11</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">01</span> <span class="mi">957</span><span class="p">:</span><span class="mi">000</span><span class="p">:</span><span class="mi">000</span> <span class="mi">8729</span>                        <span class="mi">5384</span>                        <span class="k">NULL</span>                        <span class="k">NULL</span>                      
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">07</span> <span class="mi">17</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mi">57</span> <span class="mi">812</span><span class="p">:</span><span class="mi">000</span><span class="p">:</span><span class="mi">000</span> <span class="mi">7500</span>                        <span class="mi">4559</span>                        <span class="k">NULL</span>                        <span class="k">NULL</span>                      
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">07</span> <span class="mi">14</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">06</span> <span class="mi">138</span><span class="p">:</span><span class="mi">000</span><span class="p">:</span><span class="mi">000</span> <span class="mi">5080</span>                        <span class="mi">6817</span>                        <span class="k">NULL</span>                        <span class="o">-</span><span class="mi">429</span>                      
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">07</span> <span class="mi">13</span><span class="p">:</span><span class="mi">09</span><span class="p">:</span><span class="mi">20</span> <span class="mi">464</span><span class="p">:</span><span class="mi">000</span><span class="p">:</span><span class="mi">000</span> <span class="mi">5233</span>                        <span class="mi">1869</span>                        <span class="o">-</span><span class="mi">7253</span>                       <span class="k">NULL</span>                      
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">07</span> <span class="mi">15</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">03</span> <span class="mi">539</span><span class="p">:</span><span class="mi">000</span><span class="p">:</span><span class="mi">000</span> <span class="mi">7491</span>                        <span class="mi">4453</span>                        <span class="k">NULL</span>                        <span class="k">NULL</span>
+<span class="p">...</span>
+</code></pre></div></div>
+
+<h1 id="where">WHERE</h1>
+
+<h2 id="use-of-subquery">Use of SUBQUERY</h2>
+
+<p>Subquery can be used for conditional statements. If the subquery returns more than one record in a clause except the IN clause, or if there is more than one result column in the subquery, it is not supported.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">WHERE</span> <span class="n">i1</span> <span class="o">=</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">MAX</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">T1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Uses subquery by surrounding parentheses to the right of the conditional operator.</p>
+
+<ul>
+  <li>Machbase server does not support correlated subqueries, so you can not reference columns in a subquery in an outer query.</li>
+</ul>
+
+<h2 id="search-statement">SEARCH Statement</h2>
+
+<p>The syntax is the same as for a regular database. However, a keyword index must be registered, and an additional search operation is possible by adding “SEARCH” as an operator keyword for text search.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- drop table realdual;</span>
+<span class="k">create</span> <span class="k">table</span> <span class="n">realdual</span> <span class="p">(</span><span class="n">id1</span> <span class="nb">integer</span><span class="p">,</span> <span class="n">id2</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">id3</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">));</span>
+ 
+<span class="k">create</span> <span class="n">keyword</span> <span class="k">index</span> <span class="n">idx1</span> <span class="k">on</span> <span class="n">realdual</span> <span class="p">(</span><span class="n">id2</span><span class="p">);</span>
+<span class="k">create</span> <span class="n">keyword</span> <span class="k">index</span> <span class="n">idx2</span> <span class="k">on</span> <span class="n">realdual</span> <span class="p">(</span><span class="n">id3</span><span class="p">);</span>
+ 
+<span class="k">insert</span> <span class="k">into</span> <span class="n">realdual</span> <span class="k">values</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'time time2'</span><span class="p">,</span> <span class="s1">'series series2'</span><span class="p">);</span>
+ 
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">realdual</span><span class="p">;</span>
+ 
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id2</span> <span class="k">search</span> <span class="s1">'time'</span><span class="p">;</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id3</span> <span class="k">search</span> <span class="s1">'series'</span> <span class="p">;</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id2</span> <span class="k">search</span> <span class="s1">'time'</span> <span class="k">and</span> <span class="n">id3</span> <span class="k">search</span> <span class="s1">'series'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>– drop table realdual;
+create table realdual (id1 integer, id2 varchar(20), id3 varchar(20));</p>
+
+<p>create keyword index idx1 on realdual (id2);
+create keyword index idx2 on realdual (id3);</p>
+
+<p>insert into realdual values(1, ‘time time2’, ‘series series2’);</p>
+
+<p>select * from realdual;</p>
+
+<p>select * from realdual where id2 search ‘time’;
+select * from realdual where id3 search ‘series’ ;
+select * from realdual where id2 search ‘time’ and id3 search ‘series’;</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">create</span> <span class="k">table</span> <span class="n">realdual</span> <span class="p">(</span><span class="n">id1</span> <span class="nb">integer</span><span class="p">,</span> <span class="n">id2</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">id3</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">));</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">create</span> <span class="n">keyword</span> <span class="k">index</span> <span class="n">idx1</span> <span class="k">on</span> <span class="n">realdual</span> <span class="p">(</span><span class="n">id2</span><span class="p">);</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">create</span> <span class="n">keyword</span> <span class="k">index</span> <span class="n">idx2</span> <span class="k">on</span> <span class="n">realdual</span> <span class="p">(</span><span class="n">id3</span><span class="p">);</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">insert</span> <span class="k">into</span> <span class="n">realdual</span> <span class="k">values</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'time time2'</span><span class="p">,</span> <span class="s1">'series series2'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">realdual</span><span class="p">;</span>
+<span class="n">ID1</span>         <span class="n">ID2</span>                   <span class="n">ID3</span>                  
+<span class="c1">------------------------------------------------------------</span>
+<span class="mi">1</span>           <span class="nb">time</span> <span class="n">time2</span>            <span class="n">series</span> <span class="n">series2</span> 
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id2</span> <span class="k">search</span> <span class="s1">'time'</span><span class="p">;</span>
+<span class="n">ID1</span>         <span class="n">ID2</span>                   <span class="n">ID3</span>
+<span class="c1">------------------------------------------------------------</span>
+<span class="mi">1</span>           <span class="nb">time</span> <span class="n">time2</span>            <span class="n">series</span> <span class="n">series2</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id3</span> <span class="k">search</span> <span class="s1">'series'</span><span class="p">;</span>
+<span class="n">ID1</span>         <span class="n">ID2</span>                   <span class="n">ID3</span>
+<span class="c1">------------------------------------------------------------</span>
+<span class="mi">1</span>           <span class="nb">time</span> <span class="n">time2</span>            <span class="n">series</span> <span class="n">series2</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id2</span> <span class="k">search</span> <span class="s1">'time'</span> <span class="k">and</span> <span class="n">id3</span> <span class="k">search</span> <span class="s1">'series'</span><span class="p">;</span>
+<span class="n">ID1</span>         <span class="n">ID2</span>                   <span class="n">ID3</span>
+<span class="c1">------------------------------------------------------------</span>
+<span class="mi">1</span>           <span class="nb">time</span> <span class="n">time2</span>            <span class="n">series</span> <span class="n">series2</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h2 id="esearch-statement">ESEARCH Statement</h2>
+
+<p>The ESEARCH statement is a search keyword that enables extended searches on ASCII text. For this extension, search for the desired pattern is performed using the % character. In this Like operation, if all the records are checked before the %, the advantage of ESEARCH is that the words can be found quickly even in this case. This feature can be very useful when looking for a part of an English string (an error string or code).</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example</span>
+ 
+<span class="k">select</span> <span class="n">id2</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id2</span> <span class="n">esearch</span> <span class="s1">'bbb%'</span><span class="p">;</span>
+<span class="n">id2</span>
+<span class="c1">--------------------------------------------</span>
+<span class="n">bbb</span> <span class="n">ccc1</span>
+<span class="n">aaa</span> <span class="n">bbb1</span>
+ 
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="c1">-- Search pattern 'bbb%' also includes bbb1 in search results.</span>
+ 
+ 
+<span class="k">select</span> <span class="n">id3</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id3</span> <span class="n">esearch</span> <span class="s1">'%cd%'</span><span class="p">;</span>
+<span class="n">id3</span>
+<span class="c1">--------------------------------------------</span>
+<span class="n">cdf</span> <span class="n">def1</span>
+<span class="n">bcd</span><span class="o">/</span><span class="n">cdf1ad</span>
+<span class="n">abc</span><span class="p">,</span> <span class="n">bcd1</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="c1">-- % character works in middle of search pattern as well as beginning and end.</span>
+ 
+<span class="k">select</span> <span class="n">id3</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id3</span> <span class="n">esearch</span> <span class="s1">'%cd%'</span><span class="p">;</span>
+<span class="n">id3</span>
+<span class="c1">--------------------------------------------</span>
+<span class="n">cdf</span> <span class="n">def1</span>
+<span class="n">bcd</span><span class="o">/</span><span class="n">cdf1ad</span>
+<span class="n">abc</span><span class="p">,</span> <span class="n">bcd1</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h2 id="not-search-statement">NOT SEARCH Statement</h2>
+
+<p>NOT SEARCH is a statement that returns true for records other than those found in the SEARCH statement.</p>
+
+<p>NOT ESEARCH can not be used.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">table</span> <span class="n">t1</span> <span class="p">(</span><span class="n">id</span> <span class="nb">integer</span><span class="p">,</span> <span class="n">i2</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+<span class="k">create</span> <span class="n">keyword</span> <span class="k">index</span> <span class="n">t1_i2</span> <span class="k">on</span> <span class="n">t1</span><span class="p">(</span><span class="n">i2</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">t1</span> <span class="k">values</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'aaaa'</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">t1</span> <span class="k">values</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'bbbb'</span><span class="p">);</span>
+ 
+<span class="k">select</span> <span class="n">id</span> <span class="k">from</span> <span class="n">t1</span> <span class="k">where</span> <span class="n">i2</span> <span class="k">not</span> <span class="k">search</span> <span class="s1">'aaaa'</span><span class="p">;</span>
+ 
+<span class="n">id</span>
+<span class="c1">--------------------------------------------</span>
+<span class="mi">2</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h2 id="regexp-statement">REGEXP Statement</h2>
+
+<p>The REGEXP statement is used to perform searches on data using regular expressions. In general, patterns of a particular column are filtered using regular expressions.</p>
+
+<p>One thing to keep in mind is that you can not use indexes when using the REGEXP clause, so you must lower the overall search cost by putting index conditions on other columns in order to reduce the overall search scope.
+If you want to check a specific pattern, use index by SEARCH or ESEARCH, and then use REGEXP again in a state where the total number of data is small, it helps to improve the efficiency of the whole system.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span>
+<span class="k">create</span> <span class="k">table</span> <span class="n">realdual</span> <span class="p">(</span><span class="n">id1</span> <span class="nb">integer</span><span class="p">,</span> <span class="n">id2</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">id3</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">));</span>
+<span class="k">create</span> <span class="k">table</span> <span class="n">dual</span> <span class="p">(</span><span class="n">id</span> <span class="nb">integer</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">dual</span> <span class="k">values</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">realdual</span> <span class="k">values</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'time1'</span><span class="p">,</span> <span class="s1">'series1 series21'</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">realdual</span> <span class="k">values</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'time2'</span><span class="p">,</span> <span class="s1">'series2 series22'</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">realdual</span> <span class="k">values</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'time3'</span><span class="p">,</span> <span class="s1">'series3 series32'</span><span class="p">);</span>
+ 
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id2</span> <span class="n">REGEXP</span> <span class="s1">'time'</span> <span class="p">;</span>
+<span class="n">ID1</span>         <span class="n">ID2</span>                   <span class="n">ID3</span>                  
+<span class="c1">------------------------------------------------------------</span>
+<span class="mi">1</span>           <span class="n">time3</span>                 <span class="n">series3</span> <span class="n">series32</span>
+<span class="mi">1</span>           <span class="n">time2</span>                 <span class="n">series2</span> <span class="n">series22</span>
+<span class="mi">1</span>           <span class="n">time1</span>                 <span class="n">series1</span> <span class="n">series21</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id2</span> <span class="n">REGEXP</span> <span class="s1">'time[12]'</span> <span class="p">;</span>
+<span class="n">ID1</span>         <span class="n">ID2</span>                   <span class="n">ID3</span>                  
+<span class="c1">------------------------------------------------------------</span>
+<span class="mi">1</span>           <span class="n">time2</span>                 <span class="n">series2</span> <span class="n">series22</span>
+<span class="mi">1</span>           <span class="n">time1</span>                 <span class="n">series1</span> <span class="n">series21</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id2</span> <span class="n">REGEXP</span> <span class="s1">'time[13]'</span> <span class="p">;</span>
+<span class="n">ID1</span>         <span class="n">ID2</span>                   <span class="n">ID3</span>                  
+<span class="c1">------------------------------------------------------------</span>
+<span class="mi">1</span>           <span class="n">time3</span>                 <span class="n">series3</span> <span class="n">series32</span>
+<span class="mi">1</span>           <span class="n">time1</span>                 <span class="n">series1</span> <span class="n">series21</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id2</span> <span class="n">regexp</span> <span class="s1">'time[13]'</span> <span class="k">and</span> <span class="n">id3</span> <span class="n">regexp</span> <span class="s1">'series[12]'</span><span class="p">;</span>
+<span class="n">ID1</span>         <span class="n">ID2</span>                   <span class="n">ID3</span>                  
+<span class="c1">------------------------------------------------------------</span>
+<span class="mi">1</span>           <span class="n">time1</span>                 <span class="n">series1</span> <span class="n">series21</span> 
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">realdual</span> <span class="k">where</span> <span class="n">id2</span> <span class="k">NOT</span> <span class="n">REGEXP</span> <span class="s1">'time[12]'</span><span class="p">;</span>
+<span class="n">ID1</span>         <span class="n">ID2</span>                   <span class="n">ID3</span>                  
+<span class="c1">------------------------------------------------------------</span>
+<span class="mi">1</span>           <span class="n">time3</span>                 <span class="n">series3</span> <span class="n">series32</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="s1">'abcde'</span> <span class="n">REGEXP</span> <span class="s1">'a[bcd]{1,10}e'</span> <span class="k">from</span> <span class="n">dual</span><span class="p">;</span>
+<span class="s1">'abcde'</span> <span class="n">REGEXP</span> <span class="s1">'a[bcd]{1,10}e'</span>
+<span class="c1">---------------------------------</span>
+<span class="mi">1</span>          
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h2 id="in-statement">IN Statement</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">column_name</span> <span class="k">IN</span> <span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">,...)</span>
+</code></pre></div></div>
+
+<p>The IN statement returns TRUE if it is satisfied in the value list. It is the same as the syntax linked by OR.</p>
+
+<h2 id="use-in-statement-and-subquery">Use In Statement and SUBQUERY</h2>
+
+<p>You can use a subquery to the right of the IN statement in the conditional statement. However, if you specify more than one column on the left side of the IN condition, it treats it as an error and checks whether the result set returned from the right subquery exists in the left column value.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">WHERE</span> <span class="n">i1</span> <span class="k">IN</span> <span class="p">(</span><span class="k">Select</span> <span class="n">c1</span> <span class="k">from</span> <span class="p">...)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Machbase server does not support correlated subqueries, so you can not reference columns in a subquery in an outer query.</li>
+</ul>
+
+<h2 id="between-statement">BETWEEN Statement</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">column_name</span> <span class="k">BETWEEN</span> <span class="n">value1</span> <span class="k">AND</span> <span class="n">value2</span>
+</code></pre></div></div>
+
+<p>The BETWEEN statement returns TRUE if the value of column is in the range of value1 and value2.</p>
+
+<h2 id="range-statement">RANGE Statement</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">column_name</span> <span class="n">RANGE</span> <span class="n">duration_spec</span><span class="p">;</span>
+ 
+<span class="c1">-- duration_spec : integer (YEAR | WEEK | HOUR | MINUTE | SECOND);</span>
+</code></pre></div></div>
+
+<p>Provides a Range operator that allows you to easily specify a time condition for a given column. The Range operator specifies the time range from the current time as the target of the operation, rather than specifying a specific time (as specified by the BEFORE keyword). With this operator, you can easily retrieve result records within a desired time range.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span> <span class="k">where</span> <span class="n">id</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="k">and</span> <span class="n">c1</span> <span class="n">range</span> <span class="mi">1</span> <span class="n">hour</span><span class="p">;</span>
+<span class="n">ID</span>          <span class="n">C1</span>                             
+<span class="c1">-----------------------------------------------</span>
+<span class="mi">1</span>           <span class="mi">2014</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">25</span> <span class="mi">09</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mi">53</span> <span class="mi">706</span><span class="p">:</span><span class="mi">707</span><span class="p">:</span><span class="mi">001</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h1 id="group-by--having">GROUP BY / HAVING</h1>
+
+<p>The GROUP BY clause is used to group the results of a SELECT statement on a specific column. It is used when sorting by group or by aggregating functions by using aggregate functions. Group means records having the same column value for the column specified in the GROUP BY clause.You can combine the HAVING clause after the GROUP BY clause to set the conditional expression for group selection. That is, of all the groups constituted by the GROUP BY clause, only the group satisfying the conditional expression specified in the HAVING clause is inquired.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="p">...</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="err">{</span> <span class="n">col_name</span> <span class="o">|</span> <span class="n">expr</span> <span class="err">}</span> <span class="p">,...[</span> <span class="k">HAVING</span> <span class="o">&lt;</span><span class="n">search_condition</span><span class="o">&gt;</span> <span class="p">]</span>
+ 
+<span class="k">select</span> <span class="n">id1</span><span class="p">,</span> <span class="k">avg</span><span class="p">(</span><span class="n">id2</span><span class="p">)</span> <span class="k">from</span> <span class="n">exptab</span> <span class="k">where</span> <span class="n">id2</span> <span class="k">group</span> <span class="k">by</span> <span class="n">id1</span> <span class="k">order</span> <span class="k">by</span> <span class="n">id1</span><span class="p">;</span>
+<span class="n">Obtain</span> <span class="n">average</span> <span class="n">value</span> <span class="k">of</span> <span class="n">id2</span> <span class="n">based</span> <span class="k">on</span> <span class="n">id1</span> <span class="k">column</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h1 id="order-by">ORDER BY</h1>
+
+<p>The ORDER BY clause sorts the query results in ascending or descending order. If no sorting options such as ASC or DESC are specified, the ORDER BY clause sorts by default in ascending order. If the ORDER BY clause is not specified, the order of the records to be queried depends on the query.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="p">...</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="err">{</span><span class="n">col_name</span> <span class="o">|</span> <span class="n">expr</span><span class="err">}</span> <span class="p">[</span><span class="k">ASC</span> <span class="o">|</span> <span class="k">DESC</span><span class="p">]</span>
+ 
+<span class="k">select</span> <span class="n">id1</span><span class="p">,</span> <span class="k">avg</span><span class="p">(</span><span class="n">id2</span><span class="p">)</span> <span class="k">from</span> <span class="n">exptab</span> <span class="k">where</span> <span class="n">id2</span> <span class="k">group</span> <span class="k">by</span> <span class="n">id1</span> <span class="k">order</span> <span class="k">by</span> <span class="n">id1</span><span class="p">;</span>
+<span class="n">Obtain</span> <span class="n">average</span> <span class="n">value</span> <span class="k">of</span> <span class="n">id2</span> <span class="n">based</span> <span class="k">on</span> <span class="n">id1</span> <span class="k">column</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h1 id="series-by">SERIES BY</h1>
+
+<p>The SERIES BY clause extracts the sorted result set as successive result values ​​satisfying the SERIES BY condition. If the ORDER BY clause is not specified, it generates the sorted result using the _ARRIVAL_TIME column value. Therefore, if you use the GROUP BY clause or the query for a volatile table or lookup table that does not have the _ARRIVAL_TIME column, you must use the ORDER BY clause do.</p>
+
+<p>The result values ​​that satisfy the conditional clause will have the return value of the same SERIESNUM () function.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">For</span> <span class="n">example</span><span class="p">,</span> <span class="k">for</span> <span class="n">the</span> <span class="n">following</span> <span class="k">data</span>
+ 
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">T1</span> <span class="p">(</span><span class="n">C1</span> <span class="nb">INTEGER</span><span class="p">,</span> <span class="n">C2</span> <span class="nb">INTEGER</span><span class="p">);</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">T1</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+ 
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">T1</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+ 
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">T1</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+ 
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">T1</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+ 
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">T1</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+ 
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">T1</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+ 
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">T1</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+ 
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">T1</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+ 
+ 
+<span class="n">The</span> <span class="n">following</span> <span class="n">query</span> <span class="n">produces</span> <span class="n">the</span> <span class="n">following</span> <span class="k">output</span><span class="p">:</span>
+ 
+<span class="k">SELECT</span> <span class="n">C1</span><span class="p">,</span><span class="n">C2</span> <span class="k">FROM</span> <span class="n">T1</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">C1</span> <span class="n">SERIES</span> <span class="k">BY</span> <span class="n">C2</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">C1</span>          <span class="n">C2</span>         
+<span class="c1">---------------------------</span>
+<span class="mi">1</span>           <span class="mi">2</span>          
+<span class="mi">2</span>           <span class="mi">3</span>          
+<span class="mi">3</span>           <span class="mi">2</span>          
+<span class="mi">5</span>           <span class="mi">2</span>          
+<span class="mi">6</span>           <span class="mi">3</span>   
+ 
+<span class="n">If</span> <span class="n">you</span> <span class="n">want</span> <span class="k">to</span> <span class="n">know</span> <span class="n">the</span> <span class="n">RANGE</span> <span class="n">value</span> <span class="k">of</span> <span class="n">C1</span> <span class="k">where</span> <span class="n">the</span> <span class="n">value</span> <span class="k">of</span> <span class="n">the</span> <span class="n">C2</span> <span class="k">column</span> <span class="k">is</span> <span class="n">larger</span> <span class="k">than</span> <span class="mi">1</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="n">determine</span> <span class="n">the</span> <span class="n">range</span> <span class="k">by</span> <span class="n">outputting</span> <span class="k">to</span> <span class="n">which</span> <span class="k">group</span> <span class="k">each</span> <span class="n">record</span> <span class="k">is</span> <span class="n">included</span> <span class="k">with</span> <span class="n">the</span> <span class="n">SERIESNUM</span> <span class="k">function</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h1 id="limit">LIMIT</h1>
+
+<p>The LIMIT clause is used to limit the number of records to be output. You can specify an integer to output from the first row to the last row of the result set</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">LIMIT</span> <span class="p">[</span><span class="k">offset</span><span class="p">,]</span> <span class="k">row_count</span>
+ 
+<span class="k">select</span> <span class="n">id1</span><span class="p">,</span> <span class="k">avg</span><span class="p">(</span><span class="n">id2</span><span class="p">)</span> <span class="k">from</span> <span class="n">exptab</span> <span class="k">where</span> <span class="n">id2</span> <span class="k">group</span> <span class="k">by</span> <span class="n">id1</span> <span class="k">order</span> <span class="k">by</span> <span class="n">id1</span> <span class="k">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h1 id="duration">DURATION</h1>
+
+<p>DURATION is a keyword that allows you to easily determine the data retrieval scope based on _arrival_time. Used with the BEFORE statement to set a specific range of data at a specific point in time. By using this DURATION, search performance can be dramatically increased and the system load can be dramatically reduced. For more detailed usage, please refer to the following.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">DURATION</span> <span class="n">Number</span> <span class="n">TimeSpec</span> <span class="p">[</span><span class="k">BEFORE</span><span class="o">/</span><span class="k">AFTER</span> <span class="n">Number</span> <span class="n">TimeSpec</span><span class="p">]</span>
+<span class="n">TimeSpec</span> <span class="p">:</span> <span class="nb">YEAR</span> <span class="o">|</span> <span class="k">MONTH</span> <span class="o">|</span> <span class="n">WEEK</span> <span class="o">|</span>  <span class="k">DAY</span> <span class="o">|</span> <span class="n">HOUR</span> <span class="o">|</span> <span class="k">MINUTE</span> <span class="o">|</span> <span class="k">SECOND</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">table</span> <span class="n">t8</span><span class="p">(</span><span class="n">i1</span> <span class="nb">integer</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">t8</span> <span class="k">values</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">t8</span> <span class="k">values</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+ 
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span><span class="p">;</span>
+ 
+<span class="o">#</span> <span class="k">Without</span> <span class="k">BEFORE</span> <span class="n">clause</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">2</span> <span class="k">second</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">minute</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="n">hour</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="n">week</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">month</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="nb">year</span><span class="p">;</span>
+ 
+<span class="o">#</span> <span class="k">Using</span> <span class="k">full</span> <span class="n">DURATION</span> <span class="k">statement</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">second</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">minute</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="n">hour</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">day</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="n">week</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">month</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="nb">year</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>The results are as follows.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">create</span> <span class="k">table</span> <span class="n">t8</span><span class="p">(</span><span class="n">i1</span> <span class="nb">integer</span><span class="p">);</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">insert</span> <span class="k">into</span> <span class="n">t8</span> <span class="k">values</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">insert</span> <span class="k">into</span> <span class="n">t8</span> <span class="k">values</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="mi">2</span>          
+<span class="mi">1</span>          
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="o">#</span> <span class="k">BEFORE</span> <span class="err">절</span> <span class="err">없이</span>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">2</span> <span class="k">second</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="mi">2</span>          
+<span class="mi">1</span>          
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">minute</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="mi">2</span>          
+<span class="mi">1</span>          
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="n">hour</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="mi">2</span>          
+<span class="mi">1</span>          
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="mi">2</span>          
+<span class="mi">1</span>          
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="n">week</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="mi">2</span>          
+<span class="mi">1</span>          
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">month</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="mi">2</span>          
+<span class="mi">1</span>          
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="nb">year</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="mi">2</span>          
+<span class="mi">1</span>          
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="o">#</span> <span class="k">Using</span> <span class="k">full</span> <span class="n">DURATION</span> <span class="k">statement</span>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">second</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">minute</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="n">hour</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">day</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="n">week</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="k">month</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t8</span> <span class="n">duration</span> <span class="mi">1</span> <span class="nb">year</span> <span class="k">before</span> <span class="mi">1</span> <span class="k">day</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h1 id="save-data">SAVE DATA</h1>
+
+<p>Saves the results of the query directly into the CSV data file.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SAVE</span> <span class="k">DATA</span> <span class="k">INTO</span> <span class="s1">'file_name.csv'</span> <span class="p">[</span><span class="n">HEADER</span> <span class="k">ON</span><span class="o">|</span><span class="k">OFF</span><span class="p">]</span> <span class="p">[(</span><span class="n">FIELDS</span> <span class="o">|</span> <span class="n">COLUMNS</span><span class="p">)</span> <span class="p">[</span><span class="n">TERMINATED</span> <span class="k">BY</span> <span class="s1">'char'</span><span class="p">]</span> <span class="p">[</span><span class="n">ENCLOSED</span> <span class="k">BY</span> <span class="s1">'char'</span><span class="p">]]</span> <span class="p">[</span><span class="n">ENCODED</span> <span class="k">BY</span> <span class="n">coding_name</span><span class="p">]</span> <span class="k">AS</span> <span class="k">select</span> <span class="n">query</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>The options are described below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Options</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HEADER (ON|OFF)</td>
+      <td>Specifies the column delimiter and escape delimiter of the csv file to be created.</td>
+    </tr>
+    <tr>
+      <td>(FIELDS|COLUMNS) TERMINATED BY ‘term_char’<br /><br />ENCLOSED BY ‘escape_char’</td>
+      <td>Decides whether to enter the column name on the first line of the csv file to be created. The default is OFF.</td>
+    </tr>
+    <tr>
+      <td>ENCODED BY coding_name<br /><br />coding_name = ( UTF8, MS949, KSC5601, EUCJP, SHIFTJIS, BIG5, GB231280 )</td>
+      <td>Specifies the encoding format of the output data file. The default value is UTF8.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SAVE</span> <span class="k">DATA</span> <span class="k">INTO</span> <span class="s1">'/tmp/aaa.csv'</span> <span class="k">AS</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">t1</span><span class="p">;</span>
+<span class="c1">-- Execute select statement and write result to '/tmp/aaa.csv' file in csv format.</span>
+  
+<span class="n">SAVE</span> <span class="k">DATA</span> <span class="k">INTO</span> <span class="s1">'/tmp/ccc.csv'</span> <span class="n">HEADER</span> <span class="k">ON</span> <span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="k">BY</span> <span class="s1">';'</span> <span class="n">ENCLOSED</span> <span class="k">BY</span> <span class="s1">'</span><span class="se">\'</span><span class="s1">'</span> <span class="n">ENCODED</span> <span class="k">BY</span> <span class="n">MS949</span> <span class="k">AS</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">t1</span> <span class="k">where</span> <span class="n">i1</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">;</span>
+<span class="c1">-- Execute select statement and write result to /tmp/ccc.csv file. Specify field separator and escape separator, respectively, and set encoding of stored data to MS949.</span>
+</code></pre></div></div>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/kr/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/kr/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/kr/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>Property (Cluster)</title>
+    <meta property="og:title" content="Property (Cluster)" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="Property (Cluster)">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Property (Cluster)"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/kr/assets/css/main.css">
+    <link rel="stylesheet" href="/kr/assets/css/palette.css">
+    <script
+      src="/kr/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/kr/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/kr/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/kr/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/kr/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/kr/config-monitor/property-cl.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/kr/config-monitor/property-cl.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">마크베이스 매뉴얼</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="마크베이스-매뉴얼">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">개요</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="개요">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-개요-마크베이스-소개" href="/kr//intro/introduction">마크베이스 소개</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-개요-마크베이스-특징" href="/kr//intro/features">마크베이스 특징</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-개요-마크베이스-제품군-소개" href="/kr//intro/products">마크베이스 제품군 소개</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">설치</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="설치">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-패키지-개요" href="/kr//install/package">패키지 개요</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-리눅스-설치" href="/kr//install/linux">리눅스 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-windows-설치" href="/kr//install/windows">Windows 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-라이선스-설치" href="/kr//install/license">라이선스 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-cluster-edition-설치" href="/kr//install/cluster">Cluster Edition 설치</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설치-업그레이드-복구" href="">업그레이드 / 복구</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">주요기능 / 테이블</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="주요기능-테이블">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-태그-테이블-tag-table" href="/kr//feature-table/tag">태그 테이블 (Tag Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-로그-테이블-log-table" href="/kr//feature-table/log">로그 테이블 (Log Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-휘발성-테이블-volatile-table" href="/kr//feature-table/volatile">휘발성 테이블 (Volatile Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-참조-테이블-lookup-table" href="/kr//feature-table/lookup">참조 테이블 (Lookup Table)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-스트림-stream" href="/kr//feature-table/stream">스트림 (Stream)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-주요기능-테이블-백업-및-마운트" href="/kr//feature-table/backup-mount">백업 및 마운트</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">도구</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="도구">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-유틸리티-모음" href="/kr//tools/utilities">유틸리티 모음</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-mwa-machbase-web-analytics" href="/kr//tools/mwa">MWA (Machbase Web Analytics)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-태그-분석기-tag-analyzer" href="/kr//tools/tag-analyzer">태그 분석기(Tag Analyzer)</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-machcoordinatoradmin" href="/kr//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-도구-machdeployeradmin" href="/kr//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">설정 / 모니터링</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="설정-모니터링">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-meta-table" href="/kr//setting-monitoring/meta-table">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-virtual-table" href="/kr//setting-monitoring/virtual-table">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-property" href="/kr//setting-monitoring/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-설정-모니터링-property-cluster" href="/kr//setting-monitoring/property-cl">Property (Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-자료형" href="/kr//sql-ref/data-types">자료형</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-ddl" href="/kr//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-dml" href="/kr//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-select" href="/kr//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-select-hint" href="/kr//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-사용자-관리" href="/kr//sql-ref/user">사용자 관리</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-지원-함수" href="/kr//sql-ref/func">지원 함수</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sql-reference-시스템-세션-관리" href="/kr//sql-ref/sys-session">시스템/세션 관리</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-cli-odbc" href="/kr//sdk/cli_odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-cli-odbc-예제" href="/kr//sdk/cli_odbc_example">CLI/ODBC 예제</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-jdbc" href="/kr//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-python" href="/kr//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-restful-api" href="/kr//sdk/restful_api">RESTful API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-net-connector" href="/kr//sdk/dotnet">.NET Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-sdk-timezone" href="/kr//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Release Note</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="release-note">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-release-note-7-0-release-note" href="/kr//release-note/7_0">7.0 Release Note</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-release-note-7-5-release-note" href="/kr//release-note/7_5">7.5 Release Note</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">자주 묻는 질문(FAQ)</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="자주-묻는-질문-faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-마크베이스-매뉴얼-자주-묻는-질문-faq-쿼리-에러를-property-수정하여-해결하는-방법" href="/kr//faq/faq">쿼리 에러를 Property 수정하여 해결하는 방법</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/kr/config-monitor/">Config monitor</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/kr/config-monitor/property-cl.html">Property (Cluster)</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">Property (Cluster)</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<p><a href="/kr/config-monitor/property.html">Property</a>와 별개로, Cluster Edition 에서만 사용 가능한 Property 를 정리한다.</p>
+
+<h1 id="목차">목차</h1>
+<ul>
+  <li><a href="#cluster_link_accept_timeout">CLUSTER_LINK_ACCEPT_TIMEOUT</a></li>
+  <li><a href="#cluster_link_buffer_size">CLUSTER_LINK_BUFFER_SIZE</a></li>
+  <li><a href="#cluster_link_check_interval">CLUSTER_LINK_CHECK_INTERVAL</a></li>
+  <li><a href="#cluster_link_connect_retry_timeout">CLUSTER_LINK_CONNECT_RETRY_TIMEOUT</a></li>
+  <li><a href="#cluster_link_connect_timeout">CLUSTER_LINK_CONNECT_TIMEOUT</a></li>
+  <li><a href="#cluster_link_error_add_origin_host">CLUSTER_LINK_ERROR_ADD_ORIGIN_HOST</a></li>
+  <li><a href="#cluster_link_handshake_timeout">CLUSTER_LINK_HANDSHAKE_TIMEOUT</a></li>
+  <li><a href="#cluster_link_host">CLUSTER_LINK_HOST</a></li>
+  <li><a href="#cluster_link_long_term_callback_interval">CLUSTER_LINK_LONG_TERM_CALLBACK_INTERVAL</a></li>
+  <li><a href="#cluster_link_long_wait_interval">CLUSTER_LINK_LONG_WAIT_INTERVAL</a></li>
+  <li><a href="#cluster_link_max_listen">CLUSTER_LINK_MAX_LISTEN</a></li>
+  <li><a href="#cluster_link_max_poll">CLUSTER_LINK_MAX_POLL</a></li>
+  <li><a href="#cluster_link_port_no">CLUSTER_LINK_PORT_NO</a></li>
+  <li><a href="#cluster_link_receive_timeout">CLUSTER_LINK_RECEIVE_TIMEOUT</a></li>
+  <li><a href="#cluster_link_request_timeout">CLUSTER_LINK_REQUEST_TIMEOUT</a></li>
+  <li><a href="#cluster_link_send_retry_count">CLUSTER_LINK_SEND_RETRY_COUNT</a></li>
+  <li><a href="#cluster_link_send_timeout">CLUSTER_LINK_SEND_TIMEOUT</a></li>
+  <li><a href="#cluster_link_session_timeout">CLUSTER_LINK_SESSION_TIMEOUT</a></li>
+  <li><a href="#cluster_link_thread_count">CLUSTER_LINK_THREAD_COUNT</a></li>
+  <li><a href="#cluster_query_stat_log_enable">CLUSTER_QUERY_STAT_LOG_ENABLE</a></li>
+  <li><a href="#cluster_replication_block_size">CLUSTER_REPLICATION_BLOCK_SIZE</a></li>
+  <li><a href="#cluster_warehouse_direct_dml_enable">CLUSTER_WAREHOUSE_DIRECT_DML_ENABLE</a></li>
+  <li><a href="#coordinator_dbs_path">COORDINATOR_DBS_PATH</a></li>
+  <li><a href="#coordinator_ddl_request_timeout">COORDINATOR_DDL_REQUEST_TIMEOUT</a></li>
+  <li><a href="#coordinator_ddl_timeout">COORDINATOR_DDL_TIMEOUT</a></li>
+  <li><a href="#coordinator_decision_delay">COORDINATOR_DECISION_DELAY</a></li>
+  <li><a href="#coordinator_decision_interval">COORDINATOR_DECISION_INTERVAL</a></li>
+  <li><a href="#coordinator_host_resource_enable">COORDINATOR_HOST_RESOURCE_ENABLE</a></li>
+  <li><a href="#coordinator_host_resource_collect_interval">COORDINATOR_HOST_RESOURCE_COLLECT_INTERVAL</a></li>
+  <li><a href="#coordinator_host_resource_interval">COORDINATOR_HOST_RESOURCE_INTERVAL</a></li>
+  <li><a href="#coordinator_host_resource_request_timeout">COORDINATOR_HOST_RESOURCE_REQUEST_TIMEOUT</a></li>
+  <li><a href="#coordinator_node_request_timeout">COORDINATOR_NODE_REQUEST_TIMEOUT</a></li>
+  <li><a href="#coordinator_node_timeout">COORDINATOR_NODE_TIMEOUT</a></li>
+  <li><a href="#coordinator_startup_delay">COORDINATOR_STARTUP_DELAY</a></li>
+  <li><a href="#coordinator_status_node_interval">COORDINATOR_STATUS_NODE_INTERVAL</a></li>
+  <li><a href="#coordinator_status_node_request_timeout">COORDINATOR_STATUS_NODE_REQUEST_TIMEOUT</a></li>
+  <li><a href="#coordinator_disk_full_upper_bound_ratio">COORDINATOR_DISK_FULL_UPPER_BOUND_RATIO</a></li>
+  <li><a href="#coordinator_disk_full_lower_bound_ratio">COORDINATOR_DISK_FULL_LOWER_BOUND_RATIO</a></li>
+  <li><a href="#deployer_dbs_path">DEPLOYER_DBS_PATH</a></li>
+  <li><a href="#execution_stage_memory_max">EXECUTION_STAGE_MEMORY_MAX</a></li>
+  <li><a href="#http_admin_port">HTTP_ADMIN_PORT</a></li>
+  <li><a href="#http_connect_timeout">HTTP_CONNECT_TIMEOUT</a></li>
+  <li><a href="#http_receive_timeout">HTTP_RECEIVE_TIMEOUT</a></li>
+  <li><a href="#http_send_timeout">HTTP_SEND_TIMEOUT</a></li>
+  <li><a href="#insert_bulk_data_max_size">INSERT_BULK_DATA_MAX_SIZE</a></li>
+  <li><a href="#insert_record_count_per_node">INSERT_RECORD_COUNT_PER_NODE</a></li>
+  <li><a href="#lookupnode_command_retry_max_count">LOOKUPNODE_COMMAND_RETRY_MAX_COUNT</a></li>
+  <li><a href="#stage_result_block_size">STAGE_RESULT_BLOCK_SIZE</a></li>
+</ul>
+
+<h4 id="cluster_link_accept_timeout">CLUSTER_LINK_ACCEPT_TIMEOUT</h4>
+
+<p>특정 Node와 연결할 때, Accept 후 Handshake 메시지를 수신할 때까지의 Timeout.</p>
+
+<p>Timeout 이후까지 수신에 실패하면, 해당 연결은 실패한다.</p>
+
+<p>기본값은 5초.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>5000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_buffer_size">CLUSTER_LINK_BUFFER_SIZE</h4>
+
+<ul>
+  <li>5.6 부터 사용 가능합니다.</li>
+</ul>
+
+<p>이 크기가 모자라면 송신시 버퍼가 비워질 때 까지 재시도하게 된다.송신/수신 버퍼의 크기.</p>
+
+<p>기본값은 32M.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(byte)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>1024768</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^32 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>33554432 (32M)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_check_interval">CLUSTER_LINK_CHECK_INTERVAL</h4>
+
+<p>특정 Node와 연결된 Socket들을 검사하는, Timeout Thread의 검사 주기.</p>
+
+<p>RECEIVE_TIMEOUT, SESSION_TIMEOUT 을 검사하는 Timeout Thread가 존재한다.
+주기를 짧게 할 수록, 자주 검사하지만 Timeout 판단은 아래의 값에 따라 이루어진다.</p>
+
+<p>기본값은 1초.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_connect_retry_timeout">CLUSTER_LINK_CONNECT_RETRY_TIMEOUT</h4>
+
+<p>특정 Node와 연결이 실패한 이후, 재연결 시도를 반복하는 Timeout</p>
+
+<p>Timeout 이후까지 재연결되지 않는다면, 완전히 단절되었다고 판단한다.</p>
+
+<p>기본값은 1분.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>60000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_connect_timeout">CLUSTER_LINK_CONNECT_TIMEOUT</h4>
+
+<p>특정 Node와 연결을 시도할 때, 기다리는 시간.</p>
+
+<p>Timeout 이후까지 연결되지 않는다면, CLUSTER_LINK_CONNECT_RETRY_TIMEOUT 이 지나기 전 까지 재연결을 시도한다.</p>
+
+<p>기본값은 5초.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>5000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_error_add_origin_host">CLUSTER_LINK_ERROR_ADD_ORIGIN_HOST</h4>
+
+<p>Cluster 간 통신 중 발생하는 에러 메시지에, 오류가 발생한 호스트 이름을 추가할지 여부를 선택할 수 있다.</p>
+
+<p>자세한 에러 메시지를 표시하고자 한다면, 해당 Property를 켜야 한다.</p>
+
+<p>기본값은 ‘No’ (=0). 호스트 이름이 출력되지 않는다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(boolean)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_handshake_timeout">CLUSTER_LINK_HANDSHAKE_TIMEOUT</h4>
+
+<p>특정 Node와 Cluster Socket으로 연결된 상태에서, Handshake 메시지를 수신할 때까지의 Timeout</p>
+
+<p>연결이 막 완료된 두 Node는, 연결 상태를 점검하는 차원에서 작은 크기의 Handshake 메시지를 주고 받는다.
+Accept한 Node가 Handshake 메시지를 먼저 보내는데, 그 응답을 기다리는 시간을 여기서 설정한다.</p>
+
+<p>기본값은 5초.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>5000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_host">CLUSTER_LINK_HOST</h4>
+
+<p>특정 Node와 Cluster Socket 을 연결하기 위한, 현재 Node의 호스트 이름</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>(string)</td>
+      <td>Value</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>localhost</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_long_term_callback_interval">CLUSTER_LINK_LONG_TERM_CALLBACK_INTERVAL</h4>
+
+<p>Cluster Socket 으로 수신 되는 메시지를 처리할 Receive Callback 이 수행한 시간을 Long-Term Callback 으로 인식할 시간</p>
+
+<p>수신 Thread의 개수가 제한적이므로, 가급적이면 Receive Callback은 오랜 시간 동안 메시지를 처리하고 있으면 안 된다.
+이 시간이 지나도록 Receive Callback이 메시지를 처리하고 있다면, Long-Term Callback 으로 인식하고 Trace Log에 그 기록을 남긴다.</p>
+
+<p>기본값은 1초.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_long_wait_interval">CLUSTER_LINK_LONG_WAIT_INTERVAL</h4>
+
+<p>Cluster Socket 으로 수신 되는 메시지가 도착할 때 까지의 시간을 Long-Wait Message 로 인식할 시간</p>
+
+<p>수신 시작~수신 종료 까지의 시간이 길면 네트워크 환경의 문제로 볼 수 있다.
+이 시간이 지나도록 수신 메시지가 도착하지 않는다면, Long-Wait Message 로 인식하고 Trace Log에 그 기록을 남긴다.</p>
+
+<p>기본값은 1초.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_max_listen">CLUSTER_LINK_MAX_LISTEN</h4>
+
+<p>특정 Node와 연결할 때, Socket의 Accept Queue 의 최대 숫자</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(count)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^32 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>512</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_max_poll">CLUSTER_LINK_MAX_POLL</h4>
+
+<p>특정 Node와 통신할 때, Poll에 의헤서 한번에 조회할 수 있는 최대 Event 수</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(count)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^32 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>4096</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_port_no">CLUSTER_LINK_PORT_NO</h4>
+
+<p>특정 Node와 Cluster Socket 을 연결하기 위한, 현재 Node의 포트 번호</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(port)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>1024</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>65535</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>3868</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_receive_timeout">CLUSTER_LINK_RECEIVE_TIMEOUT</h4>
+
+<p>Timeout Thread가, 마지막 수신 이후로 연결이 끊긴 것을 판단할 때 까지의 Timeout</p>
+
+<p>Cluster Node 간 연결은, 수신이 완료되면 종료되기 때문에 ‘연결 리스트’ 에 존재하는 연결들은 지속적으로 수신을 받고 있어야 한다.
+이 시간이 지나도록 마지막 수신 시각이 갱신되지 않으면, Timeout Thread는 Trace Log에 기록을 남기고 해당 Socket을 닫는다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>30000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_request_timeout">CLUSTER_LINK_REQUEST_TIMEOUT</h4>
+
+<p>Cluster Socket에서 요청 메시지를 보냈을 때, 요청에 대한 응답이 올 때 까지의 Timeout</p>
+
+<p>특정 메시지의 경우 Request 이후 Answer 전송까지 대기할 수 있는 시간을 따로 지정한다.
+이 시간이 지나도록 응답 메시지가 도착하지 않으면, Trace Log에 기록을 남기고 해당 Socket을 닫는다.</p>
+
+<p>기본값은 60초. 메시지 종류와 수신 처리가 어떻게 될지 모르므로, Timeout이 길다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>60000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_send_retry_count">CLUSTER_LINK_SEND_RETRY_COUNT</h4>
+
+<ul>
+  <li>5.6 부터 사용 가능합니다.</li>
+</ul>
+
+<p>재시도를 할 때 마다 1ms 씩 쉬게 된다. 이 회수를 넘어서서 재시도하게 될 경우 연결을 해제하게 된다.송신 버퍼가 비워질 때 까지 송신을 재시도하는 회수.</p>
+
+<p>기본값은 5000.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(count)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^32 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>5000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_send_timeout">CLUSTER_LINK_SEND_TIMEOUT</h4>
+
+<p>Cluster Socket을 통해 메시지를 송신할 때 설정하는 Timeout</p>
+
+<p>송신할 때 해당 Timeout 을 설정하며, 
+Timeout 까지 송신이 완료되지 않으면 Trace Log에 그 기록을 남긴다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>30000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_session_timeout">CLUSTER_LINK_SESSION_TIMEOUT</h4>
+
+<p>Timeout Thread가, 특정 세션에서 마지막 수신 이후로 연결이 끊긴 것을 판단할 때 까지의 Timeout</p>
+
+<p>Cluster 연결은, 내부적으로 모든 메시지의 세션을 관리하고 있다. 갑자기 세션 정리를 하지 못하게 된 상황에서 필요한 Property 이다.
+이 시간이 지나도록 해당 세션에 대한 마지막 수신 시각이 갱신되지 않으면, Timeout Thread는 Trace Log에 기록을 남기고 해당 세션을 닫는다.</p>
+
+<p>기본값은 1시간.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>3600000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_link_thread_count">CLUSTER_LINK_THREAD_COUNT</h4>
+
+<p>특정 Node와 통신할 때, 수신된 메시지를 처리할 Thread의 수</p>
+
+<p>Cluster의 규모가 커지거나, 처리해야 할 연산의 개수가 많아져서 수신 가능한 Thread 가 여유가 없을 때 늘릴 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(count)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>4096</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_query_stat_log_enable">CLUSTER_QUERY_STAT_LOG_ENABLE</h4>
+
+<p>수행한 질의에 대한 통계정보를 trace log에 출력한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(boolean)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_replication_block_size">CLUSTER_REPLICATION_BLOCK_SIZE</h4>
+
+<p>Cluster Edition 에서, Node 추가로 Replication 을 진행할 때, 한번에 실어 보내는 데이터 크기.</p>
+
+<p>Replication Active 가 되는 Warehouse (=전송을 하는 Warehouse) 에 직접 Property 를 적용해야 한다.</p>
+
+<p>기본값은 640KB 이다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(size)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>64 * 1024</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>100 * 1024 * 1024</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>640 * 1024 (655360)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cluster_warehouse_direct_dml_enable">CLUSTER_WAREHOUSE_DIRECT_DML_ENABLE</h4>
+
+<p>Cluster Edition 에서, Warehouse 에 곧바로 접속해 DML 을 수행할 수 있도록 한다.</p>
+
+<ul>
+  <li>1 : 수행 가능</li>
+  <li>2 : 수행 불가능. 에러가 반환된다.</li>
+</ul>
+
+<p>Warehouse 에 직접 DML 을 수행할 경우 Broker 를 통한 것보다 성능 이점이 있지만, 동일 Group 에 DML 이 전파되지 않는 문제가 있다. 
+따라서, 데이터 불일치로 인한 비상 복구용 혹은 Group 의 데이터 불일치를 감안해도 되는 경우에 한해 사용한다.</p>
+
+<p>원하는 특정 Warehouse 에 직접 Property 를 적용해야 한다.</p>
+
+<p>기본값은 0이다.</p>
+
+<ul>
+  <li>해당 Property 를 켠 채로 Group 내 Warehouse 간의 데이터 차이가 발생하더라도, Coordinator 는 데이터 불일치 여부를 별도로 검사하지 않는다.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>(boolean)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_dbs_path">COORDINATOR_DBS_PATH</h4>
+
+<p>Coordinator 의 데이터 파일이 생성될 디렉터리를 지정한다.</p>
+
+<p>기본값은 ?/dbs 로 설정되어 있으며, ? 는 $MACHBASE_COORDINATOR_HOME 환경변수로 치환된다.
+이는 환경변수 $MACHBASE_COORDINATOR_HOME/dbs 디렉터리라는 의미이다.</p>
+
+<p>Coordinator 에 적용해야 하며, 다른 Node 에는 아무런 효과가 없다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(path)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>기본값</td>
+      <td>?/dbs</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_ddl_request_timeout">COORDINATOR_DDL_REQUEST_TIMEOUT</h4>
+
+<p>Coordinator가 Node에게 DDL 수행을 요청한 후 대기할 때 까지의 Timeout</p>
+
+<p>이 값은 Coordinator가 각 Node에게 DDL 수행을 요청한 후 대기할 때 까지를 말한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>300000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_ddl_timeout">COORDINATOR_DDL_TIMEOUT</h4>
+
+<p>Broker가 CC를 통해 Coordinator에게 DDL 수행을 요청한 후 대기할 때 까지의 Timeout</p>
+
+<p>이 값은 Broker가 Cluster 전체에 대한 DDL 수행을 Coordinator에게 요청한 후 대기할 때 까지를 말한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>3600000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_decision_delay">COORDINATOR_DECISION_DELAY</h4>
+
+<p>Coordinator가 상태 변경을 요청하고 실제로 반영할 때 까지의 Timeout.</p>
+
+<p>이 시간이 지나도록 실제로 상태가 변경되지 않는 경우, Cluster 상태를 비활성화시킨다.
+만약 Warehouse Active의 상태가 변경되지 않았는데 연결된 Standby가 존재하는 경우, Fail-Over 작업을 시작한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_decision_interval">COORDINATOR_DECISION_INTERVAL</h4>
+
+<p>Coordinator가 상태 변경을 얼마나 자주 할지 결정할 시간.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_host_resource_enable">COORDINATOR_HOST_RESOURCE_ENABLE</h4>
+
+<p>Coordinator가 Cluster Node들의 Host Resource 수집 여부</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(boolean)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0(false)</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>1(true)</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>0(false)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_host_resource_collect_interval">COORDINATOR_HOST_RESOURCE_COLLECT_INTERVAL</h4>
+
+<p>Cluster Node들이 Host Resource를 수집하는 주기</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_host_resource_interval">COORDINATOR_HOST_RESOURCE_INTERVAL</h4>
+
+<p>Coordinator가 Node들과 Host Resource를 주고받는 주기</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_host_resource_request_timeout">COORDINATOR_HOST_RESOURCE_REQUEST_TIMEOUT</h4>
+
+<p>Coordinator가 Node들에게 Host Resource 정보를 요청한 이후 대기할 시간</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>10000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_node_request_timeout">COORDINATOR_NODE_REQUEST_TIMEOUT</h4>
+
+<p>Coordinator가 Node에게 명령을 수행하도록 요청한 후 대기할 때 까지의 Timeout</p>
+
+<p>Add/Remove-node, Add/Remove-Package 등의 Node 명령 수행이 포함되어 있어, 짧은 시간으로 잡을 경우 해당 명령 처리가 완료되지 못할 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>600000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_node_timeout">COORDINATOR_NODE_TIMEOUT</h4>
+
+<p>Coordinator가 Node의 장애를 판단하기 까지 기다릴 시간.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>30000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_startup_delay">COORDINATOR_STARTUP_DELAY</h4>
+
+<p>Coordinator 시작 직후 Decision Thread를 작동시킬 때 까지의 유예 시간.</p>
+
+<p>Cluster 전체 구동에 오랜 시간이 소요되는 경우, 해당 값을 크게 설정해서 Coordinator의 Node 제어를 더욱 늦게 시작할 수 있다.
+전체 구동도 하기 전에 Decision Thread가 작동하는 경우, Coordinator가 오판할 가능성이 높아진다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>3000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_status_node_interval">COORDINATOR_STATUS_NODE_INTERVAL</h4>
+
+<p>Coordinator가 Node들과 상태 조회 메시지를 주고 받을 주기</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>1000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_status_node_request_timeout">COORDINATOR_STATUS_NODE_REQUEST_TIMEOUT</h4>
+
+<p>Coordinator가 Node들에게 상태 조회 요청을 한 이후 대기할 시간.</p>
+
+<p>해당 시간동안 상태 조회 응답이 없으면, Coordinator는 해당 Node의 상태를 갱신하지 않고 계속 진행한다.
+네트워크 상황이 좋지 않은데 상태 갱신을 반드시 해야 하는 경우엔, 값을 늘리는 것을 고려해 볼 수 있다.
+대신, 상태 조회 응답이 없을 경우엔 값을 늘린 만큼 Coordinator에서 반드시 기다리게 된다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>5000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_disk_full_upper_bound_ratio">COORDINATOR_DISK_FULL_UPPER_BOUND_RATIO</h4>
+
+<p>Cluster 로 구성중인 일부 서버의 디스크 사용량이 프로퍼티 값을 넘어가면 해당 host 가 속한 group 이 DISKFULL 상태로 전환된다.
+DISKFULL 상태의 group 에 대해서는 입력이 제한되고 조회 및 삭제만 가능하다.</p>
+
+<p>프로퍼티 값이 0 인 경우 해당 기능이 disable 된다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(percent)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="coordinator_disk_full_lower_bound_ratio">COORDINATOR_DISK_FULL_LOWER_BOUND_RATIO</h4>
+
+<p>DISKFULL 상태로 동작중인 서버의  디스크 사용량이 프로퍼티 값 이하로 떨어질 경우 해당 group 이 normal 상태로 전환된다.</p>
+
+<p>프로퍼티 값이 0 인 경우 해당 기능이 disable 된다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(percent)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>99</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="deployer_dbs_path">DEPLOYER_DBS_PATH</h4>
+
+<p>Deployer 의 데이터 파일이 생성될 디렉터리를 지정한다.</p>
+
+<p>기본값은 ?/dbs 로 설정되어 있으며, ? 는 $MACHBASE_DEPLOYER_HOME 환경변수로 치환된다.
+이는 환경변수 $MACHBASE_DEPLOYER_HOME /dbs 디렉터리라는 의미이다.</p>
+
+<p>Deployer 에 적용해야 하며, 다른 Node 에는 아무런 효과가 없다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(path)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>기본값</td>
+      <td>?/dbs</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="execution_stage_memory_max">EXECUTION_STAGE_MEMORY_MAX</h4>
+
+<p>Cluster Edition 에서, SELECT 쿼리를 수행하는 Stage Thread 가 사용하는 Memory 의 최대 크기.</p>
+
+<p>각 Stage 의 최대 크기이므로, Stage 개수가 늘어나는 복잡한 SELECT 쿼리의 경우 요구 메모리가 더 커질 수 있다.
+최대 크기를 넘는 Stage 가 존재하는 경우, 해당 Stage 는 취소되고 Query 역시 에러와 함께 취소된다.</p>
+
+<p>원하는 특정 Warehouse 에 직접 Property 를 적용해야 한다.</p>
+
+<p>기본값은 1GB 이다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(size)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>1024</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>1024 *1024 * 1024</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="http_admin_port">HTTP_ADMIN_PORT</h4>
+
+<p>MWA 또는 machcoordinatoradmin 으로부터 요청을 받을 port number</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(port)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>1024</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>65535</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>5779</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="http_connect_timeout">HTTP_CONNECT_TIMEOUT</h4>
+
+<p>machcoordinatoradmin 과 연결할 때 사용하는 timeout</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>30000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="http_receive_timeout">HTTP_RECEIVE_TIMEOUT</h4>
+
+<p>machcoordinatoradmin 과 통신할 때 사용하는 timeout</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>3600000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="http_send_timeout">HTTP_SEND_TIMEOUT</h4>
+
+<p>machcoordinatoradmin 과 통신할 때 사용하는 timeout</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(usec)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>60000000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="insert_bulk_data_max_size">INSERT_BULK_DATA_MAX_SIZE</h4>
+
+<p>Append 또는 INSERT-SELECT 수행 시 입력 data block의 최대 크기</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(size)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>1024</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>10 * 1024 * 1024</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>1024 * 1024</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="insert_record_count_per_node">INSERT_RECORD_COUNT_PER_NODE</h4>
+
+<p>입력 수행시 warehouse group 전환을 유도하는 data 입력 개수.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(count)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>10000</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="lookupnode_command_retry_max_count">LOOKUPNODE_COMMAND_RETRY_MAX_COUNT</h4>
+
+<p>Lookup 노드에 명령 및 접속 실패시 재시도 횟수</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(count)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>3600</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="stage_result_block_size">STAGE_RESULT_BLOCK_SIZE</h4>
+
+<p>하나의 stage 에서 만드는 최대 block 크기</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>(size)</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최소값</td>
+      <td>1024</td>
+    </tr>
+    <tr>
+      <td>최대값</td>
+      <td>2^64 - 1</td>
+    </tr>
+    <tr>
+      <td>기본값</td>
+      <td>1024 * 1024</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<script
+  src="/kr/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/kr/assets/js/main.js"></script>
+
+  </body>
+</html>

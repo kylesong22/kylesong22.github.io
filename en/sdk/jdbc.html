@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>JDBC</title>
+    <meta property="og:title" content="JDBC" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="JDBC">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="JDBC"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/sdk/jdbc.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/sdk/jdbc.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/sdk/">Sdk</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/sdk/jdbc.html">JDBC</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">JDBC</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+<ul>
+  <li><a href="#jdbc-overview">JDBC Overview</a></li>
+  <li><a href="#standard-jdbc-functions">Standard JDBC Functions</a></li>
+  <li><a href="#extension-jdbc-functions">Extension JDBC Functions</a>
+    <ul>
+      <li><a href="#setipv4">setIPv4</a></li>
+      <li><a href="#setipv6">setIPv6</a></li>
+      <li><a href="#executeappendopen">executeAppendOpen</a></li>
+      <li><a href="#executeappenddata">executeAppendData</a></li>
+      <li><a href="#executeappenddatabytime">executeAppendDataByTime</a></li>
+      <li><a href="#executeappendclose">executeAppendClose</a></li>
+      <li><a href="#executesetappenderrorcallback">executeSetAppendErrorCallback</a></li>
+      <li><a href="#getappendsuccesscount">getAppendSuccessCount</a></li>
+      <li><a href="#getappendfailcount">getAppendFailCount</a></li>
+    </ul>
+  </li>
+  <li><a href="#application-development">Application Development</a>
+    <ul>
+      <li><a href="#jdbc-library-installation-check">JDBC Library Installation Check</a></li>
+      <li><a href="#makefile-creation-guide">Makefile Creation Guide</a></li>
+      <li><a href="#compile-and-link">Compile and Link</a></li>
+      <li><a href="#jdbc-sample">JDBC Sample</a></li>
+      <li><a href="#connection-example">Connection Example</a></li>
+      <li><a href="#data-input-and-output-example-1-direct-io">Data Input and Output Example (1) Direct I/O</a></li>
+      <li><a href="#data-input-and-output-example-2-preparedstatement-input-used">Data Input and Output Example (2) PreparedStatement Input Used</a></li>
+      <li><a href="#extension-function-append-example">Extension Function Append Example</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="jdbc-overview">JDBC Overview</h1>
+
+<p>The set of database manipulation interfaces created in the Java programming language is called JDBC (Java DataBase Connectivity). A set of APIs that provide a consistent interface for a variety of relational databases, defining a set of object-oriented classes of classes that the programmer will use to build SQL requests. That is, if you use a JDBC driver, no matter which database you use, there is an advantage that you can apply it directly without modifying the code.</p>
+
+<h1 id="standard-jdbc-functions">Standard JDBC Functions</h1>
+
+<p><a href="http://www.oracle.com/technetwork/java/javase/jdbc/index.html#corespec40">Standard Function Specs 4.0</a></p>
+
+<h1 id="extension-jdbc-functions">Extension JDBC Functions</h1>
+
+<h2 id="setipv4">setIPv4</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">setIpv4</span><span class="o">(</span><span class="kt">int</span> <span class="n">ind</span><span class="o">,</span> <span class="nc">String</span> <span class="n">ipString</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>This is a function to input IPv4 address type in PrepareStatement.</p>
+
+<p>Receives column index and IPv4 string as arguments.</p>
+
+<h2 id="setipv6">setIPv6</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">setIpv6</span><span class="o">(</span><span class="kt">int</span> <span class="n">ind</span><span class="o">,</span> <span class="nc">String</span> <span class="n">ipString</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>This is a function to input IPv6 address type in PrepareStatement.</p>
+
+<p>Receives column index and IPv6 string as arguments.</p>
+
+<h2 id="executeappendopen">executeAppendOpen</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">ResultSet</span> <span class="nf">executeAppendOpen</span><span class="o">(</span><span class="nc">String</span> <span class="n">aTableName</span><span class="o">,</span> <span class="kt">int</span> <span class="n">aErrorCheckCount</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Opens the protocol to write the Append protocol in the Statement.</p>
+
+<p>The table name and error checking interval are received as arguments. Returns a ResultSet with the result value.</p>
+
+<h2 id="executeappenddata">executeAppendData</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">executeAppendData</span><span class="o">(</span><span class="nc">ResultSetMetaData</span> <span class="n">rsmd</span><span class="o">,</span> <span class="nc">ArrayList</span> <span class="n">aData</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Enters the actual data for the Append protocol in the statement.</p>
+
+<p>Receives the metadata of the ResultSet, which is the result value of executeAppendOpen, and the data to input. When the result value is stored in the transfer buffer, 1 is returned. If the transfer buffer is transferred to Machbase, 2 is returned. Therefore, if 1 or 2 is returned, it is judged as success.</p>
+
+<h2 id="executeappenddatabytime">executeAppendDataByTime</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">executeAppendDataByTime</span><span class="o">(</span><span class="nc">ResultSetMetaData</span> <span class="n">rsmd</span><span class="o">,</span> <span class="kt">long</span> <span class="n">aTime</span><span class="o">,</span> <span class="nc">ArrayList</span> <span class="n">aData</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Enters the actual data for the Append protocol on a time basis in the statement.</p>
+
+<p>Receives the metadata of the ResultSet which is the result value of executeAppendOpen, the time value of the specific time zone to be set, and the data to input as arguments. If the result value is stored in the transmission buffer, 1 is returned.</p>
+
+<h2 id="executeappendclose">executeAppendClose</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">executeAppendClose</span><span class="o">()</span>
+</code></pre></div></div>
+
+<p>Terminates the statement for the Append protocol in the statement.</p>
+
+<p>If the result is a success, it returns 1.</p>
+
+<h2 id="executesetappenderrorcallback">executeSetAppendErrorCallback</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">executeSetAppendErrorCallback</span><span class="o">(</span><span class="nc">MachAppendCallback</span> <span class="n">aCallback</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Sets a callback function that outputs an error if an error occurs during Append execution.</p>
+
+<p>It takes a callback function that outputs an error log as an argument. If the result is successful, 1 is returned.</p>
+
+<h2 id="getappendsuccesscount">getAppendSuccessCount</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">long</span> <span class="nf">getAppendSuccessCount</span><span class="o">()</span>
+</code></pre></div></div>
+
+<p>Returns the number of successes for the Append protocol in the Statement.</p>
+
+<p>Returns the number of successful results.</p>
+
+<h2 id="getappendfailcount">getAppendFailCount</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">long</span> <span class="nf">getAppendFailCount</span><span class="o">()</span>
+</code></pre></div></div>
+
+<p>Returns the number of failures for the Append protocol in the Statement.</p>
+
+<p>Returns the number of failures as a result.</p>
+
+<h1 id="application-development">Application Development</h1>
+
+<h2 id="jdbc-library-installation-check">JDBC Library Installation Check</h2>
+<p>Verifies that the machbase.jar file exists in the $MACHBASE_HOME/lib directory.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>mach@localhost ~]<span class="nv">$ </span><span class="nb">cd</span> <span class="nv">$MACHBASE_HOME</span>/lib
+<span class="o">[</span>mach@localhost lib]<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> machbase.jar
+<span class="nt">-rw-rw-r--</span> 1 mach mach 78599 Jun 18 10:00 machbase.jar
+<span class="o">[</span>mach@localhost lib]<span class="err">$</span>
+</code></pre></div></div>
+
+<h2 id="makefile-creation-guide">Makefile Creation Guide</h2>
+
+<p>$(MACHBASE_HOME)/lib/machbase.jar must be specified in the classpath. The following is an example of a Makefile.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">CLASSPATH</span><span class="o">=</span><span class="s2">".:</span><span class="si">$(</span>MACHBASE_HOME<span class="si">)</span><span class="s2">/lib/machbase.jar"</span>
+ 
+SAMPLE_SRC <span class="o">=</span> Sample1Connect.java Sample2Insert.java Sample3PrepareStmt.java Sample4Append.java
+ 
+all: build
+ 
+build:
+    -@rm <span class="nt">-rf</span> <span class="k">*</span>.class
+    javac <span class="nt">-classpath</span> <span class="si">$(</span>CLASSPATH<span class="si">)</span> <span class="nt">-d</span> <span class="nb">.</span> <span class="si">$(</span>SAMPLE_SRC<span class="si">)</span>
+ 
+create_table:
+    machsql <span class="nt">-s</span> localhost <span class="nt">-u</span> sys <span class="nt">-p</span> manager <span class="nt">-f</span> createTable.sql
+ 
+select_table:
+    machsql <span class="nt">-s</span> localhost <span class="nt">-u</span> sys <span class="nt">-p</span> manager <span class="nt">-f</span> selectTable.sql
+ 
+run_sample1:
+    java <span class="nt">-classpath</span> <span class="si">$(</span>CLASSPATH<span class="si">)</span> Sample1Connect
+ 
+run_sample2:
+    java <span class="nt">-classpath</span> <span class="si">$(</span>CLASSPATH<span class="si">)</span> Sample2Insert
+ 
+run_sample3:
+    java <span class="nt">-classpath</span> <span class="si">$(</span>CLASSPATH<span class="si">)</span> Sample3PrepareStmt
+ 
+run_sample4:
+    java <span class="nt">-classpath</span> <span class="si">$(</span>CLASSPATH<span class="si">)</span> Sample4Append
+ 
+clean:
+    <span class="nb">rm</span> <span class="nt">-rf</span> <span class="k">*</span>.class
+</code></pre></div></div>
+
+<h2 id="compile-and-link">Compile and Link</h2>
+<p>Run the make command to compile and link as follows:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>mach@localhost jdbc]<span class="nv">$ </span>make
+javac <span class="nt">-classpath</span> <span class="s2">".:/home/machbase/machbase_home/lib/machbase.jar"</span> <span class="nt">-d</span> <span class="nb">.</span> Sample1Connect.java Sample2Insert.java Sample3PrepareStmt.java Sample4Append.java
+<span class="o">[</span>mach@localhost jdbc]<span class="err">$</span>
+</code></pre></div></div>
+
+<h1 id="jdbc-sample">JDBC Sample</h1>
+
+<h2 id="connection-example">Connection Example</h2>
+
+<p>Let’s write an example program that connects to a Machbase server using a Machbase JDBC driver. Name the source file Sample1Connect.java.</p>
+
+<blockquote>
+  <p><img src="/icons/tips.png" alt="tips" /> The _arrival_time column is not displayed by default. Therefore, to display the _arrival_time column, add show_hidden_cols = 1 to the connection string.<br /><br />
+     You can modify the connection string in the following example source as follows:
+     String sURL = “jdbc:machbase://localhost:5656/mhdb?show_hidden_cols=1”;</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.machbase.jdbc.*</span><span class="o">;</span>
+ 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sample1Connect</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Connection</span> <span class="nf">connect</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="nc">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span>
+        <span class="o">{</span>
+            <span class="nc">String</span> <span class="n">sURL</span> <span class="o">=</span> <span class="s">"jdbc:machbase://localhost:5656/mhdb"</span><span class="o">;</span>
+ 
+            <span class="nc">Properties</span> <span class="n">sProps</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Properties</span><span class="o">();</span>
+            <span class="n">sProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"user"</span><span class="o">,</span> <span class="s">"sys"</span><span class="o">);</span>
+            <span class="n">sProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"password"</span><span class="o">,</span> <span class="s">"manager"</span><span class="o">);</span>
+ 
+            <span class="nc">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"com.machbase.jdbc.driver"</span><span class="o">);</span>
+            <span class="n">conn</span> <span class="o">=</span> <span class="nc">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">sURL</span><span class="o">,</span> <span class="n">sProps</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span> <span class="nc">ClassNotFoundException</span> <span class="n">ex</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception : unable to load mach jdbc driver class"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span> <span class="nc">Exception</span> <span class="n">e</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception : "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">conn</span><span class="o">;</span>
+    <span class="o">}</span>
+ 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
+    <span class="o">{</span>
+        <span class="nc">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+ 
+        <span class="k">try</span>
+        <span class="o">{</span>
+            <span class="n">conn</span> <span class="o">=</span> <span class="n">connect</span><span class="o">();</span>
+            <span class="k">if</span><span class="o">(</span> <span class="n">conn</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span>
+            <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"mach JDBC connected."</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">catch</span><span class="o">(</span> <span class="nc">Exception</span> <span class="n">e</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception : "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">finally</span>
+        <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span> <span class="n">conn</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Now compile and run the source code. Use the Makefile you have already created.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>mach@localhost jdbc]<span class="nv">$ </span>make
+javac <span class="nt">-classpath</span> <span class="s2">".:/home/machbase/machbase_home/lib/machbase.jar"</span> <span class="nt">-d</span> <span class="nb">.</span> Sample1Connect.java Sample2Insert.java Sample3PrepareStmt.java Sample4Append.java
+<span class="o">[</span>mach@localhost jdbc]<span class="nv">$ </span>make run_sample1
+java <span class="nt">-classpath</span> <span class="s2">".:/home/machbase/machbase_home/lib/machbase.jar"</span> Sample1Connect
+mach JDBC connected.
+</code></pre></div></div>
+
+<h2 id="data-input-and-output-example-1-direct-io">Data Input and Output Example (1) Direct I/O</h2>
+
+<p>Create and display an example that uses the Machbase JDBC driver to input and output data.</p>
+
+<p>The name of the source file is called Sample2Insert.java.
+First, you need to create the necessary tables using the machsql program. 
+In the example, we used the sample code to create a table called sample_table in advance.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>mach@localhost jdbc]<span class="nv">$ </span>machsql
+<span class="o">=================================================================</span>
+     Machbase Client Query Utility
+     Release Version 3.5.0.826b8f2.official
+     Copyright 2014, Machbase Inc. or its subsidiaries.
+     All Rights Reserved.
+<span class="o">=================================================================</span>
+Machbase server address <span class="o">(</span>Default:127.0.0.1<span class="o">)</span>:
+Machbase rser ID  <span class="o">(</span>Default:SYS<span class="o">)</span>
+Machbase user password: MANAGER
+<span class="nv">MACHBASE_CONNECT_MODE</span><span class="o">=</span>INET, <span class="nv">PORT</span><span class="o">=</span>5656
+mach&gt; create table sample_table<span class="o">(</span>d1 short, d2 integer, d3 long, f1 float, f2 double, name varchar<span class="o">(</span>20<span class="o">)</span>, text text, bin binary, v4 ipv4, v6 ipv6, dt datetime<span class="o">)</span><span class="p">;</span>
+Created successfully.
+mach&gt; <span class="nb">exit</span>
+<span class="o">[</span>mach@localhost jdbc]<span class="err">$</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.machbase.jdbc.*</span><span class="o">;</span>
+ 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sample2Insert</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Connection</span> <span class="nf">connect</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="nc">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span>
+        <span class="o">{</span>
+ 
+            <span class="nc">String</span> <span class="n">sURL</span> <span class="o">=</span> <span class="s">"jdbc:machbase://localhost:5656/mhdb"</span><span class="o">;</span>
+ 
+            <span class="nc">Properties</span> <span class="n">sProps</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Properties</span><span class="o">();</span>
+            <span class="n">sProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"user"</span><span class="o">,</span> <span class="s">"sys"</span><span class="o">);</span>
+            <span class="n">sProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"password"</span><span class="o">,</span> <span class="s">"manager"</span><span class="o">);</span>
+ 
+            <span class="nc">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"com.machbase.jdbc.driver"</span><span class="o">);</span>
+ 
+            <span class="n">conn</span> <span class="o">=</span> <span class="nc">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">sURL</span><span class="o">,</span> <span class="n">sProps</span><span class="o">);</span>
+ 
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span> <span class="nc">ClassNotFoundException</span> <span class="n">ex</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception : unable to load mach jdbc driver class"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span> <span class="nc">Exception</span> <span class="n">e</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception : "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+ 
+        <span class="k">return</span> <span class="n">conn</span><span class="o">;</span>
+    <span class="o">}</span>
+ 
+ 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
+    <span class="o">{</span>
+        <span class="nc">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="nc">Statement</span> <span class="n">stmt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="nc">String</span> <span class="n">sql</span><span class="o">;</span>
+ 
+        <span class="k">try</span>
+        <span class="o">{</span>
+            <span class="n">conn</span> <span class="o">=</span> <span class="n">connect</span><span class="o">();</span>
+            <span class="k">if</span><span class="o">(</span> <span class="n">conn</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span>
+            <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"mach JDBC connected."</span><span class="o">);</span>
+ 
+                <span class="n">stmt</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+ 
+                <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+                <span class="o">{</span>
+                    <span class="n">sql</span> <span class="o">=</span> <span class="s">"INSERT INTO SAMPLE_TABLE VALUES ("</span><span class="o">;</span>
+                    <span class="n">sql</span> <span class="o">+=</span> <span class="o">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">5</span><span class="o">)</span> <span class="o">*</span> <span class="mi">6552</span><span class="o">;</span><span class="c1">//short</span>
+                    <span class="n">sql</span> <span class="o">+=</span> <span class="s">","</span><span class="o">+</span> <span class="o">((</span><span class="n">i</span> <span class="o">-</span> <span class="mi">5</span><span class="o">)</span> <span class="o">*</span> <span class="mi">429496728</span><span class="o">);</span><span class="c1">//integer</span>
+                    <span class="n">sql</span> <span class="o">+=</span> <span class="s">","</span><span class="o">+</span> <span class="o">((</span><span class="n">i</span> <span class="o">-</span> <span class="mi">5</span><span class="o">)</span> <span class="o">*</span> <span class="mi">922337203685477580L</span><span class="o">);</span><span class="c1">//long</span>
+                    <span class="n">sql</span> <span class="o">+=</span> <span class="s">","</span><span class="o">+</span> <span class="mf">1.23456789</span><span class="o">+</span><span class="s">"e"</span><span class="o">+((</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="o">)?</span><span class="s">""</span><span class="o">:</span><span class="s">"+"</span><span class="o">)+((</span><span class="n">i</span><span class="o">-</span><span class="mi">5</span><span class="o">)*</span><span class="mi">7</span><span class="o">);</span><span class="c1">//float</span>
+                    <span class="n">sql</span> <span class="o">+=</span> <span class="s">","</span><span class="o">+</span> <span class="mf">1.23456789</span><span class="o">+</span><span class="s">"e"</span><span class="o">+((</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="o">)?</span><span class="s">""</span><span class="o">:</span><span class="s">"+"</span><span class="o">)+((</span><span class="n">i</span><span class="o">-</span><span class="mi">5</span><span class="o">)*</span><span class="mi">61</span><span class="o">);</span><span class="c1">//double</span>
+                    <span class="n">sql</span> <span class="o">+=</span> <span class="s">",'id-"</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">"'"</span><span class="o">;</span><span class="c1">//varchar</span>
+                    <span class="n">sql</span> <span class="o">+=</span> <span class="s">",'name-"</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">"'"</span><span class="o">;</span><span class="c1">//text</span>
+                    <span class="n">sql</span> <span class="o">+=</span> <span class="s">",'aabbccddeeff'"</span><span class="o">;</span><span class="c1">//binary</span>
+                    <span class="n">sql</span> <span class="o">+=</span> <span class="s">",'192.168.0."</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">"'"</span><span class="o">;</span><span class="c1">//ipv4</span>
+                    <span class="n">sql</span> <span class="o">+=</span> <span class="s">",'::192.168.0."</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">"'"</span><span class="o">;</span>
+                    <span class="n">sql</span> <span class="o">+=</span> <span class="s">",TO_DATE('2014-08-0"</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">"','YYYY-MM-DD')"</span><span class="o">;</span><span class="c1">//dt</span>
+                    <span class="n">sql</span> <span class="o">+=</span> <span class="s">")"</span><span class="o">;</span>
+ 
+                    <span class="n">stmt</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+ 
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">i</span><span class="o">+</span><span class="s">" record inserted."</span><span class="o">);</span>
+                <span class="o">}</span>
+ 
+                <span class="nc">String</span> <span class="n">query</span> <span class="o">=</span> <span class="s">"SELECT d1, d2, d3, f1, f2, name, text, bin, to_hex(bin), v4, v6, to_char(dt,'YYYY-MM-DD') as dt from SAMPLE_TABLE"</span><span class="o">;</span>
+                <span class="nc">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">stmt</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">query</span><span class="o">);</span>
+                <span class="k">while</span><span class="o">(</span> <span class="n">rs</span><span class="o">.</span><span class="na">next</span> <span class="o">()</span> <span class="o">)</span>
+                <span class="o">{</span>
+                    <span class="kt">short</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getShort</span><span class="o">(</span><span class="s">"d1"</span><span class="o">);</span>
+                    <span class="kt">int</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">"d2"</span><span class="o">);</span>
+                    <span class="kt">long</span> <span class="n">d3</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="s">"d3"</span><span class="o">);</span>
+                    <span class="kt">float</span> <span class="n">f1</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getFloat</span><span class="o">(</span><span class="s">"f1"</span><span class="o">);</span>
+                    <span class="kt">double</span> <span class="n">f2</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getDouble</span><span class="o">(</span><span class="s">"f2"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"name"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">text</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"text"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">bin</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"bin"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">hexbin</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"to_hex(bin)"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">v4</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"v4"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">v6</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"v6"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"dt"</span><span class="o">);</span>
+ 
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"d1: "</span> <span class="o">+</span> <span class="n">d1</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", d2: "</span> <span class="o">+</span> <span class="n">d2</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", d3: "</span> <span class="o">+</span> <span class="n">d3</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", f1: "</span> <span class="o">+</span> <span class="n">f1</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", f2: "</span> <span class="o">+</span> <span class="n">f2</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", name: "</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", text: "</span> <span class="o">+</span> <span class="n">text</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", bin: "</span> <span class="o">+</span> <span class="n">bin</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", hexbin: "</span><span class="o">+</span><span class="n">hexbin</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", v4: "</span> <span class="o">+</span> <span class="n">v4</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", v6: "</span> <span class="o">+</span> <span class="n">v6</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">", dt: "</span> <span class="o">+</span> <span class="n">dt</span><span class="o">);</span>
+ 
+                <span class="o">}</span>
+                <span class="n">rs</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">catch</span><span class="o">(</span> <span class="nc">SQLException</span> <span class="n">se</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SQLException : "</span> <span class="o">+</span> <span class="n">se</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">catch</span><span class="o">(</span> <span class="nc">Exception</span> <span class="n">e</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception : "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">finally</span>
+        <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span> <span class="n">stmt</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">stmt</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                <span class="n">stmt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="k">if</span><span class="o">(</span> <span class="n">conn</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Now compile and run the source code. Use the Makefile you have already created.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>mach@localhost jdbc]<span class="nv">$ </span>make
+javac <span class="nt">-classpath</span> <span class="s2">".:/home/machbase/machbase_home/lib/machbase.jar"</span> <span class="nt">-d</span> <span class="nb">.</span> Sample1Connect.java Sample2Insert.java Sample3PrepareStmt.java Sample4Append.java
+<span class="o">[</span>mach@localhost jdbc]<span class="nv">$ </span>make run_sample2
+make run_sample2
+java <span class="nt">-classpath</span> <span class="s2">".:/home/machbase/machbase_home/lib/machbase.jar"</span> Sample2Insert
+mach JDBC connected.
+1 record inserted.
+2 record inserted.
+3 record inserted.
+4 record inserted.
+5 record inserted.
+6 record inserted.
+7 record inserted.
+8 record inserted.
+9 record inserted.
+d1: 26208, d2: 1717986912, d3: 3689348814741910320, f1: 1.2345679E28, f2: 1.23456789E244, name: id-9, text: name-9, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4: 192.168.0.9, v6: 0:0:0:0:0:0:c0a8:9, dt: 2014-08-09
+d1: 19656, d2: 1288490184, d3: 2767011611056432740, f1: 1.2345678E21, f2: 1.23456789E183, name: id-8, text: name-8, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4: 192.168.0.8, v6: 0:0:0:0:0:0:c0a8:8, dt: 2014-08-08
+d1: 13104, d2: 858993456, d3: 1844674407370955160, f1: 1.23456788E14, f2: 1.23456789E122, name: id-7, text: name-7, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4: 192.168.0.7, v6: 0:0:0:0:0:0:c0a8:7, dt: 2014-08-07
+d1: 6552, d2: 429496728, d3: 922337203685477580, f1: 1.2345679E7, f2: 1.23456789E61, name: id-6, text: name-6, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4: 192.168.0.6, v6: 0:0:0:0:0:0:c0a8:6, dt: 2014-08-06
+d1: 0, d2: 0, d3: 0, f1: 1.2345679, f2: 1.23456789, name: id-5, text: name-5, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4: 192.168.0.5, v6: 0:0:0:0:0:0:c0a8:5, dt: 2014-08-05
+d1: <span class="nt">-6552</span>, d2: <span class="nt">-429496728</span>, d3: <span class="nt">-922337203685477580</span>, f1: 1.2345679E-7, f2: 1.23456789E-61, name: id-4, text: name-4, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4: 192.168.0.4, v6: 0:0:0:0:0:0:c0a8:4, dt: 2014-08-04
+d1: <span class="nt">-13104</span>, d2: <span class="nt">-858993456</span>, d3: <span class="nt">-1844674407370955160</span>, f1: 1.2345679E-14, f2: 1.23456789E-122, name: id-3, text: name-3, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4: 192.168.0.3, v6: 0:0:0:0:0:0:c0a8:3, dt: 2014-08-03
+d1: <span class="nt">-19656</span>, d2: <span class="nt">-1288490184</span>, d3: <span class="nt">-2767011611056432740</span>, f1: 1.2345679E-21, f2: 1.23456789E-183, name: id-2, text: name-2, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4: 192.168.0.2, v6: 0:0:0:0:0:0:c0a8:2, dt: 2014-08-02
+d1: <span class="nt">-26208</span>, d2: <span class="nt">-1717986912</span>, d3: <span class="nt">-3689348814741910320</span>, f1: 1.2345679E-28, f2: 1.23456789E-244, name: id-1, text: name-1, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4: 192.168.0.1, v6: 0:0:0:0:0:0:c0a8:1, dt: 2014-08-01
+</code></pre></div></div>
+
+<h2 id="data-input-and-output-example-2-preparedstatement-input-used">Data Input and Output Example (2) PreparedStatement Input Used</h2>
+
+<p>Create and view an example that uses a PreparedStatement to input and output data.</p>
+
+<p>The name of the source file is Sample3PrepareStmt.java.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.machbase.jdbc.*</span><span class="o">;</span>
+ 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sample3PrepareStmt</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Connection</span> <span class="nf">connect</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="nc">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span>
+        <span class="o">{</span>
+            <span class="nc">String</span> <span class="n">sURL</span> <span class="o">=</span> <span class="s">"jdbc:machbase://localhost:5656/mhdb"</span><span class="o">;</span>
+ 
+            <span class="nc">Properties</span> <span class="n">sProps</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Properties</span><span class="o">();</span>
+            <span class="n">sProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"user"</span><span class="o">,</span> <span class="s">"sys"</span><span class="o">);</span>
+            <span class="n">sProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"password"</span><span class="o">,</span> <span class="s">"manager"</span><span class="o">);</span>
+ 
+            <span class="nc">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"com.machbase.jdbc.driver"</span><span class="o">);</span>
+ 
+            <span class="n">conn</span> <span class="o">=</span> <span class="nc">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">sURL</span><span class="o">,</span> <span class="n">sProps</span><span class="o">);</span>
+ 
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span> <span class="nc">ClassNotFoundException</span> <span class="n">ex</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception : unable to load mach jdbc driver class"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span> <span class="nc">Exception</span> <span class="n">e</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception : "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">conn</span><span class="o">;</span>
+    <span class="o">}</span>
+ 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
+    <span class="o">{</span>
+        <span class="nc">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="nc">Statement</span> <span class="n">stmt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">machPreparedStatement</span> <span class="n">preStmt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="nc">SimpleDateFormat</span> <span class="n">sdf</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy-MM-dd HH:mm:ss SSS"</span><span class="o">);</span>
+ 
+        <span class="k">try</span>
+        <span class="o">{</span>
+            <span class="n">conn</span> <span class="o">=</span> <span class="n">connect</span><span class="o">();</span>
+            <span class="k">if</span><span class="o">(</span> <span class="n">conn</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span>
+            <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"mach JDBC connected."</span><span class="o">);</span>
+ 
+                <span class="n">stmt</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+                <span class="n">preStmt</span> <span class="o">=</span> <span class="o">(</span><span class="n">machPreparedStatement</span><span class="o">)</span><span class="n">conn</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="s">"INSERT INTO SAMPLE_TABLE VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"</span><span class="o">);</span>
+ 
+                <span class="nc">String</span> <span class="n">ipStr</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+                <span class="nc">String</span> <span class="n">dateStr</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+                <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+                <span class="o">{</span>
+                    <span class="n">ipStr</span> <span class="o">=</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"172.16.0.%d"</span><span class="o">,</span><span class="n">i</span><span class="o">);</span>
+                    <span class="n">dateStr</span> <span class="o">=</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"2014-08-09 12:23:34 %03d"</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+                    <span class="kt">byte</span><span class="o">[]</span> <span class="n">bin</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">20</span><span class="o">];</span>
+                    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">j</span><span class="o">&lt;</span><span class="mi">20</span><span class="o">;</span><span class="n">j</span><span class="o">++){</span>
+                        <span class="n">bin</span><span class="o">[</span><span class="n">j</span><span class="o">]=(</span><span class="kt">byte</span><span class="o">)(</span><span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()*</span><span class="mi">255</span><span class="o">);</span>
+                    <span class="o">}</span>
+                    <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Date</span> <span class="n">day</span> <span class="o">=</span> <span class="n">sdf</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">dateStr</span><span class="o">);</span>
+                    <span class="n">java</span><span class="o">.</span><span class="na">sql</span><span class="o">.</span><span class="na">Date</span> <span class="n">sqlDate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">sql</span><span class="o">.</span><span class="na">Date</span><span class="o">(</span><span class="n">day</span><span class="o">.</span><span class="na">getTime</span><span class="o">());</span>
+ 
+                    <span class="n">preStmt</span><span class="o">.</span><span class="na">setShort</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="o">(</span><span class="n">i</span><span class="o">-</span><span class="mi">5</span><span class="o">)</span> <span class="o">*</span> <span class="mi">3276</span> <span class="o">);</span>
+                    <span class="n">preStmt</span><span class="o">.</span><span class="na">setInt</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="o">(</span><span class="n">i</span><span class="o">-</span><span class="mi">5</span><span class="o">)</span> <span class="o">*</span> <span class="mi">214748364</span> <span class="o">);</span>
+                    <span class="n">preStmt</span><span class="o">.</span><span class="na">setLong</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="o">(</span><span class="n">i</span><span class="o">-</span><span class="mi">5</span><span class="o">)</span> <span class="o">*</span> <span class="mi">922337203685477580L</span> <span class="o">);</span>
+                    <span class="n">preStmt</span><span class="o">.</span><span class="na">setFloat</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mf">1.23456789101112131415</span><span class="o">*</span><span class="nc">Math</span><span class="o">.</span><span class="na">pow</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span><span class="n">i</span><span class="o">));</span>
+                    <span class="n">preStmt</span><span class="o">.</span><span class="na">setDouble</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mf">1.23456789101112131415</span><span class="o">*</span><span class="nc">Math</span><span class="o">.</span><span class="na">pow</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span><span class="n">i</span><span class="o">*</span><span class="mi">10</span><span class="o">));</span>
+                    <span class="n">preStmt</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"varchar-%d"</span><span class="o">,</span><span class="n">i</span><span class="o">));</span>
+                    <span class="n">preStmt</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">7</span><span class="o">,</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"text-%d"</span><span class="o">,</span><span class="n">i</span><span class="o">));</span>
+                    <span class="n">preStmt</span><span class="o">.</span><span class="na">setBytes</span><span class="o">(</span><span class="mi">8</span><span class="o">,</span> <span class="n">bin</span><span class="o">);</span>
+                    <span class="n">preStmt</span><span class="o">.</span><span class="na">setIpv4</span><span class="o">(</span><span class="mi">9</span><span class="o">,</span> <span class="n">ipStr</span><span class="o">);</span>
+                    <span class="n">preStmt</span><span class="o">.</span><span class="na">setIpv6</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="s">"::"</span><span class="o">+</span><span class="n">ipStr</span><span class="o">);</span>
+                    <span class="n">preStmt</span><span class="o">.</span><span class="na">setDate</span><span class="o">(</span><span class="mi">11</span><span class="o">,</span> <span class="n">sqlDate</span><span class="o">);</span>
+                    <span class="n">preStmt</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>
+ 
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">i</span><span class="o">+</span><span class="s">" record inserted."</span><span class="o">);</span>
+                <span class="o">}</span>
+ 
+                <span class="c1">//date type format : YYYY-MM-DD HH24:MI:SS mmm:uuu:nnnn</span>
+                <span class="nc">String</span> <span class="n">query</span> <span class="o">=</span> <span class="s">"SELECT d1, d2, d3, f1, f2, name, text, bin, to_hex(bin), v4, v6, to_char(dt,'YYYY-MM-DD HH24:MI:SS mmm:uuu:nnn') as dt from SAMPLE_TABLE"</span><span class="o">;</span>
+                <span class="nc">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">stmt</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">query</span><span class="o">);</span>
+                <span class="k">while</span><span class="o">(</span> <span class="n">rs</span><span class="o">.</span><span class="na">next</span> <span class="o">()</span> <span class="o">)</span>
+                <span class="o">{</span>
+                    <span class="kt">short</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getShort</span><span class="o">(</span><span class="s">"d1"</span><span class="o">);</span>
+                    <span class="kt">int</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">"d2"</span><span class="o">);</span>
+                    <span class="kt">long</span> <span class="n">d3</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="s">"d3"</span><span class="o">);</span>
+                    <span class="kt">float</span> <span class="n">f1</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getFloat</span><span class="o">(</span><span class="s">"f1"</span><span class="o">);</span>
+                    <span class="kt">double</span> <span class="n">f2</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getDouble</span><span class="o">(</span><span class="s">"f2"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"name"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">text</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"text"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">bin</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"bin"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">hexbin</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"to_hex(bin)"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">v4</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"v4"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">v6</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"v6"</span><span class="o">);</span>
+                    <span class="nc">String</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"dt"</span><span class="o">);</span>
+ 
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"d1: "</span> <span class="o">+</span> <span class="n">d1</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", d2: "</span> <span class="o">+</span> <span class="n">d2</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", d3: "</span> <span class="o">+</span> <span class="n">d3</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", f1: "</span> <span class="o">+</span> <span class="n">f1</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", f2: "</span> <span class="o">+</span> <span class="n">f2</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", name: "</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", text: "</span> <span class="o">+</span> <span class="n">text</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", bin: "</span> <span class="o">+</span> <span class="n">bin</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", hexbin: "</span><span class="o">+</span><span class="n">hexbin</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", v4: "</span> <span class="o">+</span> <span class="n">v4</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">", v6: "</span> <span class="o">+</span> <span class="n">v6</span><span class="o">);</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">", dt: "</span> <span class="o">+</span> <span class="n">dt</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="n">rs</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">catch</span><span class="o">(</span> <span class="nc">SQLException</span> <span class="n">se</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SQLException : "</span> <span class="o">+</span> <span class="n">se</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">catch</span><span class="o">(</span> <span class="nc">Exception</span> <span class="n">e</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception : "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">finally</span>
+        <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span> <span class="n">stmt</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">stmt</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                <span class="n">stmt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="k">if</span><span class="o">(</span> <span class="n">conn</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Now compile and run the source code. Use the Makefile you have already created.</p>
+
+<p>It should be noted that the data entered in Sample2Insert.java is output together.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>mach@localhost jdbc]<span class="nv">$ </span>make
+javac <span class="nt">-classpath</span> <span class="s2">".:/home/machbase/machbase_home/lib/machbase.jar"</span> <span class="nt">-d</span> <span class="nb">.</span> Sample1Connect.java
+Sample2Insert.java Sample3PrepareStmt.java Sample4Append.java
+<span class="o">[</span>mach@localhost jdbc]<span class="nv">$ </span>make run_sample3
+make run_sample3
+java <span class="nt">-classpath</span> <span class="s2">".:/home/machbase/machbase_home/lib/machbase.jar"</span> Sample3PrepareStmt
+Mach JDBC connected.
+1 record inserted.
+2 record inserted.
+3 record inserted.
+4 record inserted.
+5 record inserted.
+6 record inserted.
+7 record inserted.
+8 record inserted.
+9 record inserted.
+d1: 13104, d2: 858993456, d3: 3689348814741910320, f1: 754454.6, f2: 453821.380752063, name:
+varchar-9, text: text-9, bin: ?+,??r?J?????S<span class="o">)</span>n?, hexbin:
+A4C9A8D491D6728B4AACB39EE5FC5300296EFA9F, v4: 172.16.0.9, v6: 0:0:0:0:0:0:ac10:9, dt:
+2014-08-09 12:23:34 009:000:000
+?h???a?, hexbin: 6C20F09329ABBA3E7DE501C30DA368D6EFC961EF, v4: 172.16.0.8, v6:
+0:0:0:0:0:0:ac10:8, dt: 2014-08-09 12:23:34 008:000:000
+d1: 6552, d2: 429496728, d3: 1844674407370955160, f1: 2664182.0, f2: 1357910.1926900472, name:
+varchar-7, text: text-7, bin: ????Uls?q?H?I?&amp;<span class="o">(</span>?, hexbin:
+B5A0A2EFA185556C73BF719448BD49C92628F8C6, v4: 172.16.0.7, v6: 0:0:0:0:0:0:ac10:7, dt:
+2014-08-09 12:23:34 007:000:000
+d1: 3276, d2: 214748364, d3: 922337203685477580, f1: 443847.1, f2: 9342855.256576871, name:
+varchar-6, text: text-6, bin: ??&gt;x??Eu?? ?Iw??+n, hexbin:
+BC973E78F5B44575D6CC15F94977DAE62B6E1D0E, v4: 172.16.0.6, v6: 0:0:0:0:0:0:ac10:6, dt:
+2014-08-09 12:23:34 006:000:000
+d1: 0, d2: 0, d3: 0, f1: 1283723.1, f2: 1771261.2019240903, name: varchar-5, text: text-5,
+bin: &amp;<span class="o">==</span> j?j3?? T??y?
+??, hexbin: 263D3D1C6AF56A33F79D0C54A5C479A4030AFE8B, v4: 172.16.0.5, v6: 0:0:0:0:0:0:ac10:5,
+dt: 2014-08-09 12:23:34 005:000:000
+d1: <span class="nt">-3276</span>, d2: <span class="nt">-214748364</span>, d3: <span class="nt">-922337203685477580</span>, f1: 9447498.0, f2: 7529392.937964935,
+name: varchar-4, text: text-4, bin: ?Sw ??<span class="o">)</span>? ?h2?E??/?, hexbin:
+C653771DD2DF29CDB30ED96832E745D3D7A52FD2, v4: 172.16.0.4, v6: 0:0:0:0:0:0:ac10:4, dt:
+2014-08-09 12:23:34 004:000:000
+d1: <span class="nt">-6552</span>, d2: <span class="nt">-429496728</span>, d3: <span class="nt">-1844674407370955160</span>, f1: 9589634.0, f2: 5994172.201347323,
+name: varchar-3, text: text-3, bin: 9aB,.????L/?<span class="o">=</span>3,?<span class="sb">`</span>?f, hexbin:
+3961422C2EA39BE6F2964C2FCD3D332C8960A466, v4: 172.16.0.3, v6: 0:0:0:0:0:0:ac10:3, dt:
+2014-08-09 12:23:34 003:000:000
+d1: <span class="nt">-9828</span>, d2: <span class="nt">-644245092</span>, d3: <span class="nt">-2767011611056432740</span>, f1: 7409537.5, f2: 2313739.6613546023,
+name: varchar-2, text: text-2, bin: _? N?3 ?? ??~H ??<span class="o">=</span> 8, hexbin:
+5F84144EF63320F3C718B0FD7E4809A4CB3D1838, v4: 172.16.0.2, v6: 0:0:0:0:0:0:ac10:2, dt:
+2014-08-09 12:23:34 002:000:000
+d1: <span class="nt">-13104</span>, d2: <span class="nt">-858993456</span>, d3: <span class="nt">-3689348814741910320</span>, f1: 596626.75, f2: 2649492.1936065694,
+name: varchar-1, text: text-1, bin: ???d??Wu<span class="nv">$v</span>? 7m?-, hexbin:
+E8D0C564B4EB57E59B08752476FC07376DBF2D14, v4: 172.16.0.1, v6: 0:0:0:0:0:0:ac10:1, dt:
+2014-08-09 12:23:34 001:000:000
+d1: 26208, d2: 1717986912, d3: 3689348814741910320, f1: 1.2345679E28, f2: 1.23456789E244,
+name: id-9, text: name-9, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4:
+192.168.0.9, v6: 0:0:0:0:0:0:c0a8:9, dt: 2014-08-09 00:00:00 000:000:000
+d1: 19656, d2: 1288490184, d3: 2767011611056432740, f1: 1.2345678E21, f2: 1.23456789E183,
+name: id-8, text: name-8, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4:
+192.168.0.8, v6: 0:0:0:0:0:0:c0a8:8, dt: 2014-08-08 00:00:00 000:000:000
+d1: 13104, d2: 858993456, d3: 1844674407370955160, f1: 1.23456788E14, f2: 1.23456789E122,
+name: id-7, text: name-7, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4:
+192.168.0.7, v6: 0:0:0:0:0:0:c0a8:7, dt: 2014-08-07 00:00:00 000:000:000
+d1: 6552, d2: 429496728, d3: 922337203685477580, f1: 1.2345679E7, f2: 1.23456789E61, name:
+id-6, text: name-6, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4: 192.168.0.6, v6:
+0:0:0:0:0:0:c0a8:6, dt: 2014-08-06 00:00:00 000:000:000
+d1: 0, d2: 0, d3: 0, f1: 1.2345679, f2: 1.23456789, name: id-5, text: name-5, bin:
+aabbccddeeff, hexbin: 616162626363646465656666, v4: 192.168.0.5, v6: 0:0:0:0:0:0:c0a8:5, dt:
+2014-08-05 00:00:00 000:000:000
+d1: <span class="nt">-6552</span>, d2: <span class="nt">-429496728</span>, d3: <span class="nt">-922337203685477580</span>, f1: 1.2345679E-7, f2: 1.23456789E-61,
+name: id-4, text: name-4, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4:
+192.168.0.4, v6: 0:0:0:0:0:0:c0a8:4, dt: 2014-08-04 00:00:00 000:000:000
+d1: <span class="nt">-13104</span>, d2: <span class="nt">-858993456</span>, d3: <span class="nt">-1844674407370955160</span>, f1: 1.2345679E-14, f2: 1.23456789E-122,
+name: id-3, text: name-3, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4:
+192.168.0.3, v6: 0:0:0:0:0:0:c0a8:3, dt: 2014-08-03 00:00:00 000:000:000
+d1: <span class="nt">-19656</span>, d2: <span class="nt">-1288490184</span>, d3: <span class="nt">-2767011611056432740</span>, f1: 1.2345679E-21, f2: 1.23456789E-183,
+name: id-2, text: name-2, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4:
+192.168.0.2, v6: 0:0:0:0:0:0:c0a8:2, dt: 2014-08-02 00:00:00 000:000:000
+d1: <span class="nt">-26208</span>, d2: <span class="nt">-1717986912</span>, d3: <span class="nt">-3689348814741910320</span>, f1: 1.2345679E-28, f2: 1.23456789E-244,
+name: id-1, text: name-1, bin: aabbccddeeff, hexbin: 616162626363646465656666, v4:
+192.168.0.1, v6: 0:0:0:0:0:0:c0a8:1, dt: 2014-08-01 00:00:00 000:000:000
+</code></pre></div></div>
+
+<h2 id="extension-function-append-example">Extension Function Append Example</h2>
+
+<p>The Machbase JDBC driver supports the Append protocol to quickly upload large numbers of data.</p>
+
+<p>The following is an example of using the Append protocol. 
+Use the sample_table used in the previous example.
+The name of the source file is called Sample4Append.java. 
+Enter the contents of data.txt into sample_table. 
+Copy the data.txt file used in the CLI append example.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.math.BigDecimal</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.machbase.jdbc.*</span><span class="o">;</span>
+ 
+ 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sample4Append</span>
+<span class="o">{</span>
+    <span class="kd">protected</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">sTableName</span> <span class="o">=</span> <span class="s">"sample_table"</span><span class="o">;</span>
+    <span class="kd">protected</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">sErrorCheckCount</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+ 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Connection</span> <span class="nf">connect</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="nc">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span>
+        <span class="o">{</span>
+            <span class="nc">String</span> <span class="n">sURL</span> <span class="o">=</span> <span class="s">"jdbc:machbase://localhost:5656/mhdb"</span><span class="o">;</span>
+ 
+            <span class="nc">Properties</span> <span class="n">sProps</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Properties</span><span class="o">();</span>
+            <span class="n">sProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"user"</span><span class="o">,</span> <span class="s">"sys"</span><span class="o">);</span>
+            <span class="n">sProps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"password"</span><span class="o">,</span> <span class="s">"manager"</span><span class="o">);</span>
+ 
+            <span class="nc">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"com.machbase.jdbc.driver"</span><span class="o">);</span>
+ 
+            <span class="n">conn</span> <span class="o">=</span> <span class="nc">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">sURL</span><span class="o">,</span> <span class="n">sProps</span><span class="o">);</span>
+ 
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span> <span class="nc">ClassNotFoundException</span> <span class="n">ex</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception : unable to load mach jdbc driver class"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span> <span class="nc">Exception</span> <span class="n">e</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception : "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">conn</span><span class="o">;</span>
+    <span class="o">}</span>
+ 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span>
+    <span class="o">{</span>
+        <span class="nc">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="nc">MachStatement</span> <span class="n">stmt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="nc">SimpleDateFormat</span> <span class="n">sdf</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy-MM-dd HH:mm:ss"</span><span class="o">);</span>
+        <span class="nc">Calendar</span> <span class="n">cal</span> <span class="o">=</span> <span class="nc">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+        <span class="nc">String</span> <span class="n">filename</span> <span class="o">=</span> <span class="s">"data.txt"</span><span class="o">;</span>
+ 
+        <span class="k">try</span>
+        <span class="o">{</span>
+            <span class="n">conn</span> <span class="o">=</span> <span class="n">connect</span><span class="o">();</span>
+            <span class="k">if</span><span class="o">(</span> <span class="n">conn</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span>
+            <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Mach JDBC connected."</span><span class="o">);</span>
+ 
+                <span class="n">stmt</span> <span class="o">=</span> <span class="o">(</span><span class="nc">MachStatement</span><span class="o">)</span><span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+ 
+                <span class="nc">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">stmt</span><span class="o">.</span><span class="na">executeAppendOpen</span><span class="o">(</span><span class="n">sTableName</span><span class="o">,</span> <span class="n">sErrorCheckCount</span><span class="o">);</span>
+                <span class="nc">ResultSetMetaData</span> <span class="n">rsmd</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getMetaData</span><span class="o">();</span>
+ 
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"append open ok"</span><span class="o">);</span>
+ 
+                <span class="nc">MachAppendCallback</span> <span class="n">cb</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MachAppendCallback</span><span class="o">()</span> <span class="o">{</span>
+                        <span class="nd">@Override</span>
+                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAppendError</span><span class="o">(</span><span class="kt">long</span> <span class="n">aErrNo</span><span class="o">,</span> <span class="nc">String</span> <span class="n">aErrMsg</span><span class="o">,</span> <span class="nc">String</span> <span class="n">aRowMsg</span><span class="o">)</span> <span class="o">{</span>
+                             <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"Append Error : [%05d - %s]\n%s\n"</span><span class="o">,</span> <span class="n">aErrNo</span><span class="o">,</span> <span class="n">aErrMsg</span><span class="o">,</span> <span class="n">aRowMsg</span><span class="o">);</span>
+                        <span class="o">}</span>
+                    <span class="o">};</span>
+ 
+                <span class="n">stmt</span><span class="o">.</span><span class="na">executeSetAppendErrorCallback</span><span class="o">(</span><span class="n">cb</span><span class="o">);</span>
+ 
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"append data start"</span><span class="o">);</span>
+                <span class="nc">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="nc">FileReader</span><span class="o">(</span><span class="n">filename</span><span class="o">));</span>
+                <span class="nc">String</span> <span class="n">buf</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+                <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+                <span class="kt">long</span> <span class="n">dt</span><span class="o">;</span>
+ 
+                <span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="nc">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+ 
+                <span class="k">while</span><span class="o">(</span> <span class="o">(</span><span class="n">buf</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span>
+                <span class="o">{</span>
+                    <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">sBuf</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">&gt;();</span>
+                    <span class="nc">StringTokenizer</span> <span class="n">st</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringTokenizer</span><span class="o">(</span><span class="n">buf</span><span class="o">,</span><span class="s">","</span><span class="o">);</span>
+                    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">st</span><span class="o">.</span><span class="na">hasMoreTokens</span><span class="o">()</span> <span class="o">;</span><span class="n">i</span><span class="o">++</span> <span class="o">)</span>
+                    <span class="o">{</span>
+                        <span class="k">switch</span><span class="o">(</span><span class="n">i</span><span class="o">){</span>
+                            <span class="k">case</span> <span class="mi">7</span><span class="o">:</span><span class="c1">//binary case</span>
+                                <span class="n">sBuf</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">ByteArrayInputStream</span><span class="o">(</span><span class="n">st</span><span class="o">.</span><span class="na">nextToken</span><span class="o">().</span><span class="na">getBytes</span><span class="o">()));</span> <span class="k">break</span><span class="o">;</span>
+                            <span class="k">case</span> <span class="mi">10</span><span class="o">:</span><span class="c1">//date case</span>
+                                <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Date</span> <span class="n">day</span> <span class="o">=</span> <span class="n">sdf</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">st</span><span class="o">.</span><span class="na">nextToken</span><span class="o">());</span>
+                                <span class="n">cal</span><span class="o">.</span><span class="na">setTime</span><span class="o">(</span><span class="n">day</span><span class="o">);</span>
+                                <span class="n">dt</span> <span class="o">=</span> <span class="n">cal</span><span class="o">.</span><span class="na">getTimeInMillis</span><span class="o">()*</span><span class="mi">1000000</span><span class="o">;</span> <span class="c1">//make nanotime</span>
+                                <span class="n">sBuf</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">dt</span><span class="o">);</span>
+                                <span class="k">break</span><span class="o">;</span>
+                            <span class="k">default</span><span class="o">:</span>
+                                <span class="n">sBuf</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">st</span><span class="o">.</span><span class="na">nextToken</span><span class="o">());</span> <span class="k">break</span><span class="o">;</span>
+                        <span class="o">}</span>
+                    <span class="o">}</span>
+ 
+                    <span class="k">if</span><span class="o">(</span> <span class="n">stmt</span><span class="o">.</span><span class="na">executeAppendData</span><span class="o">(</span><span class="n">rsmd</span><span class="o">,</span> <span class="n">sBuf</span><span class="o">)</span> <span class="o">!=</span> <span class="mi">1</span> <span class="o">)</span>
+                    <span class="o">{</span>
+                        <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Error : AppendData error"</span><span class="o">);</span>
+                        <span class="k">break</span><span class="o">;</span>
+                    <span class="o">}</span>
+ 
+                    <span class="k">if</span><span class="o">(</span> <span class="o">(</span><span class="n">cnt</span><span class="o">++%</span><span class="mi">10000</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">)</span>
+                    <span class="o">{</span>
+                        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"."</span><span class="o">);</span>
+                    <span class="o">}</span>
+                    <span class="n">sBuf</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+ 
+                <span class="o">}</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\nappend data end"</span><span class="o">);</span>
+ 
+                <span class="kt">long</span> <span class="n">endTime</span> <span class="o">=</span> <span class="nc">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+                <span class="n">stmt</span><span class="o">.</span><span class="na">executeAppendClose</span><span class="o">();</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"append close ok"</span><span class="o">);</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Append Result : success = "</span><span class="o">+</span><span class="n">stmt</span><span class="o">.</span><span class="na">getAppendSuccessCount</span><span class="o">()+</span><span class="s">", failure = "</span><span class="o">+</span><span class="n">stmt</span><span class="o">.</span><span class="na">getAppendFailureCount</span><span class="o">());</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"timegap "</span> <span class="o">+</span> <span class="o">((</span><span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="o">)/</span><span class="mi">1000</span><span class="o">)</span> <span class="o">+</span> <span class="s">" in microseconds, "</span> <span class="o">+</span> <span class="n">cnt</span> <span class="o">+</span> <span class="s">" records"</span> <span class="o">);</span>
+ 
+                <span class="k">try</span> <span class="o">{</span>
+                    <span class="nc">BigDecimal</span> <span class="n">records</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BigDecimal</span><span class="o">(</span> <span class="n">cnt</span> <span class="o">);</span>
+                    <span class="nc">BigDecimal</span> <span class="n">gap</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BigDecimal</span><span class="o">(</span> <span class="o">(</span><span class="kt">double</span><span class="o">)(</span><span class="n">endTime</span> <span class="o">-</span> <span class="n">startTime</span><span class="o">)/</span><span class="mi">1000000000</span> <span class="o">);</span>
+                    <span class="nc">BigDecimal</span> <span class="n">rps</span> <span class="o">=</span> <span class="n">records</span><span class="o">.</span><span class="na">divide</span><span class="o">(</span><span class="n">gap</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="nc">BigDecimal</span><span class="o">.</span><span class="na">ROUND_UP</span> <span class="o">);</span>
+ 
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">rps</span> <span class="o">+</span> <span class="s">" records/second"</span> <span class="o">);</span>
+                <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="nc">ArithmeticException</span> <span class="n">ae</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">cnt</span> <span class="o">+</span> <span class="s">" records/second"</span><span class="o">);</span>
+                <span class="o">}</span>
+ 
+                <span class="n">rs</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">catch</span><span class="o">(</span> <span class="nc">SQLException</span> <span class="n">se</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"SQLException : "</span> <span class="o">+</span> <span class="n">se</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">catch</span><span class="o">(</span> <span class="nc">Exception</span> <span class="n">e</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Exception : "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">finally</span>
+        <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span> <span class="n">stmt</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">stmt</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                <span class="n">stmt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="k">if</span><span class="o">(</span> <span class="n">conn</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>When appending, date type data must be converted to long type nanosecond time.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>mach@localhost jdbc]<span class="nv">$ </span>make run_sample4
+make run_sample4
+java <span class="nt">-classpath</span> <span class="s2">".:/home/machbase/machbase_home/lib/machbase.jar"</span> Sample4Append<span class="p">;</span>
+Mach JDBC connected.
+append open ok
+append data start
+......
+append data end
+append close ok
+Append Result : success <span class="o">=</span> 60000, failure <span class="o">=</span> 0
+timegap 6905594 <span class="k">in </span>microseconds, 60000 records
+8688.61 records/second
+</code></pre></div></div>
+
+<p>Displays the dot (.) every 10,000, and can know the input time.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use machsql to check number actually entered.</span>
+<span class="c"># Confirm that 60018 are entered including those from Sample2Insert and Sample3PrepareStmt.</span>
+ 
+ 
+<span class="o">[</span>mach@localhost jdbc]<span class="nv">$ </span>machsql
+<span class="o">=================================================================</span>
+     Machbase Client Query Utility
+     Release Version 3.0.0
+     Copyright 2014, Machbase Inc. or its subsidiaries.
+     All Rights Reserved.
+<span class="o">=================================================================</span>
+Machbase server address <span class="o">(</span>Default:127.0.0.1<span class="o">)</span>:
+Machbase user ID  <span class="o">(</span>Default:SYS<span class="o">)</span>
+Machbase user password: MANAGER
+<span class="nv">MACH_CONNECT_MODE</span><span class="o">=</span>INET, <span class="nv">PORT</span><span class="o">=</span>5656
+mach&gt; <span class="k">select </span>count<span class="o">(</span><span class="k">*</span><span class="o">)</span> from sample_table<span class="p">;</span>
+count<span class="o">(</span><span class="k">*</span><span class="o">)</span>            
+<span class="nt">-----------------------</span>
+60018               
+<span class="o">[</span>1] row<span class="o">(</span>s<span class="o">)</span> selected.
+</code></pre></div></div>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

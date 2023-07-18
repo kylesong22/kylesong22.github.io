@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>Text Search</title>
+    <meta property="og:title" content="Text Search" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="Text Search">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Text Search"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/feature-tables/log/extract/text-search.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/feature-tables/log/extract/text-search.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/feature-tables/">Feature tables</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/feature-tables/log/">Log</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/feature-tables/log/extract/">Extract</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/feature-tables/log/extract/text-search.html">Text Search</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">Text Search</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#search">SEARCH</a></li>
+  <li><a href="#multilingual-search">Multilingual Search</a></li>
+  <li><a href="#esearch">ESEARCH</a></li>
+  <li><a href="#regexp">REGEXP</a></li>
+  <li><a href="#like">LIKE</a></li>
+</ul>
+
+<p>This document deals with text search using keyword indexes.</p>
+
+<p>Text search is faster than comparable DBMS LIKE search because it searches a special kind of index called “reverse index” to search the desired string pattern. Keyword indexes can only be created for varchar and text type columns, which are variable-length character columns. However, the search target string must match exactly. Machbase does not perform keywords based on special characters or morphological analysis.</p>
+
+<h1 id="search">SEARCH</h1>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span>  <span class="k">column_name</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">FROM</span>    <span class="k">table_name</span>
+<span class="k">WHERE</span>   <span class="k">column_name</span>
+<span class="k">SEARCH</span>  <span class="n">pattern</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">search_table</span> <span class="p">(</span><span class="n">id</span> <span class="nb">INTEGER</span><span class="p">,</span> <span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">));</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">idx_SEARCH</span> <span class="k">ON</span> <span class="n">SEARCH_table</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="n">INDEX_TYPE</span> <span class="n">KEYWORD</span><span class="p">;</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">search_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'time flys'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">search_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'time runs'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">search_table</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">SEARCH</span> <span class="s1">'time'</span> <span class="k">OR</span> <span class="n">name</span> <span class="k">SEARCH</span> <span class="s1">'runs2'</span> <span class="p">;</span>
+<span class="n">ID</span>          <span class="n">NAME</span>
+<span class="c1">-------------------------------------</span>
+<span class="mi">1</span>           <span class="nb">time</span> <span class="n">runs</span>
+<span class="mi">1</span>           <span class="nb">time</span> <span class="n">flys</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">search_table</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">SEARCH</span> <span class="s1">'time'</span> <span class="k">AND</span> <span class="n">name</span> <span class="k">SEARCH</span> <span class="s1">'runs2'</span> <span class="p">;</span>
+<span class="n">ID</span>          <span class="n">NAME</span>
+<span class="c1">-------------------------------------</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">search_table</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">SEARCH</span> <span class="s1">'flys'</span> <span class="k">OR</span> <span class="n">name</span> <span class="k">SEARCH</span> <span class="s1">'runs2'</span> <span class="p">;</span>
+<span class="n">ID</span>          <span class="n">NAME</span>
+<span class="c1">-------------------------------------</span>
+<span class="mi">1</span>           <span class="nb">time</span> <span class="n">flys</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h1 id="multilingual-search">Multilingual Search</h1>
+
+<p>Machbase can search variable-length strings of various kinds of languages ​​stored in ASCII and UTF-8. In order to search only part of a sentence in a language such as Korean or Japanese, a 2-gram technique is used.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span>  <span class="k">column_name</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">FROM</span>    <span class="k">table_name</span>
+<span class="k">WHERE</span>   <span class="k">column_name</span>
+<span class="k">SEARCH</span>  <span class="n">pattern</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">multi_table</span> <span class="p">(</span><span class="n">message</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">idx_multi</span> <span class="k">ON</span> <span class="n">multi_table</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="n">INDEX_TYPE</span> <span class="n">KEYWORD</span><span class="p">;</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">multi_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="nv">"Machbase is the combination of ideal solutions"</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">multi_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="nv">"Machbase is a columnar DBMS"</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">multi_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="nv">"Machbaseは理想的なソリューションの組み合わせです"</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">multi_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="nv">"Machbaseは円柱状のDBMSです"</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span>  <span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">multi_table</span> <span class="k">WHERE</span> <span class="n">message</span> <span class="k">SEARCH</span> <span class="s1">'Machbase DBMS'</span><span class="p">;</span>
+<span class="n">MESSAGE</span>
+<span class="c1">------------------------------------------------------------------------------------</span>
+<span class="n">Machbase</span><span class="err">は円柱状の</span><span class="n">DBMS</span><span class="err">です</span>
+<span class="n">Machbase</span> <span class="k">is</span> <span class="n">a</span> <span class="n">columnar</span> <span class="n">DBMS</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">multi_table</span> <span class="k">WHERE</span> <span class="n">message</span> <span class="k">SEARCH</span> <span class="s1">'DBMS is'</span><span class="p">;</span>
+<span class="n">MESSAGE</span>
+<span class="c1">------------------------------------------------------------------------------------</span>
+<span class="n">Machbase</span> <span class="k">is</span> <span class="n">a</span> <span class="n">columnar</span> <span class="n">DBMS</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">multi_table</span> <span class="k">WHERE</span> <span class="n">message</span> <span class="k">SEARCH</span> <span class="s1">'DBMS'</span> <span class="k">OR</span> <span class="n">message</span> <span class="k">SEARCH</span> <span class="s1">'ideal'</span><span class="p">;</span>
+<span class="n">MESSAGE</span>
+<span class="c1">------------------------------------------------------------------------------------</span>
+<span class="n">Machbase</span><span class="err">は円柱状の</span><span class="n">DBMS</span><span class="err">です</span>
+<span class="n">Machbase</span> <span class="k">is</span> <span class="n">a</span> <span class="n">columnar</span> <span class="n">DBMS</span>
+<span class="n">Machbase</span> <span class="k">is</span> <span class="n">the</span> <span class="n">combination</span> <span class="k">of</span> <span class="n">ideal</span> <span class="n">solutions</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">multi_table</span> <span class="k">WHERE</span> <span class="n">message</span> <span class="k">SEARCH</span> <span class="s1">'組み合わせ'</span><span class="p">;</span>
+<span class="n">MESSAGE</span>
+<span class="c1">------------------------------------------------------------------------------------</span>
+<span class="n">Machbase</span><span class="err">は理想的なソリューションの組み合わせです</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+<span class="n">Elapsed</span> <span class="nb">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">001</span>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">multi_table</span> <span class="k">WHERE</span> <span class="n">message</span> <span class="k">SEARCH</span> <span class="s1">'円柱'</span><span class="p">;</span>
+<span class="n">MESSAGE</span>
+<span class="c1">------------------------------------------------------------------------------------</span>
+<span class="n">Machbase</span><span class="err">は円柱状の</span><span class="n">DBMS</span><span class="err">です</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>When the input data is “대한민국”, three words of “대한,” “한민,” and “민국” are recorded in the index. Therefore, you can search for “대한민국” with the keywords “대한” or “민국”.</p>
+
+<p>Basically, the keywords entered in the search statement are searched by the AND condition, so even if you enter only three words, the result is displayed very accurately. For example, if the search target keyword is a “computer utilization guide”, the three words “computer”, “utilization”, and “guide” are set as AND conditions.</p>
+
+<h1 id="esearch">ESEARCH</h1>
+
+<p>The ESEARCH operator is used to expand the search target keyword. The search target keyword must be ASCII. Search keywords can be set using the % character. Using a keyword that begins with the % character, such as the LIKE conditional, searches all records, but searches for this condition on words in the keyword index, which makes searching faster than LIKE. This feature is useful for quickly searching for alphabet strings (such as error statements or code).</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span>  <span class="k">column_name</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">FROM</span>    <span class="k">table_name</span>
+<span class="k">WHERE</span>   <span class="k">column_name</span>
+<span class="n">ESEARCH</span> <span class="n">pattern</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">esearch_table</span><span class="p">(</span><span class="n">id</span> <span class="nb">INTEGER</span><span class="p">,</span> <span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="k">data</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">));</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">idx1</span> <span class="k">ON</span> <span class="n">esearch_table</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="n">INDEX_TYPE</span> <span class="n">KEYWORD</span><span class="p">;</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">idx2</span> <span class="k">ON</span> <span class="n">esearch_table</span><span class="p">(</span><span class="k">data</span><span class="p">)</span> <span class="n">INDEX_TYPE</span> <span class="n">KEYWORD</span><span class="p">;</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">esearch_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'machbase'</span><span class="p">,</span> <span class="s1">'Real-time search technology'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">esearch_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'mach2flux'</span><span class="p">,</span> <span class="s1">'Real-time data compression'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">esearch_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'DB MS'</span><span class="p">,</span> <span class="s1">'Memory cache technology'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">esearch_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'ファ ッションアドバイザー、'</span><span class="p">,</span> <span class="s1">'errors'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">esearch_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'인피 니 플럭스'</span><span class="p">,</span> <span class="s1">'socket232'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">esearch_table</span> <span class="k">where</span> <span class="n">name</span> <span class="n">ESEARCH</span> <span class="s1">'%mach'</span><span class="p">;</span>
+<span class="n">ID</span>          <span class="n">NAME</span>                  <span class="k">DATA</span>
+<span class="c1">--------------------------------------------------------------------------------</span>
+<span class="mi">1</span>           <span class="n">machbase</span>            <span class="nb">Real</span><span class="o">-</span><span class="nb">time</span> <span class="k">search</span> <span class="n">technology</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+<span class="n">Elapsed</span> <span class="nb">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">001</span>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">esearch_table</span> <span class="k">where</span> <span class="k">data</span> <span class="n">ESEARCH</span> <span class="s1">'%echn%'</span><span class="p">;</span>
+<span class="n">ID</span>          <span class="n">NAME</span>                  <span class="k">DATA</span>
+<span class="c1">--------------------------------------------------------------------------------</span>
+<span class="mi">3</span>           <span class="n">DB</span> <span class="n">MS</span>                 <span class="n">Memory</span> <span class="k">cache</span> <span class="n">technology</span>
+<span class="mi">1</span>           <span class="n">machbase</span>            <span class="nb">Real</span><span class="o">-</span><span class="nb">time</span> <span class="k">search</span> <span class="n">technology</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">esearch_table</span> <span class="k">where</span> <span class="n">name</span> <span class="n">ESEARCH</span> <span class="s1">'%피니%럭스'</span><span class="p">;</span>
+<span class="n">ID</span>          <span class="n">NAME</span>                  <span class="k">DATA</span>
+<span class="c1">--------------------------------------------------------------------------------</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">esearch_table</span> <span class="k">where</span> <span class="k">data</span> <span class="n">ESEARCH</span> <span class="s1">'%232'</span><span class="p">;</span>
+<span class="n">ID</span>          <span class="n">NAME</span>                  <span class="k">DATA</span>
+<span class="c1">--------------------------------------------------------------------------------</span>
+<span class="mi">5</span>           <span class="err">인피</span> <span class="err">니</span> <span class="err">플럭스</span>  <span class="n">socket232</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h1 id="regexp">REGEXP</h1>
+
+<p>The REGEXP operator is used to perform a text search on data through a regular expression. The REGEXP operator is executed by performing a regular expression on the target column, and because the index is not available, the search performance may be degraded. Therefore, it is a good idea to add another search condition that can use the index as an AND operator to improve the search speed.</p>
+
+<p>Applying a SEARCH or ESEARCH operator that can use an index before searching for a particular regular expression pattern is a good way to improve search performance by first reducing the result set and then using REGEXP.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">regexp_table</span><span class="p">(</span><span class="n">id</span> <span class="nb">INTEGER</span><span class="p">,</span> <span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="k">data</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">));</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">regexp_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'machbase'</span><span class="p">,</span> <span class="s1">'Real-time search technology'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">regexp_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'mach2base'</span><span class="p">,</span> <span class="s1">'Real-time data compression'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">regexp_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'DBMS'</span><span class="p">,</span> <span class="s1">'Memory cache technology'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">regexp_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'ファ ッショ'</span><span class="p">,</span> <span class="s1">'errors'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">regexp_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'인피니플럭스'</span><span class="p">,</span> <span class="s1">'socket232'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">regexp_table</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="n">REGEXP</span> <span class="s1">'mach'</span><span class="p">;</span>
+<span class="n">ID</span>          <span class="n">NAME</span>                  <span class="k">DATA</span>
+<span class="c1">--------------------------------------------------------------------------------</span>
+<span class="mi">2</span>           <span class="n">mach2base</span>           <span class="nb">Real</span><span class="o">-</span><span class="nb">time</span> <span class="k">data</span> <span class="n">compression</span>
+<span class="mi">1</span>           <span class="n">machbase</span>            <span class="nb">Real</span><span class="o">-</span><span class="nb">time</span> <span class="k">search</span> <span class="n">technology</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">regexp_table</span> <span class="k">WHERE</span> <span class="k">data</span> <span class="n">REGEXP</span> <span class="s1">'mach[1]'</span><span class="p">;</span>
+<span class="n">ID</span>          <span class="n">NAME</span>                  <span class="k">DATA</span>
+<span class="c1">--------------------------------------------------------------------------------</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">regexp_table</span> <span class="k">WHERE</span> <span class="k">data</span> <span class="n">REGEXP</span> <span class="s1">'[A-Za-z]'</span><span class="p">;</span>
+<span class="n">ID</span>          <span class="n">NAME</span>                  <span class="k">DATA</span>
+<span class="c1">--------------------------------------------------------------------------------</span>
+<span class="mi">5</span>           <span class="err">인피니플럭스</span>  <span class="n">socket232</span>
+<span class="mi">4</span>           <span class="err">ファ</span> <span class="err">ッショ</span>      <span class="n">errors</span>
+<span class="mi">3</span>           <span class="n">DBMS</span>                  <span class="n">Memory</span> <span class="k">cache</span> <span class="n">technology</span>
+<span class="mi">2</span>           <span class="n">mach2base</span>           <span class="nb">Real</span><span class="o">-</span><span class="nb">time</span> <span class="k">data</span> <span class="n">compression</span>
+<span class="mi">1</span>           <span class="n">machbase</span>            <span class="nb">Real</span><span class="o">-</span><span class="nb">time</span> <span class="k">search</span> <span class="n">technology</span>
+<span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h1 id="like">LIKE</h1>
+
+<p>Machbase also supports the SQL standard LIKE operator. The LIKE operator is available in Korean, Japanese, and Chinese.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span>  <span class="k">column_name</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">FROM</span>    <span class="k">table_name</span>
+<span class="k">WHERE</span>   <span class="k">column_name</span>
+<span class="k">LIKE</span>    <span class="n">pattern</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Example:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">like_table</span> <span class="p">(</span><span class="n">id</span> <span class="nb">INTEGER</span><span class="p">,</span> <span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="k">data</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">40</span><span class="p">));</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">like_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'machbase'</span><span class="p">,</span> <span class="s1">'Real-time search technology'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">like_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'mach2base'</span><span class="p">,</span> <span class="s1">'Real-time data compression'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">like_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'DBMS'</span><span class="p">,</span> <span class="s1">'Memory cache technology'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">like_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'ファ ッションアドバイザー、'</span><span class="p">,</span> <span class="s1">'errors'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">like_table</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'인피 니 플럭스'</span><span class="p">,</span> <span class="s1">'socket232'</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">like_table</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">'mach%'</span><span class="p">;</span>
+<span class="n">ID</span>          <span class="n">NAME</span>                  <span class="k">DATA</span>
+<span class="c1">--------------------------------------------------------------------------------</span>
+<span class="mi">2</span>           <span class="n">mach2base</span>           <span class="nb">Real</span><span class="o">-</span><span class="nb">time</span> <span class="k">data</span> <span class="n">compression</span>
+<span class="mi">1</span>           <span class="n">machbase</span>            <span class="nb">Real</span><span class="o">-</span><span class="nb">time</span> <span class="k">search</span> <span class="n">technology</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">like_table</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">'%니%'</span><span class="p">;</span>
+<span class="n">ID</span>          <span class="n">NAME</span>                  <span class="k">DATA</span>
+<span class="c1">--------------------------------------------------------------------------------</span>
+<span class="mi">5</span>           <span class="err">인피</span> <span class="err">니</span> <span class="err">플럭스</span>  <span class="n">socket232</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">like_table</span> <span class="k">WHERE</span> <span class="k">data</span> <span class="k">LIKE</span> <span class="s1">'%technology'</span><span class="p">;</span>
+<span class="n">ID</span>          <span class="n">NAME</span>                  <span class="k">DATA</span>
+<span class="c1">--------------------------------------------------------------------------------</span>
+<span class="mi">3</span>           <span class="n">DBMS</span>                  <span class="n">Memory</span> <span class="k">cache</span> <span class="n">technology</span>
+<span class="mi">1</span>           <span class="n">machbase</span>            <span class="nb">Real</span><span class="o">-</span><span class="nb">time</span> <span class="k">search</span> <span class="n">technology</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

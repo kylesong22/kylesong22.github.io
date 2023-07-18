@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>DDL</title>
+    <meta property="og:title" content="DDL" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="DDL">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="DDL"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/sql-ref/ddl.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/sql-ref/ddl.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/sql-ref/">Sql ref</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/sql-ref/ddl.html">DDL</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">DDL</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#index">Index</a></li>
+  <li><a href="#create-tablespace">CREATE TABLESPACE</a>
+    <ul>
+      <li><a href="#data-disk">DATA DISK</a></li>
+    </ul>
+  </li>
+  <li><a href="#create-table">CREATE TABLE</a>
+    <ul>
+      <li><a href="#table-type">Table Type</a></li>
+      <li><a href="#data-column">Data Column</a></li>
+      <li><a href="#table-property">Table Property</a></li>
+      <li><a href="#column-property">Column Property</a></li>
+      <li><a href="#minmax-cache-concept">MINMAX Cache Concept</a></li>
+      <li><a href="#minmax-cache-column">MINMAX Cache Column</a></li>
+      <li><a href="#primary-key">Primary Key</a></li>
+      <li><a href="#auto_del-clauses">AUTO_DEL Clauses</a></li>
+    </ul>
+  </li>
+  <li><a href="#sequence-for-lookup-table">SEQUENCE for Lookup Table</a>
+    <ul>
+      <li><a href="#machbase-edition-support-sequence">Machbase Edition support Sequence</a></li>
+      <li><a href="#table-type-support-sequence">Table type support Sequence</a></li>
+      <li><a href="#configuring-sequence-when-creating-lookup-tables">Configuring Sequence when Creating Lookup Tables</a></li>
+      <li><a href="#use-of-sequence-column">Use of sequence column</a></li>
+    </ul>
+  </li>
+  <li><a href="#create-tag-table">CREATE TAG TABLE</a></li>
+  <li><a href="#create-index">CREATE INDEX</a>
+    <ul>
+      <li><a href="#index-type">Index Type</a></li>
+      <li><a href="#keyword-index">KEYWORD Index</a></li>
+      <li><a href="#lsm-index">LSM Index</a></li>
+      <li><a href="#lsm-index-property">LSM Index Property</a></li>
+      <li><a href="#bitmap-index">BITMAP Index</a></li>
+      <li><a href="#red-black-index">RED-BLACK Index</a></li>
+      <li><a href="#index-property">Index Property</a></li>
+    </ul>
+  </li>
+  <li><a href="#drop-tablespace">DROP TABLESPACE</a></li>
+  <li><a href="#drop-table">DROP TABLE</a>
+    <ul>
+      <li><a href="#drop-index">DROP INDEX</a></li>
+    </ul>
+  </li>
+  <li><a href="#alter-tablespace">ALTER TABLESPACE</a>
+    <ul>
+      <li><a href="#alter-tablespace-modify-datadisk">ALTER TABLESPACE MODIFY DATADISK</a></li>
+    </ul>
+  </li>
+  <li><a href="#alter-table">ALTER TABLE</a>
+    <ul>
+      <li><a href="#alter-table-set">ALTER TABLE SET</a></li>
+      <li><a href="#alter-table-add-column">ALTER TABLE ADD COLUMN</a></li>
+      <li><a href="#alter-table-drop-column">ALTER TABLE DROP COLUMN</a></li>
+      <li><a href="#alter-table-rename-column">ALTER TABLE RENAME COLUMN</a></li>
+      <li><a href="#alter-table-modify-column">ALTER TABLE MODIFY COLUMN</a></li>
+      <li><a href="#alter-table-flush">ALTER TABLE FLUSH</a></li>
+      <li><a href="#alter-table-flush-index">ALTER TABLE FLUSH INDEX</a></li>
+      <li><a href="#alter-table-reclaim-storage">ALTER TABLE RECLAIM STORAGE</a></li>
+      <li><a href="#alter-table-rename-to">ALTER TABLE RENAME TO</a></li>
+      <li><a href="#alter-table-auto-delete">ALTER TABLE AUTO DELETE</a></li>
+      <li><a href="#alter-table-add-retention">ALTER TABLE ADD RETENTION</a></li>
+      <li><a href="#alter-table-drop-retention">ALTER TABLE DROP RETENTION</a></li>
+    </ul>
+  </li>
+  <li><a href="#truncate-table">TRUNCATE TABLE</a></li>
+  <li><a href="#create-rollup">CREATE ROLLUP</a></li>
+  <li><a href="#drop-rollup">DROP ROLLUP</a></li>
+  <li><a href="#create-retention">CREATE RETENTION</a></li>
+  <li><a href="#drop-retention">DROP RETENTION</a></li>
+</ul>
+
+<h1 id="create-tablespace">CREATE TABLESPACE</h1>
+
+<p><strong>create_tablespace_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/create_tablespace_stmt.png" alt="create_tablespace_stmt" /></p>
+
+<p><strong>datadisk_list:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/datadisk_list.png" alt="datadisk_list" /></p>
+
+<p><strong>data_disk:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/data_disk.png" alt="data_disk" /></p>
+
+<p><strong>data_disk_property:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/data_disk_property.png" alt="data_disk_property" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_tablespace_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'CREATE TABLESPACE'</span> <span class="n">tablespace_name</span> <span class="s1">'DATADISK'</span> <span class="n">datadisk_list</span>
+<span class="n">datadisk_list</span> <span class="p">::</span><span class="o">=</span> <span class="n">data_disk</span> <span class="p">(</span> <span class="s1">','</span> <span class="n">data_disk</span> <span class="p">)</span><span class="o">*</span>
+<span class="n">data_disk</span> <span class="p">::</span><span class="o">=</span> <span class="n">disk_name</span> <span class="n">data_disk_property</span>
+<span class="n">data_disk_property</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'('</span> <span class="s1">'DISK_PATH'</span> <span class="s1">'='</span> <span class="s1">'"'</span> <span class="n">path</span> <span class="s1">'"'</span> <span class="p">(</span> <span class="s1">','</span> <span class="s1">'PARALLEL_IO'</span> <span class="s1">'='</span> <span class="n">number</span> <span class="p">)</span><span class="o">?</span> <span class="s1">')'</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example</span>
+<span class="k">create</span> <span class="n">tablespace</span> <span class="n">tbs1</span> <span class="n">datadisk</span> <span class="n">disk1</span> <span class="p">(</span><span class="n">disk_path</span><span class="o">=</span><span class="nv">""</span><span class="p">);</span> <span class="c1">-- $MACHBASE_HOME/dbs/  (Create in $MACHBASE_HOME/dbs/)</span>
+<span class="k">create</span> <span class="n">tablespace</span> <span class="n">tbs1</span> <span class="n">datadisk</span> <span class="n">disk1</span> <span class="p">(</span><span class="n">disk_path</span><span class="o">=</span><span class="nv">"tbs1_disk1"</span><span class="p">);</span> <span class="c1">-- $MACHBASE_HOME/dbs/tbs1_disk1  (Created in $MACHBASE_HOME/dbs/tbs1_disk1. tbs1_disk1 folder must exist)</span>
+<span class="k">create</span> <span class="n">tablespace</span> <span class="n">tbs2</span> <span class="n">datadisk</span> <span class="n">disk1</span> <span class="p">(</span><span class="n">disk_path</span><span class="o">=</span><span class="nv">"tbs2_disk1"</span><span class="p">,</span> <span class="n">parallel_io</span> <span class="o">=</span> <span class="mi">5</span><span class="p">);</span>
+<span class="k">create</span> <span class="n">tablespace</span> <span class="n">tbs1</span> <span class="n">datadisk</span> <span class="n">disk1</span> <span class="p">(</span><span class="n">disk_path</span><span class="o">=</span><span class="nv">"tbs1_disk1"</span><span class="p">,</span> <span class="n">parallel_io</span> <span class="o">=</span> <span class="mi">10</span><span class="p">),</span> <span class="n">disk2</span> <span class="p">(</span><span class="n">disk_path</span><span class="o">=</span><span class="nv">"tbs1_disk2"</span><span class="p">),</span> <span class="n">disk3</span> <span class="p">(</span><span class="n">disk_path</span><span class="o">=</span><span class="nv">"tbs1_disk3"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The CREATE TABLESPACE statement creates a tablespace in $MACHBASE_HOME/dbs/ where the indexes of the log table or log table will be stored.</p>
+
+<p>Tablespace can have multiple disks. When each Partition File that stores data of Table and Index is stored, it is distributed and stored in Data Disks belonging to Tablespace.
+If two or more disks are used, the index and table files are distributed and stored on each disk, and I/O is performed in parallel on each device. As the number of disks increases, disk I / O throughput increases, and a large amount of data can be stored on the disk quickly
+Also, if tables and index tablespace are separately created and different disks are defined, I/O of table and index can be logically separated without reconfiguration of physical disk.</p>
+
+<h2 id="data-disk">DATA DISK</h2>
+
+<p>Defines disk belonging to a tablespace. Each Disk has the following properties.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>data_disk_property</td>
+      <td>Specifies the attributes of the disk.</td>
+    </tr>
+    <tr>
+      <td>disk_name</td>
+      <td>Specifies the name of the Disk object. It is used to change the attributes of the Disk object through Alter Tablespace syntax later.</td>
+    </tr>
+    <tr>
+      <td>disk_path</td>
+      <td>Specifies the Directory Path of the disk. This Directory must be created. When a path is specified as a relative path, PATH is searched based on $MACHBASE_HOME/dbs. For example, if PATH = ‘disk1’, Disk Path is recognized as $MACHBASE_HOME/dbs/disk1.</td>
+    </tr>
+    <tr>
+      <td>parallel_io</td>
+      <td>Determines how many disk IO requests are allowed to be paralleled. (DEF: 3, MIN: 1, MAX: 128)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="create-table">CREATE TABLE</h1>
+
+<p><strong>create_table_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/create_table_stmt.png" alt="create_table_stmt" /></p>
+
+<p><strong>column_list:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/column_list.png" alt="column_list" /></p>
+
+<p><strong>column_property_list:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/column_property_list.png" alt="column_property_list" /></p>
+
+<p><strong>table_property_list:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/table_property_list.png" alt="table_property_list" /></p>
+
+<p><strong>column_type:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/column_type.png" alt="column_type" /></p>
+
+<p><strong>auto_del:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/auto_del.png" alt="auto_del" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_table_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'CREATE'</span> <span class="p">(</span> <span class="s1">'LOG'</span> <span class="o">|</span> <span class="s1">'VOLATILE'</span> <span class="o">|</span> <span class="s1">'LOOKUP'</span> <span class="p">)</span><span class="o">?</span> <span class="s1">'TABLE'</span> <span class="k">table_name</span> <span class="s1">'('</span> <span class="n">column_list</span> <span class="s1">')'</span> <span class="n">table_property_list</span><span class="o">?</span>
+<span class="n">column_list</span> <span class="p">::</span><span class="o">=</span> <span class="k">column_name</span> <span class="n">column_type</span> <span class="n">column_property_list</span><span class="o">?</span> <span class="s1">'PRIMARY KEY'</span><span class="o">?</span> <span class="s1">'NOT NULL'</span><span class="o">?</span> <span class="p">(</span> <span class="s1">','</span> <span class="k">column_name</span> <span class="n">column_type</span> <span class="n">column_property_list</span><span class="o">?</span> <span class="s1">'PRIMARY KEY'</span><span class="o">?</span> <span class="s1">'NOT NULL'</span><span class="o">?</span> <span class="p">)</span><span class="o">*</span>
+<span class="n">column_property_list</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'PROPERTY'</span> <span class="s1">'('</span> <span class="p">(</span> <span class="s1">'PART_PAGE_COUNT'</span> <span class="o">|</span> <span class="s1">'PAGE_VALUE_COUNT'</span> <span class="o">|</span> <span class="s1">'MINMAX_CACHE_SIZE'</span> <span class="o">|</span> <span class="s1">'MAX_CACHE_PART_COUNT'</span> <span class="p">)</span> <span class="s1">'='</span> <span class="n">value</span> <span class="p">(</span> <span class="s1">','</span> <span class="p">(</span> <span class="s1">'PART_PAGE_COUNT'</span> <span class="o">|</span> <span class="s1">'PAGE_VALUE_COUNT'</span> <span class="o">|</span> <span class="s1">'MINMAX_CACHE_SIZE'</span> <span class="o">|</span> <span class="s1">'MAX_CACHE_PART_COUNT'</span> <span class="p">)</span> <span class="s1">'='</span> <span class="n">value</span> <span class="p">)</span><span class="o">*</span> <span class="s1">')'</span>
+<span class="n">table_property_list</span> <span class="p">::</span><span class="o">=</span>  <span class="p">(</span> <span class="s1">'CHECK_FORGERY'</span> <span class="o">|</span> <span class="s1">'TAG_PARTITION_COUNT'</span> <span class="p">)</span> <span class="s1">'='</span> <span class="n">value</span>
+<span class="n">column_type</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'SHORT'</span> <span class="o">|</span> <span class="s1">'USHORT'</span> <span class="o">|</span> <span class="s1">'INTEGER'</span> <span class="o">|</span> <span class="s1">'UINTEGER'</span> <span class="o">|</span> <span class="s1">'LONG'</span> <span class="o">|</span> <span class="s1">'ULONG'</span> <span class="o">|</span> <span class="s1">'FLOAT'</span> <span class="o">|</span> <span class="s1">'DOUBLE'</span> <span class="o">|</span> <span class="s1">'DATETIME'</span> <span class="o">|</span> <span class="s1">'VARCHAR'</span> <span class="s1">'('</span> <span class="k">size</span> <span class="s1">')'</span> <span class="o">|</span> <span class="s1">'IPV4'</span> <span class="o">|</span> <span class="s1">'IPV6'</span> <span class="o">|</span> <span class="s1">'TEXT'</span> <span class="o">|</span> <span class="s1">'BINARY'</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Create ctest table with 5 columns</span>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">create</span> <span class="k">table</span> <span class="n">ctest</span> <span class="p">(</span><span class="n">id</span> <span class="nb">integer</span><span class="p">,</span> <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">sipv4</span> <span class="n">ipv4</span><span class="p">,</span><span class="n">dipv6</span> <span class="n">ipv6</span><span class="p">,</span><span class="k">comment</span> <span class="nb">text</span><span class="p">);</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h2 id="table-type">Table Type</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Table Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LOG_TABLE</td>
+      <td>If there is no keyword between CREATE TABLE, a log table is created.</td>
+    </tr>
+    <tr>
+      <td>VOLATILE_TABLE</td>
+      <td>VOLATILE_TABLE is a temporary table in which all data resides in temporary memory and joins the log table to improve the results,<br />The Machbase server disappears as soon as it is shut down.</td>
+    </tr>
+    <tr>
+      <td>LOOKUP_TABLE</td>
+      <td>Like VOLATILE_TABLE, LOOKUP_TABLE can perform fast query processing by storing all the data in memory.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-column">Data Column</h2>
+
+<p>A table column is usually a string, but it can be enclosed in single quotes (‘) or double quotes (“) to contain special characters.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">special_tbl</span> <span class="p">(</span> <span class="k">with</span><span class="p">.</span><span class="n">dot</span> <span class="nb">INTEGER</span> <span class="p">);</span>
+<span class="p">[</span><span class="n">ERR</span><span class="o">-</span><span class="mi">02010</span><span class="p">:</span> <span class="n">Syntax</span> <span class="n">error</span><span class="p">:</span> <span class="n">near</span> <span class="n">token</span> <span class="p">(.</span><span class="n">dot</span> <span class="nb">INTEGER</span> <span class="p">)).]</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">special_tbl</span> <span class="p">(</span> <span class="nv">"with.dot"</span> <span class="nb">INTEGER</span> <span class="p">);</span> <span class="c1">-- (Possible)</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">special_tbl</span> <span class="p">(</span> <span class="s1">'with.dot'</span> <span class="nb">INTEGER</span> <span class="p">);</span> <span class="c1">-- (Possible)</span>
+</code></pre></div></div>
+
+<p>When querying the column through a SELECT query, it must be enclosed in either single or double quotes.</p>
+
+<ul>
+  <li>When enclosed in single quotation marks, the name of the SELECT query result column is output with single quotation marks.</li>
+  <li>When enclosed in double quotes, the name of the SELECT query result column is output as it is.</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="s1">'with.dot'</span> <span class="k">FROM</span> <span class="n">special_tbl</span><span class="p">;</span>
+<span class="s1">'with.dot'</span>
+<span class="c1">--------------</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="nv">"with.dot"</span> <span class="k">FROM</span> <span class="n">special_tbl</span><span class="p">;</span>
+<span class="k">with</span><span class="p">.</span><span class="n">dot</span>
+<span class="c1">--------------</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h2 id="table-property">Table Property</h2>
+
+<p>Specifies the attributes for the table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Property Name</strong></th>
+      <th><strong>Available Table Types</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TAG_PARTITION_COUNT</td>
+      <td>TAG TABLE</td>
+    </tr>
+    <tr>
+      <td>TAG_DATA_PART_SIZE</td>
+      <td>TAG TABLE</td>
+    </tr>
+    <tr>
+      <td>TAG_STAT_ENABLE</td>
+      <td>TAG TABLE</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>TAG_PARTITION_COUNT(Default:4)</strong>
+A supported attribute for the TAG table, determines how many partition tables will store the TAG table internally. It should be set according to the number of tags or the performance of the server.</p>
+
+<p><strong>TAG_DATA_PART_SIZE(Default:16MB)</strong>
+A supported attribute for the TAG table, determines the data size for each partition table.</p>
+
+<p><strong>TAG_STAT_ENABLE(Default:1)</strong>
+A supported attribute for the TAG Table, determines whether to store statistical information for each TAG ID.</p>
+
+<h2 id="column-property">Column Property</h2>
+
+<p>Specifies the attribute for the column.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Property Name</strong></th>
+      <th><strong>Available Table Types</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PART_PAGE_COUNT</td>
+      <td>LOG TABLE</td>
+    </tr>
+    <tr>
+      <td>PAGE_VALUE_COUNT</td>
+      <td>LOG TABLE</td>
+    </tr>
+    <tr>
+      <td>MAX_CACHE_PART_COUNT</td>
+      <td>LOG TABLE</td>
+    </tr>
+    <tr>
+      <td>MINMAX_CACHE_SIZE</td>
+      <td>LOG TABLE</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>PART_PAGE_COUNT</strong>
+This property represents the number of pages a partition has. The number of values ​​that a partition has is PART_PAGE_COUNT * PAGE_VALUE_COUNT.</p>
+
+<p><strong>PAGE_VALUE_COUNT</strong>
+This property represents the number of values ​​that a page has.</p>
+
+<p><strong>MAX_CACHE_PART_COUNT (Default : 0)</strong>
+This property sets the cache area for performance.
+When Machbase accesses a partition, it first looks for a structure that contains the meta information of that partition in memory. It determines how many partition information it contains in memory. Larger size will help performance, but memory usage will increase. The minimum value is 1 and the maximum value is 65535.</p>
+
+<p><strong>MINMAX_CACHE_SIZE (Default : 10240)</strong>
+This property specifies how much cache memory to use for the MINMAX of the corresponding column. The default is 100MB for _ARRIVAL_TIME, the 0th hidden column. However, other columns are specified as 10KB by default. This size can be changed after the creation of the table through the “ALTER TABLE MODIFY” statement.</p>
+
+<p><strong>NOT NULL Constraint</strong>
+Specifies NOT NULL if the column value does not allow NULL, and omit it if it is allowed (Default).
+You can change the constraint with the ALTER TABLE MODIFY COLUMN command to drop or add this constraint defined after the creation of the table.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">#</span> <span class="k">Column</span> <span class="n">c1</span> <span class="k">is</span> <span class="k">not</span> <span class="k">null</span> <span class="k">and</span> <span class="n">c2</span> <span class="k">is</span> <span class="n">created</span> <span class="k">without</span> <span class="k">not</span> <span class="k">null</span> <span class="k">constraint</span><span class="p">.</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">t1</span><span class="p">(</span><span class="n">c1</span> <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span> <span class="n">c2</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><strong>Pre-defined System Columns</strong>
+When you create a table using the Create Table statement, the system creates two additional predefined system columns. _ARRIVAL_TIME and _RID columns.</p>
+
+<p>The _ARRIVAL_TIME column is inserted into the DATETIME column based on the system time at which data is inserted into the INSERT statement or AppendData, and the value can be used as the unique key of the generated record. The value of this column can be inserted by specifying the value in the machloader or INSERT statement if the order is guaranteed (in the order of past-present). When data is retrieved using the DURATION conditional expression, data is retrieved based on the value of this column.
+The _RID column is created by the system as a unique value for a particular record. The data type of this column is a 64-bit integer. For this column, the user can not specify a value and can not create an index. It is automatically generated at the time of data INSERT. You can retrieve records by the value of the _RID column.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">volatile</span> <span class="k">table</span> <span class="n">t1111</span> <span class="p">(</span><span class="n">i1</span> <span class="nb">integer</span><span class="p">);</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">desc</span> <span class="n">t1111</span><span class="p">;</span>
+ 
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">NAME</span>                          <span class="k">TYPE</span>                <span class="k">LENGTH</span>       
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">_ARRIVAL_TIME</span>                 <span class="nb">datetime</span>            <span class="mi">8</span>              
+<span class="n">I1</span>                            <span class="nb">integer</span>             <span class="mi">4</span>              
+ 
+<span class="n">Mach</span><span class="o">&gt;</span><span class="k">insert</span> <span class="k">into</span> <span class="n">t1111</span> <span class="k">values</span> <span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="mi">1</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+<span class="n">Mach</span><span class="o">&gt;</span><span class="k">select</span> <span class="n">_rid</span> <span class="k">from</span> <span class="n">t1111</span><span class="p">;</span>
+<span class="n">_rid</span>                
+<span class="c1">-----------------------</span>
+<span class="mi">0</span>                   
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">inserted</span><span class="p">.</span>
+ 
+<span class="n">Mach</span><span class="o">&gt;</span><span class="k">select</span> <span class="n">i1</span> <span class="k">from</span> <span class="n">t1111</span> <span class="k">where</span> <span class="n">_rid</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">i1</span>         
+<span class="c1">--------------</span>
+<span class="mi">1</span>          
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">row</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">selected</span><span class="p">.</span>
+</code></pre></div></div>
+
+<h2 id="minmax-cache-concept">MINMAX Cache Concept</h2>
+
+<p>In general, in the Disk DBMS, when a specific value is searched using the index, the disk is accessed to access the disk area including the index, and the final disk page including the corresponding value is searched.</p>
+
+<p>On the other hand, Machbase is a chronologically partitioned structure in order to maintain time series information, which means that a particular piece of index information is divided into chunks of files in chronological order. Therefore, when a Machbase index is used, an index file fragmented by such a partition is sequentially searched.
+If the range of data to be searched is divided into 1000 partitions, it means that 1000 files should be opened and retrieved every time. Although it is designed as an efficient columnar database structure, the MINMAX_CACHE structure is a way to improve the performance because the I/O cost is proportional to the number of index partitions.
+MINMAX_CACHE is a structure that holds the index file information of the partition in memory, and is a contiguous memory space that keeps the minimum and maximum values ​​of the column in memory. By maintaining such structure, when a partition containing a specific value is searched, if the value is smaller than the minimum value of the index or is larger than the maximum value, the corresponding partition can be skipped altogether, thereby enabling high-performance data analysis.</p>
+
+<p><img src="/en/sql-ref/ddl_image/whenyoufindavalue85.png" alt="When you find a value &quot;85&quot;" /></p>
+
+<p>As shown in the figure above, to find the value 85, only the partitions 1 and 5 included in MIN/MAX among the 5 partitions are actually searched, and the partitions 2, 3 and 4 are skipped altogether.</p>
+
+<h2 id="minmax-cache-column">MINMAX Cache Column</h2>
+
+<p>You can decide whether to use MINMAX Cache for a particular column when creating the table.</p>
+
+<p>If the minmax_cache_size is set to a value other than 0, the MINMAX Cache will be active when the index is searched for that column and will not be active if  MINMAX_CACHE_SIZE = 0.
+Please note the following when using this MINMAX Cache.</p>
+
+<ol>
+  <li>MINMAX Cache does not need to explicitly create an index on the column.</li>
+  <li>As default for all columns, MINMAX_CACHE_SIZE is set to 10KB and the Alter Table syntax can be used to reset the memory size to a reasonable size.</li>
+  <li>The hidden column _arrival_time is 100MB by default and automatically uses MINMAX Cache memory.</li>
+  <li>In the case of VARCHAR type, MINMAX Cache is not covered. Therefore, if you explicitly specify whether the VARCHAR type is cached, an error will occur.</li>
+  <li>When the corresponding table is created, the MINMAX_CACHE_SIZE maximum memory can be used as much as the property is set. As the number of partitions grows, the memory grows gradually and increases by the maximum memory above.</li>
+  <li>If there are no records in the table, MINMAX Cache memory is not allocated at all.</li>
+</ol>
+
+<p>Below is an example of table creation using actual MINMAX.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">-- MINMAX_CACHE_SIZE = 0 for VARCHAR is allowed semantically.</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">ctest</span> <span class="p">(</span><span class="n">id</span> <span class="nb">INTEGER</span><span class="p">,</span> <span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">PROPERTY</span><span class="p">(</span><span class="n">MINMAX_CACHE_SIZE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">));</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+<span class="n">Mach</span><span class="o">&gt;</span>
+ 
+<span class="c1">-- Cache applied to id column.</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">ctest2</span> <span class="p">(</span><span class="n">id</span> <span class="nb">INTEGER</span> <span class="n">PROPERTY</span><span class="p">(</span><span class="n">MINMAX_CACHE_SIZE</span> <span class="o">=</span> <span class="mi">10240</span><span class="p">),</span> <span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">PROPERTY</span><span class="p">(</span><span class="n">MINMAX_CACHE_SIZE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">));</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+<span class="n">Mach</span><span class="o">&gt;</span>
+ 
+<span class="c1">-- Applied to id1, id2, and id3.</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">ctest3</span> <span class="p">(</span><span class="n">id1</span> <span class="nb">INTEGER</span> <span class="n">PROPERTY</span><span class="p">(</span><span class="n">MINMAX_CACHE_SIZE</span> <span class="o">=</span> <span class="mi">10240</span><span class="p">),</span> <span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">PROPERTY</span><span class="p">(</span><span class="n">MINMAX_CACHE_SIZE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">),</span> <span class="n">id2</span> <span class="n">LONG</span> <span class="n">PROPERTY</span><span class="p">(</span><span class="n">MINMAX_CACHE_SIZE</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">),</span> <span class="n">id3</span> <span class="n">IPV4</span> <span class="n">PROPERTY</span><span class="p">(</span><span class="n">MINMAX_CACHE_SIZE</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">),</span> <span class="n">id4</span> <span class="n">SHORT</span><span class="p">);</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+<span class="n">Mach</span><span class="o">&gt;</span>
+ 
+<span class="c1">-- MINMAX_CACHE_SIZE is specified in column units or set to 0.</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">ctest4</span> <span class="p">(</span><span class="n">id1</span> <span class="nb">INTEGER</span> <span class="n">PROPERTY</span><span class="p">(</span><span class="n">MINMAX_CACHE_SIZE</span><span class="o">=</span><span class="mi">10240</span><span class="p">),</span> <span class="n">name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="n">PROPERTY</span><span class="p">(</span><span class="n">MINMAX_CACHE_SIZE</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">id2</span> <span class="n">LONG</span> <span class="n">PROPERTY</span><span class="p">(</span><span class="n">MINMAX_CACHE_SIZE</span><span class="o">=</span><span class="mi">10240</span><span class="p">),</span> <span class="n">id3</span> <span class="n">IPV4</span> <span class="n">PROPERTY</span><span class="p">(</span><span class="n">MINMAX_CACHE_SIZE</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">id4</span> <span class="n">SHORT</span><span class="p">);</span>
+<span class="n">Created</span> <span class="n">successfully</span><span class="p">.</span>
+<span class="n">Mach</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="primary-key">Primary Key</h2>
+
+<p>This is a constraint that can be assigned to a Volatile/Lookup table column. The Volatile / Lookup table does not always need to have a primary key, but you can not use the INSERT ON DUPLICATE KEY UPDATE statement without a primary key.</p>
+
+<p>When a primary key is assigned, a red-black tree index corresponding to the primary key is generated.</p>
+
+<h2 id="auto_del-clauses">AUTO_DEL Clauses</h2>
+
+<p><strong>Supported version 5.5 or later.</strong></p>
+
+<p>This feature limits the amount of data to maintain disk storage space. It is only supported for log table. It is set by using AUTO_DEL clause before specifying table property in CREATE TABLE statement. The AUTO_DEL clause can be set based on the storage time or the number of records.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">t1</span> <span class="p">(</span><span class="n">c1</span> <span class="nb">INT</span><span class="p">)</span> <span class="n">KEEP</span> <span class="mi">30</span> <span class="k">DAY</span> <span class="k">AFTER</span> <span class="n">APPEND</span> <span class="n">INTERVAL</span> <span class="mi">5</span> <span class="k">SECOND</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>The above example deletes data that is more than 30 days old if there is more input five seconds after the automatic deletion is performed. If the interval specified is too long, auto delete is performed for a long time, which may affect the input. If it is too short, it may affect overall system performance.</p>
+
+<p>The following example shows how to specify the automatic deletion function as the number of data to save.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">t1</span> <span class="p">(</span><span class="n">c1</span> <span class="nb">INT</span><span class="p">)</span> <span class="n">KEEP</span> <span class="mi">3</span> <span class="n">RECORD</span> <span class="k">AFTER</span> <span class="n">APPEND</span> <span class="n">INTERVAL</span> <span class="mi">5</span> <span class="n">RECORD</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>It checks the number of records in the table for every 5 input data and automatically deletes it and keep only 3 records if there are more than three.</p>
+
+<h1 id="sequence-for-lookup-table">SEQUENCE for Lookup Table</h1>
+
+<p>Sequence was added to generate a unique record of the Lookup table and determine the order in which the data is entered.</p>
+
+<p>This feature was added to solve problems such as difficulty in distinguishing the order of records if the datetime values overlap in the lookup table and application errors due to data duplication.</p>
+
+<h2 id="machbase-edition-support-sequence">Machbase Edition support Sequence</h2>
+
+<p>All type of machbase editions are supported. (Edge / Fog / Cluster)</p>
+
+<h2 id="table-type-support-sequence">Table type support Sequence</h2>
+
+<p>Lookup Table</p>
+
+<h2 id="configuring-sequence-when-creating-lookup-tables">Configuring Sequence when Creating Lookup Tables</h2>
+
+<p>When creating a lookup table with a CreateTable SQL statement, simply specify that you want to set the Sequence by adding a PROPERTY clause to the column to be used as the Sequence.</p>
+
+<p>The columns to be set in Sequence only support LONG datatype (64bit, unsigned) and no other.</p>
+
+<p>In addition, the start value of Sequence can be set, but if it is set to 1, Sequence starts from 1. (No support for 0 or negative numbers)</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="n">LOOKUP</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="p">(</span><span class="n">v1</span> <span class="n">LONG</span> <span class="n">PROPERTY</span><span class="p">(</span><span class="n">SEQUENCE</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">v2</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h2 id="use-of-sequence-column">Use of sequence column</h2>
+
+<p>The Sequence column of the Lookup table is basically the same as a regular Long column and when used in this way, the Sequence value does not automatically increase.</p>
+
+<p>It is allowed to enter values directly into the Sequence column, and even duplicate values can be entered.</p>
+
+<p>Instead, if you want to use the Sequence function, you should use a newly added Sequence-only function called nextval to increase the Sequence value.</p>
+
+<p>Internally, it stores the largest value of a column set to Sequence, so when you enter it later using nextval Function, the largest value of the Sequence column value +1 is stored.</p>
+
+<p><strong>Example of Sequence column</strong></p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Insert the following Sequence value using nextval Function in the Sequence column.</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table_name</span> <span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="n">nextval</span><span class="p">(</span><span class="n">v1</span><span class="p">),</span> <span class="s1">'aaaa'</span><span class="p">);</span>
+   
+<span class="c1">-- Insert a value directly into the Sequence column</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table_name</span> <span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s1">'aaaa'</span><span class="p">);</span>
+   
+<span class="c1">-- Insert a the computational value in the Sequence column.</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table_name</span> <span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">99</span><span class="p">,</span> <span class="s1">'aaaa'</span><span class="p">);</span>
+   
+<span class="c1">-- Success Select of Lookup Tables with Sequence Columns</span>
+<span class="k">SELECT</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span> <span class="k">FROM</span> <span class="k">table_name</span><span class="p">;</span>
+  
+<span class="c1">-- Invalid Select for Sequence column (nextval column can only be used in insert query)</span>
+<span class="k">SELECT</span> <span class="n">nextval</span><span class="p">(</span><span class="n">v1</span><span class="p">),</span> <span class="n">v2</span> <span class="k">FROM</span> <span class="k">table_name</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h1 id="create-tag-table">CREATE TAG TABLE</h1>
+
+<p><strong>create_tag_table_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/create_tag_table_stmt.png" alt="create_tag_table_stmt" /></p>
+
+<p><strong>tag_column_list:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/tag_column_list.png" alt="tag_column_list" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_tag_table_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'CREATE'</span> <span class="s1">'TAGDATA'</span> <span class="s1">'TABLE'</span> <span class="k">table_name</span> <span class="s1">'('</span> <span class="n">tag_column_list</span> <span class="p">(</span> <span class="s1">'metadata'</span> <span class="s1">'('</span> <span class="n">column_list</span> <span class="s1">')'</span> <span class="p">)</span><span class="o">?</span> <span class="s1">')'</span>
+<span class="n">tag_column_list</span> <span class="p">::</span><span class="o">=</span> <span class="k">column_name</span> <span class="n">column_type</span> <span class="n">column_property_list</span><span class="o">?</span> <span class="s1">'PRIMARY KEY'</span><span class="o">?</span> <span class="s1">'BASETIME'</span><span class="o">?</span> <span class="s1">'SUMMARIZED'</span><span class="o">?</span> <span class="s1">'NOT NULL'</span><span class="o">?</span> <span class="p">(</span> <span class="s1">','</span> <span class="k">column_name</span> <span class="n">column_typecolumn_property_list</span><span class="o">?</span> <span class="s1">'PRIMARY KEY'</span><span class="o">?</span> <span class="s1">'BASETIME'</span><span class="o">?</span> <span class="s1">'SUMMARIZED'</span><span class="o">?</span> <span class="s1">'NOT NULL'</span><span class="o">?</span> <span class="p">)</span><span class="o">*</span>
+</code></pre></div></div>
+
+<p>The primary key, basetime, and summarized must be included in the tag table creation.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example</span>
+<span class="k">CREATE</span> <span class="n">TAGDATA</span> <span class="k">TABLE</span> <span class="n">tag</span> <span class="p">(</span><span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span> <span class="nb">time</span> <span class="nb">datetime</span> <span class="n">basetime</span><span class="p">,</span> <span class="n">value</span> <span class="nb">double</span> <span class="n">summarized</span><span class="p">);</span>
+<span class="k">CREATE</span> <span class="n">TAGDATA</span> <span class="k">TABLE</span> <span class="n">tag</span> <span class="p">(</span><span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span> <span class="n">int_column</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">time</span> <span class="nb">datetime</span> <span class="n">basetime</span><span class="p">,</span> <span class="n">value</span> <span class="nb">double</span> <span class="n">summarized</span><span class="p">,</span> <span class="n">value2</span> <span class="nb">float</span><span class="p">);</span>
+<span class="k">CREATE</span> <span class="n">TAGDATA</span> <span class="k">TABLE</span> <span class="n">tag</span> <span class="p">(</span><span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span> <span class="nb">time</span> <span class="nb">datetime</span> <span class="n">basetime</span><span class="p">,</span> <span class="n">value</span> <span class="nb">double</span> <span class="n">summarized</span><span class="p">,</span> <span class="n">value2</span> <span class="nb">float</span><span class="p">)</span> <span class="n">METADATA</span> <span class="p">(</span><span class="n">i1</span> <span class="nb">int</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h1 id="create-index">CREATE INDEX</h1>
+
+<p><strong>create_index_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/create_index_stmt.png" alt="create_index_stmt" /></p>
+
+<p><strong>index_type:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/index_type.png" alt="index_type" /></p>
+
+<p><strong>table_space:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/table_space.png" alt="table_space" /></p>
+
+<p><strong>index_property_list:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/index_property_list.png" alt="index_property_list" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_index_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'CREATE'</span> <span class="s1">'INDEX'</span> <span class="n">index_name</span> <span class="s1">'ON'</span> <span class="k">table_name</span> <span class="s1">'('</span> <span class="k">column_name</span> <span class="s1">')'</span> <span class="n">index_type</span><span class="o">?</span> <span class="n">table_space</span><span class="o">?</span> <span class="n">index_property_list</span><span class="o">?</span>
+<span class="n">index_type</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'INDEX_TYPE'</span> <span class="p">(</span> <span class="s1">'KEYWORD'</span> <span class="o">|</span> <span class="s1">'BITMAP'</span> <span class="o">|</span> <span class="s1">'REDBLACK'</span> <span class="p">)</span>
+<span class="n">table_space</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'TABLESPACE'</span> <span class="n">table_space_name</span>
+<span class="n">index_property_list</span> <span class="p">::</span><span class="o">=</span> <span class="p">(</span> <span class="s1">'MAX_LEVEL'</span> <span class="o">|</span> <span class="s1">'PAGE_SIZE'</span> <span class="o">|</span> <span class="s1">'BLOOM_FILTER'</span> <span class="o">|</span> <span class="s1">'BITMAP_ENCODE'</span> <span class="o">|</span> <span class="s1">'PART_VALUE_COUNT'</span> <span class="p">)</span> <span class="s1">'='</span> <span class="n">value</span>
+</code></pre></div></div>
+
+<h2 id="index-type">Index Type</h2>
+
+<p>Specifies the Index Type to be created. If it is not Keyword Index, Index Type is created as Default Index Type according to Table Type if Index Type is not specified.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Table Type</th>
+      <th>Default Index Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Volatile Table</td>
+      <td>REDBLACK</td>
+    </tr>
+    <tr>
+      <td>Lookup Table</td>
+      <td>REDBLACK</td>
+    </tr>
+    <tr>
+      <td>Log Table</td>
+      <td>LSM</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="keyword-index">KEYWORD Index</h2>
+
+<p>This can be created only for varchar and text column of log table. It can be created for only one column.</p>
+
+<h2 id="lsm-index">LSM Index</h2>
+
+<p>LSM (Log Structure Merge) Index is an index optimized for storing and searching Big Data. The partitions of the LSM indexes are maintained for each level, and the lower level partitions are merged to move to the upper level. Lower partitions used to create a higher level partition are deleted.</p>
+
+<p>This Index Level Partition Building is performed by Background Thread. The upper level partitions are merged with the lower level partitions and are created as one partition, so there are the following advantages when searching through the index.</p>
+
+<ol>
+  <li>
+    <p>If the key is duplicated, the disk space for key storage is saved because it is stored only once.</p>
+  </li>
+  <li>
+    <p>Searching for multiple partitions reduces the cost of opening and closing the file when searching for one index partition, and the number of index pages accessed is also reduced.</p>
+  </li>
+</ol>
+
+<h2 id="lsm-index-property">LSM Index Property</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MAX_LEVEL<br />(DEFAULT = 3, MIN = 0, MAX = 3 )</td>
+      <td>The maximum level of the LSM Index, and the current value of 3 is the maximum value. And the maximum number of records of one partition can not exceed 200 million. The partition size of each level is the number of values ​​of the previous partition * 10. For example, if MAX_LEVEL = 3 and PART_VALUE_COUNT is 100,000, then Level 0 = 100,000, Level 1 = 1,000,0000, Level 2 = 10,000,000, and Level 3 = 100,000,000. If the Partition Size of the last level exceeds 200 million, index creation will fail.</td>
+    </tr>
+    <tr>
+      <td>PAGE_SIZE<br />(DEFAULT = 512 * 1024, MIN = 32 * 1024,MAX = 1 * 1024 * 1024)</td>
+      <td>Specifies the size of the page in which the index key value and bitmap value are stored. Default is 512K.</td>
+    </tr>
+    <tr>
+      <td>BLOOM_FILTER<br />(DEFAULT = 1, DISABLE = 0, ENABLE(DEFAULT) = non_zero_integer)</td>
+      <td>Sets whether to set Bloom filter on index. Setting the Bloom filter allows you to quickly search for values ​​that do not exist in the index, but it will increase the time it takes to create the index.<br />If you use only Range conditions, Bloom filters are not available and need not be created.<br />If you do not want to create a Bloom filter, you should set BLOOM_FILTER = 0.</td>
+    </tr>
+    <tr>
+      <td>BITMAP_ENCODE<br />(DEFAULT = EQUAL, RANGE)</td>
+      <td>Sets the bitmap type of the index.<br />If BITMAP_ENCODE = EQUAL (default), generates a bitmap for the same value as the key value. If BITMAP = RANGE, generates a bitmap according to the range of the key value.<br />It is better to set as BITMAP_ENCODE = EQUAL when using = as the query condition, and BITMAP_ENCODE = RANGE when using the specific range value as the query condition.<br />In the case of BITMAP = RANGE, the cost of creation increases slightly compared to EQUAL.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="bitmap-index">BITMAP Index</h2>
+
+<p>This is an index for data analysis and can be created only in the log table. It can be created on all columns except varchar, text, and binary, and can only be created on a single column.</p>
+
+<h2 id="red-black-index">RED-BLACK Index</h2>
+
+<p>This is a memory index for real-time data retrieval. It can be created only in the Volatile/Lookup table. It can be created in all columns of this table and can only be created for a single column.</p>
+
+<h2 id="index-property">Index Property</h2>
+
+<p>The properties that can be applied in the LSM Index are as follows.</p>
+
+<p><strong>PART_VALUE_COUNT</strong>
+Indicates the number of rows stored in the Partition of Index.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example</span>
+<span class="c1">-- Index applied to c1 column.</span>
+<span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">index1</span> <span class="k">on</span> <span class="n">table1</span> <span class="p">(</span> <span class="n">c1</span> <span class="p">)</span>
+<span class="c1">-- Keyword index applied to var_column of varchar type, and page_size unit is 100000.</span>
+<span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">index2</span> <span class="k">on</span> <span class="n">table1</span> <span class="p">(</span><span class="n">var_column</span><span class="p">)</span> <span class="n">INDEX_TYPE</span> <span class="n">KEYWORD</span> <span class="n">PAGE_SIZE</span><span class="o">=</span><span class="mi">100000</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h1 id="drop-tablespace">DROP TABLESPACE</h1>
+
+<p><strong>drop_tablespace_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/drop_tablespace_stmt.png" alt="drop_tablespace_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop_table_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'DROP TABLESPACE'</span> <span class="n">tablespace_name</span>
+</code></pre></div></div>
+
+<p>Deletes the specified tablespace. However, if the object created in Tablespace exists, deletion fails.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example</span>
+<span class="k">DROP</span> <span class="n">TABLESPACE</span> <span class="n">TablespaceName</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h1 id="drop-table">DROP TABLE</h1>
+
+<p><strong>drop_table_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/drop_table_stmt.png" alt="drop_table_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop_table_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'DROP TABLE'</span> <span class="k">table_name</span>
+</code></pre></div></div>
+
+<p>Deletes the specified table. However, if there is another session in which the table is being searched, it fails with an error.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example</span>
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">TableName</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="drop-index">DROP INDEX</h2>
+
+<p><strong>drop_index_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/drop_index_stmt.png" alt="drop_index_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop_index_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'DROP INDEX'</span> <span class="n">index_name</span>
+</code></pre></div></div>
+
+<p>Deletes the specified index. However, if there is another session in which the table is being searched, it fails with an error.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example</span>
+<span class="k">DROP</span> <span class="k">INDEX</span> <span class="n">IndexName</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h1 id="alter-tablespace">ALTER TABLESPACE</h1>
+
+<p>The ALTER TABLESPACE statement is used to change the information associated with the specified tablespace.</p>
+
+<h2 id="alter-tablespace-modify-datadisk">ALTER TABLESPACE MODIFY DATADISK</h2>
+
+<p>This syntax is used to change the properties of DATADISK in Tablespace.</p>
+
+<p><strong>alter_tablespace_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/alter_tablespace_stmt.png" alt="alter_tablespace_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alter_tablespace_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'ALTER TABLESPACE'</span> <span class="k">table_name</span> <span class="s1">'MODIFY DATADISK'</span> <span class="n">disk_name</span> <span class="s1">'SET'</span> <span class="s1">'PARALLEL_IO'</span> <span class="s1">'='</span> <span class="n">value</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example</span>
+<span class="k">ALTER</span> <span class="n">TABLESPACE</span> <span class="n">tbs1</span> <span class="k">MODIFY</span> <span class="n">DATADISK</span> <span class="n">disk1</span> <span class="k">SET</span> <span class="n">PARALLEL_IO</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h1 id="alter-table">ALTER TABLE</h1>
+
+<p>The ALTER TABLE statement is used to change the schema information of the specified table, and only the Log Table is available.</p>
+
+<h2 id="alter-table-set">ALTER TABLE SET</h2>
+
+<p>This syntax changes the properties of a table. Currently there are no dynamically changeable properties.</p>
+
+<h2 id="alter-table-add-column">ALTER TABLE ADD COLUMN</h2>
+
+<p><strong>alter_table_add_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/alter_table_add_stmt.png" alt="alter_table_add_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alter_table_add_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'ALTER TABLE'</span> <span class="k">table_name</span> <span class="s1">'ADD COLUMN'</span> <span class="s1">'('</span> <span class="k">column_name</span> <span class="n">column_type</span> <span class="p">(</span> <span class="s1">'DEFAULT'</span> <span class="n">value</span> <span class="p">)</span><span class="o">?</span> <span class="s1">')'</span>
+</code></pre></div></div>
+
+<p>This syntax is the ability to add a specific column to the table in real time. You can add the name and type of the column, and set the default data values ​​through the DEFAULT clause.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example-1</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">atest2</span> <span class="k">add</span> <span class="k">column</span> <span class="p">(</span><span class="n">id4</span> <span class="nb">float</span><span class="p">);</span>
+ 
+<span class="c1">-- Example-2</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">atest2</span> <span class="k">add</span> <span class="k">column</span> <span class="p">(</span><span class="n">id6</span> <span class="nb">double</span>  <span class="k">default</span> <span class="mi">5</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">atest2</span> <span class="k">add</span> <span class="k">column</span> <span class="p">(</span><span class="n">id7</span> <span class="n">ipv4</span>  <span class="k">default</span> <span class="s1">'192.168.0.1'</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">atest2</span> <span class="k">add</span> <span class="k">column</span> <span class="p">(</span><span class="n">id8</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="k">default</span> <span class="s1">'hello'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="alter-table-drop-column">ALTER TABLE DROP COLUMN</h2>
+
+<p><strong>alter_table_drop_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/alter_table_drop_stmt.png" alt="alter_table_drop_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alter_table_drop_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'ALTER TABLE'</span> <span class="k">table_name</span> <span class="s1">'DROP COLUMN'</span> <span class="s1">'('</span> <span class="k">column_name</span> <span class="s1">')'</span>
+</code></pre></div></div>
+
+<p>This syntax is to delete a specific column in the table in real time.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- Example
+alter table atest2 drop column (id4);
+alter table atest2 drop column (id8);
+</code></pre></div></div>
+
+<h2 id="alter-table-rename-column">ALTER TABLE RENAME COLUMN</h2>
+
+<p><strong>alter_table_column_rename_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/alter_table_column_rename_stmt.png" alt="alter_table_column_rename_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alter_table_column_rename_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'ALTER TABLE'</span> <span class="k">table_name</span> <span class="s1">'RENAME COLUMN'</span> <span class="n">old_column_name</span> <span class="s1">'TO'</span> <span class="n">new_column_name</span>
+</code></pre></div></div>
+
+<p>This syntax is a function that changes a specific column name in a table.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">atest2</span> <span class="k">rename</span> <span class="k">column</span> <span class="n">id7</span> <span class="k">to</span> <span class="n">id7_rename</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="alter-table-modify-column">ALTER TABLE MODIFY COLUMN</h2>
+
+<p><strong>alter_table_modify_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/alter_table_modify_stmt.png" alt="alter_table_modify_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alter_table_modify_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'ALTER TABLE'</span> <span class="k">table_name</span> <span class="s1">'MODIFY COLUMN'</span> <span class="p">(</span> <span class="s1">'('</span> <span class="k">column_name</span> <span class="s1">'VARCHAR'</span> <span class="s1">'('</span> <span class="n">new_size</span> <span class="s1">')'</span> <span class="s1">')'</span> <span class="o">|</span> <span class="k">column_name</span> <span class="p">(</span> <span class="s1">'NOT'</span><span class="o">?</span> <span class="s1">'NULL'</span> <span class="o">|</span> <span class="s1">'SET'</span> <span class="s1">'MINMAX_CACHE_SIZE'</span> <span class="s1">'='</span> <span class="n">value</span> <span class="p">)</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>This syntax changes the properties of a particular column of a table. Currently it is possible to modify MINMAX CACHE attributes and NOT NULL constraints for column lengths and other types of VARCHAR types.</p>
+
+<p><strong>VARCHAR SIZE</strong></p>
+
+<p>This syntax supports changing the column length of VARCHAR type only. This operation can not be reduced in length to preserve existing data, and should always be increased.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">MODIFY</span> <span class="k">COLUMN</span> <span class="p">(</span><span class="k">column_name</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="n">new_size</span><span class="p">));</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example: Assume TABLE is created like this.</span>
+<span class="c1">-- create table atest5 (id integer, name varchar(5), id3 double, id4 float);</span>
+ 
+<span class="c1">-- Error occurred: Can not change to another type,</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">atest5</span> <span class="k">modify</span> <span class="k">column</span> <span class="p">(</span><span class="n">id</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+ 
+<span class="c1">-- Error occurred: VARCHAR length can not be made smaller.</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">atest5</span> <span class="k">modify</span> <span class="k">column</span> <span class="p">(</span><span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+ 
+<span class="c1">-- Error occurred: Maximum size of VARCHAR can not exceed 32767.</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">atest5</span> <span class="k">modify</span> <span class="k">column</span> <span class="p">(</span><span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">32768</span><span class="p">));</span>
+ 
+<span class="c1">-- Success</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">atest5</span> <span class="k">modify</span> <span class="k">column</span> <span class="p">(</span><span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><strong>MINMAX_CACHE_SIZE</strong></p>
+
+<p>This syntax changes MINMAX_CACHE_SIZE for a particular column.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">MODIFY</span> <span class="k">COLUMN</span> <span class="k">column_name</span> <span class="k">SET</span> <span class="n">MINMAX_CACHE_SIZE</span><span class="o">=</span><span class="n">value</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Example: Assume TABLE is created like this.</span>
+<span class="k">create</span> <span class="k">table</span> <span class="n">atest9</span> <span class="p">(</span><span class="n">id</span> <span class="nb">integer</span><span class="p">,</span> <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
+ 
+<span class="c1">-- Error: Does not apply to VARCHAR.</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">atest9</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">name</span> <span class="k">set</span> <span class="n">minmax_cache_size</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="p">[</span><span class="n">ERR</span><span class="o">-</span><span class="mi">02139</span> <span class="p">:</span> <span class="n">MINMAX</span> <span class="k">CACHE</span> <span class="k">is</span> <span class="k">not</span> <span class="n">allowed</span> <span class="k">for</span> <span class="nb">VARCHAR</span> <span class="k">column</span><span class="p">(</span><span class="n">NAME</span><span class="p">).]</span>
+ 
+<span class="c1">-- Change success</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">atest9</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">id</span> <span class="k">set</span> <span class="n">minmax_cache_size</span><span class="o">=</span><span class="mi">10240</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><strong>NOT NULL</strong></p>
+
+<p>Adds a NOT NULL constraint to the column. If you add a NOT NULL constraint, the DDL operation fails for columns with NULL values.
+If you want to allow NULL values ​​in a column, use the MODIFY COLUMN NULL command in the next section.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">MODIFY</span> <span class="k">COLUMN</span> <span class="k">column_name</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Add NOT NULL constraint to t1.c1.</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">t1</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">c1</span> <span class="k">not</span> <span class="k">null</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><strong>NULL</strong></p>
+
+<p>Releases the NOT NULL constraint. Performance improvement due to min_max cache of LSM index can not be obtained. NULL values ​​can be input.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">MODIFY</span> <span class="k">COLUMN</span> <span class="k">column_name</span> <span class="k">NULL</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Release NOT NULL constraint at t1.c1.</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">t1</span> <span class="k">modify</span> <span class="k">column</span> <span class="n">c1</span> <span class="k">null</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="alter-table-flush">ALTER TABLE FLUSH</h2>
+
+<p><strong>alter_table_flush_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/alter_table_flush_stmt.png" alt="alter_table_flush_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alter_table_flush_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'ALTER TABLE'</span> <span class="k">table_name</span> <span class="s1">'FLUSH'</span>
+</code></pre></div></div>
+
+<p>Waits until the input data for the specified table is fully reflected in the data file.</p>
+
+<h2 id="alter-table-flush-index">ALTER TABLE FLUSH INDEX</h2>
+
+<p><strong>alter_table_flush_index_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/alter_table_flush_index_stmt.png" alt="alter_table_flush_index_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alter_table_flush_index_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'ALTER TABLE'</span> <span class="k">table_name</span> <span class="s1">'FLUSH'</span> <span class="s1">'INDEX'</span> <span class="p">(</span> <span class="n">index_name</span> <span class="o">|</span> <span class="s1">'ALL'</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>Waits until the index data of the specified table is completely reflected in the index file.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Wait until data for all indexes of bulktable is reflected in index files.</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">bulktable</span> <span class="n">flush</span> <span class="k">index</span> <span class="k">all</span><span class="p">;</span>
+ 
+<span class="c1">-- Wait until data of c1_idx index of bulktable is reflected in index file.</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">bulktable</span> <span class="n">flush</span> <span class="k">index</span> <span class="n">c1_idx</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="alter-table-reclaim-storage">ALTER TABLE RECLAIM STORAGE</h2>
+
+<p><strong>alter_table_reclaim_storage_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/alter_table_reclaim_storage_stmt.png" alt="alter_table_reclaim_storage_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alter_table_reclaim_storage_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'ALTER TABLE'</span> <span class="k">table_name</span> <span class="s1">'RECLAIM STORAGE'</span>
+</code></pre></div></div>
+
+<p>Delete unused data from the Tag table to secure available space.
+If the system property DISK_TAG_AUTO_RECLAIM is 1 (default), it is automatically performed without special execution.
+When this value is set to 0, the storage space may be secured by performing this query at a desired time. Only available for Tag table.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Reclaim the storage space of the tag table.</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">tag</span> <span class="n">reclaim</span> <span class="k">storage</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="alter-table-rename-to">ALTER TABLE RENAME TO</h2>
+
+<p><strong>alter_table_rename_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/alter_table_rename_stmt.png" alt="alter_table_rename_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alter_table_rename_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'ALTER TABLE'</span> <span class="k">table_name</span> <span class="s1">'RENAME TO'</span> <span class="n">new_name</span>
+</code></pre></div></div>
+
+<p>Changes the name of the table.
+Metatables can not be renamed, and you can not use the $ character in the name to be changed. Table renaming is only possible for log tables.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Change name of user table to employee.</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">user</span> <span class="k">RENAME</span> <span class="k">TO</span> <span class="n">employee</span>
+</code></pre></div></div>
+
+<h2 id="alter-table-auto-delete">ALTER TABLE AUTO DELETE</h2>
+
+<p><strong>alter_table_auto_del_stmt:</strong></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alter_table_auto_del_stmt</span> <span class="p">::</span><span class="o">=</span>  <span class="s1">'ALTER TABLE'</span> <span class="k">table_name</span> <span class="p">(</span><span class="s1">'KEEP'</span> <span class="s1">'DISABLE'</span> <span class="o">||</span> <span class="s1">'KEEP'</span> <span class="n">value</span> <span class="p">(</span><span class="s1">'DAY'</span> <span class="o">|</span> <span class="s1">'HOUR'</span> <span class="o">|</span> <span class="s1">'MINUTE'</span> <span class="o">|</span> <span class="s1">'SECOND'</span> <span class="o">|</span> <span class="s1">'RECORD'</span><span class="p">)</span> <span class="s1">'AFTER APPEND'</span> <span class="s1">'INTERVAL'</span> <span class="n">value</span> <span class="p">(</span><span class="s1">'DAY'</span> <span class="o">|</span> <span class="s1">'HOUR'</span> <span class="o">|</span> <span class="s1">'MINUTE'</span> <span class="o">|</span> <span class="s1">'SECOND'</span> <span class="o">|</span> <span class="s1">'RECORD'</span><span class="p">)</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/en/sql-ref/ddl_image/alter_table_auto_del_stmt.png" alt="alter_table_auto_del_stmt" /></p>
+
+<p>Set the automatic deletion period of the table or determine whether to use it.
+Auto deleting is only possible for log tables.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- The automatic deletion of the logtbl table keeps only 30 days of data and changes it to check every 5 seconds after the append.</span>
+<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">logtbl</span> <span class="n">keep</span> <span class="mi">30</span> <span class="k">day</span> <span class="k">after</span> <span class="n">append</span> <span class="n">interval</span> <span class="mi">5</span> <span class="k">second</span><span class="p">;</span>
+</code></pre></div></div>
+<h2 id="alter-table-add-retention">ALTER TABLE ADD RETENTION</h2>
+
+<p><strong>alter_table_add_retention_stmt:</strong></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alter_table_add_retention_stmt</span> <span class="p">::</span><span class="o">=</span>  <span class="s1">'ALTER TABLE'</span> <span class="k">table_name</span> <span class="s1">'ADD RETENTION'</span> <span class="n">policy_name</span>
+</code></pre></div></div>
+
+<p><img src="/en/sql-ref/ddl_image/alter_table_add_retention_stmt.png" alt="alter_table_add_retention_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">tag</span> <span class="k">ADD</span> <span class="n">RETENTION</span> <span class="n">policy_1d_1h</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="alter-table-drop-retention">ALTER TABLE DROP RETENTION</h2>
+
+<p><strong>alter_table_drop_retention_stmt:</strong></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alter_table_drop_retention_stmt</span> <span class="p">::</span><span class="o">=</span>  <span class="s1">'ALTER TABLE'</span> <span class="k">table_name</span> <span class="s1">'DROP RETENTION'</span>
+</code></pre></div></div>
+
+<p><img src="/en/sql-ref/ddl_image/alter_table_drop_retention_stmt.png" alt="alter_table_drop_retention_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">tag</span> <span class="k">DROP</span> <span class="n">RETENTION</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h1 id="truncate-table">TRUNCATE TABLE</h1>
+
+<p><strong>truncate_table_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/truncate_table_stmt.png" alt="truncate_table_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">truncate_table_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'TRUNCATE TABLE'</span> <span class="k">table_name</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Delete all data in ctest table.</span>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">truncate</span> <span class="k">table</span> <span class="n">ctest</span><span class="p">;</span>
+<span class="n">Truncated</span> <span class="n">successfully</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>Deletes all data in the specified table. However, if there is another session in which the table is being searched, it fails with an error.</p>
+
+<h1 id="create-rollup">CREATE ROLLUP</h1>
+
+<p><strong>create_rollup_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/create_rollup_stmt.png" alt="create_rollup_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_rollup_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'CREATE ROLLUP'</span> <span class="n">rollup_name</span> <span class="s1">'ON'</span> <span class="n">src_table_name</span> <span class="s1">'('</span><span class="n">src_table_column</span><span class="s1">')'</span> <span class="s1">'INTERVAL'</span> <span class="n">number</span> <span class="p">(</span><span class="s1">'SEC'</span> <span class="o">|</span> <span class="s1">'MIN'</span> <span class="o">|</span> <span class="s1">'HOUR'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- Creates a rollup targeting the value column of the tag table.</span>
+<span class="n">Mach</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">ROLLUP</span> <span class="n">_rollup_tag_value_sec</span> <span class="k">ON</span> <span class="n">tag</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="n">INTERVAL</span> <span class="mi">1</span> <span class="n">SEC</span><span class="p">;</span>
+<span class="n">Executed</span> <span class="n">successfully</span>
+</code></pre></div></div>
+
+<h1 id="drop-rollup">DROP ROLLUP</h1>
+
+<p><strong>drop_rollup_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/drop_rollup_stmt.png" alt="drop_rollup_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop_rollup_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'DROP ROLLUP'</span> <span class="n">rollup_name</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- drop rollup.
+Mach&gt; DROP ROLLUP _rollup_tag_value_sec;
+Executed successfully
+</code></pre></div></div>
+
+<h1 id="create-retention">CREATE RETENTION</h1>
+
+<p><strong>create_retention_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/create_retention_stmt.png" alt="create_retention_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_retention_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'CREATE RETENTION'</span> <span class="n">policy_name</span> <span class="s1">'DURATION'</span> <span class="n">duration</span> <span class="p">(</span> <span class="s1">'MONTH'</span> <span class="o">|</span> <span class="s1">'DAY'</span> <span class="p">)</span> <span class="s1">'INTERVAL'</span> <span class="n">interval</span> <span class="p">(</span> <span class="s1">'DAY'</span> <span class="o">|</span> <span class="s1">'HOUR'</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="n">RETENTION</span> <span class="n">policy_1d_1h</span> <span class="n">DURATION</span> <span class="mi">1</span> <span class="k">DAY</span> <span class="n">INTERVAL</span> <span class="mi">1</span> <span class="n">HOUR</span><span class="p">;</span>
+<span class="n">Executed</span> <span class="n">successfully</span>
+</code></pre></div></div>
+
+<h1 id="drop-retention">DROP RETENTION</h1>
+
+<p><strong>drop_retention_stmt:</strong></p>
+
+<p><img src="/en/sql-ref/ddl_image/drop_retention_stmt.png" alt="drop_retention_stmt" /></p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">drop_retention_stmt</span> <span class="p">::</span><span class="o">=</span> <span class="s1">'DROP RETENTION'</span> <span class="n">policy_name</span>
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mach</span><span class="o">&gt;</span> <span class="k">DROP</span> <span class="n">RETENTION</span> <span class="n">policy_1d_1h</span><span class="p">;</span>
+<span class="n">Executed</span> <span class="n">successfully</span>
+</code></pre></div></div>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>

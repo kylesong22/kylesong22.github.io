@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Copyright 2019-2021 Vanessa Sochat-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+    <link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+    
+    <link rel="shortcut icon" href="/en/assets/favicons/favicon.ico" >
+    <!-- <link rel="apple-touch-icon" href="/en/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-36x36.png" sizes="36x36">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-48x48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-72x72.png" sizes="72x72">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-96x196.png" sizes="96x196">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-144x144.png" sizes="144x144">
+    <link rel="icon" type="image/png" href="/en/assets/favicons/android-icon-192x192.png"sizes="192x192"> -->
+    
+    <title>An example of tag table</title>
+    <meta property="og:title" content="An example of tag table" />
+    <meta property="og:description" content="machbase-manual documents.
+" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    
+    <meta itemprop="name" content="An example of tag table">
+    <meta itemprop="description" content="machbase-manual documents.
+">
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="An example of tag table"/>
+    <meta name="twitter:description" content="machbase-manual documents.
+"/>
+    
+    <link rel="stylesheet" href="/en/assets/css/main.css">
+    <link rel="stylesheet" href="/en/assets/css/palette.css">
+    <script
+      src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+      crossorigin="anonymous"></script>
+    </head>
+  
+
+  
+  <body class="td-section">
+    <header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+    <a class="navbar-brand" href="/en/">
+        <span class="navbar-logo"></span><span class="text-uppercase font-weight-bold"><img src="/en/assets/img/logo.png" alt="Machbase manual"></span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="https://github.com/machbase/dbms-manual" target="_blank"><span>GitHub</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/about" ><span>About</span></a> -->
+        </li>
+        <li class="nav-item mr-4 mb-2 mb-lg-0">
+                        <!-- <a class="nav-link" href="/en/docs" ><span>Documentation</span></a> -->
+        </li>
+  <!--  -->
+  <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+    <!-- 
+      <span class="nav-link ">Release:</span>
+    
+    <li class="nav-item dropdown d-none d-lg-block">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Current</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        
+        
+          
+            <a class="dropdown-item" href="/en/feature-tables/tag/ex.html">Current</a>
+          
+        
+        
+          
+            
+            <a class="dropdown-item" href="/en/feature-tables/tag/ex.html">Previous</a>
+          
+         -->
+      </div>
+    </li>
+  <!-- </li> -->
+  
+    </ul>
+</div>
+<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+    </div>
+
+<!-- <div class="navbar-nav d-none d-lg-block">
+      <a class="gh-source" data-gh-source="github" href="https://github.com/machbase/dbms-manual" title="Go to repository" data-md-state="done">
+      <div class="gh-source__repository">
+        <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
+        machbase/dbms-manual
+      <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
+    </div> -->
+  </div>
+
+
+</nav>
+</header>
+
+<script>
+$(document).ready(function() {
+var url = "https://api.github.com/search/repositories?q=machbase/dbms-manual";
+fetch(url, { 
+  headers: {"Accept":"application/vnd.github.preview"}
+}).then(function(e) {
+return e.json()
+}).then(function(r) {
+ console.log(r.items[0])
+ stars = r.items[0]['stargazers_count']
+ forks = r.items[0]['forks_count']
+ $('#stars').text(stars + " Stars")
+ $('#forks').text(forks + " Forks")
+});
+});
+</script>
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation"></button>
+  </form>  
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+      <ul class="td-sidebar-nav__section pr-md-3">
+        
+        
+      
+        <li class="td-sidebar-nav__section-title">
+          <a href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Machbase Manual</a>
+        </li>
+        
+        
+          <ul>
+            <li class="collapse show" id="machbase-manual">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Introduction</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="introduction">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase" href="/en//intro/introduction">Introduction of Machbase</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-machbase-features" href="/en//intro/features">Machbase Features</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-introduction-introduction-of-machbase-products" href="/en//intro/products">Introduction of Machbase Products</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Installation</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="installation">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-package-overview" href="/en//install/package">Package Overview</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-linux-installation" href="/en//install/linux">Linux Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-windows-installation" href="/en//install/windows">Windows Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-license-installation" href="/en//install/license">License Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-cluster-edition-installation" href="/en//install/cluster">Cluster Edition Installation</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-installation-upgrade" href="">Upgrade</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Feature and Tables</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="feature-and-tables">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-tag-table" href="/en//feature-tables/tag">Tag Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-log-table" href="/en//feature-tables/log">Log Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-volatile-table" href="/en//feature-tables/volatile">Volatile Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-lookup-table" href="/en//feature-tables/lookup">Lookup Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-stream" href="/en//feature-tables/stream">STREAM</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-feature-and-tables-backup-and-mount" href="/en//feature-tables/backup-mount">Backup and Mount</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Config/Monitoring</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="config-monitoring">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-meta-table" href="/en//config-monitor/metatable">Meta Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-virtual-table" href="/en//config-monitor/virtualtable">Virtual Table</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property" href="/en//config-monitor/property">Property</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-config-monitoring-property-cluster" href="/en//config-monitor/property-cluster">Property(Cluster)</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SQL Reference</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sql-reference">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-datatypes" href="/en//sql-ref/datatypes">Datatypes</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-ddl" href="/en//sql-ref/ddl">DDL</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-dml" href="/en//sql-ref/dml">DML</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select" href="/en//sql-ref/select">SELECT</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-select-hint" href="/en//sql-ref/select-hint">SELECT Hint</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-user-management" href="/en//sql-ref/user-manage">User Management</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-functions" href="/en//sql-ref/func">Functions</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sql-reference-system-session-management" href="/en//sql-ref/sys-session-manage">System/Session Management</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">SDK</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="sdk">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc" href="/en//sdk/cli-odbc">CLI/ODBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-cli-odbc-example" href="/en//sdk/cli-odbc-example">CLI/ODBC Example</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-jdbc" href="/en//sdk/jdbc">JDBC</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-python" href="/en//sdk/python">Python</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-net-connector" href="/en//sdk/dotnet">.Net Connector</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-restfull-api" href="/en//sdk/restful">RESTfull API</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-sdk-timezone" href="/en//sdk/timezone">Timezone</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">Tools</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="tools">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-utilities" href="/en//tools/utils">Utilities</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machcoordinatoradmin" href="/en//tools/machcoordinatoradmin">machcoordinatoradmin</a>
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-tools-machdeployeradmin" href="/en//tools/machdeployeradmin">machdeployeradmin</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+                  
+                  
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section ">FAQ</a>
+                  </li>
+                  
+                  
+                    <ul>
+                      <li class="collapse show" id="faq">
+                        
+                          <a class="td-sidebar-link td-sidebar-link__page " id="m-machbase-manual-faq-how-to-fix-properties-when-an-insufficient-memory-error-occurs" href="/en//faq/memory-error">How to fix properties when an insufficient memory error occurs</a>
+                        
+                      </li>
+                    </ul>
+                  
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+              </div>
+              <nav id="TableOfContents"><ul>
+              <li><ul id="TOC">
+                <!-- Links will be appended here-->
+              </ul></li>
+              </ul></nav>
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	      <ol class="breadcrumb spb-1">
+              
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/feature-tables/">Feature tables</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    
+                      
+                      <li class="breadcrumb-item">
+                        <a href="/en/feature-tables/tag/">Tag</a>
+                      </li>
+                      
+                    
+                  
+                
+              
+                
+                  
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <a href="/en/feature-tables/tag/ex.html">An example of tag table</a>
+                    </li>
+                  
+                
+              
+	      </ol>
+           </nav>
+           <div class="td-content">        
+            
+              
+            
+            
+	      <!-- Copyright 2019-2021 Vanessa Sochat-->
+<h1 style="margin-bottom:0px">An example of tag table</h1>
+
+<span class="post-date" style="font-style: italic;"></span>
+<h1 id="index">Index</h1>
+
+<ul>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#data-conversion-flowchart">Data conversion flowchart</a></li>
+  <li><a href="#tag-table-creation-and-tag-meta-loading">Tag table creation and tag meta loading</a></li>
+  <li><a href="#create-table-for-plc-data-loading">Create table for PLC data loading</a></li>
+  <li><a href="#loading-plc-data">Loading PLC data</a></li>
+  <li><a href="#tag-meta-name-generation-rules">Tag meta name generation rules</a></li>
+  <li><a href="#loading-tag-table-data">Loading Tag table data</a></li>
+</ul>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>Introduction
+The TAG table can load the structure type of the file in which general sensor data is stored.</p>
+
+<p>The most common types of text storage files are &lt;value, value, value&gt; &lt;value, value, value&gt; <repeat> which is a random file content that just lists a number of numeric values .</repeat></p>
+
+<p>In the case of a file containing time, there are &lt;time, value, value, value&gt; &lt;time, value, value, value&gt; &lt;repeat ..&gt;.</p>
+
+<p>The data in these files is created when a device called PLC (programmable logic controller) collects data from one or more sensors continuously over a long period of time.</p>
+
+<p>The following is the picture of PLC example file.</p>
+
+<p><img src="/en/feature-tables/tag/ex1.png" alt="ex1" /></p>
+
+<p>Now we will load this file into Machbase’s TAG table.</p>
+
+<h1 id="data-conversion-flowchart">Data conversion flowchart</h1>
+
+<p><img src="/en/feature-tables/tag/ex2.png" alt="ex2" /></p>
+
+<p>As you can see in the figure above, we will load the raw CSV file into Machbase’s log table and convert it into a tag table.</p>
+
+<h1 id="tag-table-creation-and-tag-meta-loading">Tag table creation and tag meta loading</h1>
+
+<p>Create TAG table as shown below and load the tag names (tag meta) stored in the CSV file at once using a tool called tagmetaimport.</p>
+
+<p>Not only options that are described below, but also every options available in machloader are able to use.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach&gt; create tag table tag <span class="o">(</span>name varchar<span class="o">(</span>32<span class="o">)</span> primary key, <span class="nb">time </span>datetime basetime, value double
+summarized<span class="o">)</span><span class="p">;</span>
+Executed successfully.
+Elapsed <span class="nb">time</span>: 3.032
+ 
+<span class="nv">$ </span><span class="nb">cat </span>tag_meta.csv
+MTAG_V00
+MTAG_V01
+MTAG_C00
+MTAG_C01
+MTAG_C02
+MTAG_C03
+MTAG_C04
+MTAG_C05
+MTAG_C06
+MTAG_C07
+MTAG_C08
+MTAG_C09
+MTAG_C10
+MTAG_C11
+MTAG_C12
+MTAG_C13
+MTAG_C14
+MTAG_C15
+ 
+<span class="nv">$ </span>tagmetaimport <span class="nt">-d</span> tag_meta.csv
+Import <span class="nb">time</span> : 0 hour 0 min 0.340 sec
+Load success count : 18
+</code></pre></div></div>
+
+<p>(If you changed Machbase Port number from basic port number, you should use changed port number by using -P option on tagmeraimport.)
+As shown above, 18 tag meta information were loaded successfully.</p>
+
+<h1 id="create-table-for-plc-data-loading">Create table for PLC data loading</h1>
+
+<p>Execute the following query to create the log table.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">create</span> <span class="k">table</span> <span class="n">plc_tag_table</span><span class="p">(</span>
+    <span class="n">tm</span> <span class="nb">datetime</span><span class="p">,</span>
+    <span class="n">V0</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">V1</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C0</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C1</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C2</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C3</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C4</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C5</span> <span class="nb">DOUBLE</span><span class="p">,</span>
+    <span class="n">C6</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C7</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C8</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C9</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C10</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C11</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C12</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C13</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C14</span> <span class="nb">DOUBLE</span> <span class="p">,</span>
+    <span class="n">C15</span> <span class="nb">DOUBLE</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><img src="/icons/warnings.png" alt="warnings" /> Note that this table is a log type of table (do not get confused by file names). In Machbase, if you do not specify a separate table type, the default type of table is log.</p>
+</blockquote>
+
+<h1 id="loading-plc-data">Loading PLC data</h1>
+
+<p>Input the plc_tag.csv file, which contains 2 million original PLC data, using the machloader as PLC input in the log table plc_tag_table created above.</p>
+
+<p>In the plc_tag.csv file, the first column is time, then V0, V1, … Columns are divided up to C15.</p>
+
+<p>As for the data pattern in 1 second, about 100 pieces of data are input from 0 to 99 milliseconds, there is no input from 100 milliseconds to 999 milliseconds, and the same pattern is input for the next 1 second.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>machloader <span class="nt">-t</span> plc_tag_table <span class="nt">-i</span> <span class="nt">-d</span> plc_tag.csv <span class="nt">-F</span> <span class="s2">"tm YYYY-MM-DD HH24:MI:SS mmm:uuu:nnn"</span>
+<span class="nt">-----------------------------------------------------------------</span>
+Machbase Data Import/Export Utility.
+Release Version 5.5.0.official
+Copyright 2014, MACHBASE Corporation or its subsidiaries.
+All Rights Reserved.
+<span class="nt">-----------------------------------------------------------------</span>
+NLS : US7ASCII EXECUTE MODE : IMPORT
+TARGET TABLE : plc_tag_table DATA FILE : 4_plc_tag.csv
+IMPORT MODE : APPEND FIELD TERM : ,
+ROW TERM : <span class="se">\n</span> ENCLOSURE : <span class="s2">"
+ESCAPE : </span><span class="se">\ </span><span class="s2">ARRIVAL_TIME : FALSE
+ENCODING : NONE HEADER : FALSE
+CREATE TABLE : FALSE
+Progress bar Imported records Error records
+============================== 2000000 0
+Import time : 0 hour 0 min 26.544 sec
+Load success count : 2000000
+Load fail count : 0
+</span></code></pre></div></div>
+
+<h1 id="tag-meta-name-generation-rules">Tag meta name generation rules</h1>
+
+<p>Now you insert data into the tag table in order to  see the data through the Tag Analyzer.</p>
+
+<p>For this, the insert-select statement will insert every data in plc_tag_table in tag table.</p>
+
+<p>The name of each tag should be matched so it is determined as follows.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column name of log table</th>
+      <th>Tag name values of tag table</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>V0</td>
+      <td>MTAG_V00</td>
+    </tr>
+    <tr>
+      <td>V1</td>
+      <td>MTAG_V01</td>
+    </tr>
+    <tr>
+      <td>C0</td>
+      <td>MTAG_C00</td>
+    </tr>
+    <tr>
+      <td>C1</td>
+      <td>MTAG_C01</td>
+    </tr>
+    <tr>
+      <td>…</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>C15</td>
+      <td>MTAG_C15</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="loading-tag-table-data">Loading Tag table data</h1>
+
+<p>It’s time to load the actual data into the tag table.</p>
+
+<p>Query at the below insert data in to tag table sequentially.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_V00'</span>, tm, v0 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 4.898
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_V01'</span>, tm, v1 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 5.577
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C00'</span>, tm, c0 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 6.327
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C01'</span>, tm, c1 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 7.445
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C02'</span>, tm, c2 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 6.898
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C03'</span>, tm, c3 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 7.078
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C04'</span>, tm, c4 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 6.799
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C05'</span>, tm, c5 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 7.210
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C06'</span>, tm, c6 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 9.232
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C07'</span>, tm, c7 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 6.398
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C08'</span>, tm, c8 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 6.432
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C09'</span>, tm, c9 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 6.734
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C10'</span>, tm, c10 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 7.692
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C11'</span>, tm, c11 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 8.628
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C12'</span>, tm, c12 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 8.229
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C13'</span>, tm, c13 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 9.517
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C14'</span>, tm, c14 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 7.231
+Mach&gt; insert into tag <span class="k">select</span> <span class="s1">'MTAG_C15'</span>, tm, c15 from plc_tag_table<span class="p">;</span>
+2000000 row<span class="o">(</span>s<span class="o">)</span> inserted.
+Elapsed <span class="nb">time</span>: 7.830
+</code></pre></div></div>
+
+<p>A total of 36 millions of records are created.</p>
+
+
+<script
+  src="/en/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <!-- <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h5 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/machbase/dbms-manual/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+ -->
+           </div>
+          </main>
+        </div>
+      </div>
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+            <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+              <a class="text-white" target="_blank" href="https://twitter.com/machbase">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/machbase/dbms-manual">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2023  All Rights Reserved</small>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="/en/assets/js/main.js"></script>
+
+  </body>
+</html>
